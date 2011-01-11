@@ -3,23 +3,29 @@ class UsersController < ApplicationController
   tabs :default => :users
 
   subtabs :index => [[:reputation, "reputation"],
-                     [:newest, "created_at desc"],
-                     [:oldest, "created_at asc"],
-                     [:name, "login asc"]]
+                     [:newest, %w(created_at desc)],
+                     [:oldest, %w(created_at asc)],
+                     [:name, %w(login asc)],
+                     [:near, ""]]
 
   def index
     set_page_title(t("users.index.title"))
-    options =  {:per_page => params[:per_page]||24,
-               :order => current_order,
-               :page => params[:page] || 1}
-    options[:login] = /^#{Regexp.escape(params[:q])}/ if params[:q]
 
-    if options[:order] == "reputation"
-      options[:order] = "membership_list.#{current_group.id}.reputation desc"
+    order = current_order
+    options =  {:per_page => params[:per_page]||24,
+               :page => params[:page] || 1}
+    conditions = {}
+    conditions = {:login => /^#{Regexp.escape(params[:q])}/} if params[:q]
+
+    if order == "reputation"
+      order = %w(membership_list.#{current_group.id}.reputation desc)
     end
 
-    @users = current_group.users(options)
-
+    @users = if order.blank?
+               current_group.users(conditions.merge(:near => current_user.point)).paginate(options)
+             else
+               current_group.users(conditions).order_by(order).paginate(options)
+             end
     respond_to do |format|
       format.html
       format.json {
@@ -55,7 +61,6 @@ class UsersController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset session
       sweep_new_users(current_group)
-      @user.localize(request.remote_ip)
       flash[:notice] = t("flash_notice", :scope => "users.create")
       sign_in_and_redirect(:user, @user) # !! now logged in
     else
@@ -68,7 +73,7 @@ class UsersController < ApplicationController
     conds = {}
     conds[:se_id] = params[:se_id] if params[:se_id]
     @user = User.find_by_login_or_id(params[:id], conds)
-    raise PageNotFound unless @user
+    raise Goalie::NotFound unless @user
 
     set_page_title(t("users.show.title", :user => @user.login))
 
@@ -93,12 +98,11 @@ class UsersController < ApplicationController
                                     :per_page => 25)
 
     @f_sort, order = active_subtab(:f_sort)
-    @favorites = @user.favorites.paginate(:page => params[:favorites_page],
-                                          :per_page => 25,
-                                          :order => order,
-                                          :group_id => current_group.id)
-
-    @favorite_questions = Question.find(@favorites.map{|f| f.question_id })
+    @favorites = @user.favorites(:group_id => current_group.id).
+      paginate(:page => params[:favorites_page],
+               :per_page => 25,
+               :order => order
+               )
 
     add_feeds_url(url_for(:format => "atom"), t("feeds.user"))
 
@@ -133,13 +137,13 @@ class UsersController < ApplicationController
     end
 
     @user.safe_update(%w[login email name language timezone preferred_languages
-                         notification_opts bio hide_country website], params[:user])
+                         notification_opts bio hide_country website avatar use_gravatar], params[:user])
 
     if params[:user]["birthday(1i)"]
       @user.birthday = build_date(params[:user], "birthday")
     end
 
-    Magent.push("actors.judge", :on_update_user, @user.id, current_group.id)
+    Jobs::Users.async.on_update_user(@user.id, current_group.id).commit!
 
     preferred_tags = params[:user][:preferred_tags]
     if @user.valid? && @user.save
@@ -150,13 +154,55 @@ class UsersController < ApplicationController
     end
   end
 
+  def feed
+    @user = params[:id] ? current_group.users.where(:login => params[:id]).first : current_user
+
+    find_questions(:follower_ids => @user.id)
+  end
+
+  def by_me
+    @user = params[:id] ? current_group.users.where(:login => params[:id]).first : current_user
+    find_questions(:user_id => @user.id)
+  end
+
+  def preferred
+    @user = params[:id] ? current_group.users.where(:login => params[:id]).first : current_user
+    tags = @user.config_for(current_group).preferred_tags
+
+    find_questions(:tags.in => tags)
+  end
+
+  def expertise
+    @user = params[:id] ? current_group.users.where(:login => params[:id]).first : current_user
+    tags = @user.stats(:expert_tags).expert_tags # TODO: optimize
+
+    find_questions(:tags.in => tags)
+  end
+
+  def contributed
+    @user = params[:id] ? current_group.users.where(:login => params[:id]).first : current_user
+
+    find_questions(:contributor_ids => @user.id)
+  end
+
+  def connect
+    authenticate_user!
+    warden.authenticate!(:scope => :openid_identity, :recall => "show")
+
+    current_openid_identity.user = current_user
+    current_openid_identity.save!
+    sign_out :openid_identity
+
+    redirect_to settings_path
+  end
+
   def change_preferred_tags
     @user = current_user
-    if params[:tags]
+    if tags = params[:tags]
       if params[:opt] == "add"
-        @user.add_preferred_tags(params[:tags], current_group) if params[:tags]
+        @user.add_preferred_tags(tags, current_group) if tags
       elsif params[:opt] == "remove"
-        @user.remove_preferred_tags(params[:tags], current_group)
+        @user.remove_preferred_tags(tags, current_group)
       end
     end
 
@@ -171,11 +217,8 @@ class UsersController < ApplicationController
 
     flash[:notice] = t("flash_notice", :scope => "users.follow", :user => @user.login)
 
-    if @user.notification_opts.activities
-      Notifier.deliver_follow(current_group, current_user, @user)
-    end
-
-    Magent.push("actors.judge", :on_follow, current_user.id, @user.id, current_group.id)
+    Jobs::Activities.async.on_follow(current_user.id, @user.id, current_group.id).commit!
+    Jobs::Mailer.async.on_follow(current_user.id, @user.id, current_group.id).commit!
 
     respond_to do |format|
       format.html do
@@ -194,7 +237,7 @@ class UsersController < ApplicationController
 
     flash[:notice] = t("flash_notice", :scope => "users.unfollow", :user => @user.login)
 
-    Magent.push("actors.judge", :on_unfollow, current_user.id, @user.id, current_group.id)
+    Jobs::Activities.async.on_unfollow(current_user.id, @user.id, current_group.id).commit!
 
     respond_to do |format|
       format.html do
@@ -208,10 +251,12 @@ class UsersController < ApplicationController
   end
 
   def autocomplete_for_user_login
-    @users = User.all( :limit => params[:limit] || 20,
-                       :fields=> 'login',
-                       :login =>  /^#{Regexp.escape(params[:prefix].to_s.downcase)}.*/,
-                       :order => "login desc")
+    @users = User.only(:login).
+                  where(:login =>  /^#{Regexp.escape(params[:term].to_s.downcase)}.*/).
+                  limit(20).
+                  order_by(:login.desc).
+                  all
+
     respond_to do |format|
       format.json {render :json=>@users}
     end

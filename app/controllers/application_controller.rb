@@ -3,37 +3,19 @@
 
 class ApplicationController < ActionController::Base
   include Rack::Recaptcha::Helpers
-  include AuthenticatedSystem
   include Subdomains
   include Sweepers
+
+  include Shapado::Controllers::Access
+  include Shapado::Controllers::Routes
+  include Shapado::Controllers::Locale
+  include Shapado::Controllers::Utils
 
   if !AppConfig.recaptcha['activate']
     def recaptcha_valid?
       true
     end
   end
-
-  if AppConfig.exception_notification['activate']
-    include ExceptionNotifiable
-    include SuperExceptionNotifier
-    include ExceptionNotifierHelper
-
-    self.exception_notifiable_silent_exceptions = []
-    self.exception_notifiable_silent_exceptions << SuperExceptionNotifier::CustomExceptionClasses::PageNotFound
-    self.exception_notifiable_silent_exceptions << ActionController::InvalidAuthenticityToken
-    self.exception_notifiable_silent_exceptions << ActionController::RoutingError
-    self.exception_notifiable_silent_exceptions << ActionController::UnknownAction
-
-    local_addresses.clear
-
-    exception_data :additional_data
-    def additional_data
-      { :group => find_group}
-    end
-    protected :additional_data
-  end
-
-  self.error_layout = 'application'
 
   protect_from_forgery
 
@@ -45,33 +27,18 @@ class ApplicationController < ActionController::Base
 
   helper_method :recaptcha_tag
 
+  rescue_from Error404, :with => :render_404
+  rescue_from Mongoid::Errors::DocumentNotFound, :with => :render_404
+
   protected
-
-  def check_group_access
-    if ((!current_group.registered_only || is_bot?) && !current_group.private) || devise_controller? || (params[:controller] == "users" && action_name == "new" )
-      return
-    end
-
-    if logged_in?
-      if current_group.private && !current_user.user_of?(@current_group)
-        access_denied
-      end
-    else
-      respond_to do |format|
-        format.json { render :json => {:message => "Permission denied" }}
-        format.html { redirect_to new_user_session_path }
-      end
-    end
-  end
-
   def find_group
     @current_group ||= begin
       subdomains = request.subdomains
       subdomains.delete("www") if request.host == "www.#{AppConfig.domain}"
-      _current_group = Group.first(:state => "active", :domain => request.host)
+      _current_group = Group.where({:state => "active", :domain => request.host}).first
       unless _current_group
         if subdomain = subdomains.first
-          _current_group = Group.first(:state => "active", :subdomain => subdomain)
+          _current_group = Group.where(:state => "active", :subdomain => subdomain).first
           unless _current_group.nil?
             redirect_to domain_url(:custom => _current_group.domain)
             return
@@ -86,63 +53,58 @@ class ApplicationController < ActionController::Base
     @current_group
   end
 
+  def find_questions(extra_conditions = {})
+    if params[:language] || request.query_string =~ /tags=/
+      params.delete(:language)
+      head :moved_permanently, :location => url_for(params)
+      return
+    end
+
+    set_page_title(t("questions.index.title"))
+    conditions = scoped_conditions(:banned => false)
+
+    if params[:sort] == "hot"
+      conditions[:activity_at] = {"$gt" => 5.days.ago}
+    end
+
+    @active_tab = "questions"
+    if params[:unanswered]
+      conditions[:answered_with_id] = nil
+      @active_tab = "unanswered"
+    elsif params[:answers]
+      @active_tab = "answers"
+    end
+    @active_subtab ||= params[:sort] || "newest"
+
+    @questions = Question.minimal.where(conditions.merge(extra_conditions)).order_by(current_order).paginate({:per_page => 25, :page => params[:page] || 1})
+
+    @langs_conds = scoped_conditions[:language][:$in]
+
+    if logged_in?
+      feed_params = { :feed_token => current_user.feed_token }
+    else
+      feed_params = {  :lang => I18n.locale,
+                          :mylangs => current_languages }
+    end
+    add_feeds_url(url_for({:format => "atom"}.merge(feed_params)), t("feeds.questions"))
+    if params[:tags]
+      add_feeds_url(url_for({:format => "atom", :tags => params[:tags]}.merge(feed_params)),
+                    "#{t("feeds.tag")} #{params[:tags].inspect}")
+    end
+    @tag_cloud = Question.tag_cloud(scoped_conditions, 25)
+
+    respond_to do |format|
+      format.html
+      format.mobile
+      format.json  { render :json => @questions.to_json(:except => %w[_keywords watchers slugs]) }
+      format.atom
+    end
+  end
+
   def current_group
     @current_group
   end
   helper_method :current_group
-
-  def current_tags
-    @current_tags ||=  if params[:tags].kind_of?(String)
-      params[:tags].split("+")
-    elsif params[:tags].kind_of?(Array)
-      params[:tags]
-    else
-      []
-    end
-  end
-  helper_method :current_tags
-
-  def current_languages
-    @current_languages ||= find_languages.join("+")
-  end
-  helper_method :current_languages
-
-  def find_languages
-    @languages ||= begin
-      if AppConfig.enable_i18n
-        if languages = current_group.language
-          languages = [languages]
-        else
-          if logged_in?
-            languages = current_user.languages_to_filter
-          elsif session["user.language_filter"]
-            if session["user.language_filter"] == 'any'
-              languages = AVAILABLE_LANGUAGES
-            else
-              languages = [session["user.language_filter"]]
-            end
-          elsif params[:mylangs]
-            languages = params[:mylangs].split(' ')
-          elsif params[:feed_token] && (feed_user = User.find_by_feed_token(params[:feed_token]))
-            languages = feed_user.languages_to_filter
-          else
-            languages = [I18n.locale.to_s.split("-").first]
-          end
-        end
-        languages
-      else
-        [current_group.language || AppConfig.default_language]
-      end
-    end
-  end
-  helper_method :find_languages
-
-  def language_conditions
-    conditions = {}
-    conditions[:language] = { :$in => find_languages}
-    conditions
-  end
-  helper_method :language_conditions
 
   def scoped_conditions(conditions = {})
     unless current_tags.empty?
@@ -150,141 +112,36 @@ class ApplicationController < ActionController::Base
     end
     conditions.deep_merge!({:group_id => current_group.id})
     conditions.deep_merge!(language_conditions)
+    conditions
   end
   helper_method :scoped_conditions
 
-  def available_locales; AVAILABLE_LOCALES; end
-
-  def set_locale
-    locale = AppConfig.default_language || 'en'
-    if AppConfig.enable_i18n
-      if current_group.language.present?
-        locale = current_group.language
-      elsif logged_in?
-        locale = current_user.language
-        Time.zone = current_user.timezone || "UTC"
-      elsif params[:feed_token] && (feed_user = User.find_by_feed_token(params[:feed_token]))
-        locale = feed_user.language
-      elsif params[:lang] =~ /^(\w\w)/
-        locale = find_valid_locale($1)
-      elsif request.env['HTTP_ACCEPT_LANGUAGE'] =~ /^(\w\w)/
-        locale = find_valid_locale($1)
-      end
-    end
-    I18n.locale = locale.to_s
-  end
-
-  def find_valid_locale(lang)
-    case lang
-      when /^es/
-        'es-419'
-      when /^pt/
-        'pt-PT'
-      when "fr"
-        'fr'
-      when "ja"
-        'ja'
-      when /^el/
-        'el'
-      else
-        'en'
-    end
-  end
-  helper_method :find_valid_locale
-
   def set_layout
-    devise_controller? || (action_name == "new" && controller_name == "users") ? 'sessions' : 'application'
-  end
-
-  def after_sign_in_path_for(resource)
-    if return_to = session.delete("return_to")
-      return_to
+    if devise_controller? || (action_name == "new" && controller_name == "users")
+      'sessions'
+    elsif params["format"] == "mobile"
+      'mobile'
     else
-      super
+      'application'
     end
   end
 
-  def set_page_title(title)
-    @page_title = title
-  end
+  def render_404
+    Rails.logger.info "ROUTE NOT FOUND (404): #{request.url}"
 
-  def page_title
-    if @page_title
-      if current_group.name == AppConfig.application_name
-        "#{@page_title} - #{AppConfig.application_name}: #{t("layouts.application.title")}"
-      else
-        if current_group.isolate
-          "#{@page_title} - #{current_group.name} #{current_group.legend}"
-        else
-          "#{@page_title} - #{current_group.name} - #{AppConfig.application_name} -  #{current_group.legend}"
-        end
-      end
-    else
-      if current_group.name == AppConfig.application_name
-        "#{AppConfig.application_name} - #{t("layouts.application.title")}"
-      else
-        if current_group.isolate
-          "#{current_group.name} - #{current_group.legend}"
-        else
-          "#{current_group.name} - #{current_group.legend} - #{AppConfig.application_name}"
-        end
-      end
-    end
-  end
-  helper_method :page_title
-
-  def feed_urls
-    @feed_urls ||= Set.new
-  end
-  helper_method :feed_urls
-
-  def add_feeds_url(url, title="atom")
-    feed_urls << [title, url]
-  end
-
-  def admin_required
-    unless current_user.admin?
-      access_denied
+    respond_to do |format|
+      format.html { render "public_errors/not_found", :status => '404 Not Found' }
+      format.json { render :json => {:success => false, :message => "Not Found"}, :status => '404 Not Found' }
     end
   end
 
-  def moderator_required
-    unless current_user.mod_of?(current_group)
-      access_denied
-    end
+  # override from devise
+  def after_sign_out_path_for(resource)
+    params[:format] == "mobile" ? "/mobile" : root_path
   end
 
-  def owner_required
-    unless current_user.owner_of?(current_group)
-      access_denied
-    end
+  def after_sign_in_path_for(resource_or_scope)
+    self.current_user = resource_or_scope
+    super(resource_or_scope)
   end
-
-  def is_bot?
-    request.user_agent =~ /\b(Baidu|Gigabot|Googlebot|libwww-perl|lwp-trivial|msnbot|SiteUptime|Slurp|WordPress|ZIBB|ZyBorg|Java|Yandex|Linguee|LWP::Simple|Exabot|ia_archiver|Purebot|Twiceler|StatusNet|Baiduspider)\b/i
-  end
-  helper_method :is_bot?
-
-  def build_date(params, name)
-    Time.zone.parse("#{params["#{name}(1i)"]}-#{params["#{name}(2i)"]}-#{params["#{name}(3i)"]}") rescue nil
-  end
-
-  def build_datetime(params, name)
-    Time.zone.parse("#{params["#{name}(1i)"]}-#{params["#{name}(2i)"]}-#{params["#{name}(3i)"]} #{params["#{name}(4i)"]}:#{params["#{name}(5i)"]}") rescue nil
-  end
-
-  def logo_group_path(group)
-    "/_files/groups/logo/#{group.id}"
-  end
-  helper_method :logo_group_path
-
-  def css_group_path(group)
-    "/_files/groups/css/#{group.id}"
-  end
-  helper_method :css_group_path
-
-  def favicon_group_path(group)
-    "/_files/groups/favicon/#{group.id}"
-  end
-  helper_method :favicon_group_path
 end

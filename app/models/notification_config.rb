@@ -1,10 +1,17 @@
 class NotificationConfig
-  include MongoMapper::EmbeddedDocument
+  include Mongoid::Document
 
-  key :_id, String
+  identity :type => String
 
-  key :give_advice, Boolean, :default => true
-  key :activities, Boolean, :default => true
-  key :reports, Boolean, :default => true
-  key :new_answer, Boolean, :default => true
+  field :give_advice, :type => Boolean, :default => true
+  field :activities, :type => Boolean, :default => true
+  field :reports, :type => Boolean, :default => true
+  field :new_answer, :type => Boolean, :default => true
+  field :questions_to_twitter, :type => Boolean, :default => false
+  field :badges_to_twitter, :type => Boolean, :default => false
+  field :favorites_to_twitter, :type => Boolean, :default => false
+  field :answers_to_twitter, :type => Boolean, :default => false
+  field :comments_to_twitter, :type => Boolean, :default => false
+
+  embedded_in :user, :inverse_of => :notification_opts
 end

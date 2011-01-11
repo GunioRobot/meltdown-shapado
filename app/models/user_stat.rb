@@ -1,17 +1,16 @@
 class UserStat
-  include MongoMapper::Document
+  include Mongoid::Document
+  include Mongoid::Timestamps
 
-  key :_id, String
-  key :user_id, String
-  belongs_to :user
+  identity :type => String
 
-  key :answer_tags, Array
-  key :question_tags, Array
-  key :expert_tags, Array
+  field :answer_tags, :type => Array
+  field :question_tags, :type => Array
+  field :expert_tags, :type => Array
 
-  key :tag_votes, Hash
+  field :tag_votes, :type => Hash
 
-  timestamps!
+  referenced_in :user
 
   def add_answer_tags(*tags)
     self.collection.update({:_id => self.id},

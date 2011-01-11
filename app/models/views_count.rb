@@ -1,8 +1,8 @@
 class ViewsCount
-  include MongoMapper::Document
-  timestamps!
+  include Mongoid::Document
+  include Mongoid::Timestamps
 
-  key :_id, String
+  identity :type => String
 
   def self.cleanup!
     ViewsCount.delete_all(:created_at.lt => 8.days.ago)

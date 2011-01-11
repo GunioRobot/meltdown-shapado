@@ -1,28 +1,24 @@
 class Page
-  include MongoMapper::Document
-  include MongoMapperExt::Filter
-  include MongoMapperExt::Slugizer
-  include MongoMapperExt::Tags
-  include MongoMapperExt::Storage
+  include Mongoid::Document
+  include MongoidExt::Filter
+  include MongoidExt::Slugizer
+  include MongoidExt::Tags
+  include MongoidExt::Storage
   include Support::Versionable
 
-  timestamps!
+  include Mongoid::Timestamps
 
-  key :_id, String
-  key :title, String
-  key :body, String
-  key :wiki, Boolean, :default => false
-  key :language, String
-  key :adult_content, Boolean, :default => false
+  identity :type => String
+  field :title, :type => String
+  field :body, :type => String
+  field :wiki, :type => Boolean, :default => false
+  field :language, :type => String
+  field :adult_content, :type => Boolean, :default => false
 
-  key :user_id, String
-  belongs_to :user
+  referenced_in :user
+  referenced_in :group
 
-  key :group_id, String, :required => true
-  belongs_to :group
-
-  key :updated_by_id, String
-  belongs_to :updated_by, :class_name => "User"
+  referenced_in :updated_by, :class_name => "User"
 
   slug_key :title, :unique => true, :min_length => 3
 
@@ -31,11 +27,15 @@ class Page
 
   versionable_keys :title, :body, :tags
 
+  validates_presence_of :group
   validates_uniqueness_of :title, :scope => [:group_id, :language]
   validates_uniqueness_of :slug, :scope => [:group_id, :language], :allow_blank => true
 
-  def self.by_title(title, options)
-    self.first(options.merge(:title => title, :language => current_language)) || self.first(options.merge(:title => title)) || self.by_slug(title, options.merge(:language => current_language)) || self.by_slug(title, options)
+  def self.by_title(title, conditions = {})
+    self.where(conditions.merge({:title => title, :language => current_language})).first ||
+    self.where(conditions.merge(:title => title)).first# ||  # FIXME: mongoid
+    self.where(conditions.merge(:language => current_language)).by_slug(title) ||
+    self.where(conditions).by_slug(title)
   end
 
   private

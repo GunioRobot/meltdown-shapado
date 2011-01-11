@@ -1,38 +1,32 @@
-
 class Comment
-  include MongoMapper::Document
+  include Mongoid::Document
   include Support::Voteable
+  include Mongoid::Timestamps
 
-  key :_id, String
-  key :_type, String
-  key :body, String, :required => true
-  key :language, String, :default => "en"
-  key :banned, Boolean, :default => false
+#   include Shapado::Models::GeoCommon FIXME
 
-  timestamps!
 
-  key :user_id, String, :index => true
-  belongs_to :user
+  identity :type => String
 
-  key :group_id, String, :index => true
-  belongs_to :group
+  field :body, :type =>  String, :required => true
+  field :language, :type =>  String, :default => "en"
+  field :banned, :type =>  Boolean, :default => false
 
-  key :commentable_id, String
-  key :commentable_type, String
-  belongs_to :commentable, :polymorphic => true
+  field :position, :type =>  GeoPosition, :default => GeoPosition.new(0, 0) # FIXME
+
+  field :user_id, :type => String
+  referenced_in :user
+
+  embedded_in :commentable, :inverse_of => :comments
 
   validates_presence_of :user
 
-  validate :disallow_spam
-
-  def ban
-    self.collection.update({:_id => self.id}, {:$set => {:banned => true}})
+  def group
+    commentable.group
   end
 
-  def self.ban(ids)
-    ids.each do |id|
-      self.collection.update({:_id => id}, {:$set => {:banned => true}})
-    end
+  def commentable_type
+    commentable.class.to_s
   end
 
   def can_be_deleted_by?(user)
@@ -58,9 +52,9 @@ class Comment
   def question_id
     question_id = nil
 
-    if self.commentable_type == "Question"
-      question_id = self.commentable_id
-    elsif self.commentable_type == "Answer"
+    if self.commentable.is_a?(Question)
+      question_id = self.commentable.id
+    elsif self.commentable.is_a?(Answer)
       question_id = self.commentable.question_id
     elsif self.commentable.respond_to?(:question)
       question_id = self.commentable.question_id
@@ -72,19 +66,6 @@ class Comment
   def find_recipient
     if self.commentable.respond_to?(:user)
       self.commentable.user
-    end
-  end
-
-  protected
-  def disallow_spam
-    eq_comment = Comment.first({ :body => self.body,
-                                  :commentable_id => self.commentable_id
-                                })
-
-
-    valid = (eq_comment.nil? || eq_comment.id == self.id)
-    if !valid
-      self.errors.add(:body, "Your comment looks like spam.")
     end
   end
 end

@@ -1,13 +1,13 @@
 class Version
-  include MongoMapper::EmbeddedDocument
+  include Mongoid::Document
 
-  key :_id, String
-  key :data, Hash
-  key :message, String
-  key :date, Time
+  identity :type => String
+  field :data, :type => Hash
+  field :message, :type => String
+  field :date, :type => Time
 
-  key :user_id, String
-  belongs_to :user
+  field :user_id, :type => String
+  referenced_in :user
 
   def content(key)
     cdata = self.data[key]

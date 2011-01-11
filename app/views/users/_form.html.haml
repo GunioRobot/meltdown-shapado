@@ -7,6 +7,15 @@
   = f.label :email, t(:email, :scope => "activerecord.attributes.user"), :class => "label"
   = f.text_field :email, :class => "text_field"
 
+
+-unless @user.new?
+  .group
+    = f.label :avatar, t('avatar', :scope => "activerecord.attributes.user"), :class => "label"
+  -if @user.has_avatar?
+    = image_tag(avatar_user_path(@user))
+  %br
+    = f.file_field :avatar
+
 -if !@user.openid_login?
   -if !@user.new?
     .group
@@ -73,7 +82,6 @@
   %a{:name => "notifications"}
   %h2.title
     = t(".notifications")
-
   .group
     = f.check_box "notification_opts[new_answer]", :checked => @user.notification_opts.new_answer
     = t(".new_answer_notification")
@@ -86,4 +94,27 @@
   .group
     = f.check_box "notification_opts[reports]", :checked => @user.notification_opts.reports
     = t(".reports_notification")
+  -if request.user_agent =~ /webkit/i
+    .group
+      = check_box_tag "notification_opts[desktop_notifs]", true, false, {:id => "desktop_notifs"}
+      = t(".desktop_notification")
 
+  %a{:name => "social"}
+  %h2.title
+    = t(".social_interaction")
+  - if @user.twitter_login?
+    .group
+      = f.check_box "notification_opts[questions_to_twitter]", :checked => @user.notification_opts.questions_to_twitter
+      = t(".send_questions_to_twitter")
+    .group
+      = f.check_box "notification_opts[badges_to_twitter]", :checked => @user.notification_opts.badges_to_twitter
+      = t(".send_badges_to_twitter")
+    .group
+      = f.check_box "notification_opts[favorites_to_twitter]", :checked => @user.notification_opts.favorites_to_twitter
+      = t(".send_favorites_to_twitter")
+    .group
+      = f.check_box "notification_opts[answers_to_twitter]", :checked => @user.notification_opts.answers_to_twitter
+      = t(".send_answers_to_twitter")
+    .group
+      = f.check_box "notification_opts[comments_to_twitter]", :checked => @user.notification_opts.comments_to_twitter
+      = t(".send_comments_to_twitter")

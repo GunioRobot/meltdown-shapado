@@ -1,11 +1,11 @@
 class TagList
-  include MongoMapper::Document
+  include Mongoid::Document
 
-  key :_id, String
-  key :group_id, String
-  belongs_to :group
+  identity :type => String
+  field :group_id, :type => String
+  referenced_in :group
 
-  key :tags, Hash
+  field :tags, :type => Hash
 
   def self.add_tags(group_id, *tags)
     toinc = {"tags" => {}}

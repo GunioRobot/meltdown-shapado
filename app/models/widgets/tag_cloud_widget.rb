@@ -1,9 +1,14 @@
 class TagCloudWidget < Widget
-  before_validation_on_create :set_name
-  before_validation_on_update :set_name
+  field :settings, :type => Hash, :default => { :limit => 30, :on_welcome => true }
+
+  validate :validate_settings
+
+
 
   protected
-  def set_name
-    self[:name] ||= "tag_cloud"
+  def validate_settings
+    if self.settings['limit'].to_i > 30
+      self.errors.add :settings, I18n.t("questions.model.messages.too_many_tags")
+    end
   end
 end

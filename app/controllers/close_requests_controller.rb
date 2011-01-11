@@ -27,7 +27,7 @@ class CloseRequestsController < ApplicationController
 
     @question.close_requests << @close_request
     if current_user.mod_of?(current_group)
-      @question.closed = Boolean.to_mongo(params[:close]||false)
+      @question.closed = params[:close]||false
       if @question.closed
         @question.close_reason_id = @close_request.id
       else
@@ -37,7 +37,8 @@ class CloseRequestsController < ApplicationController
 
     respond_to do |format|
       if @close_request.valid?
-        @question.save
+        @question.save #FIXME: use modifiers
+        @question.increment(:close_requests_count => 1)
         if @question.closed
           flash[:notice] = "question closed successfully"
         else
@@ -72,7 +73,7 @@ class CloseRequestsController < ApplicationController
     @close_request = @question.close_requests.find(params[:id])
     @close_request.reason = params[:close_request][:reason]
 
-    close_question = Boolean.to_mongo(params[:close]||false)
+    close_question = params[:close]||false
     if current_user.mod_of?(current_group)
       @question.closed = close_question
       if @question.closed_changed?
@@ -107,7 +108,8 @@ class CloseRequestsController < ApplicationController
     end
     @question.close_requests.delete(@close_request)
 
-    @question.save
+    @question.decrement(:close_requests_count => 1)
+    @question.save #FIXME: use modifiers
     flash[:notice] = t(:flash_notice, :scope => "close_requests.destroy")
     respond_to do |format|
       format.html { redirect_to(question_path(@question)) }

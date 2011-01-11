@@ -1,0 +1,4 @@
+-current_group.send(:"#{context}_widgets").each do |widget|
+  - unless (widget.question_only? && !@question)
+    .widget.block{:id => widget.name}
+      = render :partial => widget.partial_name, :locals => {:widget => widget}

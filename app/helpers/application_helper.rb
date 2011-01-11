@@ -1,5 +1,9 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  def multiauth_dropdown(title)
+    render 'shared/login_menu', :title => title
+  end
+
   def with_facebook?
     return true if current_group.share.fb_active
 
@@ -12,7 +16,7 @@ module ApplicationHelper
 
   def context_panel_ads(group)
     if AppConfig.enable_adbard && request.domain == AppConfig.domain &&
-        !Adbard.find_by_group_id(current_group.id)
+        !Adbard.where(:group_id => current_group.id).first
       adbard = "<!--Ad Bard advertisement snippet, begin -->
         <script type='text/javascript'>
         var ab_h = '#{AppConfig.adbard_host_id}';
@@ -25,46 +29,46 @@ module ApplicationHelper
     end
     if group.has_custom_ads == true
       ads = []
-      Ad.find_all_by_group_id_and_position(group.id,'context_panel').each do |ad|
+      Ad.where(:group_id => group.id,:position =>'context_panel').each do |ad|
         ads << ad.code
       end
       ads << adbard
-      return ads.join unless ads.empty?
+      return ads.join.html_safe unless ads.empty?
     end
   end
 
   def header_ads(group)
     if group.has_custom_ads
       ads = []
-      Ad.find_all_by_group_id_and_position(group.id,'header').each do |ad|
+      Ad.where(:group_id => group.id,:position => 'header').each do |ad|
         ads << ad.code
       end
-      return ads.join  unless ads.empty?
+      return ads.join.html_safe  unless ads.empty?
     end
   end
 
   def content_ads(group)
     if group.has_custom_ads
       ads = []
-      Ad.find_all_by_group_id_and_position(group.id,'content').each do |ad|
+      Ad.where(:group_id => group.id,:position => 'content').each do |ad|
         ads << ad.code
       end
-      return ads.join  unless ads.empty?
+      return ads.join.html_safe  unless ads.empty?
     end
   end
 
   def footer_ads(group)
     if group.has_custom_ads
       ads = []
-      Ad.find_all_by_group_id_and_position(group.id,'footer').each do |ad|
+      Ad.where(:group_id => group.id,:position => 'footer').each do |ad|
         ads << ad.code
       end
-      return ads.join  unless ads.empty?
+      return ads.join.html_safe  unless ads.empty?
     end
   end
 
   def language_desc(langs)
-    langs.map do |lang|
+    (langs.kind_of?(Array) ? langs : [langs]).map do |lang|
       I18n.t("languages.#{lang}", :default => lang).capitalize
     end.join(', ')
   end
@@ -75,9 +79,14 @@ module ApplicationHelper
     else
       question.language
     end
-    languages = logged_in? ? current_user.preferred_languages : AVAILABLE_LANGUAGES
+    languages = logged_in? ? current_user.preferred_languages : current_group.languages
 
     f.select :language, languages_options(languages), {:selected => selected}, {:class => "select"}.merge(opts)
+  end
+
+  def language_select_tag(name = "language", value = nil, opts = {})
+    languages = logged_in? ? current_user.preferred_languages : current_group.languages
+    select_tag name, options_for_select(languages_options(languages)), {:value => value, :class => "select"}.merge(opts)
   end
 
   def languages_options(languages=nil, current_languages = [])
@@ -87,16 +96,16 @@ module ApplicationHelper
 
   def locales_options(languages=nil)
     languages = AVAILABLE_LOCALES if languages.blank?
+
     languages.collect do |lang|
       [language_desc(lang), lang]
     end
   end
 
-
-  def tag_cloud(tags = [], options = {})
+  def tag_cloud(tags = [], options = {}, limit = nil)
     if tags.empty?
       tags = Question.tag_cloud({:group_id => current_group.id, :banned => false}.
-                        merge(language_conditions.merge(language_conditions)))
+                        merge(language_conditions.merge(language_conditions)), limit)
     end
 
     return '' if tags.size <= 2
@@ -115,15 +124,9 @@ module ApplicationHelper
     spread = 1 if spread == 0
     ratio = (max_size - min_size) / spread
 
-    cloud = '<div class="tag_cloud">'
-    tags.each do |tag|
-      next if tag["count"].kind_of?(String)
-      size = min_size + (tag["count"] - lowest_value["count"]) * ratio
-      url = url_for(:controller => "questions", :action => "index", :tags => tag["name"])
-      cloud << "<span>#{link_to(tag["name"], url, :class => "#{tag_class} #{css[size.round]}")}</span> "
-    end
-    cloud += "</div>"
-    cloud
+    render 'shared/tag_cloud', :tags => tags, :css => css,
+                               :lowest_value => lowest_value, :ratio => ratio,
+                               :min_size => min_size, :tag_class => tag_class
   end
 
   def country_flag(code, name)
@@ -144,7 +147,7 @@ module ApplicationHelper
     if options[:sanitize] != false
       txt = defined?(Sanitize) ? Sanitize.clean(txt, SANITIZE_CONFIG) : sanitize(txt)
     end
-    txt
+    txt.html_safe
   end
 
   def render_page_links(text, options = {})
@@ -154,7 +157,8 @@ module ApplicationHelper
 
     text.gsub!(/\[\[([^\,\[\'\"]+)\]\]/) do |m|
       link = $1.split("|", 2)
-      page = Page.by_title(link.first, {:group_id => group.id, :select => [:title, :slug]})
+      # FIXME mongoid .only(:title, :slug).where()
+      page = Page.by_title(link.first, :group_id => group.id)
 
 
       if page.present?
@@ -179,7 +183,7 @@ module ApplicationHelper
             "anonymous"
           end
         when 'hottest_today'
-          question = Question.first(:activity_at.gt => Time.zone.now.yesterday, :order => "hotness desc, views_count asc", :group_id => group.id, :select => [:slug, :title])
+          question = Question.where(:activity_at.gt => Time.zone.now.yesterday, :order => "hotness desc, views_count asc", :group_id => group.id, :select => [:slug, :title]).first
           if question.present?
             link_to(question.title, question_path(question))
           end
@@ -190,6 +194,8 @@ module ApplicationHelper
   end
 
   def format_number(number)
+    return if number.nil?
+
     if number < 1000
       number.to_s
     elsif number >= 1000 && number < 1000000
@@ -200,6 +206,8 @@ module ApplicationHelper
   end
 
   def class_for_number(number)
+    return if number.nil?
+
     if number >= 1000 && number < 10000
       "medium_number"
     elsif number >= 10000
@@ -263,7 +271,7 @@ module ApplicationHelper
          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
        })();
-    </script>"
+    </script>".html_safe
   end
 
   def logged_out_language_filter
@@ -296,7 +304,6 @@ module ApplicationHelper
   def current_announcements(hide_time = nil)
     conditions = {:starts_at.lte => Time.zone.now.to_i,
                   :ends_at.gte => Time.zone.now.to_i,
-                  :order => "starts_at desc",
                   :group_id.in => [current_group.id, nil]}
     if hide_time
       conditions[:updated_at] = {:$gt => hide_time}
@@ -306,11 +313,11 @@ module ApplicationHelper
       conditions[:only_anonymous] = false
     end
 
-    Announcement.all(conditions)
+    Announcement.order_by(:starts_at.desc).where(conditions)
   end
 
   def top_bar_links
-    top_bar = current_group.custom_html.top_bar
+    top_bar = raw(current_group.custom_html.top_bar)
     return [] if top_bar.blank?
 
     top_bar.split("\n").map do |line|
@@ -318,9 +325,21 @@ module ApplicationHelper
     end
   end
 
+  def gravatar(*args)
+    super(*args).html_safe
+  end
+
   def include_latex
     if current_group.enable_latex
       require_js domain_url(:custom => current_group.domain)+'/javascripts/jsMath/easy/load.js'
+    end
+  end
+
+  def find_answer(question)
+    if question.accepted
+      question.answer
+    else
+      question.answers.order_by(:votes_average.asc).first
     end
   end
 end

@@ -1,18 +1,29 @@
 class CommentsController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required, :except => [:index]
   before_filter :find_scope
-  before_filter :check_permissions, :except => [:create]
+  before_filter :check_permissions, :except => [:create, :index]
+
+  def index
+    @comments = @answer ? @answer.comments : @question.comments
+
+    respond_to do |format|
+      format.json { render :json => @comments }
+    end
+  end
 
   def create
     @comment = Comment.new
-    @comment.body = params[:body]
-    @comment.commentable = scope
+    @comment.body = params[:comment][:body]
     @comment.user = current_user
-    @comment.group = current_group
 
-    if saved = @comment.save
+    current_scope << @comment
+
+    if @comment.valid? && saved = (@comment.save && scope.save)
       current_user.on_activity(:comment_question, current_group)
-      Magent.push("actors.judge", :on_comment, @comment.id)
+      link = question_url(@question)
+
+      Jobs::Activities.async.on_comment(scope.id, scope.class.to_s, @comment.id, link).commit!
+      Jobs::Mailer.async.on_new_comment(scope.id, scope.class.to_s, @comment.id).commit!
 
       if question_id = @comment.question_id
         Question.update_last_target(question_id, @comment)
@@ -23,13 +34,6 @@ class CommentsController < ApplicationController
       flash[:error] = @comment.errors.full_messages.join(", ")
     end
 
-    # TODO: use magent to do it
-    if (question = @comment.find_question) && (recipient = @comment.find_recipient)
-      email = recipient.email
-      if !email.blank? && current_user.id != recipient.id && recipient.notification_opts.new_answer
-        Notifier.deliver_new_comment(current_group, @comment, recipient, question)
-      end
-    end
 
     respond_to do |format|
       if saved
@@ -65,9 +69,9 @@ class CommentsController < ApplicationController
 
   def update
     respond_to do |format|
-      @comment = Comment.find(params[:id])
+      @comment = current_scope.find(params[:id])
       @comment.body = params[:body]
-      if @comment.valid? && @comment.save
+      if @comment.valid? && scope.save
         if question_id = @comment.question_id
           Question.update_last_target(question_id, @comment)
         end
@@ -88,8 +92,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = scope.comments.find(params[:id])
-    @comment.destroy
+    @scope = scope
+    @scope.comments.delete_if { |f| f._id == params[:id] }
+    @scope.save!
 
     respond_to do |format|
       format.html { redirect_to(params[:source]) }

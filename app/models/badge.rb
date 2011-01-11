@@ -1,59 +1,49 @@
 class Badge
-  include MongoMapper::Document
+  include Mongoid::Document
+  include Mongoid::Timestamps
 
   TYPES = %w[gold silver bronze]
   GOLD = %w[rockstar popstar fanatic service_medal famous_question celebrity
-            great_answer great_question stellar_question]
-  SILVER = %w[popular_person guru favorite_question addict good_question
+            great_answer great_question stellar_answer stellar_question]
+  SILVER = %w[popular_person guru favorite_answer favorite_question addict good_question
               good_answer notable_question civic_duty enlightened necromancer]
   BRONZE = %w[pioneer supporter critic inquirer troubleshooter commentator
               merit_medal effort_medal student shapado editor popular_question
               friendly interesting_person citizen_patrol cleanup disciplined
               nice_answer nice_question peer_pressure self-learner scholar autobiographer
-              organizer tutor]
+              organizer tutor altruist benefactor investor promoter]
 
   def self.TOKENS
     @tokens ||= GOLD + SILVER + BRONZE
   end
 
-  key :_id, String
-  key :user_id, String, :required => true
-  belongs_to :user
+  identity :type => String
 
-  key :group_id, String, :required => true, :index => true
-  belongs_to :group
+  referenced_in :user
+  validates_presence_of :user
 
-  key :token, String, :required => true, :index => true
-  key :type, String, :required => true
+  referenced_in :group
+  validates_presence_of :group
 
-  key :for_tag, Boolean
+  field :token, :type => String
+  validates_presence_of :token
+  index :token
 
-  key :source_id, String
-  key :source_type, String
-  belongs_to :source, :polymorphic => true
+  field :type, :type => String, :required => true
+  validates_presence_of :type
 
-  key :_type, String
-  timestamps!
+  field :for_tag, :type => Boolean
 
-  validates_inclusion_of :type,  :within => TYPES
-  validates_inclusion_of :token, :within => self.TOKENS, :if => Proc.new { |b| !b.for_tag }
+  field :source_id, :type => String
+  field :source_type, :type => String
 
-  before_validation_on_create :set_type
+  validates_inclusion_of :type,  :in => TYPES
+  validates_inclusion_of :token, :in => self.TOKENS, :if => Proc.new { |b| !b.for_tag }
+
+  before_save :set_type
 
   def self.gold_badges
     self.find_all_by_type("gold")
-  end
-
-  def to_param
-    self.token
-  end
-
-  def name
-    @name ||= I18n.t("badges.shared.#{self.token}.name", :default => self.token.titleize.downcase) if self.token
-  end
-
-  def description
-    @description ||= I18n.t("badges.shared.#{self.token}.description") if self.token
   end
 
   def self.type_of(token)
@@ -66,8 +56,36 @@ class Badge
     end
   end
 
+  def to_param
+    self.token
+  end
+
+  def name(locale=I18n.locale)
+    @name ||= I18n.t("badges.shared.#{self.token}.name", :default => self.token.titleize.downcase, :locale => locale) if self.token
+  end
+
+  def description
+    @description ||= I18n.t("badges.shared.#{self.token}.description") if self.token
+  end
+
   def type
     self[:type] ||= Badge.type_of(self.token)
+  end
+
+  def source=(s)
+    if s
+      self[:source_id] = s.id
+      self[:source_type] = s.class.to_s
+    else
+      self[:source_id] = nil
+      self[:source_type] = nil
+    end
+  end
+
+  def source
+    if self[:source_type]
+      self[:source_type].constantize.find(self[:source_id])
+    end
   end
 
   protected

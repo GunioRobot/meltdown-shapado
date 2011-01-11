@@ -1,0 +1,29 @@
+%footer
+  %nav
+    %ul
+      -if !current_group.footer.blank?
+        = raw(current_group.footer)
+      -else
+        %li
+          = link_to 'Blog', 'http://blog.ricodigo.com/shapado'
+        %li
+          = link_to 'Twitter', 'http://twitter.com/shapado'
+        %li
+          = link_to 'Identi.ca', 'http://identi.ca/shapado'
+        %li
+          = link_to 'Irc', 'irc://irc.freenode.org/shapado'
+        %li
+          = link_to 'Chat', domain_url+'/chat'
+        %li
+          = link_to 'Feedback', feedback_url, :class => "feedback", :id => "feedback"
+        %li
+          = link_to 'Tos', tos_path
+        %li
+          = link_to 'Privacy', privacy_path
+  %p
+    == All Shapado.com content and data are available under the #{link_to 'Creative Commons Attribution 3.0 license', 'http://creativecommons.org/licenses/by/3.0/'}
+  %p
+    == Powered by #{link_to 'Shapado', 'http://gitorious.org/shapado'} #{AppConfig.version} under the #{link_to 'GNU Affero General Public License','http://www.fsf.org/licensing/licenses/agpl-3.0.html'}
+      
+  .feedback{:style => "display:none"}
+    = render :partial => "welcome/feedback"

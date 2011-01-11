@@ -1,11 +1,11 @@
 class FriendList
-  include MongoMapper::Document
+  include Mongoid::Document
 
-  key :_id, String
+  identity :type => String
 
-  key :follower_ids, Array
-  many :followers, :in => :follower_ids, :class_name => "User"
+  field :follower_ids, :type => Array
+  references_many :followers, :stored_as => :array, :inverse_of => :users, :foreign_key => :follower_ids, :class_name => "User" # FIXME mongoid
 
-  key :following_ids, Array
-  many :following, :in => :following_ids, :class_name => "User"
+  field :following_ids, :type => Array
+  references_many :following, :stored_as => :array, :inverse_of => :users, :foreign_key => :follower_ids, :class_name => "User"
 end

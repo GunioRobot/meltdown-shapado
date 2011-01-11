@@ -54,7 +54,7 @@
     .friend_list
       -@user.following.each do |follower|
         %span
-          = link_to gravatar(follower.email.to_s, :size => 24), user_path(follower)
+          = link_to gravatar(follower.email.to_s, :size => 24).html_safe, user_path(follower)
   -if @user.followers.count > 0
     %h2.title
       .counter
@@ -63,7 +63,7 @@
     .friend_list
       -@user.followers.each do |follower|
         %span
-          =link_to gravatar(follower.email.to_s, :size => 24), user_path(follower)
+          =link_to gravatar(follower.email.to_s, :size => 24).html_safe, user_path(follower)
 
   .secondary-navigation{:class => @q_sort||"votes"}
     .navtitle
@@ -71,6 +71,7 @@
         = number_with_delimiter(@questions.total_entries)
       =t(:questions, :scope => "activerecord.models")
     %ul
+      -params.delete(:action)
       %li.newest
         = link_to t("questions.index.newest"), user_path(@user, params.merge(:q_sort=>"newest")), :rel => "nofollow"
       %li.oldest
@@ -106,9 +107,9 @@
     .clear
   .block
 
-  %ul.items#questions
-    -@favorite_questions.each do |question|
-      = render :partial => "questions/question", :object => question
+  %ul.items#favorites
+    -@favorites.each do |answer|
+      = render :partial => "answers/answer", :object => answer
   .additional_info
     = will_paginate @favorites, :param_name => "favorites_page"
     .clear

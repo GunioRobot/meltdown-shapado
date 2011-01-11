@@ -1,22 +1,24 @@
 
 class ReputationEvent
-  include MongoMapper::EmbeddedDocument
-  key :_id, String
-  key :time, Time
-  key :event, String
-  key :reputation, Float
-  key :delta, Float
+  include Mongoid::Document
+  identity :type => String
+  field :time, :type => Time
+  field :event, :type => String
+  field :reputation, :type => Float
+  field :delta, :type => Float
+
+  referenced_in :reputation_stat, :inverse_of => :events
 end
 
 class ReputationStat
-  include MongoMapper::Document
-  key :_id, String
+  include Mongoid::Document
+  identity :type => String
 
-  many :events, :class_name => "ReputationEvent"
+  references_many :events, :class_name => "ReputationEvent"
 
-  key :user_id, String
-  belongs_to :user
+  field :user_id, :type => String
+  referenced_in :user
 
-  key :group_id, String
-  belongs_to :group
+  field :group_id, :type => String
+  referenced_in :group
 end

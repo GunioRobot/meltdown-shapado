@@ -1,33 +1,21 @@
-require 'mm-paginate'
+Magent.setup(YAML.load_file(Rails.root.join('config', 'magent.yml')),
+                  Rails.env, {})
 
-MongoMapper.setup(YAML.load_file(Rails.root.join('config', 'database.yml')),
-                  Rails.env, { :logger => Rails.logger, :passenger => false })
+MongoidExt.init
 
-MongoMapperExt.init
-
-if defined?(PhusionPassenger)
-  PhusionPassenger.on_event(:starting_worker_process) do |forked|
-    MongoMapper.connection.connect_to_master if forked
-  end
-end
-
-Dir.glob("#{RAILS_ROOT}/app/models/**/*.rb") do |model_path|
+Dir.glob("#{Rails.root}/app/models/**/*.rb") do |model_path|
   File.basename(model_path, ".rb").classify.constantize
 end
 
-# HACK: do not create indexes on every request
-module MongoMapper::Plugins::Indexes::ClassMethods
-  def ensure_index(*args)
-  end
-end
-
-
-Dir.glob("#{RAILS_ROOT}/app/javascripts/**/*.js") do |js_path|
+Dir.glob("#{Rails.root}/app/javascripts/**/*.js") do |js_path|
   code = File.read(js_path)
   name = File.basename(js_path, ".js")
 
   # HACK: looks like ruby driver doesn't support this
-  MongoMapper.database.eval("db.system.js.save({_id: '#{name}', value: #{code}})")
+  Mongoid.database.eval("db.system.js.save({_id: '#{name}', value: #{code}})")
 end
 
 require 'support/versionable'
+require 'support/voteable'
+
+Mongoid.config.raise_not_found_error = false

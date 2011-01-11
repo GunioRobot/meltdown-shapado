@@ -1,15 +1,13 @@
 
 class OpenRequest
-  include MongoMapper::EmbeddedDocument
-#   REASONS = %w{dupe ot no_question not_relevant spam}
+  include Mongoid::Document
 
-  key :_id, String
-#   key :reason, String, :in => REASONS
+  identity :type => String
 
-  key :user_id, String
-  belongs_to :user
+  field :user_id, :type => String
+  referenced_in :user
 
-  key :comment, String
+  field :comment, :type => String
 
   validates_presence_of :user
 

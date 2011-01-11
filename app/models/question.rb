@@ -1,93 +1,131 @@
 class Question
-  include MongoMapper::Document
-  include MongoMapperExt::Filter
-  include MongoMapperExt::Slugizer
-  include MongoMapperExt::Tags
+  include Mongoid::Document
+  include Mongoid::Timestamps
+
+  include MongoidExt::Filter
+  include MongoidExt::Slugizer
+  include MongoidExt::Tags
+  include MongoidExt::Random
+  include MongoidExt::Storage
+
   include Support::Versionable
   include Support::Voteable
+  include Shapado::Models::GeoCommon
 
-  ensure_index :tags
+  index :tags
 
-  key :_id, String
-  key :title, String, :default => "", :required => true
-  key :body, String
+  identity :type => String
+
+  field :title, :type => String, :default => ""
+  field :body, :type => String
   slug_key :title, :unique => true, :min_length => 8
-  key :slugs, Array, :index => true
+  field :slugs, :type => Array
+  index :slugs
 
-  key :answers_count, Integer, :default => 0, :required => true
-  key :views_count, Integer, :default => 0
-  key :hotness, Integer, :default => 0
-  key :flags_count, Integer, :default => 0
-  key :favorites_count, Integer, :default => 0
+  field :answers_count, :type => Integer, :default => 0
+  field :views_count, :type => Integer, :default => 0
+  field :hotness, :type => Integer, :default => 0
+  field :flags_count, :type => Integer, :default => 0
+  field :close_requests_count, :type => Integer, :default => 0
+  field :open_requests_count, :type => Integer, :default => 0
 
-  key :adult_content, Boolean, :default => false
-  key :banned, Boolean, :default => false, :index => true
-  key :accepted, Boolean, :default => false
-  key :closed, Boolean, :default => false
-  key :closed_at, Time
+  field :adult_content, :type => Boolean, :default => false
+  field :banned, :type => Boolean, :default => false
+  index :banned
+  field :accepted, :type => Boolean, :default => false
+  field :closed, :type => Boolean, :default => false
+  field :closed_at, :type => Time
 
-  key :anonymous, Boolean, :default => false, :index => true
+  field :anonymous, :type => Boolean, :default => false
+  index :anonymous
 
-  key :answered_with_id, String
-  belongs_to :answered_with, :class_name => "Answer"
+  field :answered_with_id, :type => String
+  referenced_in :answered_with, :class_name => "Answer"
 
-  key :wiki, Boolean, :default => false
-  key :language, String, :default => "en", :index => true
+  field :wiki, :type => Boolean, :default => false
+  field :subjetive, :type => Boolean, :default => false
+  field :language, :type => String, :default => "en"
+  index :language
 
-  key :activity_at, Time
+  field :activity_at, :type => Time
 
-  key :user_id, String, :index => true
-  belongs_to :user
+  field :short_url, :type => String
 
-  key :answer_id, String
-  belongs_to :answer
+  referenced_in :user
+  index :user_id
 
-  key :group_id, String, :index => true
-  belongs_to :group
+  field :answer_id, :type => String
+  referenced_in :answer
 
-  key :watchers, Array
+  referenced_in :group
+  index :group_id
 
-  key :updated_by_id, String
-  belongs_to :updated_by, :class_name => "User"
+  field :followers_count, :type => Integer, :default => 0
+  references_many :followers, :stored_as => :array, :class_name => "User"
 
-  key :close_reason_id, String
+  field :contributors_count, :type => Integer, :default => 0
+  references_many :contributors, :stored_as => :array, :class_name => "User"
 
-  key :last_target_type, String
-  key :last_target_id, String
-  key :last_target_date, Time
+  field :updated_by_id, :type => String
+  referenced_in :updated_by, :class_name => "User"
 
-  belongs_to :last_target, :polymorphic => true
+  field :close_reason_id, :type => String
 
-  has_many :answers, :dependent => :destroy
-  has_many :badges, :as => "source"
-  has_many :comments, :as => "commentable", :order => "created_at asc", :dependent => :destroy
+  field :last_target_type, :type => String
+  field :last_target_id, :type => String
+  field :last_target_date, :type => Time
 
-  has_many :flags
-  has_many :close_requests
-  has_many :open_requests
+  file_list :attachments
 
-  validates_presence_of :user_id
+  attr_accessor :removed_tags
+
+#   referenced_in :last_target, :polymorphic => true
+
+  field :last_target_user_id, :type => String
+  referenced_in :last_target_user, :class_name => "User"
+
+  references_many :answers, :dependent => :destroy
+  references_many :badges, :as => "source"
+
+  embeds_many :comments, :as => "commentable", :order => "created_at asc"
+  embeds_many :flags
+  embeds_many :close_requests
+  embeds_many :open_requests
+
+  embeds_one :follow_up
+  embeds_one :reward
+
+  validates_presence_of :title
+  validates_presence_of :user
   validates_uniqueness_of :slug, :scope => :group_id, :allow_blank => true
 
-  validates_length_of       :title,    :within => 5..100, :message => lambda { I18n.t("questions.model.messages.title_too_long") }
-  validates_length_of       :body,     :minimum => 5, :allow_blank => true, :allow_nil => true, :if => lambda { |q| !q.disable_limits? }
-  validates_true_for :tags, :logic => lambda { tags.size <= 9},
-                     :message => lambda { I18n.t("questions.model.messages.too_many_tags") if tags.size > 9 }
+  validates_length_of       :title,    :in => 5..100, :message => lambda { I18n.t("questions.model.messages.title_too_long") }
+  validates_length_of       :body,     :minimum => 5, :allow_blank => true #, :if => lambda { |q| !q.disable_limits? }
+
+#  FIXME mongoid (create a validator for tags size)
+#   validates_true_for :tags, :logic => lambda { |q| q.tags.size <= 9},
+#                      :message => lambda { |q| I18n.t("questions.model.messages.too_many_tags") if q.tags.size > 9 }
 
   versionable_keys :title, :body, :tags
   filterable_keys :title, :body
   language :language
 
   before_save :update_activity_at
-  before_validation_on_create :update_language
+  validate :update_language, :on => :create
 
-  validates_inclusion_of :language, :within => AVAILABLE_LANGUAGES
-  validates_true_for :language, :logic => lambda { |q| q.group.language == q.language },
-                                :if => lambda { |q| !q.group.language.nil? }
+  validates_inclusion_of :language, :in => AVAILABLE_LANGUAGES
+
+  validate :group_language
   validate :disallow_spam
   validate :check_useful
 
-  timestamps!
+  def self.minimal
+    without(:_keywords, :followers, :flags, :close_requests, :open_requests, :versions)
+  end
+
+  def followed_up_by
+    Question.minimal.without(:comments).where(:"follow_up.original_question_id" => self.id)
+  end
 
   def first_tags
     tags[0..5]
@@ -95,31 +133,35 @@ class Question
 
   def tags=(t)
     if t.kind_of?(String)
-      t = t.downcase.split(",").join(" ").split(" ").uniq
+      t = t.downcase.split(/[,\+\s]+/).uniq
+    end
+
+    if self.user && !self.user.can_create_new_tags_on?(self.group)
+      tmp_tags = self.group.tags.where(:name.in => t).only(:name).map(&:name)
+      self.removed_tags = t-tmp_tags
+      t = tmp_tags
     end
 
     self[:tags] = t
   end
 
   def self.related_questions(question, opts = {})
-    opts[:per_page] ||= 10
-    opts[:page]     ||= 1
     opts[:group_id] = question.group_id
     opts[:banned] = false
 
-    Question.paginate(opts.merge(:_keywords => {:$in => question.tags}, :_id => {:$ne => question.id}))
+    Question.where(opts.merge(:_keywords.in => question.tags, :_id.ne => question.id))
   end
 
   def viewed!(ip)
     view_count_id = "#{self.id}-#{ip}"
-    if ViewsCount.find(view_count_id).nil?
+    if ViewsCount.where({:_id => view_count_id}).first.nil?
       ViewsCount.create(:_id => view_count_id)
-      self.increment(:views_count => 1)
+      self.inc(:views_count, 1)
     end
   end
 
   def answer_added!
-    self.increment(:answers_count => 1)
+    self.inc(:answers_count, 1)
     on_activity
   end
 
@@ -128,7 +170,7 @@ class Question
   end
 
   def flagged!
-    self.increment(:flags_count => 1)
+    self.inc(:flags_count, 1)
   end
 
   def on_add_vote(v, voter)
@@ -153,78 +195,198 @@ class Question
     on_activity(false)
   end
 
-  def add_favorite!(fav, user)
-    self.increment(:favorites_count => 1)
-    on_activity(false)
-  end
-
-
-  def remove_favorite!(fav, user)
-    self.decrement(:favorites_count => 1)
-    on_activity(false)
-  end
-
   def on_activity(bring_to_front = true)
     update_activity_at if bring_to_front
-    self.increment(:hotness => 1)
+    self.inc(:hotness, 1)
   end
 
   def update_activity_at
+    self[:subjetive] = self.tags.include?(I18n.t("global.subjetive", :default =>
+"subjetive"))
+
     now = Time.now
-    if new?
+    if new_record?
       self.activity_at = now
     else
-      self.set(:activity_at => now)
+      self.override(:activity_at => now)
     end
   end
 
   def ban
-    self.set(:banned => true)
+    self.override(:banned => true)
   end
 
-  def self.ban(ids)
-    # TODO: use mongo_mapper syntax
-    self.collection.update({:_id => {:$in => ids}}, {:$set => {:banned => true}},
-                                                     :multi => true)
+  def self.ban(ids, options = {})
+    self.override({:_id => {"$in" => ids}}.merge(options), {:banned => true})
   end
 
   def unban
-    self.set(:banned => false)
+    self.override(:banned => false)
   end
 
-  def self.unban(ids)
-    # TODO: use mongo_mapper syntax
-    self.collection.update({:_id => {:$in => ids}}, {:$set => {:banned => false}},
-                                                     :multi => true)
+  def self.unban(ids, options = {})
+    self.override({:_id => {"$in" => ids}}.merge(options), {:banned => false})
   end
 
-  def favorite_for?(user)
-    user.favorite(self)
-  end
-
-
-  def add_watcher(user)
-    # TODO: use mongo_mapper syntax
-    if !watch_for?(user)
-      self.collection.update({:_id => self.id},
-                             {:$push => {:watchers => user.id}});
+  def add_follower(user)
+    if !follower?(user)
+      self.push_uniq(:follower_ids => user.id)
+      self.increment(:followers_count => 1)
     end
   end
 
-  def remove_watcher(user)
-    # TODO: use mongo_mapper syntax
-    if watch_for?(user)
-      self.collection.update({:_id => self.id},
-                             {:$pull => {:watchers => user._id}});
+  def remove_follower(user)
+    if follower?(user)
+      self.pull(:follower_ids => user.id)
+      self.decrement(:followers_count => 1)
     end
   end
 
-  def watch_for?(user)
-    watchers.include?(user._id)
+  def follower?(user)
+    self.follower_ids && self.follower_ids.include?(user.id)
+  end
+
+  def add_contributor(user)
+    if !contributor?(user)
+      self.push_uniq(:contributor_ids => user.id)
+      self.increment(:contributors_count => 1)
+    end
+  end
+
+  def remove_contributor(user)
+    if contributor?(user)
+      self.pull(:contributor_ids => user.id)
+      self.decrement(:contributors_count => 1)
+    end
+  end
+
+  def contributor?(user)
+    self.contributor_ids && self.contributor_ids.include?(user.id)
   end
 
   def disable_limits?
     self.user.present? && self.user.can_post_whithout_limits_on?(self.group)
+  end
+
+  def answered
+    self.answered_with_id.present?
+  end
+
+  def update_last_target(target)
+    self.class.update_last_target(self._id, target)
+  end
+
+  def self.update_last_target(question_id, target)
+    data = {:last_target_id => target.id,
+            :last_target_user_id => target.user_id,
+            :last_target_type => target.class.to_s}
+    if target.respond_to?(:updated_at) && target.updated_at.present?
+      data[:last_target_date] = target.updated_at.utc
+    end
+    self.override({:_id => question_id}, data)
+  end
+
+  def can_be_requested_to_close_by?(user)
+    return false if self.closed
+    ((self.user_id == user.id) && user.can_vote_to_close_own_question_on?(self.group)) ||
+    user.can_vote_to_close_any_question_on?(self.group)
+  end
+
+  def can_be_requested_to_open_by?(user)
+    return false if !self.closed
+    ((self.user_id == user.id) && user.can_vote_to_open_own_question_on?(self.group)) ||
+    user.can_vote_to_open_any_question_on?(self.group)
+  end
+
+  def can_be_deleted_by?(user)
+    (self.user_id == user.id && self.answers.count < 1) ||
+    (self.closed && user.can_delete_closed_questions_on?(self.group))
+  end
+
+  def close_reason
+    self.close_requests.detect{ |rq| rq.id == close_reason_id }
+  end
+
+  def last_target=(target)
+    self.last_target_id = target.id
+    self.last_target_type = target.class.to_s
+    self.last_target_date = target.updated_at
+    self.last_target_user_id = target.user_id
+  end
+
+  def attachments=(files)
+    files.each do |k,v|
+      if(v.size > 0)
+        self.attachments.put(BSON::ObjectId.new.to_s, v)
+      end
+    end
+  end
+
+  def self.find_file_from_params(params, request)
+    if request.path =~ /\/(attachment)\/([^\/\.?]+)\/([^\/\.?]+)\/([^\/\.?]+)/
+      @group = Group.by_slug($2)
+      @question = @group.questions.find($3)
+      case $1
+      when "attachment"
+        @question.attachments.get($4)
+      end
+    end
+  end
+
+  protected
+  def self.map_filter_operators(quotes, ops)
+    mongoquery = {}
+    if !quotes.empty?
+      q = {:$in => quotes.map { |quote| /#{Regexp.escape(quote)}/i }}
+      mongoquery[:$or] = [{:title => q}, {:body => q}]
+    end
+
+    if ops["is"]
+      ops["is"].each do |d|
+        case d
+        when "answered"
+          mongoquery[:answered] = true
+        when "accepted"
+          mongoquery[:accepted] = true
+        end
+      end
+    end
+
+    if ops["not"]
+      ops["not"].each do |d|
+        case d
+        when "answered"
+          mongoquery[:answered] = false
+        when "accepted"
+          mongoquery[:accepted] = false
+        end
+      end
+    end
+
+    if ops["lang"]
+      mongoquery["language"] = {:$in => ops["lang"].map{|l| /#{l}/ }}
+    end
+
+    mongoquery
+  end
+
+  def update_answer_count
+    self.answers_count = self.answers.count
+    votes_average = 0
+    self.votes.each {|e| votes_average+=e.value }
+    self.votes_average = votes_average
+
+    self.votes_count = self.votes.count
+  end
+
+  def update_language
+    self.language = self.language.split("-").first
+  end
+
+  def group_language
+    if self.group.present? && (!self.group.language.nil? && self.group.language != self.language)
+      self.errors.add :language, I18n.t("questions.model.messages.not_group_languages")
+    end
   end
 
   def check_useful
@@ -244,62 +406,16 @@ class Question
   end
 
   def disallow_spam
-    if new? && !disable_limits?
-      last_question = Question.first( :user_id => self.user_id,
-                                      :group_id => self.group_id,
-                                      :order => "created_at desc")
+    if self.new_record? && !disable_limits?
+      last_question = Question.where(:user_id => self.user_id,
+                                     :group_id => self.group_id).
+                                          order_by(:created_at.desc).first
 
       valid = (last_question.nil? || (Time.now - last_question.created_at) > 20)
       if !valid
-        self.errors.add(:body, "Your question looks like spam. you need to wait 20 senconds before posting another question.")
+        self.errors.add(:body, "you need to wait 20 senconds before posting another question.") # TODO i18n
       end
     end
   end
-
-  def answered
-    self.answered_with_id.present?
-  end
-
-  def self.update_last_target(question_id, target)
-    # TODO: use mongo_mapper syntax
-    self.collection.update({:_id => question_id},
-                           {:$set => {:last_target_id => target.id,
-                                      :last_target_type => target.class.to_s,
-                                      :last_target_date => target.updated_at.utc}})
-  end
-
-  def can_be_requested_to_close_by?(user)
-    ((self.user_id == user.id) && user.can_vote_to_close_own_question_on?(self.group)) ||
-    user.can_vote_to_close_any_question_on?(self.group)
-  end
-
-  def can_be_requested_to_open_by?(user)
-    return false if !self.closed
-    ((self.user_id == user.id) && user.can_vote_to_open_own_question_on?(self.group)) ||
-    user.can_vote_to_open_any_question_on?(self.group)
-  end
-
-  def can_be_deleted_by?(user)
-    (self.user_id == user.id) || (self.closed && user.can_delete_closed_questions_on?(self.group))
-  end
-
-  def close_reason
-    self.close_requests.detect{ |rq| rq.id == close_reason_id }
-  end
-
-  protected
-  def update_answer_count
-    self.answers_count = self.answers.count
-    votes_average = 0
-    self.votes.each {|e| votes_average+=e.value }
-    self.votes_average = votes_average
-
-    self.votes_count = self.votes.count
-  end
-
-  def update_language
-    self.language = self.language.split("-").first
-  end
-
 end
 

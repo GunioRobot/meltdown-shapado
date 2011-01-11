@@ -1,82 +1,83 @@
 require 'digest/sha1'
 
 class User
-  include MongoMapper::Document
-  devise :database_authenticatable, :http_authenticatable, :recoverable, :registerable, :rememberable,
-         :lockable, :token_authenticatable
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  include MultiauthSupport
+  include MongoidExt::Storage
+  include Shapado::Models::GeoCommon
+
+  devise :database_authenticatable, :recoverable, :registerable, :rememberable,
+         :lockable, :token_authenticatable, :encryptable, :omniauthable, :encryptor => :restful_authentication_sha1
 
   ROLES = %w[user moderator admin]
   LANGUAGE_FILTERS = %w[any user] + AVAILABLE_LANGUAGES
   LOGGED_OUT_LANGUAGE_FILTERS = %w[any] + AVAILABLE_LANGUAGES
 
-  key :_id,                       String
-  key :login,                     String, :limit => 40, :index => true
-  key :name,                      String, :limit => 100, :default => '', :null => true
+  identity :type => String
+  field :login,                     :type => String, :limit => 40, :index => true
+  field :name,                      :type => String, :limit => 100, :default => '', :null => true
 
-  key :bio,                       String, :limit => 200
-  key :website,                   String, :limit => 200
-  key :location,                  String, :limit => 200
-  key :birthday,                  Time
+  field :bio,                       :type => String, :limit => 200
+  field :website,                   :type => String, :limit => 200
+  field :location,                  :type => String, :limit => 200
+  field :birthday,                  :type => Time
 
-  key :identity_url,              String, :index => true
-  key :role,                      String, :default => "user"
-  key :last_logged_at,            Time
+  field :identity_url,              :type => String
+  index :identity_url
 
-  key :preferred_languages,       Array, :default => []
+  field :role,                      :type => String, :default => "user"
+  field :last_logged_at,            :type => Time
 
-  key :notification_opts,         NotificationConfig
+  field :preferred_languages,       :type => Array, :default => []
 
-  key :language,                  String, :default => "en", :index => true
-  key :timezone,                  String
-  key :language_filter,           String, :default => "user", :in => LANGUAGE_FILTERS
+  field :language,                  :type => String, :default => "en"
+  index :language
+  field :timezone,                  :type => String
+  field :language_filter,           :type => String, :default => "user", :in => LANGUAGE_FILTERS
 
-  key :ip,                        String
-  key :country_code,              String
-  key :country_name,              String, :default => "unknown"
-  key :hide_country,              Boolean, :default => false
+  field :ip,                        :type => String
+  field :country_code,              :type => String
+  field :country_name,              :type => String, :default => "unknown"
+  field :hide_country,              :type => Boolean, :default => false
 
-  key :default_subtab,            Hash
+  field :default_subtab,            :type => Hash, :default => {}
 
-  key :followers_count,           Integer, :default => 0
-  key :following_count,           Integer, :default => 0
+  field :followers_count,           :type => Integer, :default => 0
+  field :following_count,           :type => Integer, :default => 0
 
-  key :membership_list,           MembershipList
+  field :membership_list,           :type => MembershipList
 
-  key :facebook_id,               String
-  key :facebook_token,            String
-  key :facebook_profile,          String
+  field :feed_token,                :type => String, :default => lambda { BSON::ObjectId.new.to_s }
+  field :socket_key,                :type => String, :default => lambda { BSON::ObjectId.new.to_s }
 
-  key :twitter_token,             String
-  key :twitter_secret,            String
-  key :twitter_login,             String
+  field :anonymous,                 :type => Boolean, :default => false
+  index :anonymous
 
-  key :feed_token,                String
+  field :friend_list_id, :type => String
+  field :notification_opts, :type => NotificationConfig
 
-  key :anonymous,                 Boolean, :default => false, :index => true
+  file_key :avatar, :max_length => 1.megabytes
+  field :use_gravatar, :type => Boolean, :default => true
 
-  has_many :questions, :dependent => :destroy
-  has_many :answers, :dependent => :destroy
-  has_many :comments, :dependent => :destroy
-  has_many :votes, :dependent => :destroy
-  has_many :badges, :dependent => :destroy
+  referenced_in :friend_list
 
-  has_many :favorites, :class_name => "Favorite", :foreign_key => "user_id"
-
-  key :friend_list_id, String
-  belongs_to :friend_list, :dependent => :destroy
+  references_many :questions, :dependent => :destroy
+  references_many :answers, :dependent => :destroy
+  references_many :comments, :dependent => :destroy
+  references_many :badges, :dependent => :destroy
+  references_many :searches, :dependent => :destroy
 
   before_create :create_friend_list
   before_create :generate_uuid
   after_create :update_anonymous_user
 
-  timestamps!
-
-  validates_inclusion_of :language, :within => AVAILABLE_LOCALES
-  validates_inclusion_of :role,  :within => ROLES
+  validates_inclusion_of :language, :in => AVAILABLE_LOCALES
+  validates_inclusion_of :role,  :in => ROLES
 
   with_options :if => lambda { |e| !e.anonymous } do |v|
     v.validates_presence_of     :login
-    v.validates_length_of       :login,    :within => 3..40
+    v.validates_length_of       :login,    :in => 3..40
     v.validates_uniqueness_of   :login
     v.validates_format_of       :login,    :with => /\w+/
   end
@@ -85,20 +86,30 @@ class User
 
   validates_presence_of     :email,    :if => lambda { |e| !e.openid_login? && !e.twitter_login? }
   validates_uniqueness_of   :email,    :if => lambda { |e| e.anonymous || (!e.openid_login? && !e.twitter_login?) }
-  validates_length_of       :email,    :within => 6..100, :allow_nil => true, :if => lambda { |e| !e.email.blank? }
-  validates_format_of       :email,    :with => Devise::EMAIL_REGEX, :allow_blank => true
+  validates_length_of       :email,    :in => 6..100, :allow_nil => true, :if => lambda { |e| !e.email.blank? }
 
   with_options :if => :password_required? do |v|
     v.validates_presence_of     :password
     v.validates_confirmation_of :password
-    v.validates_length_of       :password, :within => 6..20, :allow_blank => true
+    v.validates_length_of       :password, :in => 6..20, :allow_blank => true
   end
 
   before_save :update_languages
   before_create :logged!
 
   def self.find_for_authentication(conditions={})
-    first(conditions) || first(:login => conditions["email"])
+    where(conditions).first || where(:login => conditions[:email]).first
+  end
+
+  def membership_list
+    m = self[:membership_list]
+
+    if m.nil?
+      m = self[:membership_list] = MembershipList.new
+    elsif !m.kind_of?(MembershipList)
+      m = self[:membership_list] = MembershipList[m]
+    end
+    m
   end
 
   def login=(value)
@@ -110,29 +121,28 @@ class User
   end
 
   def self.find_by_login_or_id(login, conds = {})
-    first(conds.merge(:login => login)) || first(conds.merge(:_id => login))
+    where(conds.merge(:login => login)).first || where(conds.merge(:_id => login)).first
   end
 
   def self.find_experts(tags, langs = AVAILABLE_LANGUAGES, options = {})
     opts = {}
-    opts[:limit] = 15
-    opts[:select] = [:user_id]
+
     if except = options[:except]
-      except = [except] unless except.is_a? Array
+      except = [except] unless except.is_a?(Array)
       opts[:user_id] = {:$nin => except}
     end
 
-    user_ids = UserStat.all(opts.merge({:answer_tags => {:$in => tags}})).map(&:user_id)
+    user_ids = UserStat.only(:user_id).where(opts.merge({:answer_tags => {:$in => tags}})).all.map(&:user_id)
 
-    conditions = {"notification_opts.give_advice" => {:$in => ["1", true]},
-                  :preferred_languages => langs}
+    conditions = {:"notification_opts.give_advice" => {:$in => ["1", true]},
+                  :preferred_languages.in => langs,
+                  :_id.in => user_ids}
 
     if group_id = options[:group_id]
-      conditions["membership_list.#{group_id}"] = {:$exists => true}
+      conditions[:"membership_list.#{group_id}"] = {:$exists => true}
     end
 
-    u = User.all(conditions.merge(:_id => user_ids, :select => [:email, :login, :name, :language]))
-    u ? u : []
+    User.only([:email, :login, :name, :language]).where(conditions)
   end
 
   def to_param
@@ -145,10 +155,11 @@ class User
 
   def add_preferred_tags(t, group)
     if t.kind_of?(String)
-      t = t.split(",").join(" ").split(" ")
+      t = t.split(",").map{|e| e.strip}
     end
-    self.collection.update({:_id => self._id, "membership_list.#{group.id}.preferred_tags" =>  {:$nin => t}},
-                    {:$pushAll => {"membership_list.#{group.id}.preferred_tags" => t}})
+
+    self.collection.update({:_id => self._id},
+                           {:$addToSet => {"membership_list.#{group.id}.preferred_tags" => {:$each => t.uniq}}})
   end
 
   def remove_preferred_tags(t, group)
@@ -188,7 +199,7 @@ class User
 
   def is_preferred_tag?(group, *tags)
     ptags = config_for(group, false).preferred_tags
-    tags.detect { |t| ptags.include?(t) }
+    tags.detect { |t| ptags.include?(t) } if ptags
   end
 
   def admin?
@@ -207,9 +218,12 @@ Time.zone.now ? 1 : 0)
     self.admin? || self == model.user
   end
 
+  def can_create_reward?(question)
+    (Time.now - question.created_at) >= 2.days && config_for(question.group_id).reputation >= 75 && (question.reward.nil? || !question.reward.active)
+  end
+
   def groups(options = {})
-    options[:order] ||= "activity_rate desc"
-    self.membership_list.groups(options)
+    self.membership_list.groups(options).order_by([:activity_rate, :desc])
   end
 
   def member_of?(group)
@@ -226,6 +240,10 @@ Time.zone.now ? 1 : 0)
 
   def owner_of?(group)
     admin? || group.owner_id == self.id || role_on(group) == "owner"
+  end
+
+  def admin_of?(group)
+    role_on(group) == "admin" || owner_of?(group)
   end
 
   def mod_of?(group)
@@ -249,11 +267,11 @@ Time.zone.now ? 1 : 0)
   end
 
   def openid_login?
-    !identity_url.blank? || (AppConfig.enable_facebook_auth && !facebook_id.blank?)
+    !self.auth_keys.blank? || (AppConfig.enable_facebook_auth && !facebook_id.blank?)
   end
 
   def twitter_login?
-    !twitter_token.blank? && !twitter_secret.blank?
+    user_info && !user_info["twitter"].blank?
   end
 
   def has_voted?(voteable)
@@ -261,23 +279,17 @@ Time.zone.now ? 1 : 0)
   end
 
   def vote_on(voteable)
-    Vote.first(:voteable_type => voteable.class.to_s,
-               :voteable_id => voteable.id,
-               :user_id     => self.id )
+    voteable.votes[self.id]
   end
 
-  def favorite?(question)
-    !favorite(question).nil?
-  end
-
-  def favorite(question)
-    self.favorites.first(:question_id => question._id, :user_id => self._id )
+  def favorites(opts = {})
+    Answer.where(opts.merge(:favoriter_ids => id))
   end
 
   def logged!(group = nil)
     now = Time.zone.now
 
-    if new?
+    if new_record?
       self.last_logged_at = now
     elsif group && (member_of?(group) || !group.private)
       on_activity(:login, group)
@@ -288,7 +300,7 @@ Time.zone.now ? 1 : 0)
     if activity == :login
       self.last_logged_at ||= Time.now
       if !self.last_logged_at.today?
-        self.set( {:last_logged_at => Time.zone.now.utc} )
+        self.override( {:last_logged_at => Time.zone.now.utc} )
       end
     else
       self.update_reputation(activity, group) if activity != :login
@@ -301,11 +313,12 @@ Time.zone.now ? 1 : 0)
     last_day = config_for(group, false).last_activity_at
 
     if last_day != day
-      self.set({"membership_list.#{group.id}.last_activity_at" => day})
+      self.override({"membership_list.#{group.id}.last_activity_at" => day})
       if last_day
         if last_day.utc.between?(day.yesterday - 12.hours, day.tomorrow)
           self.increment({"membership_list.#{group.id}.activity_days" => 1})
-          Magent.push("actors.judge", :on_activity, group.id, self.id)
+
+          Jobs::Activities.async.on_activity(group.id, self.id).commit!
         elsif !last_day.utc.today? && (last_day.utc != Time.now.utc.yesterday)
           Rails.logger.info ">> Resetting act days!! last known day: #{last_day}"
           reset_activity_days!(group)
@@ -315,7 +328,7 @@ Time.zone.now ? 1 : 0)
   end
 
   def reset_activity_days!(group)
-    self.set({"membership_list.#{group.id}.activity_days" => 0})
+    self.override({"membership_list.#{group.id}.activity_days" => 0})
   end
 
   def upvote!(group, v = 1.0)
@@ -326,17 +339,22 @@ Time.zone.now ? 1 : 0)
     self.increment({"membership_list.#{group.id}.votes_down" => v.to_f})
   end
 
-  def update_reputation(key, group)
-    value = group.reputation_rewards[key.to_s].to_i
-    value = key if key.kind_of?(Integer)
+  def update_reputation(key, group, v = nil)
+    if v.nil?
+      value = group.reputation_rewards[key.to_s].to_i
+      value = key if key.kind_of?(Integer)
+    else
+      value = v
+    end
+
     Rails.logger.info "#{self.login} received #{value} points of karma by #{key} on #{group.name}"
     current_reputation = config_for(group, false).reputation
 
     if value
-      self.increment({"membership_list.#{group.id}.reputation" => value})
+      self.increment(:"membership_list.#{group.id}.reputation" =>  value)
     end
 
-    stats = self.reputation_stats(group, { :select => [:_id] })
+    stats = self.reputation_stats(group)
     stats.save if stats.new?
 
     event = ReputationEvent.new(:time => Time.now, :event => key,
@@ -345,27 +363,14 @@ Time.zone.now ? 1 : 0)
     ReputationStat.collection.update({:_id => stats.id}, {:$addToSet => {:events => event.attributes}})
   end
 
-  def localize(ip)
-    self.ip = ip
-    if !defined?(Localize)
-      return self.save
-    end
-
-    l = Localize.country(ip)
-    if l
-      self.country_code = l[2]
-      self.country_name = l[4]
-    end
-    save
-  end
-
   def reputation_on(group)
     config_for(group, false).reputation.to_i
   end
 
   def stats(*extra_fields)
     fields = [:_id]
-    UserStat.find_or_create_by_user_id(self._id, :select => fields+extra_fields)
+
+    UserStat.only(fields+extra_fields).where(:user_id => self.id).first || UserStat.create(:user_id => self.id)
   end
 
   def badges_count_on(group)
@@ -374,11 +379,11 @@ Time.zone.now ? 1 : 0)
   end
 
   def badges_on(group, opts = {})
-    self.badges.all(opts.merge(:group_id => group.id, :order => "created_at desc"))
+    self.badges.where(opts.merge(:group_id => group.id)).order_by(:created_at.desc)
   end
 
   def find_badge_on(group, token, opts = {})
-    self.badges.first(opts.merge(:token => token, :group_id => group.id))
+    self.badges.where(opts.merge(:token => token, :group_id => group.id)).first
   end
 
   # self follows user
@@ -406,8 +411,8 @@ Time.zone.now ? 1 : 0)
   def followers(scope = {})
     conditions = {}
     conditions[:preferred_languages] = {:$in => scope[:languages]}  if scope[:languages]
-    conditions["membership_list.#{scope[:group_id]}"] = {:$exists => true} if scope[:group_id]
-    self.friend_list.followers.all(conditions)
+    conditions[:"membership_list.#{scope[:group_id]}"] = {:$exists => true} if scope[:group_id]
+    self.friend_list.followers.where(conditions)
   end
 
   def following
@@ -415,7 +420,7 @@ Time.zone.now ? 1 : 0)
   end
 
   def following?(user)
-    friend_list(:select => [:following_ids]).following_ids.include?(user.id)
+    FriendList.only(:following_ids).where(:_id => self.friend_list_id).first.following_ids.include?(user.id)
   end
 
   def viewed_on!(group)
@@ -437,12 +442,12 @@ Time.zone.now ? 1 : 0)
     super(method, *args, &block)
   end
 
-  def config_for(group, init = true)
+  def config_for(group, init = false)
     if group.kind_of?(Group)
       group = group.id
     end
 
-    config = self.membership_list[group]
+    config = self.membership_list.get(group)
     if config.nil?
       if init
         config = self.membership_list[group] = Membership.new(:group_id => group)
@@ -459,7 +464,7 @@ Time.zone.now ? 1 : 0)
     end
     default_options = { :user_id => self.id,
                         :group_id => group}
-    stats = ReputationStat.first(default_options.merge(options)) ||
+    stats = ReputationStat.where(default_options.merge(options)).first ||
             ReputationStat.new(default_options)
   end
 
@@ -485,11 +490,14 @@ Time.zone.now ? 1 : 0)
     self.feed_token = UUIDTools::UUID.random_create.hexdigest
   end
 
-  def merge_user(user)
-    [Question, Answer, Comment, Vote, Badge, UserStat].each do |m|
-      m.set({:user_id => user.id}, {:user_id => self.id})
+  def self.find_file_from_params(params, request)
+    if request.path =~ %r{/(avatar)/([^/\.\?]+)}
+      @user = User.find($2)
+      case $1
+      when "avatar"
+        @user.avatar
+      end
     end
-    user
   end
 
   protected
@@ -505,17 +513,17 @@ Time.zone.now ? 1 : 0)
 
   def create_friend_list
     if !self.friend_list.present?
-      self.friend_list = FriendList.new
+      f = FriendList.new
+      f.save
+      self.friend_list_id = f.id
     end
-    if !self.notification_opts
-      self.notification_opts = NotificationConfig.new
-    end
+    self.notification_opts = NotificationConfig.new if self.notification_opts.nil?
   end
 
   def update_anonymous_user
     return if self.anonymous
 
-    user = User.first(:email => self.email, :anonymous => true)
+    user = User.where({:email => self.email, :anonymous => true}).first
     if user.present?
       Rails.logger.info "Merging #{self.email}(#{self.id}) into #{user.email}(#{user.id})"
       merge_user(user)

@@ -5,8 +5,9 @@ module Versionable
       extend ClassMethods
       include InstanceMethods
       attr_accessor :rolling_back
-      key :version_message
-      many :versions
+      field :version_message
+      embeds_many :versions
+
       before_save :save_version, :if => Proc.new { |d| !d.rolling_back }
 
       alias_method :assign_versions, :versions=
@@ -49,7 +50,7 @@ module Versionable
       version1 = self.version_at(pos1)
       version2 = self.version_at(pos2)
 
-      Differ.diff_by_word(version1.content(key), version2.content(key)).format_as(format)
+      Differ.diff_by_word(version1.content(key), version2.content(key)).format_as(format).safe_html
     end
 
     def current_version

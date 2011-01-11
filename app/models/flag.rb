@@ -1,21 +1,25 @@
 class Flag
-  include MongoMapper::EmbeddedDocument
+  include Mongoid::Document
   REASONS = ["spam", "offensive", "attention"]
-  key :reason, String, :required => true, :default => "spam"
 
-  key :_id, String
-  key :user_id, String
-  belongs_to :user
+  identity :type => String
+
+  field :reason, :type => String, :required => true, :default => "spam"
+
+  field :user_id, :type => String
+  referenced_in :user
+
+  embedded_in :flaggable, :inverse_of => :flags
 
   validates_presence_of :user
-  validates_inclusion_of :reason, :within => REASONS
+  validates_inclusion_of :reason, :in => REASONS
 
   validate :should_be_unique
   validate :check_reputation
 
   protected
   def should_be_unique
-    request = self._root_document.flags.detect{ |rq| rq.user_id == self.user_id }
+    request = self.flaggable.flags.detect{ |rq| rq.user_id == self.user_id }
     valid = (request.nil? || request.id == self.id)
 
     if !valid
@@ -26,8 +30,8 @@ class Flag
   end
 
   def check_reputation
-    if ((self._root_document.user_id == self.user_id) && !self.user.can_flag_on?(self._root_document.group))
-      reputation = self._root_document.group.reputation_constrains["flag"]
+    if ((self.flaggable.user_id == self.user_id) && !self.user.can_flag_on?(self.flaggable.group))
+      reputation = self.flaggable.group.reputation_constrains["flag"]
       self.errors.add(:reputation, I18n.t("users.messages.errors.reputation_needed",
                                           :min_reputation => reputation,
                                           :action => I18n.t("users.actions.flag")))

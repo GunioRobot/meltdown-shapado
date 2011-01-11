@@ -2,18 +2,19 @@
 javascripts:
 - base:
   - jquery
+  - rails
+  - jquery.json-2.2.min
   - jquery.tools.min
   - jquery-ui
   - jquery.textarea
   - jHtmlArea
-  - jquery.autocomplete
-  - jquery.autoSuggest
   - jquery.notifyBar
   - showdown
   - highlight/prettify
   - components/search
+  - jqueryui.ricodigoComplete
   - application
-  - modules/sessions
+  - modules/effects
   - modules/index_question
   - modules/retag
   - modules/new_question
@@ -25,21 +26,34 @@ javascripts:
   - modules/members
   - modules/move_group
   - modules/editor
+  - modules/notifier
+  - multiauth
+  - superfish
+
+- mobile:
+  - jquery
+  - rails
+  - mobile
+
+- websocket:
+  - web-socket-js/swfobject
+  - web-socket-js/FABridge
+  - web-socket-js/web_socket
+  - websocket
 
 - show:
   - jquery.autovideo
   - modules/single/question
   - modules/show_question
-
-- login:
-  - openid/js/jquery.openid.min
-
-
+  - modules/panel_forms
 
 stylesheets:
 - base:
-  - jquery-ui
+  - ui-lightness/jquery-ui
   - compiled/application
+  - multiauth
   - prettify
-  - ../javascripts/openid/css/style
+
+- mobile:
+  - compiled/mobile
 

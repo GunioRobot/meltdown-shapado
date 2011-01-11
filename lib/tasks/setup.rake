@@ -1,7 +1,8 @@
 desc "Setup application"
-task :bootstrap => [:environment, "setup:reset",
+task :bootstrap => [:environment, "db:drop",
                     "setup:create_admin",
                     "setup:default_group",
+                    "setup:create_reputation_constrains_modes",
                     "setup:create_widgets",
                     "setup:create_pages"] do
 end
@@ -11,14 +12,10 @@ task :upgrade => [:environment] do
 end
 
 namespace :setup do
-  desc "Reset databases"
-  task :reset => [:environment] do
-    MongoMapper.connection.drop_database(MongoMapper.database.name)
-  end
 
   desc "Reset admin password"
   task :reset_password => :environment do
-    admin = User.find_by_login("admin")
+    admin = User.where(:login => "admin").first
     admin.encrypted_password = nil
     admin.password = "admins"
     admin.password_confirmation = "admins"
@@ -34,32 +31,31 @@ namespace :setup do
     default_group = Group.new(:name => AppConfig.application_name,
                               :domain => AppConfig.domain,
                               :subdomain => subdomain,
+                              :language => "en",
                               :domain => AppConfig.domain,
                               :description => "question-and-answer website",
                               :legend => "question and answer website",
                               :default_tags => default_tags,
                               :state => "active")
 
-    default_group.save!
-    if admin = User.find_by_login("admin")
+    if admin = User.where(:login => "admin").first
       default_group.owner = admin
       default_group.add_member(admin, "owner")
     end
-    default_group.logo = File.open(RAILS_ROOT+"/public/images/logo.png")
-    default_group.logo.extension = "png"
-    default_group.logo.content_type = "image/png"
+    default_group.save!
+    default_group.logo = File.open(Rails.root+"public/images/logo.png")
     default_group.save
   end
 
   desc "Create default widgets"
   task :create_widgets => :environment do
-    default_group = Group.find_by_domain(AppConfig.domain)
+    default_group = Group.where(:domain => AppConfig.domain).first
 
     if AppConfig.enable_groups
-      default_group.widgets << GroupsWidget.new
+      default_group.welcome_widgets << GroupsWidget.new
     end
-    default_group.widgets << UsersWidget.new
-    default_group.widgets << BadgesWidget.new
+    default_group.welcome_widgets << UsersWidget.new
+    default_group.welcome_widgets << BadgesWidget.new
     default_group.save!
   end
 
@@ -84,7 +80,7 @@ namespace :setup do
 
   desc "Create pages"
   task :create_pages => [:environment] do
-    Dir.glob(RAILS_ROOT+"/db/fixtures/pages/*.markdown") do |page_path|
+    Dir.glob(Rails.root+"db/fixtures/pages/*.markdown") do |page_path|
       basename = File.basename(page_path, ".markdown")
       title = basename.gsub(/\.(\w\w)/, "").titleize
       language = $1
@@ -92,47 +88,76 @@ namespace :setup do
       body = File.read(page_path)
 
       puts "Loading: #{title.inspect} [lang=#{language}]"
-      Group.find_each do |group|
-        if Page.count(:title => title, :language => language, :group_id => group.id) == 0
-          Page.create(:title => title, :language => language, :body => body, :user_id => group.owner, :group_id => group.id)
-        end
-      end
+      #Group.all.each do |group|
+      #  if Page.where(:title => title, :language => language, :group_id => group.id).count == 0
+      #    Page.create(:title => title, :language => language, :body => body, :user_id => group.owner, :group_id => group.id)
+      #  end
+      #end
     end
+  end
+
+  desc "Create reputation constrains modes"
+  task :create_reputation_constrains_modes => [:environment] do
+    ConstrainsConfig.destroy_all
+    ConstrainsConfig.create(:name => "default", :content => REPUTATION_CONSTRAINS)
+    bootstrap_content = {
+      vote_up: 0,
+      flag: 0,
+      post_images: 0,
+      comment: 0,
+      delete_own_comments: 50,
+      vote_down: 10,
+      create_new_tags: 0,
+      post_whithout_limits: 0,
+      edit_wiki_post: 100,
+      remove_advertising: 200,
+      vote_to_open_own_question: 250,
+      vote_to_close_own_question: 250,
+      retag_others_questions: 100,
+      delete_comments_on_own_questions: 750,
+      edit_others_posts: 2000,
+      view_offensive_counts: 2000,
+      vote_to_close_any_question: 3000,
+      vote_to_open_any_question: 3000,
+      delete_closed_questions: 10000,
+      moderate: 10000
+    }
+    ConstrainsConfig.create(:name => "bootstrap", :content => bootstrap_content)
   end
 
   desc "Reindex data"
   task :reindex => [:environment] do
     class Question
-      def update_timestamps
-      end
+      def set_created_at; end
+      def set_updated_at; end
     end
 
     class Answer
-      def update_timestamps
-      end
+      def set_created_at; end
+      def set_updated_at; end
     end
 
     class Group
-      def update_timestamps
-      end
+      def set_created_at; end
+      def set_updated_at; end
     end
 
     $stderr.puts "Reindexing #{Question.count} questions..."
-    Question.find_each do |question|
+    Question.all.each do |question|
       question._keywords = []
       question.rolling_back = true
       question.save(:validate => false)
     end
 
     $stderr.puts "Reindexing #{Answer.count} answers..."
-    Answer.find_each do |answer|
+    Answer.all.each do |answer|
       answer._keywords = []
       answer.rolling_back = true
       answer.save(:validate => false)
     end
 
     $stderr.puts "Reindexing #{Group.count} groups..."
-    Group.find_each do |group|
+    Group.all.each do |group|
       group._keywords = []
       group.save(:validate => false)
     end

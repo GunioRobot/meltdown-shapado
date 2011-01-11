@@ -37,6 +37,8 @@ en:
     share: Share
     active: Activate
     anonymous: Anonymous
+    unknown_place: Unknown
+    subjetive: subjetive
   feeds:
     question: Subscribe to this question
     questions: Subscribe to all questions

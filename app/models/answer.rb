@@ -1,27 +1,44 @@
-class Answer < Comment
-  include MongoMapper::Document
-  include MongoMapperExt::Filter
+class Answer
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  include MongoidExt::Filter
+  include MongoidExt::Random
+
   include Support::Versionable
-  key :_id, String
+  include Support::Voteable
+  include Shapado::Models::GeoCommon
+  identity :type => String
 
-  key :body, String, :required => true
-  key :language, String, :default => "en", :index => true
-  key :flags_count, Integer, :default => 0
-  key :banned, Boolean, :default => false, :index => true
-  key :wiki, Boolean, :default => false
-  key :anonymous, Boolean, :default => false, :index => true
+  field :body, :type => String, :required => true
+  field :language, :type =>  String, :default => "en"
+  index :language
+  field :flags_count, :type =>  Integer, :default => 0
+  field :banned, :type =>  Boolean, :default => false
+  index :banned
+  field :wiki, :type => Boolean, :default => false
+  field :anonymous, :type => Boolean, :default => false
+  index :anonymous
+  field :short_url, :type => String
 
-  timestamps!
+  field :rewarded, :type => Boolean, :default => false
 
-  key :updated_by_id, String
-  belongs_to :updated_by, :class_name => "User"
+  field :favoriters_count, :type => Integer, :default => 0
+  references_many :favoriters, :stored_as => :array, :class_name => "User"
 
-  key :question_id, String, :index => true
-  belongs_to :question
+  referenced_in :group
+  index :group_id
 
-  has_many :flags
+  referenced_in :user
+  index :user_id
 
-  has_many :comments, :foreign_key => "commentable_id", :class_name => "Comment", :order => "created_at asc", :dependent => :destroy
+  referenced_in :updated_by, :class_name => "User"
+  referenced_in :original_question, :class_name => "Question"
+
+  referenced_in :question
+  index :question_id
+
+  embeds_many :flags
+  embeds_many :comments#, :order => "created_at asc"
 
   validates_presence_of :user_id
   validates_presence_of :question_id
@@ -34,9 +51,32 @@ class Answer < Comment
 
   before_destroy :unsolve_question
 
+  def ban
+    self.collection.update({:_id => self.id}, {:$set => {:banned => true}})
+  end
+
+  def self.minimal
+    without(:_keywords, :flags, :votes, :versions)
+  end
+
+  def self.ban(ids)
+    ids.each do |id|
+      self.collection.update({:_id => id}, {:$set => {:banned => true}})
+    end
+  end
+
+  def can_be_deleted_by?(user)
+    ok = (self.user_id == user.id && user.can_delete_own_comments_on?(self.group)) || user.mod_of?(self.group)
+    if !ok && user.can_delete_comments_on_own_questions_on?(self.group) && (q = self.question)
+      ok = (q.user_id == user.id)
+    end
+
+    ok
+  end
+
   def check_unique_answer
-    check_answer = Answer.first(:question_id => self.question_id,
-                               :user_id => self.user_id)
+    check_answer = Answer.where({:question_id => self.question_id,
+                               :user_id => self.user_id}).first
 
     if !check_answer.nil? && check_answer.id != self.id
       self.errors.add(:limitation, "Your can only post one answer by question.")
@@ -72,7 +112,7 @@ class Answer < Comment
   def ban
     self.question.answer_removed!
     unsolve_question
-    self.set({:banned => true})
+    self.overwrite({:banned => true})
   end
 
   def self.ban(ids)
@@ -91,22 +131,39 @@ class Answer < Comment
 
   def disallow_spam
     if new? && !disable_limits?
-      eq_answer = Answer.first({:body => self.body,
+      eq_answer = Answer.where({:body => self.body,
                                   :question_id => self.question_id,
                                   :group_id => self.group_id
-                                })
+                                }).first
 
-      last_answer  = Answer.first(:user_id => self.user_id,
+      last_answer  = Answer.where({:user_id => self.user_id,
                                    :question_id => self.question_id,
-                                   :group_id => self.group_id,
-                                   :order => "created_at desc")
+                                   :group_id => self.group_id}).order_by(:created_at.desc).first
 
       valid = (eq_answer.nil? || eq_answer.id == self.id) &&
               ((last_answer.nil?) || (Time.now - last_answer.created_at) > 20)
       if !valid
-        self.errors.add(:body, "Your answer looks like spam.")
+        self.errors.add(:body, "Your answer is duplicate.")
       end
     end
+  end
+
+  def add_favorite!(user)
+    unless favorite_for?(user)
+      self.push_uniq(:favoriter_ids => user.id)
+      self.increment(:favorites_count => 1)
+    end
+  end
+
+  def remove_favorite!(user)
+    if favorite_for?(user)
+      self.pull(:favoriter_ids => user.id)
+      self.decrement(:favorites_count => 1)
+    end
+  end
+
+  def favorite_for?(user)
+    self.favoriter_ids && self.favoriter_ids.include?(user.id)
   end
 
   protected

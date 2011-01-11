@@ -1,12 +1,27 @@
 class AnswersController < ApplicationController
-  before_filter :login_required, :except => [:show, :create]
+  before_filter :login_required, :except => [:show, :create, :index]
   before_filter :check_permissions, :only => [:destroy]
   before_filter :check_update_permissions, :only => [:edit, :update, :revert]
 
   helper :votes
 
+  def index
+    exclude = [:votes, :_keywords]
+    if params[:question_id]
+      @question = current_group.questions.by_slug(params[:question_id])
+      @answers = @question.answers.without(exclude)
+    else
+      @answers = current_group.answers.without(exclude).paginate(:per_page => params[:per_page]||25, :page => params[:page]||1)
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @answers }
+    end
+  end
+
   def history
-    @answer = Answer.find(params[:id])
+    @answer = current_group.answers.find(params[:id])
     @question = @answer.question
 
     respond_to do |format|
@@ -49,15 +64,15 @@ class AnswersController < ApplicationController
     @question = @answer.question
     respond_to do |format|
       format.html
+      format.mobile
       format.json  { render :json => @answer.to_json }
     end
   end
 
   def create
     @answer = Answer.new
-    @answer.safe_update(%w[body wiki anonymous], params[:answer])
-    @answer.anonymous = Boolean.to_mongo(params[:answer][:anonymous])
-
+    @answer.safe_update(%w[body wiki anonymous position], params[:answer])
+    @answer.anonymous = params[:answer][:anonymous]
     @question = Question.find_by_slug_or_id(params[:question_id])
     @answer.question = @question
     @answer.group_id = @question.group_id
@@ -70,7 +85,7 @@ class AnswersController < ApplicationController
     @answer.user = current_user
     if !logged_in?
       if recaptcha_valid? && params[:user]
-        @user = User.first(:email => params[:user][:email])
+        @user = User.where(:email => params[:user][:email]).first
         if @user.present?
           if !@user.anonymous
             flash[:notice] = "The user is already registered, please log in"
@@ -92,10 +107,20 @@ class AnswersController < ApplicationController
 
     respond_to do |format|
       if (logged_in? || (recaptcha_valid? && @answer.user.valid?)) && @answer.save
-        after_create_answer
+        @question.add_contributor(current_user)
+        link = question_answer_url(@question, @answer)
+
+        Jobs::Activities.async.on_create_answer(@answer.id).commit!
+        Jobs::Answers.async.on_create_answer(@question.id, @answer.id, link).commit!
+
+        sweep_question(@question) # TODO move to magent
+        Magent::WebSocketChannel.push({id: "newanswer", object_id: @answer.id, name: @answer.body, channel_id: current_group.slug,
+                                       owner_id: @answer.user.id, owner_name: @answer.user.login,
+                                       question_id: @question.id, question_title: @question.title})
 
         flash[:notice] = t(:flash_notice, :scope => "answers.create")
         format.html{redirect_to question_path(@question)}
+        format.mobile{redirect_to question_path(@question, :format => :mobile)}
         format.json { render :json => @answer.to_json(:except => %w[_keywords]) }
         format.js do
           render(:json => {:success => true, :message => flash[:notice],
@@ -128,13 +153,16 @@ class AnswersController < ApplicationController
       @answer.updated_by = current_user
 
       if @answer.valid? && @answer.save
+        @question.add_contributor(current_user)
+
         sweep_question(@question)
 
         Question.update_last_target(@question.id, @answer)
 
         flash[:notice] = t(:flash_notice, :scope => "answers.update")
 
-        Magent.push("actors.judge", :on_update_answer, @answer.id)
+        Jobs::Activities.async.on_update_answer(@answer.id).commit!
+
         format.html { redirect_to(question_path(@answer.question)) }
         format.json { head :ok }
       else
@@ -153,11 +181,46 @@ class AnswersController < ApplicationController
     @question.answer_removed!
     sweep_question(@question)
 
-    Magent.push("actors.judge", :on_destroy_answer, current_user.id, @answer.attributes)
+    Jobs::Activities.async.on_destroy_answer(current_user.id, @answer.attributes).commit!
 
     respond_to do |format|
       format.html { redirect_to(question_path(@question)) }
       format.json { head :ok }
+    end
+  end
+
+  def favorite
+    @answer = Answer.find(params[:id])
+    @answer.add_favorite!(current_user)
+    link = question_answer_url(@answer.question, @answer)
+    Jobs::Mailer.async.on_favorite_answer(@answer.id, current_user.id).commit!
+    Jobs::Answers.async.on_favorite_answer(@answer.id, current_user.id, link).commit!
+
+    respond_to do |format|
+      flash[:notice] = t("favorites.create.success")
+      format.html { redirect_to(question_path(@answer.question)) }
+      format.mobile { redirect_to(question_path(@answer.question, :format => :mobile)) }
+      format.json { head :ok }
+      format.js {
+        render(:json => {:success => true,
+                 :message => flash[:notice], :increment => 1 }.to_json)
+      }
+    end
+  end
+
+  def unfavorite
+    @answer = Answer.find(params[:id])
+    @answer.remove_favorite!(current_user)
+
+    flash[:notice] = t("unfavorites.create.success")
+    respond_to do |format|
+      format.html { redirect_to(question_path(@answer.question)) }
+      format.mobile { redirect_to(question_path(@answer.question, :format => :mobile)) }
+      format.js {
+        render(:json => {:success => true,
+                 :message => flash[:notice], :increment => -1 }.to_json)
+      }
+      format.json  { head :ok }
     end
   end
 
@@ -208,42 +271,5 @@ class AnswersController < ApplicationController
     draft = Draft.create(:answer => @answer)
     session[:draft] = draft.id
     login_required
-  end
-
-  # TODO: use magent to do it
-  def after_create_answer
-    sweep_question(@question)
-
-    Question.update_last_target(@question.id, @answer)
-
-    @question.answer_added!
-    current_group.on_activity(:answer_question)
-
-    unless @answer.anonymous
-      @answer.user.stats.add_answer_tags(*@question.tags)
-      @answer.user.on_activity(:answer_question, current_group)
-
-      search_opts = {"notification_opts.#{current_group.id}.new_answer" => {:$in => ["1", true]},
-                      :_id => {:$ne => @answer.user.id},
-                      :select => ["email"]}
-
-      users = User.all(search_opts.merge(:_id => @question.watchers))
-      users.push(@question.user) if !@question.user.nil? && @question.user != @answer.user
-      followers = @answer.user.followers(:languages => [@question.language], :group_id => current_group.id)
-
-      users ||= []
-      followers ||= []
-      (users - followers).each do |u|
-        if !u.email.blank? && u.notification_opts.new_answer
-          Notifier.deliver_new_answer(u, current_group, @answer, false)
-        end
-      end
-
-      followers.each do |u|
-        if !u.email.blank? && u.notification_opts.new_answer
-          Notifier.deliver_new_answer(u, current_group, @answer, true)
-        end
-      end
-    end
   end
 end
