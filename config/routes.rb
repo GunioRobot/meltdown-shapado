@@ -75,7 +75,7 @@ Shapado::Application.routes.draw do
     resources :tags, :constraints => { :id => /\S+/ }
   end
 
-  resources :questions do
+  resources :pytania, :as => :questions, :controller => :questions do
     resources :votes
     resources :flags
 
