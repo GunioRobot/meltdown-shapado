@@ -48,7 +48,7 @@ gem 'sanitize', '1.2.1'
 gem "twitter_oauth"
 
 # authentication
-gem 'omniauth', '~> 0.1.6'
+gem 'omniauth', '~> 0.2.0'
 gem 'multiauth', :git => "http://github.com/dcu/multiauth.git"
 
 gem 'orm_adapter'
