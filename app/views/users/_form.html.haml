@@ -1,4 +1,3 @@
-
 .group
   = f.label :login, t(:login, :scope => "activerecord.attributes.user"), :class => "label"
   = f.text_field :login, :class => "text_field"
@@ -47,13 +46,6 @@
     = f.label :bio, t(:bio, :scope => "activerecord.attributes.user", :default => "Bio"), :class => "label"
     = f.text_field :bio, :class => "text_field"
 
--if AppConfig.enable_i18n
-  .group
-    = f.label :language, t('.language'), :class => "label"
-    = f.select :language, locales_options, {}, :class => "select"
--else
-  = f.hidden_field :language, :value => (current_group.language || AppConfig.default_language)
-
 .group
   = f.label :timezone, t(:timezone, :scope => "activerecord.attributes.user"), :class => "label"
   - ActiveSupport::TimeZone.zones_map.delete(""); ActiveSupport::TimeZone.zones_map.delete(nil)
@@ -63,6 +55,13 @@
   .group
     = f.label :hide_country, t(:hide_country, :scope => "activerecord.attributes.user"), :class => "label"
     = f.check_box :hide_country, :class => "checkbox"
+
+-if AppConfig.enable_i18n
+  .group
+    = f.label :language, t('.language'), :class => "label"
+    = f.select :language, locales_options, {}, :class => "select"
+-else
+  = f.hidden_field :language, :value => (current_group.language || AppConfig.default_language)
 
 -if AppConfig.enable_i18n
   .group
