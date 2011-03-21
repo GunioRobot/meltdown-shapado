@@ -22,3 +22,4 @@ public/javascripts/jsMath/fonts/
 *.kdev4
 .redcar
 /nbproject/
+/.idea/
