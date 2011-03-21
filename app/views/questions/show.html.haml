@@ -26,12 +26,14 @@
   %meta{:name => "description", :content => question_body.gsub(/<\/?[^>]*>/, "")[0, 255] }
   %link{:rel => "canonical", :href => question_url(@question) }
 
-%section.main-question#question
+%nav
   %h1
     &= @question.title
     - if @question.closed
       =" [#{t("closed", :scope => "activerecord.attributes.question").upcase}]"
+  .clear
 
+%section.main-question#question
   .description.markdown
     = question_body
     = render "reward_info"

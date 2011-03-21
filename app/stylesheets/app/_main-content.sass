@@ -12,75 +12,148 @@
   section
     width: 100%
     article
-      border-bottom: 1px solid #ccc
-      padding: 15px
+      border-bottom: 1px dotted $gray
+      padding: 10px 8px
       color: #666
-      .user-data
-        font-size: 12px
-        margin: 0 0 10px 20px
-        a:hover
-          border-bottom: 1px dotted
-        i
+      .counters
+        float: left
+        padding: 0px 0px 0px 0px
+        .counter
+          float: left
+          width: 60px
+          margin-right: 4px
+          text-align: center
           font-size: 10px
-          font-style: italic
-          margin: 0 5px 0 0
-      h2
-        font-size: 15px
-        padding-left: 20px 
-        background: url("/images/q-icon-small.gif") 0 2px  no-repeat 
-        margin: 0 0 5px 0
-        a
-          color: $dark
-          font-weight: bold
-          display: block
-        a:hover
-          color: #000
-      .tags
-        clear: both
-        display: block
-        margin: 0 0 13px 20px
-        ul
-          li
-            float: left
-            display: inline
+          .tail
+            padding: 2px 0px 14px 0px
+          .count
+            padding: 14px 0px 2px 0px
+            font-size: 16px
+            font-weight: bold
+        .votecount
+          @extend .counter
+          border: solid 1px white
+        .answercount-none
+          @extend .counter
+          border: solid 1px $grayBorder
+        .answercount
+          @extend .counter
+          background-color: $blue
+          background-image: url("/images/meltdown-sidebar-bg.png")
+          background-repeat: repeat-x
+          border: solid 1px $grayBorder
+        .answercount-accepted
+          @extend .counter
+          background-color: $green
+          background-image: url("/images/meltdown-green-bg.png")
+          background-repeat: repeat-x
+          border: solid 1px $grayBorder
+          .count
+            color: $hibiscus
+        .viewcount
+          @extend .counter
+          border: solid 1px white
+
+      .summary
+        padding: 5px 0px 5px 0px
+        width: 480px
+        margin-left: 10px
+        float: left
+        p
+          margin-bottom: 10px
+          color: $anthracite
+        .user-data
+          padding: 3px 0px 0px 0px
+          float: right
+          font-size: 12px
+          margin: 0 0 10px 20px
+          a
+            color: $hibiscus
+          a:hover
+            border-bottom: 1px dotted
+          i
+            font-size: 10px
+            font-style: italic
+            margin: 0 5px 0 0
+          .timeago
+            font-weight: bold
+            font-style: italic
             font-size: 11px
-            a
-              margin: 0 0 0 7px
-            a:hover
-              border-bottom: 1px dotted
-      .toolbar
-        clear: both
-        display: block
-        ul
-          li.answers, li.votes, li.followers
-            float: left
-            margin-right: 5px
-            margin-left: 0
-            form
+            color: $navText
+          .reputation
+            font-size: 13px
+            font-weight: bold
+        h2
+          font-size: 15px
+          font-family: $helvetica
+          margin: 0 0 10px 0
+          a
+            color: $hibiscus
+            font-weight: bold
+          a:hover
+            color: $hibiscus
+            border-bottom: 1px dotted $hibiscus
+        .tags
+          ul
+            li
               float: left
-              margin: 0 4px 0 0 
-            a
-              background: #fff url("/images/ans-icon-small-light.gif") 0 1px  no-repeat
-              margin: 0
-              padding: 0 0 0 20px
-              font-size: 12px
-            a:hover
-              background-color: #fff
-              color: #000
-          li.votes
-            a
-              background: none
-              padding: 0
-          li
-            float: right
-            display: inline
-            margin-left: 5px
-            a
-              +small-radius
-              color: #666
-              padding: 3px 7px
+              display: inline
               font-size: 11px
-              background-color: #e5e5e5
-            a:hover
-              background-color: #ccc
-              color: #000
+              background-color: $silver
+              background-image: url("/images/meltdown-nav-current-bg.png")
+              background-repeat: repeat-x
+              color: $navText
+              border: solid 1px $grayBorder
+              padding: 4px 6px
+              margin: 0px 5px 5px 0px
+              &:hover
+                background: $anthracite
+                background-image: url("/images/meltdown-nav-bg.png")
+                background-repeat: repeat-x
+                color: white
+
+        .toolbar
+          display: block
+          ul
+            li.answers, li.votes, li.followers
+              float: left
+              margin-right: 5px
+              margin-left: 0
+              form
+                float: left
+                margin: 0 4px 0 0
+              a
+                background: #fff url("/images/ans-icon-small-light.gif") 0 1px  no-repeat
+                margin: 0
+                padding: 0 0 0 20px
+                font-size: 12px
+              a:hover
+                background-color: #fff
+                color: #000
+            li.votes
+              a
+                background: none
+                padding: 0
+            li
+              float: right
+              display: inline
+              margin-left: 5px
+              a
+                +small-radius
+                color: #666
+                padding: 3px 7px
+                font-size: 11px
+                background-color: #e5e5e5
+              a:hover
+                background-color: #ccc
+                color: #000
+    article.full
+      .counters
+        padding: 0px 10px 0px 0px
+        .counter
+          float: none
+        .viewcount
+          .count
+            font-size: 12px
+      .summary
+        width: 600px

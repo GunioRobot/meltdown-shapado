@@ -84,6 +84,7 @@ Shapado::Application.routes.draw do
       get :unanswered
       get :related_questions
       get :random
+      get :root
     end
 
     member do
@@ -191,6 +192,6 @@ Shapado::Application.routes.draw do
   match '/moderate' => 'moderate/questions#index'
 #   match '/search' => 'searches#index', :as => :search
   match '/about' => 'groups#show', :as => :about
-  root :to => 'questions#index'
+  root :to => 'questions#root'
   match '/:controller(/:action(/:id))'
 end

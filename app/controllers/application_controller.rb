@@ -53,7 +53,7 @@ class ApplicationController < ActionController::Base
     @current_group
   end
 
-  def find_questions(extra_conditions = {})
+  def find_questions(extra_conditions = {}, is_root_page = nil)
     if params[:language] || request.query_string =~ /tags=/
       params.delete(:language)
       head :moved_permanently, :location => url_for(params)
@@ -67,12 +67,15 @@ class ApplicationController < ActionController::Base
       conditions[:activity_at] = {"$gt" => 5.days.ago}
     end
 
-    @active_tab = "questions"
+    @active_tab = :questions
+    if is_root_page
+      @active_tab = :root
+    end
     if params[:unanswered]
       conditions[:answered_with_id] = nil
-      @active_tab = "unanswered"
+      @active_tab = :unanswered
     elsif params[:answers]
-      @active_tab = "answers"
+      @active_tab = :answers
     end
     @active_subtab ||= params[:sort] || "newest"
 

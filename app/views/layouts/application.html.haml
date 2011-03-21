@@ -14,24 +14,85 @@
     = csrf_meta_tag
 
   %body
-    = render "shared/analytics"
+    #menu-container{:class => @current_class}
+      - if logged_in?
+        = current_user.login
+      - else
+        = link_to "Zaloguj", "#"
+
+    #logo-container{:class => @current_class}
+      <a href="/"><img id="logo" src="/images/meltdown-logo.png" /></a>
+      %nav{:class => @active_tab}
+        %ul
+          %li><
+            - if @active_tab == :questions
+              - tab_status = "current"
+            - else
+              - tab_status = ""
+            = link_to "Pytania", questions_path, :class => "nav-button #{tab_status}"
+          -# %li><
+            -# = link_to "Tagi", "#", :class => "nav-button"
+          %li><
+            - if @active_tab == :users
+              - tab_status = "current"
+            - else
+              - tab_status = ""
+            = link_to "Użytkownicy", users_path, :class => "nav-button #{tab_status}"
+          -# %li><
+            -# = link_to "Odznaki", "#", :class => "nav-button"
+          -# %li><
+            -# = link_to "Bez odpowiedzi", "#", :class => "nav-button"
+
+          %li><
+            - if @active_tab == :ask_question
+              - tab_status = "current"
+            - else
+              - tab_status = ""
+            = link_to "Nowe pytanie", new_question_path, :class => "nav-button ask #{tab_status}"
+
+
     #container{:class => @current_class}
+      %section.content-panel
+        -# = render "shared/action-tabs"
 
-      %section.left-panel
-        .brand
-          %h1
-            -if current_group.has_logo?
-              =link_to image_tag(logo_path(current_group), :class => "group_logo", :width => current_group.logo_info["width"], :height => current_group.logo_info["height"]), domain_url(:custom => current_group.domain)
-            -else
-              = link_to image_tag("shapado-brand.png", :class => "group_logo"), domain_url(:custom => current_group.domain)
-              %small Simplemente &nbsp;&nbsp;&nbsp; &nbsp; Pregunta
+        #main-content-wrap
+          = yield
+          .clear
 
-        = render "shared/user-zone"
+      %section.right-panel
+        -# = render "shared/user-zone"
 
-        .widget-lang.module
+        .info-box
+          .peachFill
+            Witaj użytkowniku!
+ 
+          %p
+            Serwis
+            %a
+              meltdown.pl
+            jest otwartą i&nbsp;bezpłatną
+            <em>bazą odpowiedzi na pytania z zakresu szeroko pojętych finansów i ekonomii</em>
+            współtworzoną przez wszystkich użytkowników.
+
+          %p
+            Więcej o ogólnej tematyce pytań zadawanych w serwisie możesz dowiedzieć się na
+            naszej stronie informacyjnej.
+
+          .peachFill
+            %ul
+              %li
+                %a
+                  O serwisie &raquo;
+              %li
+                %a
+                  Zastrzeżenia prawne &raquo;
+
+        -# .widget-lang.module
+        -#
           = render :partial => "shared/language_filter"
 
-        .widget-links.module
+        -# .widget-links.module
+        -#
           %nav
             %ul
               %li
@@ -43,7 +104,8 @@
 
         =render "widgets/tag_cloud", :widget => TagCloudWidget.new
 
-        .widget-networks.module
+        -# .widget-networks.module
+        -#
           %p  Siguenos y comparte:
           %ul
             %li
@@ -58,31 +120,18 @@
               -feed_urls.each do |title, url|
                 %a{:href => url}
                   =image_tag "atom.png", :width => 20
-          .clear
 
-        .add
-          %h6 Publicidad
-          =link_to image_tag "http://www.bipbanners.co.uk/assets/images/WebConveyancing_Animated_SkyScraper_Banner_Sample_1A.gif"
-
-
-      %section.content-panel
-        = render "shared/action-tabs"
-
-        #main-content-wrap
-          = yield
-          .clear
-
-      %section.right-panel
-
-        .add
-          %h6 Publicidad
-          =link_to image_tag "banner-250x250.jpg"
+        = render :partial => "shared/ads/sidebar_180x150"
 
         = yield :sidebar
 
-        = render "shared/ads/context_panel_ads"
+        -# = render "shared/ads/context_panel_ads"
 
         .clear
-        = render "shared/ads/footer_ads"
+        -# = render "shared/ads/footer_ads"
 
+      #clear
+
+    #footer-container{:class => @current_class}
       = render "shared/layout/footer"
+      = render "shared/analytics"

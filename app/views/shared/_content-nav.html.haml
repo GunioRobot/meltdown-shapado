@@ -1,20 +1,13 @@
-%nav{:class => @active_tab}
+%nav
+  %h1
+    [title]
   %ul.content-tabs
-    %li.questions
-      =link_to t("layouts.application.questions"), questions_link
-    %li.answers
-      =link_to "Respuestas", url_for(:answers => 1)
-    %li.unanswered
-      =link_to t("layouts.application.unanswered"), url_for(:unanswered => 1)
-    %li.activity
-      =link_to "Activity", "#"
-
-  %section.filters{:class => @active_subtab }
-    %ul
-      %header Sort By:
-      %li.newest
-        = link_to t("questions.index.newest"), url_for(params.merge(:sort=>"newest")), :title => t("questions.index.newest_tooltip")
-      %li.hot
-        = link_to t("questions.index.hot"), url_for(params.merge(:sort=>"hot")), :title => t("questions.index.hot_tooltip"), :rel => "nofollow"
-      %li.votes
-        = link_to t("questions.index.votes"), url_for(params.merge(:sort=>"votes")), :title =>  t("questions.index.votes_tooltip"), :rel => "nofollow"
+    %li{:class => params[:sort] == "newest" || (! params.key?(:sort) && ! params.key?(:unanswered)) ? "newest active" : "newest"}
+      = link_to "najnowsze", url_for(params.merge(:sort=>"newest", :unanswered => nil)), :title => "Ostatnio zadane pytania"
+    %li{:class => params[:sort] == "hot" ? "hot active" : "hot"}
+      = link_to "ważne", url_for(params.merge(:sort=>"hot", :unanswered => nil)), :title => "Pytania o największej aktywności", :rel => "nofollow"
+    %li{:class => params[:sort] == "votes" ? "votes active" : "votes"}
+      = link_to "głosy", url_for(params.merge(:sort=>"votes", :unanswered => nil)), :title => "Pytania z największą ilością głosów", :rel => "nofollow"
+    %li{:class => params.key?(:unanswered) ? "unanswered active" : "unanswered"}
+      = link_to "bez odpowiedzi", url_for(params.merge(:sort => nil, :unanswered => 1)), :title => "Pytania bez odpowiedzi"
+  .clear

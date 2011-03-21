@@ -9,53 +9,41 @@
 //Main tabs
 //========================================================================
 #main-content-wrap
+  nav
+    border-bottom: 1px solid $grayBorder
+    h1
+      float: left
+      font-size: 16px
+      font-weight: bold
+      color: $navText
+      vertical-align: bottom
+      line-height: 35px
   background-color: #fff
-  border: 1px solid #e5e5e5
   overflow: hidden
-  nav.questions
-    li.questions
-      a
-        border-bottom: 2px solid $orange
-        color: #000
-  nav.unanswered
-    ul.content-tabs
-      border-bottom: 1px solid $blue
-      li.unanswered
-        a
-          border-bottom: 2px solid $blue
-          color: #000
-    .filters
-      ul
-        background-color: $lightBlue
-        border-bottom: 3px solid #a3e7eb
-        li.active
-          a
-            color: #000
-            border-bottom: 3px solid $blue
   ul.content-tabs
-    border-bottom: 1px solid $orange
+    float: right
     height: 35px
+    maring-bottom: -1px
     li
+      margin: 7px 5px 0px 5px
       float: left
       display: inline
-      border-right: 1px solid #e5e5e5
+      border: solid 1px transparent
       a
-        padding: 10px 13px 10px 36px
+        padding: 7px 13px 7px 13px
         display: block 
-        background: url("/images/q-icon-medium.gif") 7px 50%  no-repeat
-        border-bottom: 2px solid transparent
-        color: #999
-      a:hover
-        color: #000
-    li.answers
+        color: $navText
+    li:hover
+      border: solid 1px $grayBorder
+      border-bottom: solid 1px white
+    li.active
+      margin: 4px 5px 0px 5px
+      border: solid 1px $grayBorder
+      border-bottom: solid 1px white
       a
-        background: url("/images/ans-icon-medium.gif") 7px 50%  no-repeat
-    li.unanswered
-      a
-        background: url("/images/noans-icon-medium.gif") 7px 50%  no-repeat
-    li.activity
-      a
-        background: url("/images/activity-iacon.gif") 7px 50%  no-repeat 
+        padding: 10px 13px 7px 13px
+        color: $navText
+        font-weight: bold
   
   //Filter
   //======================================================================

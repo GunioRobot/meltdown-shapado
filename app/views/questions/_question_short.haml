@@ -13,7 +13,7 @@
     - last_target_date = question.updated_at
     - owner = question.user unless question.anonymous
 
-  %article{:class => [class_for_question(question), "full"] }
+  %article{:class => class_for_question(question)}
     .counters
       .votecount
         .count
@@ -48,19 +48,14 @@
       -cache("question_on_index_#{question.id}_#{I18n.locale}") do
         %h2
           = link_to title, question_path(question), :title => truncate(strip_tags(question.body), :length => 200)
-        %p
-          = truncate(strip_tags(question.body), :length => 200)
 
       .user-data
         %span.timeago
-          zadane
           = time_ago_in_words(last_target_date)
-          temu
-        %p
-          -if owner
-            =render :partial => "users/user_data", :locals => {:user => owner}
-          -else
-            anonim
+        -if owner
+          =render :partial => "users/user_data", :locals => {:user => owner}
+        -else
+          anonim
 
       .tags
         %ul

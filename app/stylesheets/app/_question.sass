@@ -9,52 +9,54 @@
   #main-content-wrap
     border: none
     background: transparent
+    nav
+      border-bottom: solid 1px $grayBorder
+      h1
+        font-size: 16px
+        line-height: 28px
+        font-weight: bold
+        margin: 0px 0px 5px 0px
+        &.version
+          font-size: 18px
+          line-height: 20 px
+          margin: 5px 20px 5px 45px
+        br
+          margin-bottom: 10px
+        small
+          a
+            font-size: 12px
+            color: #000
+            font-style: italic !important
+            &:hover
+              border-bottom: 1px dotted
+        small.version
+          font-size: 15px
+          font-style: italic !important
+        small.current
+          color: #c00
+          font-weight: bold
+        small.verion-nav
+          float: right
+          font-size: 12px
+          color: #666
+          a
+            margin: 0 3px
+            color: $orange
+            &:hover
+              border-bottom: 1px dotted
+            &.revert
+              color: #c00
 
 /* Main Question */
 //========================================================================
 section.main-question
   +normal-radius
-  border: 1px solid #e5e5e5
-  background: #fff url("/images/q-icon-medium.gif") 15px 15px  no-repeat
+  border: 0px solid #e5e5e5
+  margin-top: 10px
   margin-bottom: 15px
   position: relative  
   ul.tag-list
     margin-left: 45px
-  h1
-    font-size: 26px
-    line-height: 28px
-    font-weight: bold
-    margin: 10px 20px 5px 45px
-    &.version
-      font-size: 18px
-      line-height: 20 px
-      margin: 5px 20px 5px 45px
-    br
-      margin-bottom: 10px
-    small
-      a
-        font-size: 12px
-        color: #000
-        font-style: italic !important        
-        &:hover
-          border-bottom: 1px dotted
-    small.version
-      font-size: 15px      
-      font-style: italic !important
-    small.current
-      color: #c00
-      font-weight: bold
-    small.verion-nav
-      float: right
-      font-size: 12px
-      color: #666
-      a
-        margin: 0 3px
-        color: $orange
-        &:hover
-          border-bottom: 1px dotted
-        &.revert
-          color: #c00
   .description
     margin: 0 20px 0 45px
     p
