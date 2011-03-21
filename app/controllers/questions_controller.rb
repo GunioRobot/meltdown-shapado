@@ -75,7 +75,7 @@ class QuestionsController < ApplicationController
     @questions = Question.related_questions(@question).without(:_keywords, :watchers, :flags,
                                                                :close_requests, :open_requests, :versions).
                                                        order_by(:answers_count.desc).
-                                                       paginate(:page => params[:page], :per_page => params[:per_page],)
+                                                       paginate(:page => params[:page], :per_page => params[:per_page] )
 
     respond_to do |format|
       format.js do
