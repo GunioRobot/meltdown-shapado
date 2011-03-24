@@ -15,35 +15,55 @@
 
   %article{:class => class_for_question(question)}
     .counters
+      - votecount = question.votes_average
       .votecount
         .count
-          25
+          = votecount
         .tail
-          głosów
-      - r = Random.new.rand(1..3)
-      - if r == 1
-        .answercount
-          .count
-            3
-          .tail
-            odpowiedzi
-      - elsif r == 2
+          - if votecount.abs == 1
+            głos
+          - elsif votecount.abs % 10 > 1 && votecount.abs % 10 < 5 && votecount.abs % 100 != 10
+            głosy
+          - else
+            głosów
+      - answercount = question.answers_count
+      - answered = question.answered
+      - if answercount
+        - if answered
+          .answercount-accepted
+            .count
+              = answercount
+            .tail
+              - if answercount == 1
+                odpowiedź
+              - else
+                odpowiedzi
+        - else
+          .answercount
+            .count
+              = answercount
+            .tail
+              - if answercount == 1
+                odpowiedź
+              - else
+                odpowiedzi
+      - else
         .answercount-none
           .count
-            0
+            = answercount
           .tail
             odpowiedzi
-      - else
-        .answercount-accepted
-          .count
-            5
-          .tail
-            odpowiedzi
+      - viewcount = question.views_count
       .viewcount
         .count
-          1350
+          = viewcount
         .tail
-          wyświetleń
+          - if viewcount == 1
+            wyświetlenie
+          - elsif viewcount % 10 > 1 && viewcount % 10 < 5 && viewcount % 100 != 10
+            wyświetlenia
+          - else
+            wyświetleń
     .summary
       -cache("question_on_index_#{question.id}_#{I18n.locale}") do
         %h2
