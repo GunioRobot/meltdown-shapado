@@ -28,7 +28,7 @@
             głosów
       - answercount = question.answers_count
       - answered = question.answered
-      - if answercount
+      - if answercount != 0
         - if answered
           .answercount-accepted
             .count
