@@ -1,0 +1,17 @@
+pl:
+  counters:
+    votes:
+      zero: głosów
+      one: głos
+      few: głosy
+      many: głosów
+    answers:
+      zero: odpowiedzi
+      one: odpowiedź
+      few: odpowiedzi
+      many: odpowiedzi
+    views:
+      zero: wyświetleń
+      one: wyświetlenie
+      few: wyświetlenia
+      many: wyświetleń

@@ -26,6 +26,8 @@ Fabricator(:question) do
   comments {[]}
   group!
   user!
+  banned false
+  language 'pl'
 end
 
 Fabricator(:answer) do

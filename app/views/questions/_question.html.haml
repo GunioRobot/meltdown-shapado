@@ -20,12 +20,7 @@
         .count
           = votecount
         .tail
-          - if votecount.abs == 1
-            głos
-          - elsif votecount.abs % 10 > 1 && votecount.abs % 10 < 5 && votecount.abs % 100 != 10
-            głosy
-          - else
-            głosów
+          = t(:votes, { :scope => "counters", :count => votecount})
       - answercount = question.answers_count
       - answered = question.answered
       - if answercount != 0
@@ -34,36 +29,25 @@
             .count
               = answercount
             .tail
-              - if answercount == 1
-                odpowiedź
-              - else
-                odpowiedzi
+              = t(:answers, { :scope => "counters", :count => answercount})
         - else
           .answercount
             .count
               = answercount
             .tail
-              - if answercount == 1
-                odpowiedź
-              - else
-                odpowiedzi
+              = t(:answers, { :scope => "counters", :count => answercount})
       - else
         .answercount-none
           .count
             = answercount
           .tail
-            odpowiedzi
+            = t(:answers, { :scope => "counters", :count => answercount})
       - viewcount = question.views_count
       .viewcount
         .count
           = viewcount
         .tail
-          - if viewcount == 1
-            wyświetlenie
-          - elsif viewcount % 10 > 1 && viewcount % 10 < 5 && viewcount % 100 != 10
-            wyświetlenia
-          - else
-            wyświetleń
+          = t(:views, { :scope => "counters", :count => viewcount})
     .summary
       -cache("question_on_index_#{question.id}_#{I18n.locale}") do
         %h2
@@ -73,9 +57,9 @@
 
       .user-data
         %span.timeago
-          zadane
+          = t(:asked, :scope => "questions")
           = time_ago_in_words(last_target_date)
-          temu
+          = t(:ago, :scope => "questions")
         %p
           -if owner
             =render :partial => "users/user_data", :locals => {:user => owner}

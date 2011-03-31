@@ -1,3 +1,9 @@
+test:
+  database: meltdown-test
+  host: localhost
+  port: 27017
+  websocket_channel: magent.websocket
+
 development:
   database: meltdown-development
   host: localhost

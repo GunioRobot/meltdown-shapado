@@ -63,14 +63,21 @@ end
 
 group :test do
   gem "fabrication"
+  gem "factory_girl"
   gem "autotest"
 end
 
 group :development do
   gem "database_cleaner"
   gem "rspec", ">= 2.0.1"
+  gem 'rcov'
   gem "fabrication"
+  gem "factory_girl"
   gem "rspec-rails", ">= 2.0.1"
+  gem "capybara"
+  gem "launchy"
+  gem "cucumber"
+  gem "cucumber-rails"
   gem "remarkable_mongoid", ">= 0.5.0"
   gem 'hpricot'
   gem 'ruby_parser'

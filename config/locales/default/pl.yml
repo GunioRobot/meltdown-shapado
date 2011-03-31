@@ -29,7 +29,7 @@ pl:
         units:
           byte:
             one:   "bajt"
-            other: "bajty"
+            few: "bajty"
           kb: "KB"
           mb: "MB"
           gb: "GB"
@@ -60,45 +60,49 @@ pl:
     distance_in_words:
       half_a_minute: "pół minuty"
       less_than_x_seconds:
-        one:   "mniej niż sekundę"
-        few:   "mniej niż %{count} sekundy"
-        other: "mniej niż %{count} sekund"
+        one:  "mniej niż sekundę"
+        few:  "mniej niż %{count} sekundy"
+        many: "mniej niż %{count} sekund"
       x_seconds:
-        one:   "sekundę"
-        few:   "%{count} sekundy"
-        other: "%{count} sekund"
+        one:  "sekundę"
+        few:  "%{count} sekundy"
+        many: "%{count} sekund"
       less_than_x_minutes:
-        one:   "mniej niż minutę"
-        few:   "mniej niż %{count} minuty"
-        other: "mniej niż %{count} minut"
+        one:  "mniej niż minutę"
+        few:  "mniej niż %{count} minuty"
+        many: "mniej niż %{count} minut"
       x_minutes:
-        one:   "minutę"
-        few:   "%{count} minuty"
-        other: "%{count} minut"
+        one:  "minutę"
+        few:  "%{count} minuty"
+        many: "%{count} minut"
       about_x_hours:
-        one:   "około godziny"
-        other: "około %{count} godzin"
+        one:  "około godziny"
+        few:  "około %{count} godziny"
+        many: "około %{count} godzin"
       x_days:
-        one:   "1 dzień"
-        other: "%{count} dni"
+        one:  "1 dzień"
+        few:  "%{count} dni"
+        many: "%{count} dni"
       about_x_months:
-        one:   "około miesiąca"
-        other: "około %{count} miesięcy"
+        one:  "około miesiąca"
+        few:  "około %{count} miesięcy"
+        many: "około %{count} miesięcy"
       x_months:
-        one:   "1 miesiąc"
-        few:   "%{count} miesiące"
-        other: "%{count} miesięcy"
+        one:  "1 miesiąc"
+        few:  "%{count} miesiące"
+        many: "%{count} miesięcy"
       about_x_years:
-        one:   "około roku"
-        other: "około %{count} lat"
+        one:  "około roku"
+        few:  "około %{count} lat"
+        many: "około %{count} lat"
       almost_x_years:
-        one:   "prawie rok"
-        few:   "prawie %{count} lata"
-        other: "prawie %{count} lat"
+        one:  "prawie rok"
+        few:  "prawie %{count} lata"
+        many: "prawie %{count} lat"
       over_x_years:
-        one:   "ponad rok"
-        few:   "ponad %{count} lata"
-        other: "ponad %{count} lat"
+        one:  "ponad rok"
+        few:  "ponad %{count} lata"
+        many: "ponad %{count} lat"
     prompts:
       second: "sekundy"
       minute: "minuty"
@@ -112,7 +116,7 @@ pl:
       template:
         header:
           one:    "%{model} nie został zachowany z powodu jednego błędu"
-          other:  "%{model} nie został zachowany z powodu %{count} błędów"
+          many:  "%{model} nie został zachowany z powodu %{count} błędów"
         body: "Błędy dotyczą następujących pól:"
 
   activerecord:
@@ -120,7 +124,7 @@ pl:
       template:
         header:
           one:    "%{model} nie został zachowany z powodu jednego błędu"
-          other:  "%{model} nie został zachowany z powodu %{count} błędów"
+          many:  "%{model} nie został zachowany z powodu %{count} błędów"
         body: "Błędy dotyczą następujących pól:"
       messages:
         inclusion: "nie znajduje się na liście dopuszczalnych wartości"
