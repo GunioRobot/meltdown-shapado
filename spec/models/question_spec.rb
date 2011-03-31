@@ -91,9 +91,10 @@ describe Question do
       it "should unban the question" do
         @question.ban
         @question.reload
+        @question.banned.should be_true
         Question.unban([@question.id])
         @question.reload
-        @question.banned.should be_true
+        @question.banned.should be_false
       end
     end
   end
