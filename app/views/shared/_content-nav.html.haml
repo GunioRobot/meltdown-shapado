@@ -2,12 +2,14 @@
   %h1
     [title]
   %ul.content-tabs
-    %li{:class => params[:sort] == "newest" || (! params.key?(:sort) && ! params.key?(:unanswered)) ? "newest active" : "newest"}
-      = link_to "najnowsze", url_for(params.merge(:sort=>"newest", :unanswered => nil)), :title => "Ostatnio zadane pytania"
-    %li{:class => params[:sort] == "hot" ? "hot active" : "hot"}
-      = link_to "ważne", url_for(params.merge(:sort=>"hot", :unanswered => nil)), :title => "Pytania o największej aktywności", :rel => "nofollow"
-    %li{:class => params[:sort] == "votes" ? "votes active" : "votes"}
-      = link_to "głosy", url_for(params.merge(:sort=>"votes", :unanswered => nil)), :title => "Pytania z największą ilością głosów", :rel => "nofollow"
-    %li{:class => params.key?(:unanswered) ? "unanswered active" : "unanswered"}
-      = link_to "bez odpowiedzi", url_for(params.merge(:sort => nil, :unanswered => 1)), :title => "Pytania bez odpowiedzi"
+    %li{:class => @active_subtab.to_s == "najnowsze" ? "newest active" : "newest"}
+      = link_to "najnowsze", url_for(params.merge(:sort=>"najnowsze", :unanswered => nil)), :title => "Ostatnio zadane pytania"
+    %li{:class => @active_subtab.to_s == "popularne" ? "hot active" : "hot"}
+      = link_to "popularne", url_for(params.merge(:sort=>"popularne", :unanswered => nil)), :title => "Pytania o największej popularności", :rel => "nofollow"
+    %li{:class => @active_subtab.to_s == "glosy" ? "votes active" : "votes"}
+      = link_to "głosy", url_for(params.merge(:sort=>"glosy", :unanswered => nil)), :title => "Pytania z największą ilością głosów", :rel => "nofollow"
+    %li{:class => @active_subtab.to_s == "aktywnosc" ? "activity active" : "activity"}
+      = link_to "aktywność", url_for(params.merge(:sort=>"aktywnosc", :unanswered => nil)), :title => "Pytania, w których ostatnio pojawiły się nowe komentarze lub odpowiedzi", :rel => "nofollow"
+    %li{:class => @active_subtab.to_s == "bez_odpowiedzi" ? "unanswered active" : "unanswered"}
+      = link_to "bez odpowiedzi", url_for(params.merge(:sort => "bez_odpowiedzi", :unanswered => nil)), :title => "Pytania bez odpowiedzi"
   .clear

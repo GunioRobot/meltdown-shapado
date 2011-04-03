@@ -12,7 +12,8 @@ class QuestionsController < ApplicationController
   tabs :default => :questions, :tags => :tags,
        :unanswered => :unanswered, :new => :ask_question
 
-  subtabs :index => [[:newest, %w(created_at desc)], [:hot, [%w(hotness desc), %w(views_count desc)]], [:votes, %w(votes_average desc)], [:activity, %w(activity_at desc)], [:expert, %w(created_at desc)]],
+  subtabs :index => [[:aktywnosc, %w(activity_at desc)], [:najnowsze, %w(created_at desc)], [:popularne, [%w(hotness desc), %w(views_count desc)]], [:glosy, %w(votes_average desc)], [:bez_odpowiedzi, %w(activity_at desc)]],
+          :root => [[:aktywnosc, %w(activity_at desc)], [:najnowsze, %w(created_at desc)], [:popularne, [%w(hotness desc), %w(views_count desc)]], [:glosy, %w(votes_average desc)], [:bez_odpowiedzi, %w(activity_at desc)]],
           :unanswered => [[:newest, %w(created_at desc)], [:votes, %w(votes_average desc)], [:mytags, %w(created_at desc)]],
           :show => [[:votes, %w(votes_average desc)], [:oldest, %w(created_at asc)], [:newest, %w(created_at desc)]]
   helper :votes

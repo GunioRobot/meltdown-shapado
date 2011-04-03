@@ -1,19 +1,45 @@
 # coding: utf-8
 
+# =========== GIVEN  =================================
+
 Given /^there are different questions$/ do
-  questionZero  = Fabricate(:question, :title => 'Question with zero answers', :group => @group)
-  questionOne   = Fabricate(:question, :title => 'Question with one answer', :group => @group, :votes_average => 1, :votes_count => 1, :answers_count => 1, :views_count => 1)
-  questionFew   = Fabricate(:question, :title => 'Question with few answers', :group => @group, :votes_average => 2, :votes_count => 2, :answers_count => 3, :views_count => 24)
-  questionMany  = Fabricate(:question, :title => 'Question with many answers', :group => @group, :votes_average => 5, :votes_count => 5, :answers_count => 13, :views_count => 55)
+  Fabricate(:question, :title => 'Question with zero answers', :group => @group)
+  Fabricate(:question, :title => 'Question with one answer', :group => @group, :votes_average => 1, :votes_count => 1, :answers_count => 1, :views_count => 1)
+  Fabricate(:question, :title => 'Question with few answers', :group => @group, :votes_average => 2, :votes_count => 2, :answers_count => 3, :views_count => 24)
+  Fabricate(:question, :title => 'Question with many answers', :group => @group, :votes_average => 5, :votes_count => 5, :answers_count => 13, :views_count => 55)
 end
 
+Given /^there are upvoted questions$/ do
+  Fabricate(:question, :title => 'Question with 5 votes', :group => @group, :votes_average => 5, :votes_count => 5)
+  Fabricate(:question, :title => 'Question with 3 votes', :group => @group, :votes_average => 3, :votes_count => 3)
+  Fabricate(:question, :title => 'Question with 2 votes', :group => @group, :votes_average => 2, :votes_count => 2)
+  Fabricate(:question, :title => 'Question with 1 votes', :group => @group, :votes_average => 1, :votes_count => 1)
+end
+
+Given /^there are sortable questions$/ do
+  Given "there are upvoted questions"
+  pending        # TODO: Pending
+end
+
+
+# ===========  WHEN  =================================
+
 When /^I visit root page$/ do
-  visit('http://www.meltdown.pl.local/')
+  visit('/')
 end
 
 When /^I visit questions page$/ do
-  visit('http://www.meltdown.pl.local/pytania')
+  visit('/pytania')
 end
+
+When /^I choose (\w+) sorting order$/ do |sort|
+  within("ul.content-tabs li.#{sort}") do
+    page.first("a").click
+  end
+end
+
+
+# ===========  THEN  =================================
 
 Then /^I should see valid counters with correct pluralization$/ do
   def few_or_many(count)
@@ -78,3 +104,14 @@ Then /^I should see valid counters with correct pluralization$/ do
   end
 end
 
+Then /^I should see (\w+) questions first$/ do |sort|
+  case sort
+    when 'newest'
+      pending    # TODO: Pending
+  end
+  pending
+end
+
+Then /^(\w+) tab should be selected$/ do |tab|
+  pending        # TODO: Pending
+end

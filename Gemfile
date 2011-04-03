@@ -54,6 +54,8 @@ gem 'multiauth', :git => "http://github.com/dcu/multiauth.git"
 gem 'orm_adapter'
 gem 'devise', :git => 'http://github.com/plataformatec/devise.git'
 
+# docs
+gem 'yard'
 
 group :scripts do
   gem 'eventmachine', '~> 0.12.10'

@@ -19,6 +19,7 @@ I18n.backend.store_translations 'ko', {}
 I18n.backend.store_translations 'mk', {}
 I18n.backend.store_translations 'nl', {}
 I18n.backend.store_translations 'pl', {}
+I18n.backend.store_translations 'pl_strict', {}
 I18n.backend.store_translations 'pt-BR', {}
 I18n.backend.store_translations 'pt-PT', {}
 I18n.backend.store_translations 'ru', {}

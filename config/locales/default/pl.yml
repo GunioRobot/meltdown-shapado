@@ -52,11 +52,15 @@ pl:
     formats:
       default: "%a, %d %b %Y, %H:%M:%S %z"
       short: "%d %b, %H:%M"
+      semishort: "%d %B o %H:%M"
       long: "%d %B %Y, %H:%M"
+      iso: "%Y-%m-%d %H:%M:%S%z"
     am: "przed południem"
     pm: "po południu"
 
   datetime:
+    yesterday: "wczoraj"
+    day_before_yesterday: "przedwczoraj"
     distance_in_words:
       half_a_minute: "pół minuty"
       less_than_x_seconds:
@@ -75,6 +79,10 @@ pl:
         one:  "minutę"
         few:  "%{count} minuty"
         many: "%{count} minut"
+      x_hours:
+        one:  "godzinę"
+        few:  "%{count} godziny"
+        many: "%{count} godzin"
       about_x_hours:
         one:  "około godziny"
         few:  "około %{count} godziny"
@@ -103,6 +111,23 @@ pl:
         one:  "ponad rok"
         few:  "ponad %{count} lata"
         many: "ponad %{count} lat"
+    distance_in_short_words:
+      x_seconds:
+        one:  "s"
+        few:  "%{count} s"
+        many: "%{count} s"
+      x_minutes:
+        one:  "min"
+        few:  "%{count} min"
+        many: "%{count} min"
+      x_hours:
+        one:  "h"
+        few:  "%{count} h"
+        many: "%{count} h"
+      x_days:
+        one:  "1 dzień"
+        few:  "%{count} dni"
+        many: "%{count} dni"
     prompts:
       second: "sekundy"
       minute: "minuty"

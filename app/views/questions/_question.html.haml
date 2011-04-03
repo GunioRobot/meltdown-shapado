@@ -12,6 +12,7 @@
     - last_target = question
     - last_target_date = question.updated_at
     - owner = question.user unless question.anonymous
+  - creation_date = question.created_at
 
   %article{:class => [class_for_question(question), "full"] }
     .counters
@@ -55,11 +56,11 @@
         %p
           = truncate(strip_tags(question.body), :length => 200)
 
-      .user-data
-        %span.timeago
-          = t(:asked, :scope => "questions")
-          = time_ago_in_words(last_target_date)
-          = t(:ago, :scope => "questions")
+      .user-data.left
+        %span.timeago{ :title => l((@active_subtab.to_s == "najnowsze") ? creation_date : last_target_date, :format => :iso) }
+          %span.normal
+            = (@active_subtab.to_s == "najnowsze") ? t(:asked, :scope => "questions") : t(:modified, :scope => "questions")
+          = time_ago_in_full_words((@active_subtab.to_s == "najnowsze") ? creation_date : last_target_date)
         %p
           -if owner
             =render :partial => "users/user_data", :locals => {:user => owner}

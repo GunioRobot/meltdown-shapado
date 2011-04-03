@@ -289,6 +289,7 @@ GEM
     whatlanguage (1.0.0)
     xpath (0.1.3)
       nokogiri (~> 1.3)
+    yard (0.6.5)
 
 PLATFORMS
   ruby
@@ -343,3 +344,4 @@ DEPENDENCIES
   uuidtools (= 2.1.1)
   whatlanguage (= 1.0.0)
   will_paginate!
+  yard

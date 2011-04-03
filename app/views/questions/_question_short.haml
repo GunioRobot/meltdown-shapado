@@ -54,10 +54,8 @@
           = link_to title, question_path(question), :title => truncate(strip_tags(question.body), :length => 200)
 
       .user-data
-        %span.timeago
-          = t(:asked, :scope => "questions")
-          = time_ago_in_words(last_target_date)
-          = t(:ago, :scope => "questions")
+        %span.timeago{ :title => l(last_target_date, :format => :iso) }
+          = time_ago_in_short_words(last_target_date)
         -if owner
           =render :partial => "users/user_data", :locals => {:user => owner}
         -else

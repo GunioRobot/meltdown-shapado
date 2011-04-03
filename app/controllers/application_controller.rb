@@ -63,21 +63,21 @@ class ApplicationController < ActionController::Base
     set_page_title(t("questions.index.title"))
     conditions = scoped_conditions(:banned => false)
 
-    if params[:sort] == "hot"
-      conditions[:activity_at] = {"$gt" => 5.days.ago}
+    if params[:sort] == "popularne"
+      conditions[:activity_at] = {"$gt" => 7.days.ago}
     end
 
     @active_tab = :questions
     if is_root_page
       @active_tab = :root
     end
-    if params[:unanswered]
+
+    @active_subtab ||= params[:sort] || "najnowsze"
+
+    if @active_subtab == "bez_odpowiedzi"
       conditions[:answered_with_id] = nil
-      @active_tab = :unanswered
-    elsif params[:answers]
-      @active_tab = :answers
+      conditions[:answers_count] = 0
     end
-    @active_subtab ||= params[:sort] || "newest"
 
     @questions = Question.minimal.where(conditions.merge(extra_conditions)).order_by(current_order).paginate({:per_page => 25, :page => params[:page] || 1})
 
