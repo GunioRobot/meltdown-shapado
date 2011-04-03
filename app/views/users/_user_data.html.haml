@@ -4,15 +4,15 @@
   
   -if user.owner_of?(current_group)
     %i.owner{:title => "admin"}
-      [ Admin ]
+      ♦
 
   -elsif user.mod_of?(current_group)
     %i.mod{:title => "moderator"}
-      [ Moderator ]
+      ♦
 
   -elsif user.editor_of?(current_group)
     %i.editor{:title => "editor"}
-      [ Editor ]
+      ♦
 
   %span.reputation
     = user.reputation_on(current_group)
