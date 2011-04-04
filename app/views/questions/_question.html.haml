@@ -72,16 +72,12 @@
           -if question.wiki
             %li{:class => "wiki" }
               wiki
-          %li{:class => "tag_gielda"}
-            gielda
-          %li{:class => "tag_gielda"}
-            pytanie
           -question.first_tags.each do |tag|
             %li{:class => "tag_#{h(tag)}"}
               = link_to h(tag), tag_path(:id => tag), :rel => "tag", :title => t("questions.tags.tooltip", :tag => tag)
-          -if question.tags.empty? && logged_in? && (current_user.can_modify?(@question) || current_user.can_retag_others_questions_on?(current_group))
-            %li
-              = link_to t('questions.show.retag'), retag_question_path(question), :id => 'retag', :class => "important"
+          -#-if question.tags.empty? && logged_in? && (current_user.can_modify?(@question) || current_user.can_retag_others_questions_on?(current_group))
+          -#  %li
+          -#    = link_to t('questions.show.retag'), retag_question_path(question), :id => 'retag', :class => "important"
     .clear
 
 -else
