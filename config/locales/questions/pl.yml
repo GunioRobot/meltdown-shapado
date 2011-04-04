@@ -3,3 +3,7 @@ pl:
     asked: zadane
     modified: zaktualizowane
     ago: temu
+    root:
+      full_list_html: Chcesz zobaczyć więcej pytań? Przeglądnij %{questions_link} lub pytania dla poszczególnych %{tags_link}.
+      full_list_questions_link: pełną listę pytań
+      full_list_tags_link: tagów

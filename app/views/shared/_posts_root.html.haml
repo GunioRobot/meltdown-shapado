@@ -43,7 +43,9 @@
   -@questions.each do |question|
     = render "questions/question_short", :question => question
 
-#additional_info
-  =will_paginate @questions
+#full_list
+  = t("questions.root.full_list_html",
+      :questions_link => (link_to t("questions.root.full_list_questions_link"), questions_path()),
+      :tags_link      => (link_to t("questions.root.full_list_tags_link"), tags_path()))
 
   .clear

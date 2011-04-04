@@ -70,6 +70,7 @@ class ApplicationController < ActionController::Base
     @active_tab = :questions
     if is_root_page
       @active_tab = :root
+      params[:page] = nil
     end
 
     @active_subtab ||= params[:sort] || "najnowsze"
