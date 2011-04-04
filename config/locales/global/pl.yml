@@ -1,4 +1,7 @@
 pl:
+  pagination:
+    next: Następna →
+    previous: ← Poprzednia
   counters:
     votes:
       zero: głosów
