@@ -121,7 +121,7 @@ pl:
         few:  "%{count} min"
         many: "%{count} min"
       x_hours:
-        one:  "h"
+        one:  "1 h"
         few:  "%{count} h"
         many: "%{count} h"
       x_days:
