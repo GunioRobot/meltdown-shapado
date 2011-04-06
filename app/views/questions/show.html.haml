@@ -33,6 +33,8 @@
       =" [#{t("closed", :scope => "activerecord.attributes.question").upcase}]"
   .clear
 
+=vote_box(@question, question_path(@question), @question.closed)
+
 %section.main-question#question
   .description.markdown
     = question_body
