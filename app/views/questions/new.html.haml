@@ -1,7 +1,7 @@
-
--content_for :subtabs do
-  .navtitle
+-content_for :form_title do
+  %h1
     = t(".title")
+
 -content_for :sidebar do
   -if !current_group.question_help.empty?
     .help

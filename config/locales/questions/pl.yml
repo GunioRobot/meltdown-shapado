@@ -28,7 +28,8 @@ pl:
       solution: Solution
       share: "Share this question on"
       share_on: "Share this question on %{site}"
-      related_questions: Related questions
+      related_questions: Podobne pytania
+      related_questions_help: W tym miejscu możesz zobaczyć zadane już pytania o podobnej tematyce
       flags: Reported as
       flag: Flag
       flagged_as: Flagged as
@@ -55,9 +56,10 @@ pl:
       retract_request: "Retract request"
       edit_request: "Edit request"
       answers_title:
-        zero: "%{count} answers"
-        one: "%{count} answer"
-        other: "%{count} answers"
+        zero: "%{count} odpowiedzi"
+        one: "%{count} odpowiedź"
+        few: "%{count} odpowiedzi"
+        many: "%{count} odpowiedzi"
     retag:
       title: Retag
     answer:
@@ -74,12 +76,12 @@ pl:
     form:
       body_tip: What is your question? Be descriptive.
       language_tip: Select the language the question is asked in.
-      tags_tip:  Use tags to add more information about your question.
+      tags_tip:  Wykorzystaj tagi, aby lepiej określić kategorię swojego pytania
       adult_content: This question contains adult material.
     flag:
       title:   Flag question
     edit:
-      title: Editing question
+      title: Edytuj pytanie
     unanswered:
       title: Unanswered questions
       tags: Unanswered tags
@@ -91,7 +93,7 @@ pl:
       tooltip: Pokaż pytania z tagiem %{tag}
       filter: Search for tags
     new:
-      title: Ask question
+      title: Zadaj nowe pytanie
       how_to_ask: How to ask
     create:
       flash_notice: "The question was successfully created."
@@ -128,7 +130,7 @@ pl:
         too_short: "Seems too short. Please use more words than %{count} to be more specific."
         too_many_tags: Sorry, you can only enter 9 tags maximum.
         empty_tags: Sorry, you need to use at least one tag.
-        title_too_long: "The title is too long. It should not contain more than 100 characters."
+        title_too_long: "^Tytuł jest nieodpowiedniej długości. Tytuł nie może być dłuższy niż 100 znaków ani krótszy niż 5 znaków."
         tags_not_added: "The tags '%{tags}' could not be added. You need a reputation of %{reputation_required} to create new tags"
 
   activerecord:
@@ -137,11 +139,15 @@ pl:
       question: Question
     attributes:
       question:
-        title: Title
+        title: Tytuł
         body: Body
-        tags: Tags
+        tags: Tagi
         asked_by: Asked by
-        answers: Answers
+        answers:
+          zero: "%{count} odpowiedzi"
+          one: "%{count} odpowiedź"
+          few: "%{count} odpowiedzi"
+          many: "%{count} odpowiedzi"
         views: Views
         votes: Votes
         language: Language

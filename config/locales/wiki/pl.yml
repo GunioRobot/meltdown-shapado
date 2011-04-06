@@ -19,4 +19,4 @@ pl:
       version_summary: Podsumowanie wersji
     model: 
       attributes: 
-        message: Podsumowanie
+        message: Podsumowanie zmian

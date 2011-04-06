@@ -3,7 +3,7 @@
 
 =render "followup_form.html.haml", local_assigns
 
-%h1 Editing this question
+= yield :form_title
 
 -if @question.position
   = hidden_field_tag "question[position][lat]", @question.position.lat, :class => "lat_input"
@@ -18,26 +18,26 @@
   %label
     =t(".related_questions", :default => :"questions.show.related_questions" )
   %ul#related_questions
-  %small Here you will find questions that are similar to yours
+  %small
+    =t(:"questions.show.related_questions_help")
 
 .field
   = f.label :tags, "#{t(:tags, :scope => "activerecord.attributes.question")}", :class => "label"
   = f.text_field :tags, :value => @question.tags.join(", "), :class => "text_field autocomplete_for_tags"
   %small
     = t(".tags_tip")
-    
 .field
   =render "editor.html.haml", local_assigns
   .clear
 
-.field
-  -if !@question.new_record?
-    = render "attachments", :question => @question, :attachments => @question.attachments, :editing => true
-  #attachments
-    .attachment_field
-      = f.file_field "attachments[0]"
-      = link_to "Remove", "#", :class => "remove_attachment"
-    = link_to "Add attachment", "#", :class => "add_attachment"
+-#.field
+-#  -if !@question.new_record?
+-#    = render "attachments", :question => @question, :attachments => @question.attachments, :editing => true
+-#  #attachments
+-#    .attachment_field
+-#      = f.file_field "attachments[0]"
+-#      = link_to "Remove", "#", :class => "remove_attachment"
+-#    = link_to "Add attachment", "#", :class => "add_attachment"
 
 
 -if current_group.languages.size>1 && AppConfig.enable_i18n
@@ -49,10 +49,10 @@
 -else
   = f.hidden_field :language, :value => (current_group.language || AppConfig.default_language)
 
--if current_group.has_adult_content
-  .field
-    = f.check_box :adult_content, :class => "checkbox"
-    = f.label :adult_content, t(".adult_content"), :class => "radio"
+-#-if current_group.has_adult_content
+-#  .field
+-#    = f.check_box :adult_content, :class => "checkbox"
+-#    = f.label :adult_content, t(".adult_content"), :class => "radio"
 
 -if !@question.new?
   .field

@@ -6,7 +6,7 @@
               if(!input.parent().find('.added-tag[data-caption='+tag+']').length){
                 input.val('');
                 input.removeAttr('data-init')
-                var tag =  $('<ul style="margin-left:4px;margin-right:4px;margin-top:6px;" class="ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem"><li class="ui-menu-item" role="menuitem"><a class="ui-corner-all added-tag" tabindex="-1" id="ui-active-menuitem" data-caption="'+tag+'">'+tag+'&nbsp;<span style="font-weight:bold;cursor:pointer;" class="remove-tag">x</span></a></li></ul>');
+                var tag =  $('<ul style="margin-left:4px;margin-right:4px;margin-top:6px;" class="ui-menu ui-widget ui-widget-content" role="listbox" aria-activedescendant="ui-active-menuitem"><li class="ui-menu-item" role="menuitem"><a class="added-tag" tabindex="-1" id="ui-active-menuitem" data-caption="'+tag+'">'+tag+'&nbsp;<span style="font-weight:bold;cursor:pointer;" class="remove-tag">x</span></a></li></ul>');
                 input.before(tag);
                 input.css({width: '30px'});
                 input.attr({placeholder: ''});

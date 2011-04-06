@@ -1,0 +1,21 @@
+pl:
+  errors:
+    template:
+      header: "Wystąpił błąd przy wysyłaniu formularza"
+      body: "W trakcie wysyłania formularza wystąpiły następujące błędy, które uniemożliwiły jego zapisanie:"
+    options_label: "Other things to try:"
+    go_to: "Go to %{link} page"
+    help_us_answer: Help us answer %{link}
+    search: "Search"
+    forbidden:
+      title: "Access denied"
+      explanation: "You do not have the required rights to access this page."
+    not_found:
+      title: "Page not found."
+      explanation: "You may have mistyped the address or the page may have moved."
+    unprocessable_entity:
+      title: "The change you wanted was rejected."
+      explanation: "Maybe you tried to change something you did not have access to."
+    internal_error:
+      title: "We are sorry, but something went wrong."
+      explanation: "We have been notified about this issue and we will take a look at it shortly."

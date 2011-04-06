@@ -1,4 +1,6 @@
 pl:
+  global:
+    or: lub
   pagination:
     next: Następna →
     previous: ← Poprzednia
@@ -18,3 +20,20 @@ pl:
       one: wyświetlenie
       few: wyświetlenia
       many: wyświetleń
+  scaffold:
+    sure: Are you sure you want to delete this %{model} ?
+    show: Pokaż
+    edit: Edytuj
+    destroy: Usuń
+    back: Wróć
+    update: Aktualizuj
+    cancel: Anuluj
+    close: Zamknij
+    create: Wyślij
+    new: Add new %{model}
+    more: "More ..."
+    add: Add
+    send: Send
+    save: Save
+    details: Details
+    post_as_anonymous: Wyślij anonimowo

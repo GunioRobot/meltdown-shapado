@@ -62,6 +62,8 @@
       %section.right-panel
         -# = render "shared/user-zone"
 
+        = yield :sidebar
+
         .info-box
           .peachFill
             Witaj użytkowniku!
@@ -122,8 +124,6 @@
                   =image_tag "atom.png", :width => 20
 
         = render :partial => "shared/ads/sidebar_180x150"
-
-        = yield :sidebar
 
         -# = render "shared/ads/context_panel_ads"
 

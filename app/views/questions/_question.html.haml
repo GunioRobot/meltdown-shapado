@@ -90,4 +90,4 @@
       .toolbar
         %ul
           %li.answers
-            = link_to "#{format_number(question.answers_count)} #{t(:answers, :scope => "activerecord.attributes.question")}"
+            = link_to "#{t(:answers, :scope => "activerecord.attributes.question", :count => question.answers_count)}"
