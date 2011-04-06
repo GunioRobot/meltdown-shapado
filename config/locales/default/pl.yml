@@ -88,7 +88,7 @@ pl:
         few:  "około %{count} godziny"
         many: "około %{count} godzin"
       x_days:
-        one:  "1 dzień"
+        one:  "dobę"
         few:  "%{count} dni"
         many: "%{count} dni"
       about_x_months:
@@ -125,7 +125,7 @@ pl:
         few:  "%{count} h"
         many: "%{count} h"
       x_days:
-        one:  "1 dzień"
+        one:  "dobę"
         few:  "%{count} dni"
         many: "%{count} dni"
     prompts:

@@ -24,9 +24,7 @@ module DateHelper
           end
         when 2..59           then locale.t(:x_minutes,      :count => distance_in_minutes) + " " + locale.t(:ago, :scope => "questions")
         when 60..1439        then locale.t(:x_hours,        :count => (distance_in_minutes.to_f / 60.0).round) + " " + locale.t(:ago, :scope => "questions")
-        when 1440..2879      then locale.t(:yesterday, :scope => 'datetime')
-        when 2880..4319      then locale.t(:day_before_yesterday, :scope => 'datetime')
-        when 4320..7199      then locale.t(:x_days,         :count => (distance_in_minutes.to_f / 1440.0).round) + " " + locale.t(:ago, :scope => "questions")
+        when 1440..7199      then locale.t(:x_days,         :count => (distance_in_minutes.to_f / 1440.0).round) + " " + locale.t(:ago, :scope => "questions")
         else
           if from_time.year != Time.now.year
             locale.l from_time, :scope => :'', :format => :semishort_with_year, :locale => :pl_strict
