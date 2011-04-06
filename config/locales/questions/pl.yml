@@ -55,6 +55,7 @@ pl:
       retract_request: "Retract request"
       edit_request: "Edit request"
       answers_title:
+        zero: "%{count} answers"
         one: "%{count} answer"
         other: "%{count} answers"
     retag:
