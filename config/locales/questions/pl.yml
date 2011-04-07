@@ -133,6 +133,14 @@ pl:
         title_too_long: "^Tytuł jest nieodpowiedniej długości. Tytuł nie może być dłuższy niż 100 znaków ani krótszy niż 5 znaków."
         tags_not_added: "The tags '%{tags}' could not be added. You need a reputation of %{reputation_required} to create new tags"
 
+  activemodel:
+    errors:
+      models:
+        question:
+          attributes:
+            body:
+              too_short: "^Treść pytania jest zbyt krótka."
+
   activerecord:
     models:
       questions: Questions

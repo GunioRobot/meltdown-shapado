@@ -637,7 +637,7 @@ class QuestionsController < ApplicationController
     @question = current_group.questions.find_by_slug_or_id(params[:id])
     allow_update = true
     unless @question.nil?
-      if !current_user.can_modify?(@question)
+      if !current_user.can_modify?(@question) # TODO: Fix when current_user.nil?
         if @question.wiki
           if !current_user.can_edit_wiki_post_on?(@question.group)
             allow_update = false

@@ -1,6 +1,19 @@
 pl:
   global:
+    from: "from %{site}"
+    permission_denied: Permission denied
+    please_login: Please log in
+    group_not_found: "The page %{url} does not exist"
+    preview: Preview
     or: lub
+    by: by
+    current: Current
+    previous: Previous
+    share: Share
+    active: Activate
+    anonymous: Anonim
+    unknown_place: Unknown
+    subjetive: subjetive
   pagination:
     next: Następna →
     previous: ← Poprzednia
