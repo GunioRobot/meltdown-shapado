@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $('ul.sf-menu').superfish();
 
-  init_geolocal();
+  // init_geolocal();
   $("form.nestedAnswerForm").hide();
   $("#add_comment_form").hide();
   $("form").live('submit', function() {
