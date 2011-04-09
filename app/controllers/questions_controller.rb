@@ -176,7 +176,16 @@ class QuestionsController < ApplicationController
       end
     end
 
-    set_page_title(@question.title)
+    if @question.tags[0] != nil
+      if @question.tags[1] != nil
+        set_page_title("#{@question.tags[0]}, #{@question.tags[1]} - #{@question.title}")
+      else
+        set_page_title("#{@question.tags[0]} - #{@question.title}")
+      end
+    else
+      set_page_title(@question.title)
+    end
+
     add_feeds_url(url_for(:format => "atom"), t("feeds.question"))
 
     respond_to do |format|
@@ -190,6 +199,8 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   # GET /questions/new.xml
   def new
+    set_page_title(t("questions.new.title"))
+
     @question = Question.new(params[:question])
 
     if params[:from_question]

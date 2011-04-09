@@ -8,7 +8,7 @@ pl:
       full_list_questions_link: pełną listę pytań
       full_list_tags_link: tagów
     index:
-      title: All questions
+      title: Lista pytań
       hot:     Hot
       active:  Active
       votes:   Votes
