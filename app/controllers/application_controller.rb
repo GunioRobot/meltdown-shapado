@@ -60,7 +60,6 @@ class ApplicationController < ActionController::Base
       return
     end
 
-    set_page_title(t("questions.index.title"))
     conditions = scoped_conditions(:banned => false)
 
     if params[:sort] == "popularne"
@@ -71,6 +70,9 @@ class ApplicationController < ActionController::Base
     if is_root_page
       @active_tab = :root
       params[:page] = nil
+      set_page_title(nil)
+    else
+      set_page_title(t("questions.index.title"))
     end
 
     @active_subtab ||= params[:sort] || "najnowsze"

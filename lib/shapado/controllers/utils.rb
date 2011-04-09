@@ -23,25 +23,9 @@ module Shapado
 
       def page_title
         if @page_title
-          if current_group.name == AppConfig.application_name
-            "#{@page_title} - #{AppConfig.application_name}: #{t("layouts.application.title")}"
-          else
-            if current_group.isolate
-              "#{@page_title} - #{current_group.name} #{current_group.legend}"
-            else
-              "#{@page_title} - #{current_group.name} - #{AppConfig.application_name} -  #{current_group.legend}"
-            end
-          end
+            "#{@page_title} - #{t("layouts.application.title")}"
         else
-          if current_group.name == AppConfig.application_name
-            "#{AppConfig.application_name} - #{t("layouts.application.title")}"
-          else
-            if current_group.isolate
-              "#{current_group.name} - #{current_group.legend}"
-            else
-              "#{current_group.name} - #{current_group.legend} - #{AppConfig.application_name}"
-            end
-          end
+            "#{t("layouts.application.title_long")}"
         end
       end
 
