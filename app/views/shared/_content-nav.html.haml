@@ -1,6 +1,6 @@
 %nav
   %h1
-    [title]
+    = yield :title_heading
   %ul.content-tabs
     %li{:class => @active_subtab.to_s == "najnowsze" ? "newest active" : "newest"}
       = link_to "najnowsze", url_for(params.merge(:sort=>"najnowsze", :unanswered => nil)), :title => "Ostatnio zadane pytania"
