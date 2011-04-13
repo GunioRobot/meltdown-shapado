@@ -42,6 +42,7 @@ module Support
                                   self._position+".votes_average" => value.to_i})
         else
           self.increment({:votes_count => 1, :votes_average => value.to_i})
+          self.votes_average += value.to_i
         end
         if value > 0
           self.user.upvote!(self.group)
@@ -56,7 +57,8 @@ module Support
           self._parent.increment({self._position+".votes_count" => -1,
                                   self._position+".votes_average" => -value.to_i})
         else
-          self.increment({:votes_count => -1, :votes_average => -value})
+          self.increment({:votes_count => -1, :votes_average => -value.to_i})
+          self.votes_average += -value.to_i
         end
         if value > 0
           self.user.upvote!(self.group, -1)

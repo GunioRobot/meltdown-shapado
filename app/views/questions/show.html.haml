@@ -33,7 +33,20 @@
       =" [#{t("closed", :scope => "activerecord.attributes.question").upcase}]"
   .clear
 
-=vote_box(@question, question_path(@question), @question.closed)
+%ul.tag-list
+  %li.title
+    Tagi:
+  - @question.tags.each do |tag|
+    %li
+      = link_to h(tag), tag_path(:id => tag), :rel => "tag"
+  - if logged_in? && (current_user.can_modify?(@question) || current_user.can_retag_others_questions_on?(current_group))
+    %li.retag
+      = link_to t('.retag'), retag_question_path(@question), :id => 'retag'
+
+.clear
+
+.control_box
+  =vote_box(@question, question_path(@question), @question.closed)
 
 %section.main-question#question
   .description.markdown
@@ -183,16 +196,6 @@
         .clear
 
       .clear
-
-%ul.tag-list
-  %li.title
-    Topics:
-  - @question.tags.each do |tag|
-    %li
-      = link_to h(tag), tag_path(:id => tag), :rel => "tag"
-  - if logged_in? && (current_user.can_modify?(@question) || current_user.can_retag_others_questions_on?(current_group))
-    %li.retag
-      = link_to t('.retag'), retag_question_path(@question), :id => 'retag'
 
 #answers-content-wrap
   %header

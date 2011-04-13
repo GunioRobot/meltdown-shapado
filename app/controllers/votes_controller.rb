@@ -11,6 +11,7 @@ class VotesController < ApplicationController
   def create
     value = 0
     if params[:vote_up] || params['vote_up.x'] || params['vote_up.y']
+      vote_type = "vote_up"
       value = 1
     elsif params[:vote_down] || params['vote_down.x'] || params['vote_down.y']
       vote_type = "vote_down"
@@ -25,7 +26,7 @@ class VotesController < ApplicationController
 
     if state == :created
       if @voteable.class == Question
-        sweep_question(vote.voteable)
+        sweep_question(@voteable)
         Jobs::Votes.async.on_vote_question(@voteable.id, value, current_user.id, current_group.id).commit!
       elsif @voteable.class == Answer
         Jobs::Votes.async.on_vote_answer(@voteable.id, value, current_user.id, current_group.id).commit!
@@ -37,12 +38,12 @@ class VotesController < ApplicationController
 
       format.js do
         if state != :error
-          average = @voteable.votes_average + value
+          average = @voteable.votes_average
           render(:json => {:success => true,
                            :message => flash[:notice],
                            :vote_type => vote_type,
                            :vote_state => state,
-                           :average => I18n.t("votes.create.average", :count => average)}.to_json)
+                           :average => average}.to_json)
         else
           render(:json => {:success => false, :message => flash[:error] }.to_json)
         end
@@ -50,7 +51,7 @@ class VotesController < ApplicationController
 
       format.json do
         if vote_state != :error
-          average = @voteable.votes_average + value
+          average = @voteable.votes_average
           render(:json => {:success => true,
                            :message => flash[:notice],
                            :vote_type => vote_type,

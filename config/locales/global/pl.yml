@@ -2,7 +2,7 @@ pl:
   global:
     from: "from %{site}"
     permission_denied: Permission denied
-    please_login: Please log in
+    please_login: Proszę, zaloguj się
     group_not_found: "The page %{url} does not exist"
     preview: Preview
     or: lub

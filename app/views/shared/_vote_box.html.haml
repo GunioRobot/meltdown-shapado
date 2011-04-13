@@ -3,16 +3,16 @@
 
   %form{:action=> url, :method=>'post', :class=>'vote_form'}
     = token_tag
-    %p.vote_box
+    .vote_box
       =hidden_field_tag "source", source, :id => "source_#{class_name}_#{voteable.id}"
-      -if !voteable.is_a?(Comment)
-        %button.negative{:type=>"submit", :name=>"vote_down", :value=>"-1"}
+      %button.positive{:class => vote == 1 ? "voted" : '', :type=>"submit", :name=>"vote_up", :value=>"1", :title => t("questions.help.upvote")}
       %span.votes_average
-        =I18n.t("votes.create.average", :count => calculate_votes_average(voteable))
-      %button.positive{:type=>"submit", :name=>"vote_up", :value=>"1"}
+        =calculate_votes_average(voteable)
+      -if !voteable.is_a?(Comment)
+        %button.negative{:class => vote == -1 ? "voted" : '', :type=>"submit", :name=>"vote_down", :value=>"-1", :title => t("questions.help.downvote")}
 -else
-  %p.vote_box
-    %button.negative
+  .vote_box.unvotable
+    %button.positive{:title => t("questions.help.unvotable")}
     %span.votes_average
-      =I18n.t("votes.create.average", :count => calculate_votes_average(voteable))
-    %button.positive
+      = calculate_votes_average(voteable)
+    %button.negative{:title => t("questions.help.unvotable")}

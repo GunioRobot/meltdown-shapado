@@ -10,17 +10,17 @@ $(document).ready(function() {
     $.post(form.attr("action")+'.js', form.serialize()+"&"+btn_name+"=1", function(data){
       if(data.success){
         form.find(".votes_average").text(data.average)
-        if(data.vote_state == "deleted") {
-          form.find("button[name=vote_down] img").attr("src", "/images/to_vote_down.png")
-          form.find("button[name=vote_up] img").attr("src", "/images/to_vote_up.png")
+        if(data.vote_state == "destroyed") {
+          form.find("button[name=vote_down]").attr("class", "negative")
+          form.find("button[name=vote_up]").attr("class", "positive")
         }
         else {
           if(data.vote_type == "vote_down") {
-            form.find("button[name=vote_down] img").attr("src", "/images/vote_down.png")
-            form.find("button[name=vote_up] img").attr("src", "/images/to_vote_up.png")
+            form.find("button[name=vote_down]").attr("class", "negative voted")
+            form.find("button[name=vote_up]").attr("class", "positive")
           } else {
-            form.find("button[name=vote_up] img").attr("src", "/images/vote_up.png")
-            form.find("button[name=vote_down] img").attr("src", "/images/to_vote_down.png")
+            form.find("button[name=vote_up]").attr("class", "positive voted")
+            form.find("button[name=vote_down]").attr("class", "negative")
           }
         }
         showMessage(data.message, "notice")

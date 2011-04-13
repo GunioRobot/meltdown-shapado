@@ -9,10 +9,12 @@
   #main-content-wrap
     border: none
     background: transparent
+    padding: 15px
     nav
       border-bottom: solid 1px $grayBorder
       h1
-        font-size: 16px
+        color: $hibiscus
+        font-size: 20px
         line-height: 28px
         font-weight: bold
         margin: 0px 0px 5px 0px
@@ -46,24 +48,162 @@
               border-bottom: 1px dotted
             &.revert
               color: #c00
+    .control_box
+      float: left
+      width: 45px
+      width: 40px !important
+      padding: 15px 3px 15px 2px
+      form
+        padding: 0px
+    ul.tag-list
+      float: none
+      width: auto !important
+      height: 15px
+      margin: 0px 0px 5px 0px
+      display: block
+      padding: 15px 10px
+      background-color: $peach
+      background-image: url("/images/meltdown-sidebar-peach-bg.png")
+      background-repeat: repeat-x
+      border: solid $grayBorder
+      border-width: 0px 0px 1px 0px
+      li, span.tag
+        float: left
+        display: inline
+        margin: 0 0 7px 0
+        a
+          font-size: 11px
+          background-color: $silver
+          background-image: url("/images/meltdown-nav-current-bg.png")
+          background-repeat: repeat-x
+          color: $navText
+          border: solid 1px $grayBorder
+          padding: 4px 6px
+          margin: 0px 5px 5px 0px
+        a:hover
+          background: $anthracite
+          background-image: url("/images/meltdown-nav-bg.png")
+          background-repeat: repeat-x
+          color: white
+        &.title
+          font-weight: bolder
+          font-size: 12px
+          margin-top: 1px
+          margin-right: 20px
+      .retag-form
+        background-color: #e5e5e5
+        padding: 15px
+        width: 100% !important
+        margin-bottom: 20px
+        label
+          font-size: 15px
+          font-weight: bold
+          margin-bottom: 5px
+        .tagwrapper
+          border: 1px solid #ccc !important
+          min-height: 20px !important
+          padding: 5px 5px 3px 5px !important
+          font-size: 11px
+          margin-bottom: 10px
+          line-height: 11px
+          width: 93.5% !important
+          ul
+            margin: 0 2px !important
+            padding: 0 !important
+            border: 0px !important
+            border: none
+            li, li:hover
+              margin: 0 !important
+              padding: 0 !important
+            a, a.ui-state-hover, a:hover, span:hover
+              padding: 0px 5px 2px 13px !important
+              margin: 0 !important
+              background: url("/images/tag-back-lt.png") 0 50% no-repeat !important
+              border: none !important
+              .remove-tag
+                padding: 0 !important
+                margin: 0 !important
+          input.autocomplete_for_tags
+            padding: 2px 5px 1px 5px !important
+            font-size: 11px
+            line-height: 11px
+        .buttons
+          text-align: right
+          clear: both
+          margin: 15px 0 0 0
+          padding: 0px 40px 0 0
+          input
+            +orange-gradient
+            border: none
+            font-size: 14px
+            padding: 5px 10px
+            color: #fff
+            width: auto
+
+=upvote
+  background: url("/images/meltdown/icons/upvote.png") no-repeat
+=upvote-gray
+  background: url("/images/meltdown/icons/upvote-gray.png") no-repeat
+=downvote
+  background: url("/images/meltdown/icons/downvote.png") no-repeat
+=downvote-gray
+  background: url("/images/meltdown/icons/downvote-gray.png") no-repeat
+
+.vote_box
+  text-align: center
+  font-size: 24px
+  font-weight: bold
+  .votes_average
+    text-align: right
+  button
+    position: relative
+    left: 1px
+    border: 0px
+    margin: 7px 0px
+    width: 32px
+    height: 32px
+    &.positive
+      +upvote-gray
+      &:hover
+        +upvote
+    &.positive.voted
+      +upvote
+      &:hover
+        +upvote-gray
+    &.negative
+      +downvote-gray
+      &:hover
+        +downvote
+    &.negative.voted
+      +downvote
+      &:hover
+        +downvote-gray
+
+.vote_box.unvotable
+  button
+    &.positive:hover
+      +upvote-gray
+    &.negative:hover
+      +downvote-gray
+
 
 /* Main Question */
 //========================================================================
+#main-content-wrap section.main-question
+  width: 640px
 section.main-question
-  +normal-radius
+  float: right
   border: 0px solid #e5e5e5
-  margin-top: 10px
+  margin-top: 5px
   margin-bottom: 15px
   position: relative  
-  ul.tag-list
-    margin-left: 45px
   .description
-    margin: 0 20px 0 45px
+    margin: 0px
     p
-      font-size: 12px
-      line-height: 16px
+      font-size: 14px
+      line-height: 18px
       margin: 0 0 10px 0
-      color: #606060
+      color: black
   .edit
     position: absolute
     top: 43px
@@ -185,80 +325,6 @@ section.main-question
             a:first-letter
               text-transform: uppercase              
       
-      
-/* Main Question - Tags */
-//======================================================================== 
-ul.tag-list
-  margin: 0 0 10px 0
-  float: left
-  width: 100% !important  
-  li, span.tag
-    float: left
-    display: inline
-    margin: 0 0 7px 0
-    a
-      background: url("/images/tag-back-lt.png") 0 0  no-repeat
-      margin: 0 0 0 8px
-      font-size: 11px
-      padding: 1px 5px 2px 13px
-      color: #666
-    a:hover
-      background: url("/images/tag-back-hover.png") 0 0  no-repeat
-      color: #000
-    &.title
-      font-weight: bolder
-      font-size: 12px
-      margin-top: 1px
-  .retag-form
-    background-color: #e5e5e5
-    padding: 15px
-    width: 100% !important
-    margin-bottom: 20px
-    label
-      font-size: 15px
-      font-weight: bold
-      margin-bottom: 5px   
-    .tagwrapper
-      border: 1px solid #ccc !important
-      min-height: 20px !important
-      padding: 5px 5px 3px 5px !important
-      font-size: 11px
-      margin-bottom: 10px
-      line-height: 11px
-      width: 93.5% !important
-      ul
-        margin: 0 2px !important
-        padding: 0 !important
-        border: 0px !important
-        border: none
-        li, li:hover
-          margin: 0 !important
-          padding: 0 !important          
-        a, a.ui-state-hover, a:hover, span:hover 
-          padding: 0px 5px 2px 13px !important
-          margin: 0 !important
-          background: url("/images/tag-back-lt.png") 0 50% no-repeat !important  
-          border: none !important
-          .remove-tag
-            padding: 0 !important
-            margin: 0 !important
-      input.autocomplete_for_tags
-        padding: 2px 5px 1px 5px !important
-        font-size: 11px
-        line-height: 11px
-    .buttons
-      text-align: right
-      clear: both  
-      margin: 15px 0 0 0
-      padding: 0px 40px 0 0 
-      input
-        +orange-gradient
-        border: none
-        font-size: 14px
-        padding: 5px 10px
-        color: #fff
-        width: auto
- 
 /* Main Question - Answers*/
 //========================================================================
 #answers-content-wrap

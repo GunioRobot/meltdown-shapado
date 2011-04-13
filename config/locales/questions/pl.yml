@@ -1,5 +1,9 @@
 pl:
   questions:
+    help:
+      upvote: "To pytanie jest interesujące i jasno sformułowane (kliknij ponownie, aby anulować)"
+      downvote: "To pytanie jest źle sformułowane lub nie jest odpowiednie (kliknij ponownie, aby anulować)"
+      unvotable: "Nie możesz głosować na zamknięte pytania, a także na pytania, których jesteś autorem"
     asked: zadane
     modified: zaktualizowane
     ago: temu
