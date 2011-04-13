@@ -29,6 +29,7 @@ javascripts:
   - modules/notifier
   - multiauth
   - superfish
+  - jquery.tipTip.minified
 
 - mobile:
   - jquery

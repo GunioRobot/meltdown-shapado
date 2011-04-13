@@ -4,6 +4,8 @@ $(document).ready(function() {
 //  $("#close_question_form").hide();
   $('.auto-link').autoVideo();
 
+  $(".vote_box.unvotable button").tipTip();
+
   $("form.vote_form button").live("click", function(event) {
     var btn_name = $(this).attr("name");
     var form = $(this).parents("form");
