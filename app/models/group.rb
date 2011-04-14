@@ -19,10 +19,10 @@ class Group
   field :name, :type => String
   field :subdomain, :type => String
   field :domain, :type => String
-  index :domain
+  index :domain, :unique => true
   field :legend, :type => String
   field :description, :type => String
-  field :default_tags, :type => Array
+  field :default_tags, :type => Array, :default => []
   field :has_custom_ads, :type => Boolean, :default => true
   field :state, :type => String, :default => "pending" #pending, active, closed
   field :isolate, :type => Boolean, :default => false
@@ -34,7 +34,7 @@ class Group
   field :has_custom_analytics, :type => Boolean, :default => true
 
   field :language, :type => String
-  field :languages, :type => Set
+  field :languages, :type => Set, :default => Set.new
   index :languages
 
   field :activity_rate, :type => Float, :default => 0.0
@@ -49,13 +49,19 @@ class Group
   field :reputation_constrains, :type => Hash, :default => REPUTATION_CONSTRAINS
   field :forum, :type => Boolean, :default => false
 
-  field :custom_html, :type => CustomHtml, :default => CustomHtml.new
+  embeds_one :custom_html
   field :has_custom_html, :type => Boolean, :default => true
   field :has_custom_js, :type => Boolean, :default => true
   field :fb_button, :type => Boolean, :default => true
 
   field :enable_latex, :type => Boolean, :default => false
 
+  # can be:
+  # * 'all': email, openid, oauth
+  # * 'noemail': openid and oauth only
+  # * 'social': only facebook, twitter, linkedin and identica
+  # * 'email': only email/password
+  field :signup_type, :type => String, :default => 'all'
 
   field :logo_info, :type => Hash, :default => {"width" => 215, "height" => 60}
   field :share, :type => Share, :default => Share.new
@@ -106,7 +112,7 @@ class Group
   validates_inclusion_of :language, :in => AVAILABLE_LANGUAGES, :allow_blank => true
   #validates_inclusion_of :theme, :in => AVAILABLE_THEMES
 
-  validate :set_subdomain, :on => :create
+  validate :initialize_fields, :on => :create
   validate :check_domain, :on => :create
 
   validate :check_reputation_configs
@@ -240,13 +246,16 @@ class Group
   end
   protected
   #validations
-  def set_subdomain
-    self["subdomain"] = self["slug"]
+  def initialize_fields
+    self["subdomain"] ||= self["slug"]
+    self.custom_html = CustomHtml.new
+    self.share = Share.new
+    self.notification_opts = NotificationConfig.new
   end
 
   def check_domain
     if domain.blank?
-      self[:domain] = "#{subdomain}.#{AppConfig.domain}"
+      self[:domain] = "#{self[:subdomain]}.#{AppConfig.domain}"
     end
   end
 
