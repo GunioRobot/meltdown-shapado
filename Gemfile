@@ -3,6 +3,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.6'
+gem 'i18n', '0.5.0'
 
 if RUBY_PLATFORM !~ /mswin|mingw/
   gem 'rdiscount', '1.6.5'

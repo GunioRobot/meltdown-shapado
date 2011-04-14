@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
   end
 
   def root
-    find_questions({}, true)
+    find_questions({}, {}, true)
   end
 
   def history
@@ -443,7 +443,7 @@ class QuestionsController < ApplicationController
   end
 
   def close
-    @question = Question.by_slug(params[:id])
+    @question = current_group.questions.by_slug(params[:id])
 
     if @question.reward && @question.reward.active
       flash[:error] = "this question has an active reward and cannot be closed" # FIXME: i18n
