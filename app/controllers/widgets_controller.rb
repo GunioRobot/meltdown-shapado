@@ -1,17 +1,17 @@
 class WidgetsController < ApplicationController
-  before_filter :login_required
-  before_filter :check_permissions
+  before_filter :login_required, :except => :embedded
+  before_filter :check_permissions, :except => :embedded
   layout "manage"
   tabs :default => :widgets
 
-  subtabs :widgets => [[:welcome, "welcome"],
-                       [:mainlist, "mainlist"],
-                       [:question, "question"]]
+  subtabs :widgets => [[:mainlist, "mainlist"],
+                       [:question, "question"],
+                       [:external, "external"]]
 
   # GET /widgets
   # GET /widgets.json
   def index
-    @active_subtab ||= "welcome"
+    @active_subtab ||= "mainlist"
 
     @widget = Widget.new
     @widgets = @group.send(:"#{@active_subtab}_widgets")
@@ -20,7 +20,7 @@ class WidgetsController < ApplicationController
   # POST /widgets
   # POST /widgets.json
   def create
-    if Widget.types.include?(params[:widget][:_type])
+    if Widget.types(params[:tab]).include?(params[:widget][:_type])
       @widget = params[:widget][:_type].constantize.new
     end
 
@@ -75,6 +75,12 @@ class WidgetsController < ApplicationController
     widget = widgets.find(params[:id])
     widget.move_to(params[:move_to], widgets, params[:tab])
     redirect_to widgets_path(:tab => params[:tab])
+  end
+
+  def embedded
+    @widget = current_group.external_widgets.
+      detect {|f| f["_id"] == params[:id] }
+    render :layout => false
   end
 
   private

@@ -2,11 +2,21 @@ class Widget
   include Mongoid::Document
 
   identity :type => String
-  field :name, :type => String, :required => true
+  field :name, :type => String
   field :settings, :type => Hash
 
-  validate :set_name, :on => :create
-  embedded_in :group, :inverse_of => [:question_widgets, :mainlist_widgets, :welcome_widgets]
+#   validate :set_name, :on => :create
+  validates_presence_of :name
+
+  embedded_in :group_questions, :inverse_of => :question_widgets
+  embedded_in :group_external, :inverse_of => :external_widgets
+  embedded_in :group_mainlist, :inverse_of => :mainlist_widgets
+
+  def group
+    self.group_questions ||
+    self.group_external ||
+    self.group_mainlist
+  end
 
   def initialize(*args)
     super(*args)
@@ -14,10 +24,13 @@ class Widget
     self[:name] ||= self.class.to_s.sub("Widget", "").underscore
   end
 
-  def self.types(tab)
-    types = %w[UsersWidget BadgesWidget TopUsersWidget TagCloudWidget PagesWidget SharingButtonsWidget CurrentTagsWidget TagListWidget]
+  def self.types(tab="")
+    types = %w[UsersWidget BadgesWidget TopUsersWidget TagCloudWidget PagesWidget CurrentTagsWidget SuggestionsWidget]
     if tab == 'question'
-      types += %w[ModInfoWidget QuestionTagsWidget QuestionBadgesWidget QuestionStatsWidget RelatedQuestionsWidget]
+      types += %w[ModInfoWidget QuestionTagsWidget QuestionBadgesWidget QuestionStatsWidget RelatedQuestionsWidget TagListWidget]
+    end
+    if tab == 'external'
+      types += ["AskQuestionWidget"]
     end
     if AppConfig.enable_groups
       types += %w[GroupsWidget TopGroupsWidget]
@@ -73,5 +86,8 @@ class Widget
   end
 
   protected
+  def set_name
+    self[:name] ||= self.class.to_s.sub("Widget", "").underscore
+  end
 end
 

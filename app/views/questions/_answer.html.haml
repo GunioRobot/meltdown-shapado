@@ -6,6 +6,7 @@
 - @aflag ||= Flag.new
 
 %article.answer
+  %a{:name => "answer#{answer.id}"}
   %h4
     =render "answered_by", local_assigns
 
@@ -80,7 +81,7 @@
           %strong.updated{:title => answer.updated_at, :class => "relativetime"}
             = t("time.ago", :time => time_ago_in_words(answer.updated_at))
           .avatar.logo
-            = gravatar(answer.updated_by.email.to_s, :size => 32)
+            = avatar_img(answer.updated_by, :size => "small")
           .user
             = render :partial => "users/user_mini", :locals => {:user => answer.updated_by}
             -if !answer.updated_by.hide_country && answer.address.present?
@@ -92,8 +93,9 @@
 
   .clear
 
-  -answer.comments.each do |comment|
-    = render :partial => "comments/comment", :object => comment, :locals => {:source => source, :mini => true}
+  .comments
+    -answer.comments.each do |comment|
+      = render :partial => "comments/comment", :object => comment, :locals => {:source => source, :mini => true}
 
   #panel-comments
     -form_for [@question, answer, @comment ||= Comment.new], :html => {:class => "add_answer_comment_link commentForm nestedAnswerForm addNestedAnswer"} do |f|

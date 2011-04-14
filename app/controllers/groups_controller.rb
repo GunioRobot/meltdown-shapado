@@ -16,16 +16,16 @@ class GroupsController < ApplicationController
         @state = "pending"
     end
 
-    options = {:per_page => params[:per_page] || 15,
-               :page => params[:page],
-               :state => @state,
-               :order => current_order,
-               :private => false}
+    conds = {:state => @state, :private => false}
 
     if params[:q].blank?
-      @groups = Group.paginate(options)
+      @groups = Group.where(conds).order_by(current_order).
+                                   paginate(:per_page => params[:per_page] || 15,
+                                            :page => params[:page])
     else
-      @groups = Group.filter(params[:q], options)
+      @groups = Group.filter(params[:q], options).order_by(current_order).
+                                                  paginate(:per_page => params[:per_page] || 15,
+                                                           :page => params[:page])
     end
 
     respond_to do |format|
@@ -84,19 +84,18 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new
     @group.safe_update(%w[name legend description default_tags subdomain logo forum enable_latex
-                          custom_favicon language languages theme custom_css wysiwyg_editor], params[:group])
+                          custom_favicon language languages theme signup_type custom_css wysiwyg_editor], params[:group])
 
     @group.safe_update(%w[isolate domain private], params[:group]) if current_user.admin?
 
     @group.owner = current_user
     @group.state = "active"
 
-    @group.widgets << TagCloudWidget.new
-    @group.widgets << TopUsersWidget.new
-    @group.widgets << BadgesWidget.new
+    @group.reset_widgets!
 
     respond_to do |format|
       if @group.save
+        Jobs::Images.async.generate_group_thumbnails(@group.id)
         @group.add_member(current_user, "owner")
         flash[:notice] = I18n.t("groups.create.flash_notice")
         format.html { redirect_to(domain_url(:custom => @group.domain, :controller => "admin/manage", :action => "properties")) }
@@ -113,7 +112,7 @@ class GroupsController < ApplicationController
   def update
     @group.safe_update(%w[name legend description default_tags subdomain logo logo_info forum enable_latex
                           custom_favicon language languages theme reputation_rewards reputation_constrains
-                          has_adult_content registered_only openid_only custom_css wysiwyg_editor fb_button share notification_opts], params[:group])
+                          has_adult_content registered_only signup_type custom_css wysiwyg_editor fb_button share notification_opts], params[:group])
 
     @group.safe_update(%w[isolate domain private has_custom_analytics has_custom_html has_custom_js], params[:group]) #if current_user.admin?
     @group.safe_update(%w[analytics_id analytics_vendor], params[:group]) if @group.has_custom_analytics

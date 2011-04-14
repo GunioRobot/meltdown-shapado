@@ -1,12 +1,26 @@
 class UsersController < ApplicationController
-  before_filter :login_required, :only => [:edit, :update, :follow]
+  before_filter :login_required, :only => [:edit, :update,
+                                           :follow, :follow_tags,
+                                           :unfollow_tags]
+  before_filter :find_user, :only => [:show, :answers, :follows, :activity]
   tabs :default => :users
 
   subtabs :index => [[:reputation, "reputation"],
                      [:newest, %w(created_at desc)],
                      [:oldest, %w(created_at asc)],
                      [:name, %w(login asc)],
-                     [:near, ""]]
+                     [:near, ""]],
+          :show => [[:votes, [[:votes_average, :desc], [:created_at, :desc]]],
+                    [:views, [:views, :desc]],
+                    [:newest, [:created_at, :desc]],
+                    [:oldest, [:created_at, :asc]]],
+        :answers => [[:votes, [[:votes_average, :desc], [:created_at, :desc]]],
+                    [:views,  [:views, :desc]],
+                    [:newest, [:created_at, :desc]],
+                    [:oldest, [:created_at, :asc]]],
+        :follows => [[:questions, []],
+                     [:following, []],
+                     [:followers, []]]
 
   def index
     set_page_title(t("users.index.title"))
@@ -61,6 +75,7 @@ class UsersController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset session
       sweep_new_users(current_group)
+      @user.accept_invitation(params[:invitation_id]) if params[:invitation_id]
       flash[:notice] = t("flash_notice", :scope => "users.create")
       sign_in_and_redirect(:user, @user) # !! now logged in
     else
@@ -70,43 +85,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    conds = {}
-    conds[:se_id] = params[:se_id] if params[:se_id]
-    @user = User.find_by_login_or_id(params[:id], conds)
-    raise Goalie::NotFound unless @user
-
-    set_page_title(t("users.show.title", :user => @user.login))
-
-    @q_sort, order = active_subtab(:q_sort)
-    @questions = @user.questions.paginate(:page=>params[:questions_page],
-                                          :order => order,
-                                          :per_page => 10,
-                                          :group_id => current_group.id,
-                                          :banned => false,
-                                          :anonymous => false)
-
-    @a_sort, order = active_subtab(:a_sort)
-    @answers = @user.answers.paginate(:page=>params[:answers_page],
-                                      :order => order,
-                                      :group_id => current_group.id,
-                                      :per_page => 10,
-                                      :banned => false,
-                                      :anonymous => false)
-
-    @badges = @user.badges.paginate(:page => params[:badges_page],
-                                    :group_id => current_group.id,
-                                    :per_page => 25)
-
-    @f_sort, order = active_subtab(:f_sort)
-    @favorites = @user.favorites(:group_id => current_group.id).
-      paginate(:page => params[:favorites_page],
-               :per_page => 25,
-               :order => order
-               )
-
-    add_feeds_url(url_for(:format => "atom"), t("feeds.user"))
-
-    @user.viewed_on!(current_group) if @user != current_user && !is_bot?
+    @resources = @user.questions.where(:group_id => current_group.id,
+                                       :banned => false,
+                                       :anonymous => false).
+                       order_by(current_order).
+                       paginate(:page=>params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html
@@ -114,6 +97,43 @@ class UsersController < ApplicationController
       format.json {
         render :json => @user.to_json(:only => %w[name login membership_list bio website location language])
       }
+    end
+  end
+
+  def answers
+    @resources = @user.answers.where(:group_id => current_group.id,
+                                     :banned => false,
+                                     :anonymous => false).
+                              order_by(current_order).
+                              paginate(:page=>params[:page], :per_page => 10)
+    respond_to do |format|
+      format.html{render :show}
+    end
+  end
+
+  def follows
+    case @active_subtab.to_s
+    when "following"
+      @resources = @user.following.paginate(:page => params[:page], :per_page => 10)
+    when "followers"
+      @resources = @user.followers.paginate(:page => params[:page], :per_page => 10)
+    else
+      @resources = Question.where(:follower_ids.in => [@user.id],
+                                :banned => false,
+                                :group_id => current_group.id,
+                                :anonymous => false).
+                          order_by(current_order).
+                          paginate(:page=>params[:page], :per_page => 10)
+    end
+    respond_to do |format|
+      format.html{render :show}
+    end
+  end
+
+  def activity
+#     @resources = []
+    respond_to do |format|
+      format.html{render :show}
     end
   end
 
@@ -146,18 +166,37 @@ class UsersController < ApplicationController
     Jobs::Users.async.on_update_user(@user.id, current_group.id).commit!
 
     preferred_tags = params[:user][:preferred_tags]
+
     if @user.valid? && @user.save
+      if params[:user][:avatar]
+        Jobs::Images.async.generate_user_thumbnails(@user.id).commit!
+      end
       @user.add_preferred_tags(preferred_tags, current_group) if preferred_tags
-      redirect_to root_path
+      if params[:next_step]
+        current_user.accept_invitation(params[:invitation_id])
+        redirect_to accept_invitation_path(:step => params[:next_step], :id => params[:invitation_id])
+      else
+        redirect_to root_path
+      end
     else
       render :action => "edit"
     end
   end
 
+  # My feed, this returns:
+  # - all the questions I asked
+  # - all the questions I follow
+  # - all the questions followed by people I follow
+  #   (questions followed by people I find interesting must be interesting to me)
+  # - all the questions tagged with one of the tag I follow
   def feed
     @user = params[:id] ? current_group.users.where(:login => params[:id]).first : current_user
-
-    find_questions(:follower_ids => @user.id)
+    tags = @user.config_for(current_group).preferred_tags
+    user_ids = @user.friend_list.following_ids
+    user_ids << @user.id
+    find_questions({ }, :any_of => [{:follower_ids.in => user_ids},
+                                    {:tags.in => tags},
+                                    {:user_id => user_ids}])
   end
 
   def by_me
@@ -188,7 +227,6 @@ class UsersController < ApplicationController
   def connect
     authenticate_user!
     warden.authenticate!(:scope => :openid_identity, :recall => "show")
-
     current_openid_identity.user = current_user
     current_openid_identity.save!
     sign_out :openid_identity
@@ -196,18 +234,35 @@ class UsersController < ApplicationController
     redirect_to settings_path
   end
 
-  def change_preferred_tags
+  def follow_tags
     @user = current_user
     if tags = params[:tags]
-      if params[:opt] == "add"
-        @user.add_preferred_tags(tags, current_group) if tags
-      elsif params[:opt] == "remove"
-        @user.remove_preferred_tags(tags, current_group)
-      end
+      @user.add_preferred_tags(tags, current_group) if tags
     end
-
+    flash[:notice] = t("users.update_followed_tags.followed.flash_notice",
+                       :tag => params[:tags])
     respond_to do |format|
       format.html {redirect_to questions_path}
+      format.js {
+        render(:json => {:success => true,
+                 :message => flash[:notice] }.to_json)
+      }
+    end
+  end
+
+  def unfollow_tags
+    @user = current_user
+    if tags = params[:tags]
+      @user.remove_preferred_tags(tags, current_group)
+    end
+    flash[:notice] = t("users.update_followed_tags.unfollowed.flash_notice",
+                       :tag => params[:tags])
+    respond_to do |format|
+      format.html {redirect_to questions_path}
+      format.js {
+        render(:json => {:success => true,
+                 :message => flash[:notice] }.to_json)
+      }
     end
   end
 
@@ -271,6 +326,13 @@ class UsersController < ApplicationController
     return redirect_to(:root)
   end
 
+  def suggestions
+  end
+
+  def auth
+    head :status => 404
+  end
+
   protected
   def active_subtab(param)
     key = params.fetch(param, "votes")
@@ -286,6 +348,18 @@ class UsersController < ApplicationController
         order = "created_at asc"
     end
     [key, order]
+  end
+
+  def find_user
+    conds = {}
+    conds[:se_id] = params[:se_id] if params[:se_id]
+    @user = User.find_by_login_or_id(params[:id], conds)
+    raise Goalie::NotFound unless @user
+    set_page_title(t("users.show.title", :user => @user.login))
+    @badges = @user.badges.where(:group_id => current_group.id).
+                            paginate(:page => params[:badges_page], :per_page => 25)
+    add_feeds_url(url_for(:format => "atom"), t("feeds.user"))
+    @user.viewed_on!(current_group) if @user != current_user && !is_bot?
   end
 end
 

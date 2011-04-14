@@ -1,6 +1,6 @@
 -title = h(question.title)
 -if question.closed
-  -title += " [ZAMKNIĘTE]"
+  -title += " [#{t("closed", :scope => "activerecord.attributes.question").upcase}]"
 
 -if !local_assigns[:mini]
   -owner = nil
