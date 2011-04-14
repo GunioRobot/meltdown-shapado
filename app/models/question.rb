@@ -11,6 +11,9 @@ class Question
   include Support::Versionable
   include Support::Voteable
   include Shapado::Models::GeoCommon
+  include Shapado::Models::Trackable
+
+  track_activities :user, :title, :language, :scope => [:group_id]
 
   index :tags
 
@@ -61,10 +64,10 @@ class Question
   index :group_id
 
   field :followers_count, :type => Integer, :default => 0
-  references_many :followers, :stored_as => :array, :class_name => "User"
+  references_and_referenced_in_many :followers, :class_name => "User"
 
   field :contributors_count, :type => Integer, :default => 0
-  references_many :contributors, :stored_as => :array, :class_name => "User"
+  references_and_referenced_in_many :contributors, :class_name => "User"
 
   field :updated_by_id, :type => String
   referenced_in :updated_by, :class_name => "User"
@@ -85,21 +88,21 @@ class Question
   referenced_in :last_target_user, :class_name => "User"
 
   references_many :answers, :dependent => :destroy
-  references_many :badges, :as => "source"
+  references_many :badges, :as => "source", :validate => false
 
-  embeds_many :comments, :as => "commentable", :order => "created_at asc"
-  embeds_many :flags
-  embeds_many :close_requests
-  embeds_many :open_requests
+  embeds_many :comments, :as => "commentable"#, :order => "created_at asc"
+  embeds_many :flags, :as => "flaggable"
+  embeds_many :close_requests, :as => "closeable"
+  embeds_many :open_requests, :as => "openable"
 
   embeds_one :follow_up
   embeds_one :reward
 
   validates_presence_of :title
   validates_presence_of :user
-  validates_uniqueness_of :slug, :scope => :group_id, :allow_blank => true
+  validates_uniqueness_of :slug, :scope => "group_id", :allow_blank => true
 
-  validates_length_of       :title,    :in => 5..100, :message => lambda { I18n.t("questions.model.messages.title_too_long") }
+  validates_length_of       :title,    :in => 5..100, :wrong_length => lambda { I18n.t("questions.model.messages.title_too_long") }
   validates_length_of       :body,     :minimum => 5, :allow_blank => true #, :if => lambda { |q| !q.disable_limits? }
 
 #  FIXME mongoid (create a validator for tags size)
@@ -113,18 +116,22 @@ class Question
   before_save :update_activity_at
   validate :update_language, :on => :create
 
-  validates_inclusion_of :language, :in => AVAILABLE_LANGUAGES
+  validates_inclusion_of :language, :in => AVAILABLE_LANGUAGES, :if => lambda {AppConfig.enable_i18n}
 
   validate :group_language
   validate :disallow_spam
   validate :check_useful
 
   def self.minimal
-    without(:_keywords, :followers, :flags, :close_requests, :open_requests, :versions)
+    without(:_keywords, :close_requests, :open_requests, :versions)
   end
 
   def followed_up_by
     Question.minimal.without(:comments).where(:"follow_up.original_question_id" => self.id)
+  end
+
+  def email
+    "#{AppConfig.mailing["user"]}+#{self.group.subdomain}-#{self.id}@#{self.group.domain}"
   end
 
   def first_tags

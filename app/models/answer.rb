@@ -7,6 +7,10 @@ class Answer
   include Support::Versionable
   include Support::Voteable
   include Shapado::Models::GeoCommon
+  include Shapado::Models::Trackable
+
+  track_activities :user, :question, :body, :language, :scope => [:group_id]
+
   identity :type => String
 
   field :body, :type => String, :required => true
@@ -23,7 +27,7 @@ class Answer
   field :rewarded, :type => Boolean, :default => false
 
   field :favoriters_count, :type => Integer, :default => 0
-  references_many :favoriters, :stored_as => :array, :class_name => "User"
+  references_and_referenced_in_many :favoriters, :class_name => "User"
 
   referenced_in :group
   index :group_id
@@ -37,8 +41,8 @@ class Answer
   referenced_in :question
   index :question_id
 
-  embeds_many :flags
-  embeds_many :comments#, :order => "created_at asc"
+  embeds_many :flags, :as => "flaggable"
+  embeds_many :comments, :as => "commentable"
 
   validates_presence_of :user_id
   validates_presence_of :question_id
@@ -51,18 +55,8 @@ class Answer
 
   before_destroy :unsolve_question
 
-  def ban
-    self.collection.update({:_id => self.id}, {:$set => {:banned => true}})
-  end
-
   def self.minimal
     without(:_keywords, :flags, :votes, :versions)
-  end
-
-  def self.ban(ids)
-    ids.each do |id|
-      self.collection.update({:_id => id}, {:$set => {:banned => true}})
-    end
   end
 
   def can_be_deleted_by?(user)
@@ -72,16 +66,6 @@ class Answer
     end
 
     ok
-  end
-
-  def check_unique_answer
-    check_answer = Answer.where({:question_id => self.question_id,
-                               :user_id => self.user_id}).first
-
-    if !check_answer.nil? && check_answer.id != self.id
-      self.errors.add(:limitation, "Your can only post one answer by question.")
-      return false
-    end
   end
 
   def on_add_vote(v, voter)
@@ -108,17 +92,24 @@ class Answer
     self.increment(:flags_count => 1)
   end
 
-
   def ban
     self.question.answer_removed!
     unsolve_question
-    self.overwrite({:banned => true})
+    self.override({:banned => true})
   end
 
   def self.ban(ids)
-    self.find_each(:_id.in => ids, :select => [:question_id]) do |answer|
+    self.where(:_id.in => ids).only(:question_id).each do |answer|
       answer.ban
     end
+  end
+
+  def unban
+    self.override(:banned => false)
+  end
+
+  def self.unban(ids, options = {})
+    self.override({:_id => {"$in" => ids}}.merge(options), {:banned => false})
   end
 
   def to_html
@@ -127,6 +118,16 @@ class Answer
 
   def disable_limits?
     self.user.present? && self.user.can_post_whithout_limits_on?(self.group)
+  end
+
+  def check_unique_answer
+    if Answer.where(:question_id => self.question_id,
+                    :user_id => self.user_id,
+                    :_id.ne => self.id).count > 0
+      self.errors.add(:limitation, "Your can only post one answer by question.")
+      return false
+    end
+    return true
   end
 
   def disallow_spam
@@ -145,6 +146,7 @@ class Answer
       if !valid
         self.errors.add(:body, "Your answer is duplicate.")
       end
+      return valid
     end
   end
 
@@ -169,7 +171,7 @@ class Answer
   protected
   def unsolve_question
     if !self.question.nil? && self.question.answer_id == self.id
-      self.question.set({:answer_id => nil, :accepted => false})
+      self.question.override({:answer_id => nil, :accepted => false})
     end
   end
 end

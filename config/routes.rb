@@ -4,6 +4,7 @@ Shapado::Application.routes.draw do
              :controllers => {:registrations => 'users', :omniauth_callbacks => "multiauth/sessions"}) do
     match '/users/connect' => 'users#connect', :method => :post, :as => :connect
   end
+  match '/invitations/accept' => 'invitations#accept', :method => :get, :as => :accept_invitation
   match '/disconnect_twitter_group' => 'groups#disconnect_twitter_group', :method => :get
   match '/group_twitter_request_token' => 'groups#group_twitter_request_token', :method => :get
   match 'confirm_age_welcome' => 'welcome#confirm_age', :as => :confirm_age_welcome
@@ -18,7 +19,9 @@ Shapado::Application.routes.draw do
   match '/settings' => 'users#edit', :as => :settings
   match '/tos' => 'doc#tos', :as => :tos
   match '/privacy' => 'doc#privacy', :as => :privacy
-
+  match '/widgets/embedded/:id' => 'widgets#embedded', :as => :embedded_widget
+  match '/suggestions' => 'users#suggestions', :as => :suggestions
+  match '/activities' => 'activities#index', :as => :activities
   get "mobile/index"
 
   resources :users do
@@ -28,14 +31,18 @@ Shapado::Application.routes.draw do
     end
 
     member do
-      post :unfollow
-      post :change_preferred_tags
-      post :follow
+      get :unfollow
+      get :follow
+      post :follow_tags
+      post :unfollow_tags
       get :feed
       get :expertise
       get :preferred
       get :by_me
       get :contributed
+      get :answers
+      get :follows
+      get :activity
     end
   end
 
@@ -142,13 +149,18 @@ Shapado::Application.routes.draw do
     end
 
     member do
-      get :logo
       get :allow_custom_ads
       get :disallow_custom_ads
       get :favicon
       get :close
       get :accept
       get :css
+    end
+  end
+
+  resources :invitations do
+    member do
+      post :revoke
     end
   end
 
@@ -173,6 +185,7 @@ Shapado::Application.routes.draw do
       match 'reputation' => :reputation
       match 'domain' => :domain
       match 'content' => :content
+      match 'invitations' => :invitations
     end
   end
 
@@ -181,6 +194,7 @@ Shapado::Application.routes.draw do
       collection do
         get :flagged
         get :to_close
+        get :to_open
         put :manage
       end
     end

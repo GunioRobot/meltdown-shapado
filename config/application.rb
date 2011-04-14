@@ -4,6 +4,7 @@ require File.expand_path('../boot', __FILE__)
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
+
 #require 'goalie/rails'
 
 # If you have a Gemfile, require the gems listed there, including any gems
@@ -46,6 +47,11 @@ module Shapado
       config.middleware.use "Rack::Recaptcha", :public_key => AppConfig.recaptcha["public_key"],
                                                :private_key => AppConfig.recaptcha["private_key"],
                                                :paths => nil
+    end
+
+    if AppConfig.ssl
+      require 'rack/ssl'
+      config.middleware.use Rack::SSL
     end
 
     # Configure generators values. Many other options are available, be sure to check the documentation.

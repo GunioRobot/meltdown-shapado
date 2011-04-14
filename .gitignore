@@ -8,6 +8,7 @@ config/shapado.yml
 data/*.dat
 config/mongoid.yml
 config/database.yml
+config/auth_providers.yml
 base_packaged.*
 .directory
 .bundle
@@ -17,6 +18,9 @@ vendor/cache/*.gem
 public/javascripts/login_packaged.js
 public/javascripts/show_packaged.js
 public/javascripts/jsMath/fonts/
+public/javascripts/packaged/
+public/stylesheets/packaged/
 .sass-cache
 *.kdev4
 .redcar
+.idea

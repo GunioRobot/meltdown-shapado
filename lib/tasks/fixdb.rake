@@ -1,24 +1,28 @@
-class Question
-  def set_created_at; end
-  def set_updated_at; end
-end
-
-class Answer
-  def set_created_at; end
-  def set_updated_at; end
-end
-
-class Group
-  def set_created_at; end
-  def set_updated_at; end
-end
 
 desc "Fix all"
-task :fixall => [:environment, "fixdb:questions", "fixdb:contributions", "fixdb:dates", "fixdb:openid", "fixdb:groups", "fixdb:relocate", "fixdb:votes", "fixdb:counters", "fixdb:sync_counts", "fixdb:last_target_type", "fixdb:comments", "fixdb:widgets", "fixdb:tags", "fixdb:update_answers_favorite", "fixdb:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "fixdb:update_group_notification_config"] do
+task :fixall => [:init, "fixdb:questions", "fixdb:contributions", "fixdb:dates", "fixdb:openid", "fixdb:relocate", "fixdb:votes", "fixdb:counters", "fixdb:sync_counts", "fixdb:last_target_type", "fixdb:comments", "fixdb:widgets", "fixdb:tags", "fixdb:update_answers_favorite", "fixdb:groups", "fixdb:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "fixdb:update_group_notification_config", "fixdb:set_follow_ids", "fixdb:set_friends_lists", "fixdb:fix_twitter_users", "fixdb:fix_facebook_users", "fixdb:create_thumbnails", "fixdb:set_invitations_perms", "fixdb:set_signup_type", "fixdb:set_comment_count"] do
+end
+
+
+task :init => [:environment] do
+  class Question
+    def set_created_at; end
+    def set_updated_at; end
+  end
+
+  class Answer
+    def set_created_at; end
+    def set_updated_at; end
+  end
+
+  class Group
+    def set_created_at; end
+    def set_updated_at; end
+  end
 end
 
 namespace :fixdb do
-  task :questions => [:environment] do
+  task :questions => [:init] do
     Question.all.each do |question|
       question.override(:_random => rand())
       question.override(:_random_times => 0.0)
@@ -31,7 +35,7 @@ namespace :fixdb do
     end
   end
 
-  task :contributions => [:environment] do
+  task :contributions => [:init] do
     Question.only(:user_id, :contributor_ids).all.each do |question|
       question.add_contributor(question.user) if question.user
       question.answers.only(:user_id).all.each do |answer|
@@ -40,7 +44,7 @@ namespace :fixdb do
     end
   end
 
-  task :dates => [:environment] do
+  task :dates => [:init] do
     %w[badges questions comments votes users announcements groups memberships pages reputation_events user_stats versions views_counts].each do |cname|
       coll = Mongoid.master.collection(cname)
       coll.find.each do |q|
@@ -54,7 +58,7 @@ namespace :fixdb do
     end
   end
 
-  task :openid => [:environment] do
+  task :openid => [:init] do
     User.all.each do |user|
       next if user.identity_url.blank?
 
@@ -64,13 +68,13 @@ namespace :fixdb do
     end
   end
 
-  task :update_answers_favorite => [:environment] do
+  task :update_answers_favorite => [:init] do
     Mongoid.database.collection("favorites").remove
     answers = Mongoid.database.collection("answers")
     answers.update({ }, {"$set" => {"favorite_counts" => 0}})
   end
 
-  task :sync_counts => [:environment] do
+  task :sync_counts => [:init] do
     votes = Mongoid.database.collection("votes")
     comments = Mongoid.database.collection("comments")
     puts "updating comment's counts"
@@ -100,14 +104,14 @@ namespace :fixdb do
     end
   end
 
-  task :counters => :environment do
+  task :counters => :init do
     Question.all.each do |q|
       q.override(:close_requests_count => q.close_requests.size)
       q.override(:open_requests_count => q.open_requests.size)
     end
   end
 
-  task :last_target_type => [:environment] do
+  task :last_target_type => [:init] do
     puts "updating questions#last_target_type"
     Question.where({:last_target_type.ne => nil}).all.each do |q|
       print "."
@@ -127,7 +131,7 @@ namespace :fixdb do
     end
   end
 
-  task :votes => [:environment] do
+  task :votes => [:init] do
     puts "updating votes"
     comments = Mongoid.database.collection("comments")
     comments.update({:votes => nil}, {"$set" => {"votes" =>  {}}}, :multi => true)
@@ -153,7 +157,7 @@ namespace :fixdb do
     Mongoid.database.collection("votes").drop
   end
 
-  task :comments => [:environment] do
+  task :comments => [:init] do
     puts "updating comments"
     comments = Mongoid.database.collection("comments")
     questions = Mongoid.database.collection("questions")
@@ -201,13 +205,14 @@ namespace :fixdb do
     puts "updated comments"
   end
 
-  task :groups => [:environment] do
+  task :groups => [:init] do
     Group.where({:language.in => [nil, '', 'none']}).all.each do |group|
       lang = group.description.to_s.language
       puts "Updating #{group.name} subdomain='#{group.subdomain}' detected as: #{lang}"
 
       group.language = (lang == :spanish) ? 'es' : 'en'
       group.languages = DEFAULT_USER_LANGUAGES
+
       if group.valid?
         group.save
       else
@@ -216,7 +221,7 @@ namespace :fixdb do
     end
   end
 
-  task :relocate => [:environment] do
+  task :relocate => [:init] do
     doc = JSON.parse(File.read('data/countries.json'))
     i=0
     Question.override({:address => nil}, :address => {})
@@ -225,8 +230,8 @@ namespace :fixdb do
     doc.keys.each do |key|
       User.where({:country_name => key}).all.each do |u|
         p "#{u.login}: before: #{u.country_name}, after: #{doc[key]["address"]["country"]}"
-        lat = doc[key]["lat"]
-        lon = doc[key]["lon"]
+        lat = Float(doc[key]["lat"])
+        lon = Float(doc[key]["lon"])
         User.override({:_id => u.id},
                     {:position => {lat: lat, long: lon},
                       :address => doc[key]["address"] || {}})
@@ -244,28 +249,19 @@ namespace :fixdb do
     end
   end
 
-  task :widgets => [:environment] do
+  task :widgets => [:init] do
     c=Group.count
-    Group.unset({}, {:widgets => true, :question_widgets => true, :welcome_widgets => true, :mainlist_widgets => true})
+    Group.override({}, {:widgets => [], :question_widgets => [], :mainlist_widgets => [],
+                        :external_widgets => []})
     i=0
     Group.all.each do |g|
-      [SharingButtonsWidget, ModInfoWidget, QuestionBadgesWidget,
-       QuestionStatsWidget, QuestionTagsWidget, RelatedQuestionsWidget,
-       TagListWidget, CurrentTagsWidget].each do |w|
-        g.question_widgets << w.new
-      end
-
-      [BadgesWidget, PagesWidget, TopGroupsWidget, TopUsersWidget, TagCloudWidget].each do |w|
-        g.welcome_widgets << w.new
-        g.mainlist_widgets << w.new
-      end
-
+      g.reset_widgets!
       g.save
       p "(#{i+=1}/#{c}) Updated widgets for group #{g.name}"
     end
   end
 
-  task :update_group_notification_config => [:environment] do
+  task :update_group_notification_config => [:init] do
     puts "updating groups notification config"
     Group.all.each do |g|
       g.notification_opts = GroupNotificationConfig.new
@@ -274,7 +270,7 @@ namespace :fixdb do
     puts "done"
   end
 
-  task :tags => [:environment] do
+  task :tags => [:init] do
     Group.all.each do |g|
       Question.tag_cloud({:group_id => g.id} , 1000).each do |tag|
         tag = Tag.new(:name => tag["name"], :count => tag["count"])
@@ -286,7 +282,125 @@ namespace :fixdb do
     end
   end
 
-  task :remove_retag_other_tag => [:environment] do
+  task :remove_retag_other_tag => [:init] do
     Group.unset({}, "reputation_constrains.retag_others_tags" => 1 )
   end
+
+  task :cleanup => [:init] do
+    p "removing #{Question.where(:group_id => nil).destroy_all} orphan questions"
+    p "removing #{Answer.where(:group_id => nil).destroy_all} orphan answers"
+  end
+
+  task :set_follow_ids => [:init] do
+    p "setting nil following_ids to []"
+    FriendList.override({:following_ids => nil}, {:following_ids => []})
+    p "setting nil follower_ids to []"
+    FriendList.override({:follower_ids => nil}, {:follower_ids => []})
+    p "done"
+  end
+
+  task :set_friends_lists => [:init] do
+    total = User.count
+    i = 1
+    p "updating #{total} users facebook friends list"
+    User.all.each do |u|
+      u.send(:initialize_fields)
+      u.send(:create_friends_lists)
+
+      p "#{i}/#{total} #{u.login}"
+      i += 1
+    end
+    p "done"
+  end
+
+  task :fix_twitter_users => [:init] do
+    users = User.where({:twitter_token => {:$ne => nil}})
+    users.each do |u|
+      twitter_id = u.twitter_token.split('-').first
+      p "fixing #{u.login} with twitter id #{twitter_id}"
+      u["auth_keys"] = [] if u["auth_keys"].nil?
+      u["auth_keys"] << "twitter_#{twitter_id}"
+      u["auth_keys"].uniq!
+      u["twitter_id"] = twitter_id
+      u["user_info"] = { } if u["user_info"].nil?
+      u["user_info"]["twitter"] = { "old" => 1}
+      u.save(:validate => false)
+    end
+  end
+
+  task :fix_facebook_users => [:init] do
+    users = User.where({:facebook_id => {:$ne => nil}})
+    users.each do |u|
+      facebook_id = u.facebook_id
+      p "fixing #{u.login} with facebook id #{facebook_id}"
+      u["auth_keys"] = [] if u["auth_keys"].nil?
+      u["auth_keys"] << "facebook_#{facebook_id}"
+      u["auth_keys"].uniq!
+      u["user_info"] = { } if u["user_info"].nil?
+      u["user_info"]["facebook"] = { "old" => 1}
+      u.save(:validate => false)
+    end
+  end
+
+  task :create_thumbnails => [:init]  do
+    Group.all.each do |g|
+      begin
+        Jobs::Images.generate_group_thumbnails(g.id)
+      rescue Mongo::GridFileNotFound => e
+        puts "error getting #{g.name}'s logo"
+      end
+    end
+  end
+
+
+  task :set_invitations_perms => [:init] do
+    p "setting invitations permissions on groups"
+    p "only owners can invite people on private group by default"
+    Group.override({:private => false}, {:invitations_perms => "owner"})
+    p "anyone can invite people on private group by default"
+    Group.override({:private => false}, {:invitations_perms => "user"})
+    p "done"
+  end
+
+  task :set_signup_type => [:init] do
+    p "setting signup type for groups"
+    Group.override({:openid_only => true}, {:signup_type => "noemail"})
+    Group.override({:openid_only => false}, {:signup_type => "all"})
+    p "done"
+  end
+
+  task :set_comment_count => [:init] do
+    User.where.only([:_id,:membership_list, :login]).each do |u|
+      u.membership_list.each do |group_id, vals|
+        count = 0
+        group = Group.where(:_id => group_id).only([:_id, :name]).first
+        next if group.nil?
+
+        group.questions.only([:_id, :"comments.user_id"]).each do |q|
+          q.comments.each do |c|
+            if c.user_id == u.id
+              count =  count + 1
+            end
+          end
+          q.comments = []
+        end
+
+        group.answers.only([:_id, :"comments.user_id"]).each do |a|
+          a.comments.each do |c|
+            puts c.body.inspect
+            if c.user_id == u.id
+              count = count + 1
+            end
+          end
+          a.comments = []
+        end
+
+        u.override({"membership_list.#{group.id}.comments_count" => count})
+        if count > 0
+          p "#{u.login}: #{count} in #{group.name}"
+        end
+      end
+    end
+  end
+
 end

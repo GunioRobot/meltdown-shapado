@@ -18,6 +18,7 @@ base: &common
   default_language: en
   enable_i18n: false
   default_timezone: "Tokyo"
+  ssl: false
 
   smtp:
     activate: false
@@ -36,6 +37,10 @@ base: &common
     activate: false
     key: twitter api key
     secret: twitter secret key
+
+  mailing:
+    activate: false
+    user: app
 
   recaptcha:
     activate: true

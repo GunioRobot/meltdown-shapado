@@ -19,10 +19,10 @@ class Group
   field :name, :type => String
   field :subdomain, :type => String
   field :domain, :type => String
-  index :domain
+  index :domain, :unique => true
   field :legend, :type => String
   field :description, :type => String
-  field :default_tags, :type => Array
+  field :default_tags, :type => Array, :default => []
   field :has_custom_ads, :type => Boolean, :default => true
   field :state, :type => String, :default => "pending" #pending, active, closed
   field :isolate, :type => Boolean, :default => false
@@ -34,7 +34,7 @@ class Group
   field :has_custom_analytics, :type => Boolean, :default => true
 
   field :language, :type => String
-  field :languages, :type => Set
+  field :languages, :type => Set, :default => Set.new
   index :languages
 
   field :activity_rate, :type => Float, :default => 0.0
@@ -49,42 +49,53 @@ class Group
   field :reputation_constrains, :type => Hash, :default => REPUTATION_CONSTRAINS
   field :forum, :type => Boolean, :default => false
 
-  field :custom_html, :type => CustomHtml, :default => CustomHtml.new
+  embeds_one :custom_html
   field :has_custom_html, :type => Boolean, :default => true
   field :has_custom_js, :type => Boolean, :default => true
   field :fb_button, :type => Boolean, :default => true
 
   field :enable_latex, :type => Boolean, :default => false
 
+  # can be:
+  # * 'all': email, openid, oauth
+  # * 'noemail': openid and oauth only
+  # * 'social': only facebook, twitter, linkedin and identica
+  # * 'email': only email/password
+  field :signup_type, :type => String, :default => 'all'
 
   field :logo_info, :type => Hash, :default => {"width" => 215, "height" => 60}
-  field :share, :type => Share, :default => Share.new
+  embeds_one :share
 
-  field :notification_opts, :type => GroupNotificationConfig
+  embeds_one :notification_opts, :class_name => "GroupNotificationConfig"
 
   field :twitter_account, :type => Hash, :default => { }
+
+  field :invitations_perms, :type => String, :default => 'user' # can be "moderator", "owner"
 
   file_key :logo, :max_length => 2.megabytes
   file_key :custom_css, :max_length => 256.kilobytes
   file_key :custom_favicon, :max_length => 256.kilobytes
+  file_list :thumbnails
 
   slug_key :name, :unique => true
   filterable_keys :name
 
   references_many :ads, :dependent => :destroy
   references_many :tags, :dependent => :destroy
+  references_many :activities, :dependent => :destroy
 
-  embeds_many :welcome_widgets, :class_name => "Widget"
-  embeds_many :mainlist_widgets, :class_name => "Widget"
-  embeds_many :question_widgets, :class_name => "Widget"
+  embeds_many :mainlist_widgets, :class_name => "Widget", :as => "group_mainlist"
+  embeds_many :question_widgets, :class_name => "Widget", :as => "group_questions"
+  embeds_many :external_widgets, :class_name => "Widget", :as => "group_external"
 
-  references_many :badges, :dependent => :destroy
-  references_many :questions, :dependent => :destroy
-  references_many :answers, :dependent => :destroy
+  references_many :badges, :dependent => :destroy, :validate => false
+  references_many :questions, :dependent => :destroy, :validate => false
+  references_many :answers, :dependent => :destroy, :validate => false
 #   references_many :votes, :dependent => :destroy # FIXME:
   references_many :pages, :dependent => :destroy
   references_many :announcements, :dependent => :destroy
   references_many :constrains_configs, :dependent => :destroy
+  references_many :invitations, :dependent => :destroy
 
   referenced_in :owner, :class_name => "User"
   embeds_many :comments
@@ -106,7 +117,7 @@ class Group
   validates_inclusion_of :language, :in => AVAILABLE_LANGUAGES, :allow_blank => true
   #validates_inclusion_of :theme, :in => AVAILABLE_THEMES
 
-  validate :set_subdomain, :on => :create
+  validate :initialize_fields, :on => :create
   validate :check_domain, :on => :create
 
   validate :check_reputation_configs
@@ -115,7 +126,7 @@ class Group
                               :in => BLACKLIST_GROUP_NAME,
                               :message => "Sorry, this group subdomain is reserved by"+
                                           " our system, please choose another one"
-
+  validates_inclusion_of :invitations_perms, :in => %w[user moderator owner]
   before_save :disallow_javascript
   before_save :modify_attributes
 
@@ -126,6 +137,22 @@ class Group
 
   def tag_list
     TagList.where(:group_id => self.id).first || TagList.create(:group_id => self.id)
+  end
+
+  def top_tags(limit=5)
+    tags.desc(:count).limit(limit)
+  end
+
+  def top_tags_strings(limit=5)
+    tags = []
+    top_tags(limit).each do |tag|
+      tags << [tag.name]
+    end
+    tags
+  end
+
+  def top_users(limit=5)
+    users.desc(:followers_count).limit(limit)
   end
 
   def default_tags=(c)
@@ -156,11 +183,24 @@ class Group
     unless conditions[:near]
       User.where(conditions)
     else
-      point = options.delete(:near)
-      User.near(point, {}).where(conditions)
+      user_point = conditions.delete(:near)
+      User.near(:position => user_point).where(conditions)
     end
   end
   alias_method :members, :users
+
+  def owners
+    users({ "membership_list.#{self.id}.role" => 'owner' })
+  end
+
+  def mods
+    users({ "membership_list.#{self.id}.role" => 'moderator' })
+  end
+  alias_method :moderators, :mods
+
+  def mods_owners
+    users({ "membership_list.#{self.id}.role" => {:$in => ['moderator', 'owner']} })
+  end
 
   def pending?
     state == "pending"
@@ -194,11 +234,17 @@ class Group
   end
 
   def self.find_file_from_params(params, request)
-    if request.path =~ /\/(logo|css|favicon)\/([^\/\.?]+)/
+    if request.path =~ /\/(logo|big|medium|small|css|favicon)\/([^\/\.?]+)/
       @group = Group.find($2)
       case $1
       when "logo"
         @group.logo
+      when "big"
+        @group.thumbnails["big"] ? @group.thumbnails.get("big") : @group.logo
+      when "medium"
+        @group.thumbnails["medium"] ? @group.thumbnails.get("medium") : @group.logo
+      when "small"
+        @group.thumbnails["small"] ? @group.thumbnails.get("small") : @group.logo
       when "css"
         if @group.has_custom_css?
           css=@group.custom_css
@@ -238,15 +284,52 @@ class Group
         )
       end
   end
+
+  def reset_widgets!
+    self.question_widgets = []
+    self.mainlist_widgets = []
+    self.external_widgets = []
+
+    [ModInfoWidget, QuestionBadgesWidget, QuestionTagsWidget, RelatedQuestionsWidget,
+     TagListWidget, CurrentTagsWidget].each do |w|
+      self.question_widgets << w.new
+    end
+
+    [BadgesWidget, PagesWidget, TopGroupsWidget, TopUsersWidget, TagCloudWidget].each do |w|
+      self.mainlist_widgets << w.new
+    end
+
+    self.external_widgets << AskQuestionWidget.new
+  end
+
+  def is_all_signup?
+    signup_type == 'all'
+  end
+
+  def is_social_only_signup?
+    signup_type == 'social'
+  end
+
+  def is_email_only_signup?
+    signup_type == 'email'
+  end
+
+  def is_noemail_signup?
+    signup_type == 'noemail'
+  end
+
   protected
   #validations
-  def set_subdomain
-    self["subdomain"] = self["slug"]
+  def initialize_fields
+    self["subdomain"] ||= self["slug"]
+    self.custom_html = CustomHtml.new
+    self.share = Share.new
+    self.notification_opts = NotificationConfig.new
   end
 
   def check_domain
     if domain.blank?
-      self[:domain] = "#{subdomain}.#{AppConfig.domain}"
+      self[:domain] = "#{self[:subdomain]}.#{AppConfig.domain}"
     end
   end
 
