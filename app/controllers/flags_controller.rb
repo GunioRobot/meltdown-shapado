@@ -21,7 +21,8 @@ class FlagsController < ApplicationController
         @resource.flagged!
         flash[:notice] = t(:flash_notice, :scope => "flags.create")
 
-        Jobs::Activities.async.on_flag(current_user.id, current_group.id).commit!
+        Jobs::Activities.async.on_flag(current_user.id, current_group.id,
+                                       @flag.reason).commit!
       else
         flash[:error] = @flag.errors.full_messages.join(", ")
       end
@@ -94,9 +95,8 @@ class FlagsController < ApplicationController
   end
 
   def destroy
-    @resource.flags.delete_if { |f| f._id == params[:id] }
+    @resource.flags.find(params[:id]).destroy
 
-    @resource.save!
     @resource.decrement(:flags_count => 1)
     flash[:notice] = t(:flash_notice, :scope => "flag.destroy")
     respond_to do |format|

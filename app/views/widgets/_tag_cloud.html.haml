@@ -2,11 +2,12 @@
   .widget-tags.module
     %header.blueFill
       = t('.tags', :default => [:"layouts.applications.tags", :"activerecord.attributes.user.tags", "Tags"])
-    %hgroup
-      %ul
-        %li.active
-          =link_to "Size"
-        %li
-          =link_to "Alphabetically"
-    = tag_cloud([], {}, widget[:settings][:limit])
-  .clear
+    %section
+      %hgroup
+        %ul
+          %li.active
+            =link_to "Size"
+          %li
+            =link_to "Alphabetically"
+      = tag_cloud([], {}, widget[:settings][:limit])
+    .clear

@@ -8,6 +8,12 @@
       %h4
         = t(".how_to_ask")
       = raw(current_group.question_help)
+%h1
+  Asking new question
+  //i18n
+%p.description
+  Please be descriptive with your question, an be sure your are adding good tags for the searchers
+  //i18n
 
 - form_for(@question, :html=>{:class => "question-form", :id => "ask_question", :multipart => true}) do |f|
   =render :partial => "form", :locals => {:f => f}
@@ -21,10 +27,10 @@
       .checkbox
         = f.label :anonymous, t("scaffold.post_as_anonymous")
         = f.check_box :anonymous, {:class => "checkbox"}, true, false
-    
+
     .buttons
+      = f.submit t('scaffold.create'), :class => "save"
       = link_to t('scaffold.cancel'), questions_path
       = t("global.or")
-      = f.submit t('scaffold.create'), :class => "save"
-      
+
 

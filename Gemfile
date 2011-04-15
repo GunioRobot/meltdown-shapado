@@ -76,8 +76,8 @@ group :test do
   gem "fabrication"
   gem "factory_girl"
   gem 'machinist_mongo', :require => 'machinist/mongoid'
-  gem 'faker'
-  gem 'rcov'
+  gem 'ffaker'
+  gem 'simplecov'
   gem "autotest"
 end
 

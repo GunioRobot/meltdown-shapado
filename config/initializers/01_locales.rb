@@ -1,4 +1,5 @@
 I18n.backend.store_translations 'br', {}
+I18n.backend.store_translations 'be-TARASK', {}
 I18n.backend.store_translations 'ca', {}
 I18n.backend.store_translations 'da', {}
 I18n.backend.store_translations 'de', {}
@@ -23,7 +24,9 @@ I18n.backend.store_translations 'pl_strict', {}
 I18n.backend.store_translations 'pt-BR', {}
 I18n.backend.store_translations 'pt-PT', {}
 I18n.backend.store_translations 'ru', {}
+I18n.backend.store_translations 'sv', {}
 I18n.backend.store_translations 'te', {}
+I18n.backend.store_translations 'zh-CN', {}
 
 I18n.load_path += Dir[ File.join(Rails.root, 'config', 'locales', '**', '*.{rb,yml}') ]
 

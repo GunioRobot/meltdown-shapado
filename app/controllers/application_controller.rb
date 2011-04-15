@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
   before_filter :check_group_access
   before_filter :set_locale
   before_filter :find_languages
+  before_filter :share_variables
   layout :set_layout
 
   helper_method :recaptcha_tag
@@ -53,7 +54,7 @@ class ApplicationController < ActionController::Base
     @current_group
   end
 
-  def find_questions(extra_conditions = {}, is_root_page = nil)
+  def find_questions(extra_conditions = {}, extra_scope = { }, is_root_page = nil)
     if params[:language] || request.query_string =~ /tags=/
       params.delete(:language)
       head :moved_permanently, :location => url_for(params)
@@ -82,7 +83,13 @@ class ApplicationController < ActionController::Base
       conditions[:answers_count] = 0
     end
 
-    @questions = Question.minimal.where(conditions.merge(extra_conditions)).order_by(current_order).paginate({:per_page => 25, :page => params[:page] || 1})
+    @questions = Question.minimal.where(conditions.merge(extra_conditions)).order_by(current_order)
+
+    extra_scope.keys.each do |key|
+      @questions = @questions.send(key, extra_scope[key])
+    end
+
+    @questions = @questions.paginate({:per_page => 25, :page => params[:page] || 1})
 
     @langs_conds = scoped_conditions[:language][:$in]
 
@@ -104,6 +111,19 @@ class ApplicationController < ActionController::Base
       format.mobile
       format.json  { render :json => @questions.to_json(:except => %w[_keywords watchers slugs]) }
       format.atom
+    end
+  end
+
+  def find_activities(conds = {})
+    #add_feeds_url(url_for({:format => "atom"}.merge(feed_params)), t("feeds.questions"))
+
+    @activities = current_group.activities.where(conds).order(:created_at.desc).
+                                paginate(:page => params[:page],
+                                         :per_page => params[:per_page]||25)
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @activities}
     end
   end
 
@@ -149,5 +169,11 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource_or_scope)
     self.current_user = resource_or_scope
     super(resource_or_scope)
+  end
+
+  def share_variables
+    Thread.current[:current_group] = current_group
+    Thread.current[:current_user] = current_user
+    Thread.current[:current_ip] = request.remote_ip
   end
 end

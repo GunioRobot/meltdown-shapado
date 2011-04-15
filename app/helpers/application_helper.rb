@@ -287,8 +287,7 @@ module ApplicationHelper
 
   def clean_seo_keywords(tags, text = "")
     if tags.size < 5
-
-      text.scan(/(\S+)/) do |s|
+      text.scan(/\S+/) do |s|
         word = s.to_s.downcase
         if word.length > 3 && !tags.include?(word)
           tags << word
@@ -331,7 +330,9 @@ module ApplicationHelper
 
   def include_latex
     if current_group.enable_latex
-      require_js domain_url(:custom => current_group.domain)+'/javascripts/jsMath/easy/load.js'
+      require_css 'http://fonts.googleapis.com/css?family=UnifrakturMaguntia'
+      require_css domain_url(:custom => current_group.domain)+'/javascripts/mathscribe/jqmath-0.1.1.css'
+      require_js domain_url(:custom => current_group.domain)+'/javascripts/mathscribe/jqmath-etc-0.1.1.min.js'
     end
   end
 
@@ -341,6 +342,113 @@ module ApplicationHelper
     else
       question.answers.order_by(:votes_average.asc).first
     end
+  end
+
+  def widget_css(widget)
+    "<style type='text/css'>#{widget.settings["custom_external_css"]}</style>"
+  end
+
+  def widget_code(widget)
+    path = embedded_widget_path(:id => widget.id)
+    url = domain_url(:custom => current_group.domain) + path
+    %@<iframe src="#{url}" height="200px"></iframe>@
+  end
+
+  def facebook_avatar(user)
+    image_tag("http://graph.facebook.com/#{user.facebook_id}/picture")
+  end
+
+  def twitter_avatar(user)
+    if user.user_info["twitter"]["image"]
+      image_tag(user.user_info["twitter"]["image"])
+    else
+      gravatar(user.email.to_s, :size => 32)
+    end
+  end
+
+  def identica_avatar(user)
+    image_tag(user.user_info["identica"]["image"])
+  end
+
+  #TODO css for image tag size
+  def linked_in_avatar(user)
+    image_tag(user.user_info["linked_in"]["image"])
+  end
+
+  def suggestion_avatar(suggestion)
+    if suggestion.class == User
+      avatar_tag = if  suggestion.twitter_login?
+                     twitter_avatar(suggestion)
+                   elsif suggestion.identica_login?
+                     identica_avatar(suggestion)
+                   elsif suggestion.linked_in_login?
+                     linked_in_avatar(suggestion)
+                   else
+                     gravatar(suggestion.email.to_s, :size => 32)
+                   end
+    else
+      tag = Tag.where(:name => suggestion[0], :group_id => current_group.id).first
+      avatar_tag = tag_icon_image_link(tag)
+    end
+    avatar_tag
+  end
+
+  def tag_icon_image_link(tag)
+    image_tag(tag_icon_path(current_group, tag)) if tag.has_icon?
+  end
+
+  def common_follower(user, suggestion)
+    if suggestion.class == User
+      suggested_friend = suggestion
+      friend = user.common_follower(suggested_friend)
+    elsif (suggestion[1] && suggestion[1]["followed_by"])
+      friend = suggestion[1]["followed_by"].sample
+    end
+    if friend
+      raw(t('widgets.suggestions.followed_by', :user => "#{link_to friend.login, user_path(friend)}"))
+    end
+  end
+
+  def suggestion_link(suggestion)
+    if suggestion.class == User
+      link_to(suggestion.login, user_path(suggestion))
+    else
+      tag_link(suggestion[0])
+    end
+  end
+
+  def follow_suggestion_link(suggestion)
+    if suggestion.class == User
+      link_to "+ #{t("users.show.follow")}", follow_user_path(suggestion), :class => "follow_link", 'data-class' => "unfollow_link", 'data-title' => t("users.show.unfollow"), 'data-undo' => unfollow_user_path(suggestion)
+    else
+      follow_tag_link(Tag.where(:name => suggestion[0], :group_id => current_group.id).first)
+    end
+  end
+
+  def follow_tag_link(tag)
+    if logged_in?
+      if current_user.preferred_tags_on(current_group).include?(tag.name)
+        follow_class = 'unfollow-tag'
+        follow_data = 'follow-tag'
+        data_title = t("global.follow")
+        title = t("global.unfollow")
+        path = unfollow_tags_user_path(current_user)
+        data_undo = follow_tags_user_path(current_user)
+      else
+        follow_data = 'unfollow-tag'
+        follow_class = 'follow-tag'
+        data_title = t("global.unfollow")
+        title = t("global.follow")
+        opt = 'add'
+        path = follow_tags_user_path(current_user)
+        data_undo = unfollow_tags_user_path(current_user)
+      end
+      link_to title, path, :class => follow_class, 'data-tag' => tag.name, 'data-class' => follow_data, 'data-title' => data_title, 'data-undo' => data_undo
+    end
+  end
+
+  def tag_link(tag)
+    link_to h(tag), tag_path(:id => tag), :rel => "tag", :title => t("questions.tags.tooltip", :tag => tag)
   end
 end
 

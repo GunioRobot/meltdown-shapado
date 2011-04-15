@@ -1,40 +1,86 @@
-!!! Strict
-%html{ "xml:lang" => I18n.locale, :lang => I18n.locale, :xmlns => "http://www.w3.org/1999/xhtml" }
+!!! 5
+%html{"xml:lang" => I18n.locale, :lang => I18n.locale, :xmlns => "http://www.w3.org/1999/xhtml" }
   %head
     %title
       &= page_title
-    = render :partial => "shared/layout/css"
+    = render "shared/layout/css"
+
     = raw(current_group.head_tag)
-    = render :partial => "shared/layout/meta"
-    = render :partial => "shared/layout/javascript"
+    = render "shared/layout/meta"
+    <!--[if lt IE 8]><link type="text/css" rel="stylesheet" media="screen" href="/stylesheets/ie7.css"><![endif]-->
+    = render "shared/layout/javascript"
+    <link type="text/css" rel="stylesheet" media="screen" href="http://jqueryui.com/themes/base/jquery.ui.tabs.css">
+
+    = csrf_meta_tag
 
   %body
     = render :partial => "shared/analytics"
-    #container
-      = render :partial => "shared/topbar"
-      #header
-        = current_group.head
-        #main-bar{:class => @active_tab}
-          #logo
-            -if current_group.has_logo?
-              =link_to image_tag(logo_path(current_group), :class => "group_logo", :width => current_group.logo_info["width"], :height => current_group.logo_info["height"]), domain_url(:custom => current_group.domain)
-            -else
-              = link_to image_tag("default_logo.png", :class => "group_logo"), domain_url(:custom => current_group.domain)
-          = render :partial => "shared/manage_navigation"
+
+    #container{:class => @current_class}
+
+      %nav.top-bar
+        %ul.group-list.sf-menu
+          -if !current_group.isolate
+            = render "groups/top_grouplist"
+          -if !logged_in?
+          - else
+            -if current_user.admin_of?(current_group)
+              = render "admin/manage/top_admin"
+            -if current_user.mod_of?(current_group)
+              = render "admin/moderate/top_moderate"
+
+        .searcher
+          = form_tag search_index_path, :method => :get, :id => "search" do
+            .field
+              = text_field_tag :q, params[:q]
+
+
+        -if !logged_in?
+          /=multiauth_menu("Sign In")
+          = multiauth_dropdown("Sign In")
+        -else
+          = render "users/top_user"
+
+      = show_flash_messages(:class => "flash", :markdown => true)
+
+      %section.left-panel
+
+        .brand
+          %h1
+            = link_to(group_logo_img(current_group, :class => "group_logo"), domain_url(:custom => current_group.domain))
+
+        .widget-links.module
+          %h3
+            Group Content
+          %nav
+            %ul
+              -if current_group.has_custom_html
+                %li
+                  =link_to t("layouts.manage.content"), manage_content_path
+              %li
+                = link_to t("layouts.manage.members"), members_path
+              %li
+                = link_to t("layouts.manage.invitations"), manage_invitations_path
+              %li
+                = link_to t("layouts.manage.social"), manage_social_path
+
+        .widget-links.module
+          %h3
+            Group Features
+          %nav
+            %ul
+              %li
+                =link_to t("layouts.manage.widgets"), widgets_path
+              -if current_group.has_custom_html
+                %li
+                  = link_to t("layouts.manage.announcements"), announcements_path
+              -if current_group.has_custom_ads
+                %li
+                  =link_to t("layouts.application.manage_ads"), ads_path
+
+      %section.content-panel
+        #main-content-wrap{:class => @active_tab}
+          = yield
           .clear
-      #wrapper
-        #main{:style=>"width: 100%"}
-          #block-text.block
-            .secondary-navigation{:class => @active_subtab.to_s}
-              = yield :subtabs
-              .clear
-            .content
-              %p.markdown
-                = show_flash_messages(:class => "flash", :markdown => true)
-              .inner
-                = yield
-                .clear
-        .clear
-      #footer
-        .block.content
-          = render :partial => "shared/layout/footer"
+
+      = render "shared/layout/footer"

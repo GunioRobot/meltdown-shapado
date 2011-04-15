@@ -1,0 +1,195 @@
+#main-content-wrap
+  border: none
+  margin: 0px
+  nav
+    border-bottom: 1px solid $grayBorder
+    h1
+      float: left
+      font-size: 16px
+      font-weight: bold
+      color: $navText
+      vertical-align: bottom
+      line-height: 35px
+      padding: 0px
+      margin: 0px
+  ul.content-tabs
+    float: right
+    border-bottom: none
+    background: none
+    height: 35px
+    position: relative
+    top: 1px
+    li
+      margin: 6px 5px 0px 5px
+      border: solid 1px transparent
+      a
+        font-size: 13px
+        padding: 7px 13px 7px 13px
+        color: $navText
+        background: none
+        border: none
+        text-transform: none
+        &:hover
+          color: $navText
+          background: none
+    li:hover
+      border: solid 1px $grayBorder
+      border-bottom: solid 1px white
+    li.active
+      margin: 3px 5px 0px 5px
+      border: solid 1px $grayBorder
+      border-bottom: solid 1px white
+      a
+        padding: 10px 13px 7px 13px
+        color: $navText
+        font-weight: bold
+    li.answers
+      a
+        background: none
+    li.unanswered
+      a
+        background: none
+    li.activity
+      a
+        background: none
+  section
+    article
+      border-bottom: 1px dotted $gray
+      padding: 10px 8px
+
+      .counters
+        float: left
+        padding: 0px 0px 0px 0px
+        .counter
+          float: left
+          width: 60px
+          margin-right: 4px
+          text-align: center
+          font-size: 10px
+          .tail
+            padding: 2px 0px 14px 0px
+          .count
+            padding: 14px 0px 2px 0px
+            font-size: 16px
+            font-weight: bold
+        .votecount
+          @extend .counter
+          border: solid 1px white
+        .answercount-none
+          @extend .counter
+          border: solid 1px $grayBorder
+        .answercount
+          @extend .counter
+          background-color: $blue
+          background-image: url("/images/meltdown-sidebar-bg.png")
+          background-repeat: repeat-x
+          border: solid 1px $grayBorder
+        .answercount-accepted
+          @extend .counter
+          background-color: $green
+          background-image: url("/images/meltdown-green-bg.png")
+          background-repeat: repeat-x
+          border: solid 1px $grayBorder
+          .count
+            color: $hibiscus
+        .viewcount
+          @extend .counter
+          border: solid 1px white
+
+      .summary
+        padding: 5px 0px 5px 0px
+        width: 480px
+        margin-left: 10px
+        float: left
+        p
+          margin-bottom: 10px
+          color: $anthracite
+        .user-data
+          padding: 3px 0px 0px 0px
+          float: right
+          i
+            margin: 0px
+          a
+            color: $hibiscus
+          .timeago
+            font-weight: bold
+            font-size: 11px
+            color: $navText
+            .normal
+              font-weight: normal
+          .reputation
+            font-size: 13px
+            font-weight: bold
+          .owner, .mod, .editor
+            font-size: 16px
+        .user-data.left
+          width: 210px
+        h2
+          padding-left: 0px
+          background: none
+          a
+            font-family: $helvetica
+            font-size: 15px
+            font-weight: bold
+            color: $hibiscus
+            display: inline
+          a:hover
+            color: $hibiscus
+            border-bottom: 1px dotted $hibiscus
+
+      .tags
+        clear: none
+        display: inline
+        margin: 0px
+        ul
+          li
+            background-color: $silver
+            background-image: url("/images/meltdown-nav-current-bg.png")
+            background-repeat: repeat-x
+            color: $navText
+            border: solid 1px $grayBorder
+            padding: 4px 6px
+            margin: 0px 5px 5px 0px
+            a
+              color: $navText
+              margin: 0px
+              &:hover
+                border-bottom: none
+            &:hover
+              background: $anthracite
+              background-image: url("/images/meltdown-nav-bg.png")
+              background-repeat: repeat-x
+              border-bottom: none
+              color: white
+              a
+                color: white
+
+      .toolbar
+        clear: none
+
+    article.full
+      .counters
+        padding: 0px 10px 0px 0px
+        .counter
+          float: none
+        .viewcount
+          .count
+            font-size: 12px
+      .summary
+        width: 600px
+
+    #full_list
+      padding: 25px 15px 25px 15px
+      font-size: 15px
+      font-family: $helvetica
+      font-weight: bold
+      a
+        color: $hibiscus
+        font-weight: bold
+      a:hover
+        color: $hibiscus
+        font-weight: bold
+        border-bottom: 1px dotted $hibiscus
+
+
+

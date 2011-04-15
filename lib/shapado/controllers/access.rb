@@ -18,6 +18,9 @@ module Shapado
 
         if logged_in?
           if !current_user.user_of?(@current_group)
+            if cookie = cookie[:accept_invitation]
+              current_user.accept_invitation(cookie)
+            end
             raise Goalie::Forbidden
           end
         else
@@ -60,11 +63,28 @@ module Shapado
       end
 
       def after_sign_in_path_for(resource)
-        if return_to = session.delete("return_to")
-          return_to
-        else
-          super
+        if current_user.admin?
+          Jobs::Activities.async.on_admin_connect(request.remote_ip, current_user.id).commit!
         end
+        if current_user.facebook_login? && current_user.facebook_friends.empty?
+          Jobs::Users.async.get_facebook_friends(current_user.id).commit!
+        end
+        if current_user.twitter_login? && current_user.twitter_friends.empty?
+          Jobs::Users.async.get_twitter_friends(current_user.id).commit!
+        end
+        if current_user.identica_login? && current_user.identica_friends.empty?
+          Jobs::Users.async.get_identica_friends(current_user.id).commit!
+        end
+        if current_user.linked_in_login? && current_user.linked_in_friends.empty?
+          Jobs::Users.async.get_linked_in_friends(current_user.id).commit!
+        end
+        '/close_popup.html'
+        #return
+        #if return_to = session.delete("return_to")
+        #  return_to
+        #else
+        #  super
+        #end
       end
     end
   end
