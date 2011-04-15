@@ -1,27 +1,19 @@
 // ========================================================================
-//    Document   	:   _setup.sass
-//    Created on 	:   Nov14 - 2010, 20:29 pm
-//    Author      	:   @dgfrancisco
-//    Client     		:   Shapado
-//    Description	:   Variables y set up basico del portal, estas variables podran ser
-//    						cambiadas en pro de modificar colores, fuentes etc
+//    Document     :   _setup.sass
+//    Created on   :   Nov14 - 2010, 20:29 pm
+//    Author       :   @dgfrancisco
+//    Client       :   Shapado
+//    Description	 :   Variables y set up basico del portal, estas variables podran ser
+//                     cambiadas en pro de modificar colores, fuentes etc
 //========================================================================
+
 
 //  FONTS
 //========================================================================
 // Sans Serif
-$geneva: geneva, tahoma, "dejavu sans condensed", sans-serif
-$helvetica: "helvetica neue", helvetica, arial, freesans, "liberation sans", "numbus sans l", sans-serif
-$lucida: "lucida grande", "lucida sans unicode", "lucida sans", lucida, sans-serif
-$verdana: verdana, "bitstream vera sans", "dejavu sans", "liberation sans", geneva, sans-serif
-$trebuchet: 'trebuchet ms', verdana, sans-serif
-$arial: arial, verdana, "bitstream vera sans", "dejavu sans", "liberation sans", geneva, sans-serif
-
+$Arial: Arial, Helvetica, sans-serif
 // Serif
-$georgia: georgia, "bitstream charter", "century schoolbook l", "liberation serif", times, serif
-$palatino: "palatino linotype", palatino, palladio, "urw palladio l", "book antiqua", "liberation serif", times, serif
-$times: times, "times new roman", "nimbus roman no9 l", freeserif, "liberation serif", serif
-
+$Georgia: Georgia, "Times New Roman", Times, serif
 // Monospace
 $courier: "courier new", courier, freemono, "nimbus mono l", "liberation mono", monospace
 $monaco: monaco, "lucida console", "dejavu sans mono", "bitstream vera sans mono", "liberation mono", monospace
@@ -43,15 +35,16 @@ $text-shadow: 0 1px 1px #000
 //  COLORS
 //========================================================================
 // General site colors
-
+$dark: #404040
+$gray: #aaa
 $lightGray: #f2f2f2
 
-$orange: #E07200
-$lightOrange: #ffebdd
+$orange: #ee681f
+$lightOrange: #fffbeb
 $darkOrange: #d05800
 
 $blue: #00a9b2
-$lightBlue: #caedef
+$lightBlue: #eef7f8
 $darkBlue: #019199
 
 $red: #f00
@@ -63,56 +56,12 @@ $link_color: $orange
 $hover_color: $darkOrange
 $active_color: $orange
 
-$highlightBg: #FFFF51
-$highlightFg: #000000
-
-// MELTDOWN
-//========================================================================
-
-$blue: #dcedf7
-$blueBorder: #5ec5ed
-$grayBorder: #e5e5e5
-$silver: #e7e6e5
-$anthracite: #6f7072
-$navBorder: #8cd4f1
-$navCurrentBorder: #009fd3
-$navText: #717274
-
-//$green: #578719
-//$green: #9AC059
-//$green: #687339
-
-$green: #e3f195
-
-$hibiscus: #e75113
-
-$peach: #ffeed7
-$red: #8A1503
-$darkRed: #6C1B17
-
-// Original colors
-$dark: $anthracite
-$gray: #aaa
-
-//  DEFAULT BODY STYLES
-//========================================================================
-$background: $blue
-$font-family: $arial
-$font-size: $medium
-$color: $anthracite
-
-//  FANCY VIEW FOR HTML TAGS
+//  FANCY VIEW - CSS3
 //========================================================================
 // Quickly outline any tag for debug purposes
 =o
   background: rgba(255, 0, 0, 0.15) !important
   outline: 1px solid red !important
-
-// Cross browser box model resizing
-=box-sizing($box-sizing)
-  -moz-box-sizing: $box-sizing
-  -webkit-box-sizing: $box-sizing
-  box-sizing: $box-sizing
 
 // Cross browser opacity
 =opacity($opacity)

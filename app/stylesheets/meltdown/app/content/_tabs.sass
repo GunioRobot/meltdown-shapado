@@ -1,20 +1,62 @@
-// ========================================================================
-//    Document   	:   _action-tabs.sass
-//    Created on 	:   Nov16 - 2010, 21:06 pm
-//    Author      	:   @dgfrancisco
-//    Client     		:   Shapado
-//    Description	:   Estilos para los tabs de contenido con sus filtros
-//========================================================================
-
-// MAIN CONTENT - Questions
-//========================================================================
 #main-content-wrap
+  border: none
+  margin: 0px
+  nav
+    border-bottom: 1px solid $grayBorder
+    h1
+      float: left
+      font-size: 16px
+      font-weight: bold
+      color: $navText
+      vertical-align: bottom
+      line-height: 35px
+      padding: 0px
+      margin: 0px
+  ul.content-tabs
+    float: right
+    border-bottom: none
+    background: none
+    height: 35px
+    position: relative
+    top: 1px
+    li
+      margin: 6px 5px 0px 5px
+      border: solid 1px transparent
+      a
+        font-size: 13px
+        padding: 7px 13px 7px 13px
+        color: $navText
+        background: none
+        border: none
+        text-transform: none
+        &:hover
+          color: $navText
+          background: none
+    li:hover
+      border: solid 1px $grayBorder
+      border-bottom: solid 1px white
+    li.active
+      margin: 3px 5px 0px 5px
+      border: solid 1px $grayBorder
+      border-bottom: solid 1px white
+      a
+        padding: 10px 13px 7px 13px
+        color: $navText
+        font-weight: bold
+    li.answers
+      a
+        background: none
+    li.unanswered
+      a
+        background: none
+    li.activity
+      a
+        background: none
   section
-    width: 100%
     article
       border-bottom: 1px dotted $gray
       padding: 10px 8px
-      color: #666
+
       .counters
         float: left
         padding: 0px 0px 0px 0px
@@ -65,16 +107,10 @@
         .user-data
           padding: 3px 0px 0px 0px
           float: right
-          font-size: 12px
-          margin: 0 0 10px 20px
+          i
+            margin: 0px
           a
             color: $hibiscus
-          a:hover
-            border-bottom: 1px dotted
-          i
-            font-size: 10px
-            font-style: italic
-            margin: 0 0px 0 0
           .timeago
             font-weight: bold
             font-size: 11px
@@ -89,73 +125,48 @@
         .user-data.left
           width: 210px
         h2
-          font-size: 15px
-          font-family: $helvetica
-          margin: 0 0 10px 0
+          padding-left: 0px
+          background: none
           a
-            color: $hibiscus
+            font-family: $helvetica
+            font-size: 15px
             font-weight: bold
+            color: $hibiscus
+            display: inline
           a:hover
             color: $hibiscus
             border-bottom: 1px dotted $hibiscus
-        .tags
-          ul
-            li
-              float: left
-              display: inline
-              font-size: 11px
-              background-color: $silver
-              background-image: url("/images/meltdown-nav-current-bg.png")
-              background-repeat: repeat-x
-              color: $navText
-              border: solid 1px $grayBorder
-              padding: 4px 6px
-              margin: 0px 5px 5px 0px
-              a
-                color: $navText
-              &:hover
-                background: $anthracite
-                background-image: url("/images/meltdown-nav-bg.png")
-                background-repeat: repeat-x
-                color: white
-                a
-                  color: white
 
-        .toolbar
-          display: block
-          ul
-            li.answers, li.votes, li.followers
-              float: left
-              margin-right: 5px
-              margin-left: 0
-              form
-                float: left
-                margin: 0 4px 0 0
+      .tags
+        clear: none
+        display: inline
+        margin: 0px
+        ul
+          li
+            background-color: $silver
+            background-image: url("/images/meltdown-nav-current-bg.png")
+            background-repeat: repeat-x
+            color: $navText
+            border: solid 1px $grayBorder
+            padding: 4px 6px
+            margin: 0px 5px 5px 0px
+            a
+              color: $navText
+              margin: 0px
+              &:hover
+                border-bottom: none
+            &:hover
+              background: $anthracite
+              background-image: url("/images/meltdown-nav-bg.png")
+              background-repeat: repeat-x
+              border-bottom: none
+              color: white
               a
-                background: #fff url("/images/ans-icon-small-light.gif") 0 1px  no-repeat
-                margin: 0
-                padding: 0 0 0 20px
-                font-size: 12px
-              a:hover
-                background-color: #fff
-                color: #000
-            li.votes
-              a
-                background: none
-                padding: 0
-            li
-              float: right
-              display: inline
-              margin-left: 5px
-              a
-                +small-radius
-                color: #666
-                padding: 3px 7px
-                font-size: 11px
-                background-color: #e5e5e5
-              a:hover
-                background-color: #ccc
-                color: #000
+                color: white
+
+      .toolbar
+        clear: none
+
     article.full
       .counters
         padding: 0px 10px 0px 0px
@@ -166,6 +177,7 @@
             font-size: 12px
       .summary
         width: 600px
+
     #full_list
       padding: 25px 15px 25px 15px
       font-size: 15px
@@ -178,3 +190,6 @@
         color: $hibiscus
         font-weight: bold
         border-bottom: 1px dotted $hibiscus
+
+
+
