@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  ads: 
+id:
+  ads:
     ad_links: Tambahkan iklan jenis %{type} yang baru
-    create: 
+    create:
       success: Iklan berhasil dibuat.
-    index: 
+    index:
       add_adbard: Tambahkan iklan Ad Bard yang baru
       add_adsense: Tambahkan iklan Google AdSense yang baru
       title: Iklan

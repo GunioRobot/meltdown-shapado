@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  activerecord: 
-    attributes: 
-      question: 
+da:
+  activerecord:
+    attributes:
+      question:
         answers: Svar
         asked_by: Stillet af
         body: Brødtekst
@@ -18,27 +18,27 @@ da:
         updated_by: opdateret ad
         views: Visninger
         votes: Stemmer
-    models: 
+    models:
       question: Spørgsmål
       questions: Spørgsmål
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: Tilføj kommentar...
       flag: Anmeld
       pick_answer: Vælg som løsning
       unset_answer: Uset løsning?
-    create: 
+    create:
       flash_notice: Spørgsmålet blev opdateret.
-    edit: 
+    edit:
       title: Redigerer spørgsmål
-    flag: 
+    flag:
       title: Andmeld spørgsmål
-    form: 
+    form:
       adult_content: Dette spørgsmål indeholder voksen materiale.
       body_tip: Hvad er dit spørgsmål? Være beskrivende.
       language_tip: Vælg det sprog, spørgsmålet er stillet i.
       tags_tip: Brug tags til at tilføje mere information til dit spørgsmål.
-    index: 
+    index:
       active: Aktiv
       active_tooltip: Spørgsmål der er blevet opdateret for nylig
       ask_question: Stil spørgsmål
@@ -53,42 +53,42 @@ da:
       unanswered_questions: Ubesvarede spørgsmål
       votes: Stemmer
       votes_tooltip: Spørgsmål med flest stemmer
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: Beklager, du skal bruge mindst en tag.
         title_too_long: Titlen er for lang. Det bør ikke indeholde mere end 100 tegn.
         too_many_tags: Du kan desværre kun indtaste 9 tags maksimum.
         too_short: Forekommer at være for kort. Brug venligst mere end %{count} ord for at være mere specifik.
-    move: 
+    move:
       group_label: "Flyt til gruppen med slug:"
       submit: Flyt!
       title: "Flyt spørgsmål: %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: Gruppen %{group} eksisterer ikke
       success: Spørgsmål flyttet til %{group}
-    new: 
+    new:
       how_to_ask: Hvordan man stiller et spørgsmål
       title: Stil spørgsmål
-    question: 
+    question:
       accepted_tooltip: Dette spørgsmål har et svar, der er blevet accepteret
-    retag: 
+    retag:
       title: Gen-tag
-    retag_form: 
+    retag_form:
       cancel: Annuller
       submit: Opdater tags!
       title: Opdater tags
-    retag_to: 
+    retag_to:
       failure: Beklager, tags kunne ikke blive opdateret.
       success: Tags er blevet opdateret.
-    revert: 
+    revert:
       title: Fortryd spørgsmål
-    shared: 
+    shared:
       flag: Anmeld
-    show: 
+    show:
       accepted_tooltip: Et af svarene blev accepteret som det korrekte svar.
       another_answers: Andre svar
       answers: Svar
-      answers_title: 
+      answers_title:
         one: "%{count} svar"
         other: "%{count} svar"
       asked_on: spurgte på
@@ -120,23 +120,23 @@ da:
       unwatch_tooltip: Stop med at holde øje med dette spørgsmål
       viewed: set
       watch_tooltip: Hold øje med dette spørgsmål
-    solve: 
+    solve:
       flash_notice: Spørgsmålet var løst.
-    tags: 
+    tags:
       filter: Søg efter tags
       title: Tags
       tooltip: Vis spørgsmål tagged %{tag}
-    unanswered: 
+    unanswered:
       empty: Denne gruppe har ingen ubesvarede spørgsmål.
       expert: Eksperter
       my_tags: Mine tags
       tags: Ubesvarede tags
       title: Ubesvarede spørgsmål
-    unsolve: 
+    unsolve:
       flash_notice: Spørgsmålet er ikke løst længere.
-    unwatch: 
+    unwatch:
       success: Du vil ikke modtage meddelelser via e-mail for hvert nyt svar på dette spørgsmål mere.
-    update: 
+    update:
       flash_notice: Spørgsmålet blev opdateret.
-    watch: 
+    watch:
       success: Du vil nu modtage meddelelser via e-mail for hvert nyt svar på dette spørgsmål.

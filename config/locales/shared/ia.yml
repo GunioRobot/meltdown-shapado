@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: McDutchie
-ia: 
-  shared: 
-    current_tags: 
+ia:
+  shared:
+    current_tags:
       title: Etiquettas seligite
-    topbar: 
+    topbar:
       admin: Admin
       logged_as: Authenticate como %{login}
       user_page: Mi pagina

@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  activerecord: 
-    models: 
+id:
+  activerecord:
+    models:
       favorite: Kesukaan
       favorites: Kesukaan
-  favorites: 
-    create: 
+  favorites:
+    create:
       success: Pertanyaan telah ditambahkan ke kesukaan Anda
       unauthenticated: Anda perlu mendaftarkan akun untuk menambahkan kesukaan

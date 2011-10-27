@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Naudefj
-af: 
-  activerecord: 
-    attributes: 
-      announcement: 
+af:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Eindig om
         message: Boodskap
         only_anonymous: Slegs vir anonieme gebruikers
         starts_at: Begin om
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Skrap
       title: Aksies
-    create: 
+    create:
       success: Aankondiging is gemaak.
-    index: 
+    index:
       title: Aankondigings

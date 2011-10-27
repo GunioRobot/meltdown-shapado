@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Centerlink
 # Author: Nike
-fi: 
-  activerecord: 
-    attributes: 
-      question: 
+fi:
+  activerecord:
+    attributes:
+      question:
         answers: Vastaukset
         asked_by: "Kysytty:"
         body: Runko
@@ -19,27 +19,27 @@ fi:
         updated_by: "päivitetty:"
         views: Luettu
         votes: Äänet
-    models: 
+    models:
       question: Kysymys
       questions: Kysymykset
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: Lisää kommentti...
       flag: Merkintä
       pick_answer: Valitse ratkaisuna
       unset_answer: Asettamaton ratkaisu?
-    create: 
+    create:
       flash_notice: Kysymyksen luonti onnistui.
-    edit: 
+    edit:
       title: Muokataan kysymystä
-    flag: 
+    flag:
       title: Merkitse kysymys
-    form: 
+    form:
       adult_content: Tämä kysymys sisältää aikuisille tarkoitettua aineistoa.
       body_tip: Mikä on kysymys? Ole kuvaileva.
       language_tip: Valitse kieli, jolla kysymys esitetään.
       tags_tip: Tarkenna kysymyksesi alaa lisäämällä siihen tunnisteita.
-    index: 
+    index:
       active: Käytössä
       active_tooltip: Kysymykset, jotka on päivitetty äskettäin
       ask_question: Kysy kysymys
@@ -54,42 +54,42 @@ fi:
       unanswered_questions: Vastaamattomat kysymykset
       votes: Äänet
       votes_tooltip: Kysymykset, joilla on eniten ääniä
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: Anteeksi, sinun täytyy käyttää vähintään yhtä tunnistetta.
         title_too_long: Otsikko on liian pitkä. Sen ei pitäisi olla enempää kuin 100 merkkiä.
         too_many_tags: Voin valitettavasti kirjoittaa vain enintään 9 tunnistetta.
         too_short: Tuntuu liian lyhyeltä. Käytä yli %{count} sanaa ollaksesi tarkempi.
-    move: 
+    move:
       group_label: Siirrä luettelomerkillä varustettuun ryhmään
       submit: Siirrä!
       title: "Siirrä kysymys: %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: Ryhmä %{group} ei ole olemassa
       success: Kysymys siirretty ryhmään %{group}
-    new: 
+    new:
       how_to_ask: Kuinka kysyä
       title: Kysy kysymys
-    question: 
+    question:
       accepted_tooltip: Tällä kysymyksellä on  vastaus, joka on hyväksytty
-    retag: 
+    retag:
       title: Uudelleenmerkintä
-    retag_form: 
+    retag_form:
       cancel: Peru
       submit: Päivitä tunnisteet!
       title: Päivitä tunnisteet!
-    retag_to: 
+    retag_to:
       failure: Tunnisteita ei voitu valitettavasti päivittää.
       success: Tunnisteiden päivitys onnistui.
-    revert: 
+    revert:
       title: Palauta kysymys
-    shared: 
+    shared:
       flag: Merkintä
-    show: 
+    show:
       accepted_tooltip: Yksi vastauksista hyväksyttiin oikeana vastauksena.
       another_answers: Muut vastaukset
       answers: Vastaukset
-      answers_title: 
+      answers_title:
         one: "%{count} vastaus"
         other: "%{count} vastausta"
       asked_on: pyysivät
@@ -121,23 +121,23 @@ fi:
       unwatch_tooltip: Lopeta tämän kysymyksen katsominen
       viewed: katsottu
       watch_tooltip: Tarkkaile tätä kysymystä
-    solve: 
+    solve:
       flash_notice: Kysymys oli ratkaistu.
-    tags: 
+    tags:
       filter: Hae tunnisteita
       title: Tunnisteet
       tooltip: Näytä kysymykset tunnisteella %{tag}
-    unanswered: 
+    unanswered:
       empty: Tässä ryhmässä ei ole vastaamattomia kysymyksiä.
       expert: Asiantuntijat
       my_tags: Omat tunnisteet
       tags: Vastaamattomat tunnisteet
       title: Vastaamattomat kysymykset
-    unsolve: 
+    unsolve:
       flash_notice: Kysymystä ei enää ratkaista.
-    unwatch: 
+    unwatch:
       success: Et saa enää ilmoituksia sähköpostitse jokaisesta uudesta vastauksesta tähän kysymykseen.
-    update: 
+    update:
       flash_notice: Kysymyksen päivitys onnistui.
-    watch: 
+    watch:
       success: Saat nyt ilmoituksia sähköpostitse jokaisesta uudesta vastauksesta tähän kysymykseen.

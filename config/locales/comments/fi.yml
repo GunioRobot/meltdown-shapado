@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  comments: 
-    create: 
+fi:
+  comments:
+    create:
       flash_notice: Kiitoksia kommentistasi
-    edit: 
+    edit:
       title: Muokkaa kommenttia
-    shared: 
+    shared:
       add_comment: Lisää kommentti...
       comment_submit: Kommentti
       reply: Vastaus
       said: sanoi
-    update: 
+    update:
       flash_notice: Kommentti päivitettiin onnistuneesti.
-  models: 
+  models:
     comment: Kommentti
     comments: Kommentit

@@ -3,148 +3,148 @@
 # Export driver: syck
 # Author: Deneb
 # Author: Giallu
-it: 
-  activerecord: 
-    models: 
+it:
+  activerecord:
+    models:
       badge: Badge
       badges: Badge
-  badges: 
-    index: 
+  badges:
+    index:
       description: Tutti i badge che si possono guadagnare. Condividi le tue conoscenze, guadagna badge.
       title: badge
-    shared: 
-      addict: 
+    shared:
+      addict:
         description: Ha visitato il sito ogni giorno per 20 giorni consecutivi
         name: Maniaco
-      autobiographer: 
+      autobiographer:
         description: Completati tutti i campi del profilo utente
         name: Autobiografo
-      celebrity: 
+      celebrity:
         description: Raggiunti più di 100 follower
         name: Celebrità
-      citizen_patrol: 
+      citizen_patrol:
         description: Primo post segnalato
         name: Pattuglia cittadina
-      civic_duty: 
+      civic_duty:
         description: Votato 300 volte
         name: Dovere civico
-      cleanup: 
+      cleanup:
         description: Primo rollback
         name: Pulizia
-      commentator: 
+      commentator:
         description: Lasciati 10 commenti
         name: Commentatore
-      critic: 
+      critic:
         description: Votato negativamente per la prima volta
         name: Critico
-      disciplined: 
+      disciplined:
         description: Cancellato post proprio con punteggio di 3 o superiore
         name: Disciplinato
-      editor: 
+      editor:
         description: Primo messaggio modificato
         name: Correttore
-      effort_medal: 
+      effort_medal:
         description: Ha ottenuto 100 voti positivi
         name: Medaglia all'impegno
-      enlightened: 
+      enlightened:
         description: La prima risposta è stata accettata con almeno 10 voti positivi
         name: Illuminato
-      famous_question: 
+      famous_question:
         description: Ha posto una domanda con 10000 visualizzazioni
         name: Domanda famosa
-      fanatic: 
+      fanatic:
         description: Ha visitato il sito ogni giorno per 100 giorni consecutivi
         name: Fanatico
-      favorite_question: 
+      favorite_question:
         description: Domanda preferita da 25 utenti
         name: Domanda preferita
-      friendly: 
+      friendly:
         description: Segui qualcuno per la prima volta
         name: Amichevole
-      good_answer: 
+      good_answer:
         description: Avere una risposta che raggiunge una media di più di 25 voti
         name: Buona risposta
-      good_question: 
+      good_question:
         description: Avere una domanda che raggiunge una media di più di 25 voti
         name: Buona domanda
-      great_answer: 
+      great_answer:
         description: Risposta votata 100 volte
         name: Ottima risposta
-      great_question: 
+      great_question:
         description: Domanda votata positivamente 100 volte
         name: Grande domanda
-      guru: 
+      guru:
         description: Ha dato una soluzione ad una domanda con una media di più di 40 voti
         name: Guru
-      inquirer: 
+      inquirer:
         description: Domandato per la prima volta
         name: Indagatore
-      interesting_person: 
+      interesting_person:
         description: Raggiunti più di 10 follower
         name: Persona interessante
-      merit_medal: 
+      merit_medal:
         description: Ha ottenuto 200 voti positivi
         name: Medaglia al merito
-      necromancer: 
+      necromancer:
         description: Risposto ad una domanda più di 60 giorni dopo con almeno 5 voti
         name: Necromante
-      nice_answer: 
+      nice_answer:
         description: Risposta votata positivamente 10 volte
         name: Bella risposta
-      nice_question: 
+      nice_question:
         description: Domanda votata 10 volte
         name: Bella domanda
-      notable_question: 
+      notable_question:
         description: Ha posto una domanda con 2500 visualizzazioni
         name: Domanda nota
-      organizer: 
+      organizer:
         description: Primo retag
         name: Organizzatore
-      peer_pressure: 
+      peer_pressure:
         description: Cancellato post proprio con punteggio di -3 o inferiore
         name: Sotto pressione
-      pioneer: 
+      pioneer:
         description: Essere uno dei primi utenti registrati
         name: Pioniere
-      popstar: 
+      popstar:
         description: 500 voti positivi, 10 voti negativi al massimo
         name: Popstar
-      popular_person: 
+      popular_person:
         description: Raggiunti più di 50 follower
         name: Persona popolare
-      popular_question: 
+      popular_question:
         description: Ha posto una domanda con 1000 visualizzazioni
         name: Domanda popolare
-      rockstar: 
+      rockstar:
         description: 1000 voti positivi, al massimo 10 voti negativi
         name: Rockstar
-      scholar: 
+      scholar:
         description: Prima risposta accettata ad una propria domanda
         name: Studioso
-      self-learner: 
+      self-learner:
         description: Risposto alla propria domanda con almeno 3 voti
         name: Autodidatta
-      service_medal: 
+      service_medal:
         description: 300 voti positivi
         name: Medaglia al servizio
-      shapado: 
+      shapado:
         description: Ha visitato il sito ogni giorno per 8 giorni consecutivi
-      stellar_question: 
+      stellar_question:
         description: Domanda aggiunta ai preferiti da 100 utenti
         name: Domanda stellare
-      student: 
+      student:
         description: Prima domanda fatta con almeno un voto positivo
         name: Allievo
-      supporter: 
+      supporter:
         description: Votato positivamente per la prima volta
         name: Sostenitore
-      troubleshooter: 
+      troubleshooter:
         description: Risposto per la prima volta
         name: Risolutore
-      tutor: 
+      tutor:
         description: Ha dato una soluzione a un problema con una media di oltre 2 voti
         name: Tutor
-    show: 
+    show:
       description: "Utenti che hanno meritato questo badge. Premiato recentemente:"
       earned: guadagnato
       for_tag_bronze: 200 voti in tag %{tag}

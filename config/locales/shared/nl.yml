@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Siebrand
-nl: 
-  shared: 
-    current_tags: 
+nl:
+  shared:
+    current_tags:
       title: Geselecteerde labels
-    topbar: 
+    topbar:
       admin: Beheer
       logged_as: Aangemeld als %{login}
       user_page: Mijn pagina

@@ -3,9 +3,9 @@
 # Export driver: syck
 # Author: Fulup
 # Author: Y-M D
-br: 
-  layouts: 
-    application: 
+br:
+  layouts:
+    application:
       ask_question: Goulenn un dra bennak
       badges: Badjoù
       forgot: Disoñjet ?
@@ -17,7 +17,7 @@ br:
       manage_ads: Merañ ar bruderezh
       moderate: Habaskaat
       now: bremañ !
-      openid: 
+      openid:
         explaination: "Mar fell deoc'h en em enskrivañ pe kevreañ traken, dibabit ur pourvezer openid :"
       pages: Pajennoù
       questions: Goulennoù
@@ -32,7 +32,7 @@ br:
       unanswered: Direspontet
       users: Implijerien
       welcome_from: Degemer mat ! Gouest oc'h
-    manage: 
+    manage:
       actions: Oberoù
       announcements: Kemennoù
       constrains: Strishadurioù
@@ -48,5 +48,5 @@ br:
       stats: Stadegoù
       theme: Tem
       widgets: Bitrakoù
-    notifications: 
+    notifications:
       message: Ma ne fell ket deoc'h resevout kemennoù emgefre %{group}, e c'hellit kemmañ ho kefluniadurioù kemennoù.

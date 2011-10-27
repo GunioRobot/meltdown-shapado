@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Hamilton Abreu
-pt-PT: 
-  activerecord: 
-    attributes: 
-      announcement: 
+pt-PT:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Termina a
         message: Mensagem
         only_anonymous: Só para utilizadores anónimos
         starts_at: Inicia a
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Remover
       title: Acções
-    create: 
+    create:
       success: A notificação do site foi criada.
-    index: 
+    index:
       title: Notificações do site

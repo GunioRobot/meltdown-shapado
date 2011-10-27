@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Peter17
-fr: 
-  ads: 
+fr:
+  ads:
     ad_links: Ajouter une nouvelle annonce %{type}
-    create: 
+    create:
       success: L’annonce a été créée avec succès.
-    index: 
+    index:
       add_adbard: Ajouter une nouvelle annonce adbard
       add_adsense: Ajouter une nouvelle annonce Google AdSense
       title: Annonces

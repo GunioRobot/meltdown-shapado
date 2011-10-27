@@ -2,31 +2,31 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  activerecord: 
-    attributes: 
-      flag: 
+fi:
+  activerecord:
+    attributes:
+      flag:
         reason: Syy
-    models: 
+    models:
       flag: Merkintä
       flags: Merkinnät
-  flags: 
-    create: 
+  flags:
+    create:
       flash_error: Et voi merkitä tätä
       flash_notice: Kiitoksia ilmoituksestasi
-    destroy: 
+    destroy:
       flash_notice: Merkintäsi on peruutettu onnistuneesti.
-    edit: 
+    edit:
       title: Muokkaa kohteen %{model} merkintää
-    form: 
+    form:
       attention: Edellyttää valvojan huomiota
       label: Merkitse huolella
       offensive: Loukkaava, herjaava tai vihapuhe
       spam: Roskaposti
-    model: 
-      messages: 
+    model:
+      messages:
         already_requested: Olet jo merkinnyt tämän %{model}
-    new: 
+    new:
       title: Merkitse %{model}
-    update: 
+    update:
       flash_notice: Kysymysmerkintä päivitettiin onnistuneesti.

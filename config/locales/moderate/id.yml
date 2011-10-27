@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  admin: 
-    moderate: 
-      index: 
+id:
+  admin:
+    moderate:
+      index:
         all: Semua
         ban: Larang
         banned: Pertanyaan terlarang

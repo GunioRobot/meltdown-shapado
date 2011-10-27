@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  comments: 
-    create: 
+id:
+  comments:
+    create:
       flash_notice: Terima kasih atas komentar Anda
-    edit: 
+    edit:
       title: Sunting komentar
-    shared: 
+    shared:
       add_comment: Menambahkan komentar...
       comment_submit: Komentar
       reply: Balas
       said: berkata
-    update: 
+    update:
       flash_notice: Komentar berhasil dimutakhirkan.
-  models: 
+  models:
     comment: Komentar
     comments: Komentar

@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Ahmed-Najib-Biabani-Ibrahimkhel
-ps: 
-  ads: 
+ps:
+  ads:
     ad_links: يوه نوې %{type} خبرتيا ورګډول
-    create: 
+    create:
       success: خبرتيا په برياليتوب سره جوړه شوه.
-    index: 
+    index:
       title: خبرتياوې
     name: "نوم:"
     title: يوه نوې %{type} خبرتيا ورګډول

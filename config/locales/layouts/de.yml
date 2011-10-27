@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Kghbln
-de: 
-  layouts: 
-    application: 
+de:
+  layouts:
+    application:
       ask_question: Frage stellen
       badges: Abzeichen
       forgot: Vergessen?
@@ -16,7 +16,7 @@ de:
       manage_ads: Anzeigen verwalten
       moderate: Moderieren
       now: jetzt!
-      openid: 
+      openid:
         explaination: "Sofern Du Dich nicht registrieren oder anmelden möchtest, kannst Du auch Deinen OpenID-Anbieter auswählen:"
       pages: Seiten
       questions: Fragen
@@ -31,7 +31,7 @@ de:
       unanswered: Unbeantwortet
       users: Nutzer
       welcome_from: Herzlich Willkommen! Du kannst
-    manage: 
+    manage:
       actions: Aktionen
       announcements: Ankündigungen
       constrains: Voraussetzungen
@@ -47,5 +47,5 @@ de:
       stats: Statistiken
       theme: Theme
       widgets: Widgets
-    notifications: 
+    notifications:
       message: Sofern Du keine automatischen Benachrichtigungen mehr von %{group} erhalten möchtest, musst Du Deine Einstellungen auf der Benachrichtigungsseite ändern. Siehe

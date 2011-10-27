@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Discon
-el: 
-  activerecord: 
-    attributes: 
-      member: 
+el:
+  activerecord:
+    attributes:
+      member:
         role: Ρόλος
-  members: 
-    form: 
+  members:
+    form:
       login_tip: Αναζήτηση κατά την πληκτρολόγηση
-    index: 
+    index:
       manage_members_title: Διαχείριση μελών
       title: Μέλη της ομάδας %{name}
       title_isolate: Μέλη της ομάδας %{name}

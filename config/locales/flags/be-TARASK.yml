@@ -3,31 +3,31 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Jim-by
-be-TARASK: 
-  activerecord: 
-    attributes: 
-      flag: 
+be-TARASK:
+  activerecord:
+    attributes:
+      flag:
         reason: Прычына
-    models: 
+    models:
       flag: Сьцяг
       flags: Сьцягі
-  flags: 
-    create: 
+  flags:
+    create:
       flash_error: Вы ня можаце пазначыць гэта
       flash_notice: Дзякуй за Вашае паведамленьне
-    destroy: 
+    destroy:
       flash_notice: Ваш сьцяг быў пасьпяхова адкліканы.
-    edit: 
+    edit:
       title: Рэдагаваць сьцяг %{model}
-    form: 
+    form:
       attention: Патрабуе ўвагу мадэратара
       label: Калі ласка, будзьце ўважлівымі падчас пазначэньня
       offensive: Агрэсія, зьнявага ці праява нянавісьці
       spam: Спам
-    model: 
-      messages: 
+    model:
+      messages:
         already_requested: Вы ўжо пазначылі гэтую %{model}
-    new: 
+    new:
       title: Метка %{model}
-    update: 
+    update:
       flash_notice: Сьцяг пытаньня быў пасьпяхова абноўлены.

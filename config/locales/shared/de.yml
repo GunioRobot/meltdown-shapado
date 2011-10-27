@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Kghbln
-de: 
-  shared: 
-    current_tags: 
+de:
+  shared:
+    current_tags:
       title: Ausgewählte Stichworte
-    topbar: 
+    topbar:
       admin: administrieren
       logged_as: Als %{login} angemeldet
       user_page: Meine Seite

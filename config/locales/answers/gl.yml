@@ -2,28 +2,28 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  activerecord: 
-    attributes: 
-      answer: 
+gl:
+  activerecord:
+    attributes:
+      answer:
         body: corpo
         created_at: respondidas
         link: ligazón
-    models: 
+    models:
       answer: resposta
       answers: respostas
-  answers: 
-    create: 
+  answers:
+    create:
       flash_error: "algo foi mal ao engadir a súa resposta. \n  lembre que: \n - non están permitidas as preguntas baleiras ou repetidas. \n - cómpre agardar 20 segundos antes de publicar outra resposta. \n - soamente pode publicar unha resposta por cada pregunta."
       flash_notice: grazas!
-    edit: 
+    edit:
       title: editando a resposta
-    form: 
+    form:
       answer_label: responder á pregunta
       comment_label: comentar esta resposta
       comment_submit: comentar
       submit: responder
-    revert: 
+    revert:
       title: reverter a resposta
-    update: 
+    update:
       flash_notice: a resposta actualizouse correctamente.

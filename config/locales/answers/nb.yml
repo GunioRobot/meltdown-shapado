@@ -2,28 +2,28 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Nghtwlkr
-nb: 
-  activerecord: 
-    attributes: 
-      answer: 
+nb:
+  activerecord:
+    attributes:
+      answer:
         body: Brødtekst
         created_at: Besvart
         link: Lenke
-    models: 
+    models:
       answer: Svar
       answers: Svar
-  answers: 
-    create: 
+  answers:
+    create:
       flash_error: "Noe gikk galt da du la til svaret ditt.\n  Husk at:\n - Tomme og gjentatte svar er ikke tillatt.\n - Du må vente 20 sekund før du poster et nytt svar.\n - Du kan bare poste ett svar per spørsmål."
       flash_notice: Takk!
-    edit: 
+    edit:
       title: Rediger svar
-    form: 
+    form:
       answer_label: Svar på spørsmålet
       comment_label: Kommenter på dette svaret
       comment_submit: Kommentar
       submit: Svar
-    revert: 
+    revert:
       title: Tilbakestill svar
-    update: 
+    update:
       flash_notice: Svaret ble oppdatert.

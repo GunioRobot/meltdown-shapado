@@ -3,9 +3,9 @@
 # Export driver: syck
 # Author: Hamilton Abreu
 # Author: Luckas Blade
-pt-PT: 
-  layouts: 
-    application: 
+pt-PT:
+  layouts:
+    application:
       ask_question: Fazer pergunta
       badges: Condecorações
       forgot: Esqueceu-se?
@@ -17,7 +17,7 @@ pt-PT:
       manage_ads: Gerir anúncios
       moderate: Moderar
       now: agora!
-      openid: 
+      openid:
         explaination: "Se pretende registar-se ou entrar, seleccione o seu fornecedor de OpenID, por favor:"
       pages: Páginas
       questions: Perguntas
@@ -32,7 +32,7 @@ pt-PT:
       unanswered: Sem resposta
       users: Utilizadores
       welcome_from: Bem-vindo(a)! Pode
-    manage: 
+    manage:
       actions: Acções
       announcements: Notificações do site
       constrains: Requisitos
@@ -48,5 +48,5 @@ pt-PT:
       stats: Estatísticas
       theme: Tema
       widgets: Widgets
-    notifications: 
+    notifications:
       message: Se não pretende voltar a receber notificações automáticas de %{group}, altere as suas preferências na página das notificações.

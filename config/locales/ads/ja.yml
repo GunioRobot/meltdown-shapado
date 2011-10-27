@@ -1,12 +1,12 @@
 # Messages for Japanese (日本語)
 # Exported from translatewiki.net
 # Export driver: syck
-ja: 
-  ads: 
+ja:
+  ads:
     ad_links: 新しい広告の追加 %{type}
-    create: 
+    create:
       success: 広告を作成しました
-    index: 
+    index:
       add_adbard: バナー広告の追加
       add_adsense: Google Adsenseの追加
       title: 広告

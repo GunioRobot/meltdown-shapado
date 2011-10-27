@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Ravichandra
 # Author: Veeven
-te: 
-  activerecord: 
-    attributes: 
-      group: 
+te:
+  activerecord:
+    attributes:
+      group:
         default_tags: అప్రమేయ ట్యాగులు
         description: వివరణ
         forum: ఒక వాడుకరిని ఒకటి కంటే ఎక్కువ జవాబులు చెప్పనివ్వు
@@ -19,26 +19,26 @@ te:
         openid_only: ఓపెన్ఐడీ ఉపయోగించే వారు మాత్రమే ఈ సైటుని చూడగలరు
         owner: ఈ గుంపుని %{login} సృష్టించారు
         registered_only: నమోదైన వాడుకరులు మాత్రమే ఈ సైటుని చూడగలరు
-    models: 
+    models:
       default_tags_message: 10 కంటే ఎక్కువ అప్రమేయ ట్యాగులు ఉండకూడదు
       group: గుంపు
       groups: గుంపులు
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: మీ గుంపుని విజయవంతంగా సృష్టించాం. మీరు ఇక దాన్ని స్వరూపించుకోవడం మొదలుపెట్టవచ్చు.
-    form: 
+    form:
       access: అందుబాటు అమరికలు
       any_language: ఏదైనా
       description_legend: మీ గుంపు గురించి 400 అక్షరాలలో వివరించండి.
       isolate_group: ఈ గుంపుని ఇతర గుంపుల నుండి వేరుచేయి
       members_only: గుంపు సభ్యులు మాత్రమే ఈ గుంపుని చూడగలరు
-    group: 
+    group:
       about: గురించి
       accept_group: ఈ గుంపుని అంగీకరించండి
       allow_ads: వ్యాపార ప్రకటనలను అనుమతించు
       close: మూసివేయి
       close_group: ఈ గుంపుని మూసివేయి
-    index: 
+    index:
       actives: క్రియాశీలం
       filter: గుంపులకై వెతకండి
       most_active: అత్యంత క్రియాశీలం
@@ -46,9 +46,9 @@ te:
       pendings: వేచివున్నవి
       request_group: ఒక కొత్త గుంపుకై అభ్యర్థించండి
       title: గుంపులు
-    new: 
+    new:
       title: మీ గుంపుని సృష్టించుకోండి
-    show: 
+    show:
       accept_group: ఈ గుంపుని అంగీకరించండి
       close_group: ఈ గుంపుని మూసివేయి
       group_closed: ఈ గుంపుని మూసేసారు.

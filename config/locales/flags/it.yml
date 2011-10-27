@@ -2,31 +2,31 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giallu
-it: 
-  activerecord: 
-    attributes: 
-      flag: 
+it:
+  activerecord:
+    attributes:
+      flag:
         reason: Motivo
-    models: 
+    models:
       flag: Segnalazione
       flags: Segnalazioni
-  flags: 
-    create: 
+  flags:
+    create:
       flash_error: Impossibile segnalare questo
       flash_notice: Grazie per la segnalazione
-    destroy: 
+    destroy:
       flash_notice: La segnalazione è stata revocata.
-    edit: 
+    edit:
       title: Modifica segnalazione %{model}
-    form: 
+    form:
       attention: Richiede controllo di un moderatore
       label: Segnala accuratamente
       offensive: Offensivo, ingiurioso o incitante all'odio
       spam: Spam
-    model: 
-      messages: 
+    model:
+      messages:
         already_requested: "%{model} già segnalato"
-    new: 
+    new:
       title: Segnala %{model}
-    update: 
+    update:
       flash_notice: La segnalazione della domanda è stata aggiornata.

@@ -3,31 +3,31 @@
 # Export driver: syck
 # Author: Lockal
 # Author: Александр Сигачёв
-ru: 
-  activerecord: 
-    attributes: 
-      flag: 
+ru:
+  activerecord:
+    attributes:
+      flag:
         reason: причина
-    models: 
+    models:
       flag: Отметка
       flags: Отметки
-  flags: 
-    create: 
+  flags:
+    create:
       flash_error: Вы не можете отметить это
       flash_notice: Благодарим за ваше сообщение
-    destroy: 
+    destroy:
       flash_notice: Ваш флаг был успешно отменён.
-    edit: 
+    edit:
       title: Изменить флаг %{model}
-    form: 
+    form:
       attention: Необходимо внимание модератора
       label: Пожалуйста, будьте внимательны при отметке
       offensive: Агрессия, оскорбление или проявление ненависти
       spam: спам
-    model: 
-      messages: 
+    model:
+      messages:
         already_requested: Вы уже отметили эту %{model}
-    new: 
+    new:
       title: Флаг %{model}
-    update: 
+    update:
       flash_notice: Флаг вопроса был успешно обновлён.

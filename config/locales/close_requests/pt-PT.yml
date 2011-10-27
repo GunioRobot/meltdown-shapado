@@ -3,15 +3,15 @@
 # Export driver: syck
 # Author: Giro720
 # Author: Hamilton Abreu
-pt-PT: 
-  close_requests: 
-    create: 
+pt-PT:
+  close_requests:
+    create:
       flash_notice: O pedido de encerramento foi criado
-    destroy: 
+    destroy:
       flash_notice: O pedido de encerramento foi eliminado
-    edit: 
+    edit:
       title: Editar pedido de encerramento
-    form: 
+    form:
       close_with_reason: Encerrar esta pergunta usando este motivo
       dupe: Duplicada
       no_question: Não é uma pergunta
@@ -19,16 +19,16 @@ pt-PT:
       ot: Está fora do tema
       request_closing_details: Pedir para encerrar esta pergunta
       spam: spam
-    index: 
+    index:
       title: Lista de pedidos de encerramento
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Comentário
         reason: motivo
         user: Utilizador
-      messages: 
+      messages:
         already_requested: Já pediu o encerramento desta pergunta
       name: Pedido de encerramento
       prural_name: Pedidos de encerramento
-    update: 
+    update:
       flash_notice: O pedido de encerramento foi actualizado

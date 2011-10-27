@@ -1,11 +1,11 @@
 # Messages for Greek (Ελληνικά)
 # Exported from translatewiki.net
 # Export driver: syck
-el: 
-  doc: 
-    chat: 
+el:
+  doc:
+    chat:
       title: Chat Support
-    plans: 
+    plans:
       15millions: 15 millions page views/month
       1million: 1 million page views/month
       247_all_support: web based, email, chat and phone 24/7 support

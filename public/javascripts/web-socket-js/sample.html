@@ -5,23 +5,23 @@
 <html><head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Sample of web_socket.js</title>
-  
+
   <!-- Include these three JS files: -->
   <script type="text/javascript" src="swfobject.js"></script>
   <script type="text/javascript" src="FABridge.js"></script>
   <script type="text/javascript" src="web_socket.js"></script>
 
   <script type="text/javascript">
-    
+
     // Set URL of your WebSocketMain.swf here:
     WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
     // Set this to dump debug message from Flash to console.log:
     WEB_SOCKET_DEBUG = true;
-    
+
     // Everything below is the same as using standard WebSocket.
-    
+
     var ws;
-    
+
     function init() {
 
       // Connect to Web Socket.
@@ -44,7 +44,7 @@
       };
 
     }
-    
+
     function onSubmit() {
       var input = document.getElementById("input");
       // You can send message to the Web Socket using ws.send.
@@ -53,11 +53,11 @@
       input.value = "";
       input.focus();
     }
-    
+
     function onCloseClick() {
       ws.close();
     }
-    
+
     function output(str) {
       var log = document.getElementById("log");
       var escaped = str.replace(/&/, "&amp;").replace(/</, "&lt;").

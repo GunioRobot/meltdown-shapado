@@ -3,15 +3,15 @@
 # Export driver: syck
 # Author: Papapep
 # Author: SMP
-ca: 
-  close_requests: 
-    create: 
+ca:
+  close_requests:
+    create:
       flash_notice: S'ha tancat la petició correctament
-    destroy: 
+    destroy:
       flash_notice: S'ha eliminat correctament la petició de tancament
-    edit: 
+    edit:
       title: Edita la petició de tancament.
-    form: 
+    form:
       close_with_reason: Tanca aquesta pregunta per aquesta raó
       dupe: Duplicat
       no_question: No és una pregunta
@@ -19,16 +19,16 @@ ca:
       ot: Fora de tema
       request_closing_details: Petició per tancar aquesta pregunta
       spam: correu brossa
-    index: 
+    index:
       title: Llistat de peticions de tancament
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Comentari
         reason: Raó
         user: Usuari
-      messages: 
+      messages:
         already_requested: Ja heu demanat el tancament d'aquesta pregunta
       name: Tanca la petició
       prural_name: Tancament de peticions
-    update: 
+    update:
       flash_notice: S'ha actualitzat correctament la petició de tancament

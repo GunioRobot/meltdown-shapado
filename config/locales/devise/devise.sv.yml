@@ -2,27 +2,27 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Tobulos1
-sv: 
-  devise: 
-    confirmations: 
+sv:
+  devise:
+    confirmations:
       confirmed: Ditt konto har bekräftats. Du är nu inloggad.
       link: Har du inte fått bekräftelseinstuktioner?
       send_instructions: Du kommer att få ett mail med instruktioner om hur du bekräftar ditt konto inom några minuter.
-    mailer: 
+    mailer:
       confirmation_instructions: Bekräftelseinstruktioner
       reset_password_instructions: Instruktioner om att återställa lösenord
       unlock_instructions: Lås instruktioner
-    passwords: 
+    passwords:
       link: Glömt lösenordet?
       send_instructions: Du kommer att få ett e-mail med instruktioner om hur du återställer ditt lösenord inom ett par minuter.
       updated: Ditt lösenord har ändrats. Du är nu inloggad.
-    registrations: 
+    registrations:
       destroyed: Hej då! Ditt konto har nu avslutats. Vi hoppas att få se dig snart igen.
       link: Skapa ett användarkonto
       signed_up: Du har registrerat dig.
       updated: Du uppdaterade ditt konto.
-    sessions: 
-      facebook_actions: 
+    sessions:
+      facebook_actions:
         sign_in: Logga in
         sign_out: Logga ut
       facebook_authenticity_token: Något gick fel. Av säkerhetsskäl måste du logga in igen.
@@ -38,7 +38,7 @@ sv:
       timeout: Din session har upphört. Du måste logga in igen för att fortsätta.
       unauthenticated: Du måste logga in eller registrera dig innan du fortsätter.
       unconfirmed: Du måste bekräfta ditt konto innan du fortsätter.
-    unlocks: 
+    unlocks:
       link: Fick du inte instruktioner om att låsa upp?
       send_instructions: Du kommer att få ett mail med instruktioner om hur du låser upp ditt konto inom några minuter.
       unlocked: Ditt konto är nu olåst. Du är nu inloggad.

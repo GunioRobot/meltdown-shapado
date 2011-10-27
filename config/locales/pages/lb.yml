@@ -2,29 +2,29 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Robby
-lb: 
-  activerecord: 
-    attributes: 
-      page: 
+lb:
+  activerecord:
+    attributes:
+      page:
         js: JavaScript
-    models: 
+    models:
       page: Säit
       pages: Säiten
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Nei Säit uleeën
       edit_page: Säit änneren
       title: Aktiounen
-    edit: 
+    edit:
       title: Säit änneren
-    form: 
+    form:
       language_tip: Sprooch vun der Säit
-    index: 
+    index:
       create_page: Nei Säit uleeën
       title: Säitelëscht
       written_in: op  %{language} geschriwwen
-    new: 
+    new:
       title: Nei Säit
     title: Verbesser mech
-    update: 
+    update:
       success: D'Säit gouf aktualiséiert.

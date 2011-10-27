@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Linkr
-ko: 
-  sessions: 
-    create: 
+ko:
+  sessions:
+    create:
       flash_error: " '%{login}'로 로그인하지 못했습니다"
       flash_notice: 성공적으로 로그인
-    destroy: 
+    destroy:
       flash_notice: 로그아웃되었습니다.
-    new: 
+    new:
       log_in: 로그인
       not_registered: 아직 등록하지 않았나요?
       registered: 이미 등록하셨나요?

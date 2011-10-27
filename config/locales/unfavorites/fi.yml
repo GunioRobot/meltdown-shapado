@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  activerecord: 
-    models: 
+fi:
+  activerecord:
+    models:
       favorite: Suosikki
       favorites: Suosikit
-  unfavorites: 
-    create: 
+  unfavorites:
+    create:
       success: Kysymys on poistettu suosikeistasi
       unauthenticated: Sinulla on oltava tili suosikin poistamiseksi

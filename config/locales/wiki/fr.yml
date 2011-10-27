@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Patcito
-fr: 
-  wiki: 
-    actions: 
+fr:
+  wiki:
+    actions:
       all_history: Revenir à l'historique
       back_to_question: Revenir à la question
       revert: Revenir à cette version
       show_diff: Comparer les versions sélectionnées
-    diff: 
+    diff:
       title: Différences entre %{prev} et %{curr}
-    history: 
+    history:
       current_version: Version actuelle
       previous_versions: Versions précédentes
       title: Historial (%{count})
       version: Version
       version_summary: Résumé de cette version
-    model: 
-      attributes: 
+    model:
+      attributes:
         message: Résumé

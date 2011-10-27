@@ -2,8 +2,8 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Bjankuloski06
-mk: 
-  feeds: 
+mk:
+  feeds:
     feed: Канал
     post_new_questions: поставај нови прашања на
     question: претплати се на прашањево
@@ -11,7 +11,7 @@ mk:
     share_on_twitter: Twitter, Facebook и повеќе...
     tag: претплати се на ознаката
     user: претплати се на кориснички прашања
-  global: 
+  global:
     active: Активирај
     anonymous: Анонимно
     by: од
@@ -24,20 +24,20 @@ mk:
     preview: преглед
     previous: претходно
     share: сподели
-  languages: 
+  languages:
     any: било кој
     user: мои претпочитани јазици
-  models: 
+  models:
     question: прашање
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} пат"
       other: "%{count} пати"
       zero: никогаш
-  pagination: 
+  pagination:
     next: Следна &raquo;
     previous: "&laquo; Претходна"
-  scaffold: 
+  scaffold:
     add: додај
     back: назад
     cancel: откажи
@@ -54,6 +54,6 @@ mk:
     show: прикажи
     sure: дали сте сигурни дека сакате да го избришете овој %{model} ?
     update: поднови
-  time: 
+  time:
     ago: пред %{time}
     today: денес

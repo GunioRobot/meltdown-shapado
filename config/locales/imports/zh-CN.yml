@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Hydra
-zh-CN: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+zh-CN:
+  imports:
+    subtabs:
+      need_confirmation:
         name: 需要确认
         title: 发送确认电子邮件

@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Hydra
-zh-CN: 
-  sessions: 
-    create: 
+zh-CN:
+  sessions:
+    create:
       flash_error: 不能将您登录为 %{login}
       flash_notice: 成功登录
-    destroy: 
+    destroy:
       flash_notice: 您已被注销。
-    new: 
+    new:
       log_in: 登录
       not_registered: 还没有注册吗？
       registered: 已注册吗？

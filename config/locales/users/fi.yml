@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Centerlink
 # Author: Nike
-fi: 
-  activerecord: 
-    attributes: 
-      user: 
+fi:
+  activerecord:
+    attributes:
+      user:
         activated_at: aktivoitu
         activation_code: Aktivointikoodi
         age: Ikä
@@ -31,11 +31,11 @@ fi:
         timezone: Aikavyöhyke
         updated_at: päivitetty
         website: Verkkosivu
-    models: 
+    models:
       user: Käyttäjä
       users: Käyttäjät
-  users: 
-    actions: 
+  users:
+    actions:
       edit_others_posts: muokata toisten kirjoituksia
       edit_wiki_post: muokata wiki-kirjoituksia
       flag: Merkintä
@@ -44,18 +44,18 @@ fi:
       vote_to_close_any_question: pyytää minkä tahansa kysymyksen sulkemista
       vote_to_close_own_question: pyytää oman kysymyksen sulkemista
       vote_up: antaa kannatusäänen
-    anonymous_form: 
+    anonymous_form:
       never_shown: ei koskaan näytetty
-    create: 
+    create:
       flash_error: Emme valitettavasti voineet perustaa kyseistä tiliä. Yritä uudelleen tai ota yhteyttä järjestelmänvalvojaan (linkki yllä).
       flash_notice: Kiitos rekisteröitymisestä!
-    edit: 
+    edit:
       enable_twitter: Ota käyttöön Facebook- tai Twitter- tilit
       submit: Tallenna
       title: Asetukset
-    follow: 
+    follow:
       flash_notice: Käyttäjä %{user} lisättiin ystäviisi
-    form: 
+    form:
       activities_notification: Lähetä sähköposti-ilmoituksia järjestelmän toiminnasta, kuten ansaituista rintanapeista, uusista seuraajista, jne.
       avatar_tip: Muuta profiilikuvaasi käyttäen Gravatar-ohjelmaa
       give_advice_notification: Lähetä sähköposti-ilmoitukset kysymyksistä omalta erikoisalaltani
@@ -65,7 +65,7 @@ fi:
       notifications: Ilmoitukset
       reports_notification: Lähetä ilmoitus viimeisimmistä tapahtumista ryhmässä (vain ryhmän ylläpitäjille)
       show_more_lang: Näytä lisää kieliä
-    index: 
+    index:
       empty: Tässä ryhmässä ei ole jäseniä. Osallistu liittymällä tähän ryhmään.
       filter: Etsi käyttäjiä
       name: Nimi
@@ -77,16 +77,16 @@ fi:
       reputation: Maine
       reputation_tooltip: Käyttäjät lajiteltu mainejärjestyksessä
       title: Kaikki käyttäjät
-    messages: 
-      errors: 
+    messages:
+      errors:
         reputation_needed: Tarvitset %{min_reputation} mainepistettä, jotta voisit %{action}.
-    new: 
+    new:
       submit: Rekisteröidy
       title: Rekisteröidy uutena käyttäjänä
-    show: 
+    show:
       follow: Seuraa
       title: Käyttäjä %{user}
       unfollow: Älä seuraa
       views: näyttökertaa
-    unfollow: 
+    unfollow:
       flash_notice: Käyttäjä %{user} poistettiin ystävistäsi

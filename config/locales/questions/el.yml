@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Discon
-el: 
-  activerecord: 
-    attributes: 
-      question: 
+el:
+  activerecord:
+    attributes:
+      question:
         answers: Απαντήσεις
         asked_by: Ερωτήθηκε από
         body: Κείμενο
@@ -18,27 +18,27 @@ el:
         updated_by: Ενημερώθηκε από
         views: Προβολές
         votes: Ψήφοι
-    models: 
+    models:
       question: Ερώτηση
       questions: Ερωτήσεις
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: Προσθήκη σχόλιου...
       flag: Αναφορά
       pick_answer: Επιλογή ως λύση
       unset_answer: Κατάργηση ως λύση;
-    create: 
+    create:
       flash_notice: Η ερώτηση υποβλήθηκε επιτυχώς.
-    edit: 
+    edit:
       title: Επεξεργασία ερώτησης
-    flag: 
+    flag:
       title: Αναφορά ερώτησης
-    form: 
+    form:
       adult_content: Η ερώτηση είναι μόνο για ενηλίκους.
       body_tip: Ποια είναι η απορία σας; Περιγράψτε την.
       language_tip: Επιλέξτε τη γλώσσα της ερώτησης.
       tags_tip: Χρησιμοποιήστε ετικέτες για να διευκολύνετε την απάντηση της ερώτησή σας.
-    index: 
+    index:
       active: Ενεργές
       active_tooltip: Ερωτήσεις που έχουν ενημερωθεί πρόσφατα
       ask_question: Κάντε ερώτηση
@@ -53,42 +53,42 @@ el:
       unanswered_questions: αναπάντητες ερωτήσεις
       votes: Ψήφοι
       votes_tooltip: Ερωτήσεις με τις περισσότερες ψήφους
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: Λυπούμαστε αλλά πρέπει να βάλετε τουλάχιστον μία ετικέτα.
         title_too_long: Ο τίτλος είναι υπερβολικά μεγάλος. Δεν πρέπει να έχει πάνω από 100 χαρακτήρες.
         too_many_tags: Λυπούμαστε αλλά μπορείτε να βάλετε το πολύ 9 ετικέτες.
         too_short: Μοιάζει πολύ σύντομη. Παρακαλώ χρησιμοποιήστε περισσότερες από %{count} λέξεις για να γίνεται πιο συγκεκριμένοι.
-    move: 
+    move:
       group_label: "Μετακίνηση στην ομάδα με το slug:"
       submit: Μετακίνηση!
       title: "Μετακίνηση ερώτησης: %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: Η ομάδα %{group} δεν υπάρχει
       success: Η ερώτηση μετακινήθηκε στο %{group}
-    new: 
+    new:
       how_to_ask: Πώς να ρωτήσετε
       title: Υποβολή ερώτησης
-    question: 
+    question:
       accepted_tooltip: Αυτή η ερώτηση έχει μια απάντηση που έχει γίνει αποδεκτή
-    retag: 
+    retag:
       title: Αλλαγή ετικετών
-    retag_form: 
+    retag_form:
       cancel: Ακύρωση
       submit: Ενημέρωση ετικετών!
       title: Ενημέρωση ετικετών
-    retag_to: 
+    retag_to:
       failure: Λυπούμαστε αλλά οι ετικέτες δεν ενημερώθηκαν.
       success: Οι ετικέτες ενημερώθηκαν επιτυχώς.
-    revert: 
+    revert:
       title: Επαναφορά ερώτησης
-    shared: 
+    shared:
       flag: Αναφορά
-    show: 
+    show:
       accepted_tooltip: Μια από τις απαντήσεις επιλέχθηκε ως λύση
       another_answers: Άλλες απαντήσεις
       answers: Απαντήσεις
-      answers_title: 
+      answers_title:
         one: "%{count} απάντηση"
         other: "%{count} απαντήσεις"
       asked_on: Ερωτήθηκε στις
@@ -114,23 +114,23 @@ el:
       unwatch_tooltip: Σταματήστε την παρακολούθηση αυτής της ερώτησης
       viewed: Προβλήθηκε
       watch_tooltip: Παρακολουθήστε αυτή την ερώτηση
-    solve: 
+    solve:
       flash_notice: Η απάντηση στην ερώτηση έγινε αποδεκτή.
-    tags: 
+    tags:
       filter: Αναζήτηση ετικετών
       title: Ετικέτες
       tooltip: Εμφάνιση ερωτήσεων με την ετικέτα '%{tag}'
-    unanswered: 
+    unanswered:
       empty: Δεν υπάρχουν αναπάντητες ερωτήσεις.
       expert: Εμπειρογνώμονες
       my_tags: Οι ετικέτες μου
       tags: Αναπάντητες ετικέτες
       title: Αναπάντητες ερωτήσεις
-    unsolve: 
+    unsolve:
       flash_notice: Η ερώτηση δεν έχει αποδεκτή απάντηση.
-    unwatch: 
+    unwatch:
       success: Δε θα λαμβάνετε πια ειδοποιήσεις μέσω email για νέες απαντήσεις σ' αυτή την ερώτηση
-    update: 
+    update:
       flash_notice: Η ερώτηση ενημερώθηκε επιτυχώς.
-    watch: 
+    watch:
       success: Τώρα θα λαμβάνετε ειδοποιήσεις μέσω email για κάθε νέα απάντηση σ' αυτή την ερώτηση

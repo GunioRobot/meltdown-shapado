@@ -2,8 +2,8 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Discon
-el: 
-  feeds: 
+el:
+  feeds:
     feed: ροή
     post_new_questions: Αποστολή νέων ερωτήσεων προς
     question: Εγγραφείτε σ' αυτή την ερώτηση
@@ -11,7 +11,7 @@ el:
     share_on_twitter: twitter, facebook και άλλα...
     tag: Εγγραφείτε στην ετικέτα
     user: Εγγραφείτε στις ερωτήσεις του μέλους
-  global: 
+  global:
     by: από
     current: Τρέχουσα
     from: από %{site}
@@ -22,17 +22,17 @@ el:
     preview: Προεπισκόπηση
     previous: Προηγούμενη
     share: Διαμοιρασμός
-  languages: 
+  languages:
     any: Οποιαδήποτε
     user: Τις προτιμώμενες γλώσσες μου
-  models: 
+  models:
     question: Η ερώτηση
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} φορά"
       other: "%{count} φορές"
       zero: ποτέ
-  scaffold: 
+  scaffold:
     add: Προσθήκη
     back: Πίσω
     cancel: Ακύρωση
@@ -48,6 +48,6 @@ el:
     show: Προβολή
     sure: Είστε σίγουροι ότι θέλετε να διαγράψετε αυτή την %{model} ?
     update: Ενημέρωση
-  time: 
+  time:
     ago: "%{time} πριν"
     today: σήμερα

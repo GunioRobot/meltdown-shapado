@@ -4,9 +4,9 @@
 # Author: Giro720
 # Author: Luckas Blade
 # Author: Vgeorge
-pt-BR: 
-  layouts: 
-    application: 
+pt-BR:
+  layouts:
+    application:
       ask_question: Faça uma pergunta
       badges: Condecorações
       forgot: Esqueceu?
@@ -18,7 +18,7 @@ pt-BR:
       manage_ads: Gerenciar anúncios
       moderate: Moderar
       now: agora!
-      openid: 
+      openid:
         explaination: "Se pretende registar-se ou entrar, selecione o seu provedor de OpenID, por favor:"
       pages: Páginas
       questions: Perguntas
@@ -33,7 +33,7 @@ pt-BR:
       unanswered: Sem resposta
       users: Usuários
       welcome_from: Bem-vindo(a)! Você pode
-    manage: 
+    manage:
       actions: Ações
       announcements: Anúncios
       constrains: Requisitos
@@ -49,5 +49,5 @@ pt-BR:
       stats: Estatísticas
       theme: Tema
       widgets: Widgets
-    notifications: 
+    notifications:
       message: Se você não quer mais receber as notificações automáticas de %{group}, altere as suas preferências na página das notificações.

@@ -2,28 +2,28 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  activerecord: 
-    attributes: 
-      answer: 
+id:
+  activerecord:
+    attributes:
+      answer:
         body: Isi
         created_at: Terjawab
         link: Pranala
-    models: 
+    models:
       answer: Jawaban
       answers: Jawaban
-  answers: 
-    create: 
+  answers:
+    create:
       flash_error: "Ada yang salah ketika menambahkan jawaban Anda.\nIngat bahwa:\n- Jawaban kosong dan diulang tidak diperbolehkan\n- Anda harus menunggu 20 detik sebelum mengirim jawaban lain.\n- Anda hanya dapat mengirim satu jawaban untuk setiap pertanyaan."
       flash_notice: Terima kasih!
-    edit: 
+    edit:
       title: Menyunting jawaban
-    form: 
+    form:
       answer_label: Jawab pertanyaan
       comment_label: Komentar terhadap jawaban ini
       comment_submit: Komentar
       submit: Jawab
-    revert: 
+    revert:
       title: Kembalikan jawaban
-    update: 
+    update:
       flash_notice: Jawaban berhasil dimutakhirkan.

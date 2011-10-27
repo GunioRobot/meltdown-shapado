@@ -5,8 +5,8 @@
 # Author: G0rn
 # Author: Lockal
 # Author: Александр Сигачёв
-ru: 
-  feeds: 
+ru:
+  feeds:
     feed: Канал
     post_new_questions: Отправить новые вопросы в
     question: Подписаться на этот вопрос
@@ -14,7 +14,7 @@ ru:
     share_on_twitter: twitter, facebook и другое...
     tag: Подписаться на тег
     user: Подписаться на вопросы пользователя
-  global: 
+  global:
     active: Активировать
     anonymous: Аноним
     current: Текущий
@@ -26,20 +26,20 @@ ru:
     preview: Предпросмотр
     previous: Предыдущий
     share: распространить
-  languages: 
+  languages:
     any: Любой
     user: Мои предпочитаемые языки
-  models: 
+  models:
     question: Вопрос
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} раз"
       other: "%{count} раз(а)"
       zero: Никогда
-  pagination: 
+  pagination:
     next: Следующая &raquo;
     previous: "&laquo; Предыдущая"
-  scaffold: 
+  scaffold:
     add: Добавить
     back: Назад
     cancel: Отменить
@@ -56,6 +56,6 @@ ru:
     show: Показать
     sure: Вы уверены, что хотите удалить %{model}?
     update: Обновить
-  time: 
+  time:
     ago: "%{time} назад"
     today: сегодня

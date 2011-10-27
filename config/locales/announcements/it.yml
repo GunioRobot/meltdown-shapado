@@ -4,19 +4,19 @@
 # Author: Giallu
 # Author: Ric
 # Author: Tuxwet
-it: 
-  activerecord: 
-    attributes: 
-      announcement: 
+it:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Finisce il
         message: Messaggio
         only_anonymous: Solo per utenti anonimi
         starts_at: Inizia il
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Rimuovi
       title: Azioni
-    create: 
+    create:
       success: Annuncio creato
-    index: 
+    index:
       title: Annunci

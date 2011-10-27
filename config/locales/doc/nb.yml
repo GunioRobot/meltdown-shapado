@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Nghtwlkr
-nb: 
-  doc: 
-    chat: 
+nb:
+  doc:
+    chat:
       title: Nettpratstøtte
-    plans: 
+    plans:
       15millions: 15 millioner sidevisninger per måned
       1million: 1 million sidevisninger per måned
       247_all_support: Nettbasert, e-post-, nettprat- og telefonstøtte 24/7

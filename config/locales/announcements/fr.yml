@@ -3,19 +3,19 @@
 # Export driver: syck
 # Author: Patcito
 # Author: Verdy p
-fr: 
-  activerecord: 
-    attributes: 
-      announcement: 
+fr:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Termine le
         message: Message
         only_anonymous: Juste pour les utilisateurs anonymes
         starts_at: Débute le
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Enlever
       title: Actions
-    create: 
+    create:
       success: Announce créée avec succès.
-    index: 
+    index:
       title: Annonces

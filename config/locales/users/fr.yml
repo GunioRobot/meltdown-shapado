@@ -5,10 +5,10 @@
 # Author: Peter17
 # Author: Verdy p
 # Author: Zetud
-fr: 
-  activerecord: 
-    attributes: 
-      user: 
+fr:
+  activerecord:
+    attributes:
+      user:
         activated_at: activé le
         activation_code: Code d'activation
         age: Âge
@@ -33,11 +33,11 @@ fr:
         timezone: Fuseau horaire
         updated_at: actualisé le
         website: Site internet
-    models: 
+    models:
       user: Utilisateur
       users: Utilisateurs
-  users: 
-    actions: 
+  users:
+    actions:
       edit_others_posts: Modifier les postes des autres
       edit_wiki_post: Éditer les postes wiki
       flag: Rapporter
@@ -46,18 +46,18 @@ fr:
       vote_to_close_any_question: Demander de fermer toute question
       vote_to_close_own_question: Demander de fermer sa propre question
       vote_up: Voter positif
-    anonymous_form: 
+    anonymous_form:
       never_shown: jamais montré
-    create: 
+    create:
       flash_error: Désolé, nous n'avons pas pu configurer votre compte. Éssayer encore s'il vous plait, ou contacter un administrateur (le lien est ci-dessus).
       flash_notice: Merci de vous avoir enregistré!
-    edit: 
+    edit:
       enable_twitter: Activer vos comptes facebook ou twitter
       submit: Sauvegarder
       title: Configuration
-    follow: 
+    follow:
       flash_notice: L'utilisateur %{user} a été ajouté à votre liste d' amis
-    form: 
+    form:
       activities_notification: Recevoir des notifications via courrier électronique sur les activités système telles que les insignes gagnées, les nouveaux suiveurs, etc.
       avatar_tip: Changer l'image de votre profil en utilisant gravatar
       give_advice_notification: Recevoir des notifications via courrier électronique sur les questions liées à votre champ d'expertise
@@ -67,7 +67,7 @@ fr:
       notifications: Notifications
       reports_notification: Recevoir un rapport avec les dernières activités du groupes (juste pour l'admin du groupe)
       show_more_lang: Afficher plus de langues
-    index: 
+    index:
       empty: Ce groupe n'a pas de membres pour l'instant. Participez pour en devenir un.
       filter: Recherchez des utilisateurs
       name: Nom
@@ -79,18 +79,18 @@ fr:
       reputation: Réputation
       reputation_tooltip: Utilisateurs par ordre de réputation
       title: Tous les utilisateurs
-    messages: 
-      errors: 
+    messages:
+      errors:
         reputation_needed: Vous avez besoin d'une réputation de %{min_reputation} à fin de pouvoir %{action}
-    new: 
+    new:
       submit: Inscrivez-vous
       title: Se connecter en tant que nouvel utilisateur
-    show: 
+    show:
       follow: Suivre
       followers: Suiveurs
       following: Suivi
       title: Utilisateur %{user}
       unfollow: Ne plus suivre
       views: vues
-    unfollow: 
+    unfollow:
       flash_notice: L'utilisateur %{user} a été ajouté à votre liste d'amis

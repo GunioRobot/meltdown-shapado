@@ -3,25 +3,25 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Kghbln
-qqq: 
-  feeds: 
+qqq:
+  feeds:
     share_on_twitter: This message allows only 20 characters in a row. Use a line break if the translation is longer than that.
-  global: 
+  global:
     anonymous: "{{Identical|Anonymous}}"
     current: "{{Identical|Current}}"
     or: "{{Identical|Or}}"
     permission_denied: "{{Identical|Permission denied}}"
     preview: "{{Identical|Preview}}"
     previous: "{{Identical|Previous}}"
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: <nowiki>%{count}</nowiki> = 1. Refers to something that has happened once.
       other: <nowiki>%{count}</nowiki> is a number. Refers to something that has happened more than once.
       zero: "{{Identical|Never}}"
-  pagination: 
+  pagination:
     next: "{{Identical|Next}}"
     previous: "{{Identical|Previous}}"
-  scaffold: 
+  scaffold:
     add: "{{Identical|Add}}"
     back: "{{Identical|Back}}"
     cancel: "{{Identical|Cancel}}"

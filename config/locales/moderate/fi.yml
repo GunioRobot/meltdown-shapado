@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  admin: 
-    moderate: 
-      index: 
+fi:
+  admin:
+    moderate:
+      index:
         all: Kaikki
         ban: Porttikielto
         banned: Kielletyt kysymykset

@@ -3,14 +3,14 @@
 # Export driver: syck
 # Author: Patcito
 # Author: Peter17
-fr: 
-  sessions: 
-    create: 
+fr:
+  sessions:
+    create:
       flash_error: Nous n'avons pas pu vous connecter en tant que '%{login}'
       flash_notice: Connexion réussie
-    destroy: 
+    destroy:
       flash_notice: Vous avez été déconnecté.
-    new: 
+    new:
       log_in: Connectez-vous
       not_registered: Pas encore enregistré?
       registered: Déjà enregistré?

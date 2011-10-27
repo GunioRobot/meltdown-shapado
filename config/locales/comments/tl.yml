@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: AnakngAraw
-tl: 
-  comments: 
-    create: 
+tl:
+  comments:
+    create:
       flash_notice: Salamat sa puna mo
-    edit: 
+    edit:
       title: Baguhin ang puna
-    shared: 
+    shared:
       add_comment: Idagdag ang puna...
       comment_submit: Puna
       reply: tugon
       said: nagsabi
-    update: 
+    update:
       flash_notice: Matagumpay na naisapanahon ang puna.
-  models: 
+  models:
     comment: puna
     comments: mga puna

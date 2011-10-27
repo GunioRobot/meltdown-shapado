@@ -3,12 +3,12 @@
 # Export driver: syck
 # Author: Discon
 # Author: EugeneZelenko
-qqq: 
-  comments: 
-    shared: 
+qqq:
+  comments:
+    shared:
       comment_submit: "The message name \"comments.shared.comment_submit\" suggests that this is a submit button. Therefore, this message should be translated as a verb.\n{{Identical|Comment}}"
       reply: "{{Identical|Reply}}"
       said: "about 1 hour ago <username> said:"
-  models: 
+  models:
     comment: "{{Identical|Comment}}"
     comments: "{{Identical|Comment}}"

@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  activerecord: 
-    models: 
+gl:
+  activerecord:
+    models:
       favorite: favorito
       favorites: favoritos
-  unfavorites: 
-    create: 
+  unfavorites:
+    create:
       success: eliminouse a pregunta dos seus favoritos
       unauthenticated: necesita unha conta para eliminar un favorito

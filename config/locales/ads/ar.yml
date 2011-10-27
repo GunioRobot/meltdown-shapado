@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: عمرو
-ar: 
-  ads: 
+ar:
+  ads:
     ad_links: أضف إعلان %{type} جديد
-    create: 
+    create:
       success: تم إنشاء الإعلان بنجاح
-    index: 
+    index:
       add_adsense: أضف إعلان Google جديد
       title: إعلانات
     name: "الاسم:"

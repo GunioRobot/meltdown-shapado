@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giallu
-it: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+it:
+  imports:
+    subtabs:
+      need_confirmation:
         name: Da confermare
         title: Invia email di conferma

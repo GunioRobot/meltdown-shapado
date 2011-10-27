@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Veeven
-te: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+te:
+  imports:
+    subtabs:
+      need_confirmation:
         name: నిర్ధారణ కావాలి
         title: నిర్ధారణ ఈమెయిళ్ళను పంపించు

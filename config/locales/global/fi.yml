@@ -4,8 +4,8 @@
 # Author: Centerlink
 # Author: Crt
 # Author: Str4nd
-fi: 
-  feeds: 
+fi:
+  feeds:
     feed: Syöte
     post_new_questions: Lähetä uusia kysymyksiä kohteeseen
     question: Tilaa tähän kysymykseen
@@ -13,7 +13,7 @@ fi:
     share_on_twitter: Twitter, Facebook ja lisää ...
     tag: Tilaa merkintään
     user: Tilaa käyttäjän kysymyksiin
-  global: 
+  global:
     active: Ota käyttöön
     anonymous: Anonyymi
     by: /
@@ -26,20 +26,20 @@ fi:
     preview: Esikatselu
     previous: Edellinen
     share: Jaa
-  languages: 
+  languages:
     any: Mikä tahansa
     user: Ensisijaiset kieleni
-  models: 
+  models:
     question: Kysymys
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} kerta"
       other: "%{count} kertaa"
       zero: Ei koskaan
-  pagination: 
+  pagination:
     next: Seuraava &raquo;
     previous: "&laquo; Edellinen"
-  scaffold: 
+  scaffold:
     add: Lisää
     back: Takaisin
     cancel: Peruuta
@@ -56,6 +56,6 @@ fi:
     show: Näytä
     sure: Haluatko varmasti poistaa tämän %{model}?
     update: Päivitä
-  time: 
+  time:
     ago: "%{time} sitten"
     today: tänään

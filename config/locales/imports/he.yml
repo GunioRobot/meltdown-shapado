@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: YaronSh
-he: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+he:
+  imports:
+    subtabs:
+      need_confirmation:
         name: יש צורך באישור
         title: שליחת דוא״ל לאישור

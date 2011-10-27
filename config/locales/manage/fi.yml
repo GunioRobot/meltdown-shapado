@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  admin: 
-    manage: 
-      content: 
+fi:
+  admin:
+    manage:
+      content:
         footer: Alatunniste
         head: Otsake
         question_help: Kysymysopaste
@@ -13,12 +13,12 @@ fi:
         title: Mukautettu sisältö
         top_bar: Ylin palkki
         top_bar_tip: Kirjoita yksi linkki per rivi
-      properties: 
-        constrains: 
+      properties:
+        constrains:
           reputation_constrains_description: Tämä lomake sallii sinun asettaa, kuinka monta mainepistettä käyttäjien tarvitsee tehdä tíetylle toimelle
           reputation_constrains_subtitle: Jokaisen toimen mainepisteiden luettelo
           title: Vaatimukset
-        domain: 
+        domain:
           description: "Voit määrittää sivustosi siten, että sitä voi käyttää mukautetun toimialueen kautta. Se tehdään näin:"
           instruction1: Tehdäksesi näin sinun on ensin kirjauduttava toimialuepalveluntarjoajaasi. Se on sivusto, josta ostit toimialueesi kuten %{subdomain}.com.
           instruction2: Siellä sinun on mentävä DNS-kohtaan ja luotava jotain jota kutsutaan nimellä CNAME.
@@ -28,13 +28,13 @@ fi:
           instruction6: Kun näin on tapahtunut, palaa tänne ja laita toimialuenimesi www.%{subdomain} alla olevaan kenttään ja paina painiketta 'update'. Jos sinulla on kysymyksiä, kysy meiltä verkkojuttelussa %{chat_url} tai tukifoorumillamme.
           title: Aseta toimialueesi
           warning: Oletko varma, että haluat muuttaa toimialueesi?
-        general: 
+        general:
           title: Ryhmän ominaisuudet
-        rewards: 
+        rewards:
           reputation_rewards_description: Tämän lomakkeen avulla voit määrittää, miten käyttäjät voivat voittaa ja menettää mainepisteitä tietystä toimesta
           reputation_rewards_subtitle: Mainepalkintojen luettelo
           title: Palkkiot
-        share: 
+        share:
           add_tags: Lisää tunnisteet twitter-sanomiisi
           application_id: Sovellustunniste
           asking_from_twitter: Kysytään kysymyksiä Twitteristä
@@ -50,6 +50,6 @@ fi:
           tweet_ends_with: Liitä tunniste Twitter-viesteihisi
           tweet_starts_with: Liitä tunniste twitter-viestiesi alkuun
           twitter_account: Twitter-tili, jossa käyttäjäsi kysyvät kysymyksiä.
-        theme: 
+        theme:
           logo_legend: Kopioi logo ryhmäsi palvelimelle. Sen on oltava pienempi kuin 2 megatavua.
           title: Aseta ryhmän teema

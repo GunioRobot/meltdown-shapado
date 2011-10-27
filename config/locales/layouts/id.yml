@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  layouts: 
-    application: 
+id:
+  layouts:
+    application:
       ask_question: Tanyakan pertanyaan
       badges: Lencana
       forgot: Lupa?
@@ -16,7 +16,7 @@ id:
       manage_ads: Kelola iklan
       moderate: Moderasi
       now: sekarang!
-      openid: 
+      openid:
         explaination: "Jika Anda ingin mendaftar atau masuk log, silakan pilih penyedia OpenID Anda:"
       pages: Halaman
       questions: Pertanyaan
@@ -31,7 +31,7 @@ id:
       unanswered: Tidak terjawab
       users: Pengguna
       welcome_from: Selamat datang! Anda dapat
-    manage: 
+    manage:
       actions: Tindakan
       announcements: Pengumuman
       constrains: Persyaratan
@@ -47,5 +47,5 @@ id:
       stats: Statistik
       theme: Tema
       widgets: Widget
-    notifications: 
+    notifications:
       message: Jika Anda tidak ingin lagi menerima pemberitahuan otomatis dari %{group}, ubah preferensi Anda di layar notifikasi.

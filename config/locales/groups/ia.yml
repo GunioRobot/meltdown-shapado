@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: McDutchie
-ia: 
-  activerecord: 
-    attributes: 
-      group: 
+ia:
+  activerecord:
+    attributes:
+      group:
         default_tags: Etiquettas predefinite
         description: Description
         domain: Dominio
@@ -24,14 +24,14 @@ ia:
         state: Stato
         subdomain: URL
         wysiwyg_editor: Activar le editor facile a usar
-    models: 
+    models:
       default_tags_message: Tu non pote haber plus de 10 etiquettas predefinite
       group: Gruppo
       groups: Gruppos
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: Tu gruppo ha essite create con successo. Tu pote ora comenciar a configurar lo.
-    form: 
+    form:
       access: Configurationes de accesso
       analytics_engine: Motor de analyse
       analytics_legend: Le gruppo potera usar su proprie codice de sequimento
@@ -46,14 +46,14 @@ ia:
       logo_legend: Tu pote incargar le logotypo del gruppo. Le grandor maxime del file es 2MB.
       members_only: Solmente le membros del gruppo potera acceder a iste gruppo
       website_analytics_id: ID de analyse de sito web
-    group: 
+    group:
       about: A proposito
       accept_group: Acceptar iste gruppo
       allow_ads: Permitter publicitate
       close: Clauder
       close_group: Clauder iste gruppo
       disallow_ads: Non permitter publicitate
-    index: 
+    index:
       actives: Active
       filter: Cercar gruppos
       most_active: Le plus active
@@ -61,9 +61,9 @@ ia:
       pendings: Pendente
       request_group: Requestar un nove gruppo
       title: Gruppos
-    new: 
+    new:
       title: Crear tu gruppo
-    show: 
+    show:
       accept_group: Acceptar iste gruppo
       accept_group_with_custom_ads: Acceptar gruppo e permitter annuncios personalisate
       close_group: Clauder iste gruppo

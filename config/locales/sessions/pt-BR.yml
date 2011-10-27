@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giro720
-pt-BR: 
-  sessions: 
-    create: 
+pt-BR:
+  sessions:
+    create:
       flash_error: Não foi possível iniciar sessão como '%{login}'
       flash_notice: Sessão iniciada
-    destroy: 
+    destroy:
       flash_notice: A sua sessão foi terminada.
-    new: 
+    new:
       log_in: Entrar
       not_registered: Ainda não se registrou?
       registered: Já se registrou?

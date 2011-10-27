@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Papapep
-ca: 
-  admin: 
-    manage: 
-      content: 
+ca:
+  admin:
+    manage:
+      content:
         footer: Peu
         head: capçalera
         question_help: Ajuda de preguntes
@@ -13,12 +13,12 @@ ca:
         title: Contingut personalitzat
         top_bar: Barra superior
         top_bar_tip: Introduïu un enllaç per línia
-      properties: 
-        constrains: 
+      properties:
+        constrains:
           reputation_constrains_description: Aquest formulari us permet configurar quants punts de reputació necessiten els usuaris per a poder fer una determinada acció
           reputation_constrains_subtitle: Liistat de requeriments de reputació per a cada acció
           title: Requeriments
-        domain: 
+        domain:
           description: "Podeu mapejar el vostre lloc i així s'hi podrà accedir des d'el vostre propi domini personalitzat. Ho heu de fer així:"
           instruction1: Per a fer això primer necessiteu iniciar la sessió al vostre proveïdor de domini. Aquest és el lloc on vàreu comprar el vostre domini com %{subdomain}.com.
           instruction2: Necessiteu anar a la secció de DNS i crear un registre CNAME.
@@ -28,14 +28,14 @@ ca:
           instruction6: Quan aquest sigui el cas, torneu aquí i poseu el vostre nom de domini www.%{subdomain} al camp inferior i premeu el botó 'actualitza'. Si teniu preguntes, feu-les a %{chat_url} o al nostre fòrum de suport.
           title: Definiu el vostre domini
           warning: Voleu canviar el vostre domini?
-        general: 
+        general:
           title: Propietats del grup
-        rewards: 
+        rewards:
           reputation_rewards_description: Aquest formulari us permet configurar com els usuaris poden guanyar o perdre punts de reputació per a determinades accions
           reputation_rewards_subtitle: Llista de recompenses de reputació
           title: Recompenses
-        share: 
+        share:
           title: Comparteix
-        theme: 
+        theme:
           logo_legend: Pugeu un logo per al vostre grup. Ha de ser més petit de 2MB.
           title: Definiu el tema del grup

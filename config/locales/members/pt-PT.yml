@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Hamilton Abreu
-pt-PT: 
-  activerecord: 
-    attributes: 
-      member: 
+pt-PT:
+  activerecord:
+    attributes:
+      member:
         role: Função
-  members: 
-    form: 
+  members:
+    form:
       login_tip: Procurar enquanto escreve
-    index: 
+    index:
       manage_members_title: Administrar membros
       title: Membros do grupo de %{name}
       title_isolate: Membros de %{name}

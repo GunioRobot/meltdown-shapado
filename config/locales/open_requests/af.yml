@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Naudefj
-af: 
-  open_requests: 
-    create: 
+af:
+  open_requests:
+    create:
       flash_notice: Versoek om te heropen is suksesvol geskep
-    destroy: 
+    destroy:
       flash_notice: Versoek om te heropen is suksesvol geskrap
-    edit: 
+    edit:
       title: Wysig heropeningsversoek
-    form: 
+    form:
       request_opening_details: Dien 'n heropeningsversoek vir hierdie vraag in
-    index: 
+    index:
       title: Lys met heropeningsversoeke
-    model: 
+    model:
       prural_name: Heropeningsversoeke
-    new: 
+    new:
       title: Versoek heropening
-    update: 
+    update:
       flash_notice: Die heropeningsversoek is bygewerk

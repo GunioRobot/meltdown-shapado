@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Hamilton Abreu
-pt-PT: 
-  admin: 
-    moderate: 
-      index: 
+pt-PT:
+  admin:
+    moderate:
+      index:
         all: Todas
         ban: Banir
         banned: Perguntas banidas

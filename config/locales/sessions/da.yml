@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  sessions: 
-    create: 
+da:
+  sessions:
+    create:
       flash_error: Kunne ikke logge dig ind som '%{login}'
       flash_notice: Succesfuldt logget ind
-    destroy: 
+    destroy:
       flash_notice: Du er blevet logget ud.
-    new: 
+    new:
       log_in: Log ind
       not_registered: Ikke registreret endnu?
       registered: Allerede registreret?

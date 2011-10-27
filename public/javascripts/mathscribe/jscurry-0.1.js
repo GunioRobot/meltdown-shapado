@@ -1,10 +1,10 @@
 /*  jscurry.js:  a JavaScript module for functional programming; requires ECMAScript 3.  These
 	definitions are based on Haskell's, but allow side effects, and do not use automatic lazy
 	evaluation, compile-time type checking, or automatic Currying.
-	
+
 	We believe that "member functions" are the wrong technique in general for implementing
 	function closures or passing functions to polymorphic algorithms.
-	
+
 	Suffixes (in this and other modules):
 		F:  function
 		P ("Possible" or "Pointer"):  null/undefined treated specially
@@ -12,17 +12,17 @@
 		S:  string
 		_:  a non-constant variable with a large scope
 		$:  a jQuery() result or "wrapped set"
-	
+
 	These library modules aim to be small, efficient, compatible with standards, and hopefully
 	elegant.
-	
+
 	Copyright 2011, Mathscribe, Inc.  Dual licensed under the MIT or GPL Version 2 licenses.
 	See e.g. http://jquery.org/license for an explanation of these licenses.  */
 
 
 var jsCurry = function() {
 	var sliceMF = Array.prototype.slice;	// slice "Member Function"
-	
+
 	// provide a few basic ECMAScript 5 functions if they are missing:
 	if (! Function.prototype.bind)
 		Function.prototype.bind = function(thisArg /* , ... */) {
@@ -45,7 +45,7 @@ var jsCurry = function() {
 			return res;
 		};
 	if (! Date.now)	Date.now = function() { return (new Date()).getTime(); };
-	
+
 	function F(x /* , ... */) {	// F() shorthand notation for some basic operations
 		if (typeof x == 'function')	return F.curry.apply(undefined, arguments);
 		if (arguments.length == 2 && typeof arguments[1] == 'function')
@@ -55,10 +55,10 @@ var jsCurry = function() {
 		if (x && typeof x == 'object')	return F.a2f(x);
 		F.err(err_F_2_);
 	}
-	
+
 	F.err = function() { throw Error('Assertion failed'); };
 		// usually argument evaluation intentionally fails, to report its line number
-	
+
 	F.id = function(x) { return x; };
 	F.constant = function(x) { return function(/* ... */) { return x; }; };
 		// "const" is a reserved word in ECMAScript 3
@@ -92,15 +92,15 @@ var jsCurry = function() {
 	};
 	F.aritize = function(n, f)	// for discarding optional trailing arguments
 		{ return function(/* ... */) { return F.applyF(f, sliceMF.call(arguments, 0, n)); }; };
-	
+
 	F.bind0 = function(obj, p) { return obj[p].bind(obj); };
-	
+
 	F.not = function(x) { return ! x; };
-	
+
 	/*  The following functions that act on arrays also work on "array-like" objects (with a
 		'length' property), including array-like host objects.  The functions may or may not
 		skip missing elements.  */
-	
+
 	// A "cmp" function returns 0, < 0, or > 0 for ==, <, or > respectively.
 	F.cmpX = function(x, y) { return x - y; };	// for finite numbers, or Dates
 	F.cmpJS = function(s, t) { return s < t ? -1 : s > t ? 1 : 0; };
@@ -112,7 +112,7 @@ var jsCurry = function() {
 		if (! cmpP)	cmpP = function(y, z) { return y !== z; };
 		return F.o(F.not, F(cmpP, x));
 	};
-	
+
 	F.p2f = function(p) { return function(obj) { return obj[p]; }; };
 	F.a2f = function(obj) { return function(p) { return obj[p]; }; };
 	F.f2a = function(f, n) {
@@ -124,7 +124,7 @@ var jsCurry = function() {
 		if (! memo)	memo = {};
 		return function(p) { return memo.hasOwnProperty(p) ? memo[p] : (memo[p] = f(p)); };
 	};
-	
+
 	F.slice = function(a, startP, endP) {
 		if (startP == null)	startP = 0;
 		if (Array.isArray(a))
@@ -140,7 +140,7 @@ var jsCurry = function() {
 	F.concatArgs = F.oMap(F.bind0([], 'concat'),
 		function(a) { return Array.isArray(a) ? a : F.slice(a); });
 	F.concatMap = function(f, a) { return F.applyF(F.concatArgs, F.map(f, a)); };
-	
+
 	F.findIndex = function(qF, a) {
 		var n = a.length;
 		for (var i = 0; i < n; i++)	if (qF(a[i], i, a))	return i;
@@ -232,13 +232,13 @@ var jsCurry = function() {
 		while (--n >= 0)	xOpt = op(xOpt, a[n], n, a);
 		return xOpt;
 	};
-	
+
 	F.sum = function(a) {
 		var n = a.length, res = 0;
 		for (var i = 0; i < n; i++)	res += a[i];
 		return res;
 	};
-	
+
 	F.test = function(t) {	// e.g. for dynamic type checking when appropriate
 		if (t === 0 || t === '')	t = typeof t;
 		if (typeof t == 'string')	return function(x) { return typeof x == t; };
@@ -263,7 +263,7 @@ var jsCurry = function() {
 		}
 		F.err(err_test_);
 	};
-	
+
 	return F;
 }();
 var F;	if (F === undefined)	F = jsCurry;

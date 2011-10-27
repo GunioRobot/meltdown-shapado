@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: AnakngAraw
-tl: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+tl:
+  imports:
+    subtabs:
+      need_confirmation:
         name: kailangan ng kumpirmasyon
         title: ipadala ang mga e-liham ng kumpirmasyon

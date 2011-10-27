@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  admin: 
-    moderate: 
-      index: 
+da:
+  admin:
+    moderate:
+      index:
         all: Alle
         ban: Blokering
         banned: Blokerede spørgsmål

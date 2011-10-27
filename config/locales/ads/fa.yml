@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Persianizer
-fa: 
-  ads: 
+fa:
+  ads:
     ad_links: "%{type} افزودن یک آگهی  تازه"
-    create: 
+    create:
       success: آگهی با موفقیت ایجاد شد
-    index: 
+    index:
       add_adbard: آگهی ادبارد تازه‌ای بیافزایید
       add_adsense: آگهی گوگل ادسنس تازه‌ای بیافزایید
       title: آگهی‌ها

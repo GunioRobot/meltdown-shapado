@@ -3,9 +3,9 @@
 # Export driver: syck
 # Author: Darkweasel
 # Author: Gufulo
-eo: 
-  layouts: 
-    application: 
+eo:
+  layouts:
+    application:
       ask_question: Demandi
       badges: Insignoj
       forgot: Ĉu vi forgesis?
@@ -17,7 +17,7 @@ eo:
       manage_ads: Administri reklamojn
       moderate: Administri
       now: nun!
-      openid: 
+      openid:
         explaination: "Se vi volas registriĝi aŭ simple nur ensaluti, bonvolu elekti vian OpenID-proviziston:"
       pages: Paĝoj
       questions: Demandoj
@@ -32,7 +32,7 @@ eo:
       unanswered: Sen respondo
       users: Uzantoj
       welcome_from: Bonvenon! Vi povas
-    manage: 
+    manage:
       actions: Agoj
       announcements: Anoncoj
       constrains: Necesaĵoj
@@ -46,5 +46,5 @@ eo:
       rewards: Rekompencoj
       stats: Statistikoj
       theme: Aspekto
-    notifications: 
+    notifications:
       message: Se vi ne plu volas ricevi aŭtomatajn sciigojn de %{group}, ŝanĝu viajn preferojn en la ekrano de sciigoj

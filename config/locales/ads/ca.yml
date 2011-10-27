@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Papapep
-ca: 
-  ads: 
+ca:
+  ads:
     ad_links: Afegeix un nou anunci del tipus %{type}
-    create: 
+    create:
       success: S'ha creat correctament l'anunci
-    index: 
+    index:
       add_adbard: Afegeix una nova barra d'anuncis
       add_adsense: Afegeix un nou anunci de Google AdSense
       title: Anuncis

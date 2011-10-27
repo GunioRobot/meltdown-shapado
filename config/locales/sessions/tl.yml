@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: AnakngAraw
-tl: 
-  sessions: 
-    create: 
+tl:
+  sessions:
+    create:
       flash_error: Hindi ka mailagdang papasok bilang '%{login}'
       flash_notice: Matagumpay na nakalagda
-    destroy: 
+    destroy:
       flash_notice: Naalis ka na sa pagkakalagda.
-    new: 
+    new:
       log_in: Lumagda
       not_registered: Hindi pa nagpapatala?
       registered: Nakapagpatala ka na?

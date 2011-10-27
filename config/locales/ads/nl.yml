@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Siebrand
-nl: 
-  ads: 
+nl:
+  ads:
     ad_links: Nieuwe advertentie van het type %{type} toevoegen
-    create: 
+    create:
       success: De advertentie is aangemaakt.
-    index: 
+    index:
       add_adbard: Nieuwe advertentie van het type Ad Bard toevoegen
       add_adsense: nieuwe Google AdSense advertentie toevoegen
       title: Advertenties

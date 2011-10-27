@@ -33,11 +33,11 @@
       =" [#{t("closed", :scope => "activerecord.attributes.question").upcase}]"
   .edit
     = link_to "Editar"
-          
-      
+
+
   .description
     = question_body
-     
+
   .toolbar
     %ul
       %li.answer
@@ -54,11 +54,11 @@
       %li.share
         = link_to "Compartir"
       %li.activity
-        = link_to "Actividad"           
+        = link_to "Actividad"
 
 %ul.tag-list
   %li.title
-    Topics:  
+    Topics:
   - @question.tags.each do |tag|
     %li
       = link_to h(tag), tag_path(:id => tag), :rel => "tag"
@@ -68,7 +68,7 @@
 
 #answers-content-wrap
   %header
-    %h3 
+    %h3
       = t(".answers_title", :count => @answers.total_entries)
   %section.filters
     %ul{:class => @active_subtab.to_s}
@@ -80,7 +80,7 @@
       %li.oldest-active
         = link_to t("questions.index.oldest"), question_path(@question, :sort=>"oldest", :anchor => "answers"), :rel => "nofollow"
       %li
-        = link_to "Respuesta elegida" 
+        = link_to "Respuesta elegida"
 
   - source = question_path(@question)
   = error_messages_for 'answer'
@@ -89,19 +89,19 @@
     %h1.navtitle.title.entry-title
       &= @question.title
       - if @question.closed
-        =" [#{t("closed", :scope => "activerecord.attributes.question").upcase}]"        
-        
-  
+        =" [#{t("closed", :scope => "activerecord.attributes.question").upcase}]"
+
+
   %article
-    %h4 
-      %b Answered 27 days ago by 
-      = link_to "rhonda:"  
+    %h4
+      %b Answered 27 days ago by
+      = link_to "rhonda:"
       = link_to "Permalink"
     %ul.toolbar
       %li.drop
         = link_to "Actions"
       %li.votes
-        %p 
+        %p
           %button.negative
           %span  20 Votes
           %button.positive
@@ -109,33 +109,33 @@
     .content
       %p You might want to take a look at the Work Needing and Prospective Packages page, especially with respect to the Requested Packages page. There you can find what people seem to be missing and are looking package maintainers for. The list might look daunting, and there might be things in there not maintained anymore, it definitely needs some cleanup, but it might be a good starting point to look what others seem to be missing.
       %article.comment
-        %h4 
-          %b Answered 27 days ago by 
-          = link_to "rhonda:"  
-          = link_to "Permalink"    
+        %h4
+          %b Answered 27 days ago by
+          = link_to "rhonda:"
+          = link_to "Permalink"
         %ul.toolbar
           %li.votes
-            %p 
+            %p
               %button.negative
               %span  20 Votes
-              %button.positive               
+              %button.positive
         .clear
         .content
           %p There you can find what people seem to be missing and are looking package maintainers for. The list might look daunting, and there might be things in there not maintained anymore, it definitely needs some cleanup, but it might be a good starting point to look what others seem to be missing.
       %article.comment
-        %h4 
-          %b Answered 27 days ago by 
-          = link_to "rhonda:"  
-          = link_to "Permalink"    
+        %h4
+          %b Answered 27 days ago by
+          = link_to "rhonda:"
+          = link_to "Permalink"
         %ul.toolbar
           %li.votes
-            %p 
+            %p
               %button.negative
               %span  20 Votes
-              %button.positive               
+              %button.positive
         .clear
         .content
-          %p You might want to take a look at the Work Needing and Prospective Packages page, especially with respect to the Requested Packages page. There you can find what people seem to be missing and are looking package maintainers for. 
+          %p You might want to take a look at the Work Needing and Prospective Packages page, especially with respect to the Requested Packages page. There you can find what people seem to be missing and are looking package maintainers for.
         %ul.comment-actions
           %li
             = link_to "Contestar"
@@ -143,63 +143,63 @@
             = link_to "Editar"
           %li
             = link_to "Borrar"
-  .clear  
-        
-  %article
-    
-    %h4 
-      %b Answered 27 days ago by 
-      = link_to "rhonda:"  
-      = link_to "Permalink"
-    %ul.toolbar
-      %li.drop
-        = link_to "Actions"
-      %li.votes
-        %p 
-          %button.negative
-          %span  20 Votes
-          %button.positive
-    .clear
-    .content
-      %p You might want to take a look at the Work Needing and Prospective Packages page, especially with respect to the Requested Packages page. There you can find what people seem to be missing and are looking package maintainers for. The list might look daunting, and there might be things in there not maintained anymore, it definitely needs some cleanup, but it might be a good starting point to look what others seem to be missing.        
+  .clear
 
   %article
-    
-    %h4 
-      %b Answered 27 days ago by 
-      = link_to "rhonda:"  
+
+    %h4
+      %b Answered 27 days ago by
+      = link_to "rhonda:"
       = link_to "Permalink"
     %ul.toolbar
       %li.drop
         = link_to "Actions"
       %li.votes
-        %p 
+        %p
           %button.negative
           %span  20 Votes
           %button.positive
     .clear
     .content
-      %p You might want to take a look at the Work Needing and Prospective Packages page, especially with respect to the Requested Packages page. There you can find what people seem to be missing and are looking package maintainers for. The list might look daunting, and there might be things in there not maintained anymore, it definitely needs some cleanup, but it might be a good starting point to look what others seem to be missing.   
-      
+      %p You might want to take a look at the Work Needing and Prospective Packages page, especially with respect to the Requested Packages page. There you can find what people seem to be missing and are looking package maintainers for. The list might look daunting, and there might be things in there not maintained anymore, it definitely needs some cleanup, but it might be a good starting point to look what others seem to be missing.
+
   %article
-    .winner 
-      = image_tag "answer-winner.gif"
-    %h4 
-      %b Answered 27 days ago by 
-      = link_to "rhonda:"  
+
+    %h4
+      %b Answered 27 days ago by
+      = link_to "rhonda:"
       = link_to "Permalink"
     %ul.toolbar
       %li.drop
         = link_to "Actions"
       %li.votes
-        %p 
+        %p
           %button.negative
           %span  20 Votes
           %button.positive
     .clear
     .content
-      %p You might want to take a look at the Work Needing and Prospective Packages page, especially with respect to the Requested Packages page. There you can find what people seem to be missing and are looking package maintainers for. The list might look daunting, and there might be things in there not maintained anymore, it definitely needs some cleanup, but it might be a good starting point to look what others seem to be missing.         
-  .clear  
+      %p You might want to take a look at the Work Needing and Prospective Packages page, especially with respect to the Requested Packages page. There you can find what people seem to be missing and are looking package maintainers for. The list might look daunting, and there might be things in there not maintained anymore, it definitely needs some cleanup, but it might be a good starting point to look what others seem to be missing.
+
+  %article
+    .winner
+      = image_tag "answer-winner.gif"
+    %h4
+      %b Answered 27 days ago by
+      = link_to "rhonda:"
+      = link_to "Permalink"
+    %ul.toolbar
+      %li.drop
+        = link_to "Actions"
+      %li.votes
+        %p
+          %button.negative
+          %span  20 Votes
+          %button.positive
+    .clear
+    .content
+      %p You might want to take a look at the Work Needing and Prospective Packages page, especially with respect to the Requested Packages page. There you can find what people seem to be missing and are looking package maintainers for. The list might look daunting, and there might be things in there not maintained anymore, it definitely needs some cleanup, but it might be a good starting point to look what others seem to be missing.
+  .clear
 
 
 
@@ -225,14 +225,14 @@
           .comment
             =find_and_preserve(shapado_auto_link(@question.close_reason.comment))
     .post-text.entry-content
-      
 
-      = render "reward_form"    
-      
-      
+
+      = render "reward_form"
+
+
   .controls
     .actions
-      
+
 
       - if !@flag.new_record?
         .flagged

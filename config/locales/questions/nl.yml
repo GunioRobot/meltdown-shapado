@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Siebrand
-nl: 
-  activerecord: 
-    attributes: 
-      question: 
+nl:
+  activerecord:
+    attributes:
+      question:
         answers: Antwoorden
         asked_by: Gesteld door
         body: Tekst
@@ -18,27 +18,27 @@ nl:
         updated_by: Bijgewerkt door
         views: Keren bekeken
         votes: Stemmen
-    models: 
+    models:
       question: Vraag
       questions: Vragen
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: Opmerking toevoegen...
       flag: Markeren
       pick_answer: Als correct antwoord instellen
       unset_answer: Als correct antwoorden verwijderen?
-    create: 
+    create:
       flash_notice: De vraag is gesteld.
-    edit: 
+    edit:
       title: Bezig met het bewerken van de vraag
-    flag: 
+    flag:
       title: Vraag markeren
-    form: 
+    form:
       adult_content: Deze vraag bevat inhoud alleen voor volwassenen.
       body_tip: Wat is uw vraag? Zorg dat deze beschrijvend is.
       language_tip: Selecteer de taal voor de vraag.
       tags_tip: Gebruik labels om meer informatie aan uw vraag toe te voegen.
-    index: 
+    index:
       active: Actief
       active_tooltip: Vragen die recent zijn bijgewerkt
       ask_question: Vraag stellen
@@ -53,42 +53,42 @@ nl:
       unanswered_questions: Onbeantwoorde vragen
       votes: Stemmen
       votes_tooltip: Vragen met de meeste stemmen
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: U moet tenminste één label opgeven
         title_too_long: De vraag is te lang. Deze mag niet meer dan honderd tekens bevatten.
         too_many_tags: U kunt maximaal negen labels opgeven.
         too_short: Dit lijkt te kort. Gebruik alstublieft meer dan %{count} woorden om specifieker te zijn.
-    move: 
+    move:
       group_label: "Verplaatsen naar de groep:"
       submit: Verplaatsen!
       title: Vraag "%{title}" verplaatsen
-    move_to: 
+    move_to:
       group_dont_exists: De groep %{group} bestaat niet.
       success: Vraag verplaatst naar %{group}
-    new: 
+    new:
       how_to_ask: Hoe vragen
       title: Stel vraag
-    question: 
+    question:
       accepted_tooltip: Deze vraag heeft een antwoord dat is geaccepteerd.
-    retag: 
+    retag:
       title: Labels wijzigen
-    retag_form: 
+    retag_form:
       cancel: Annuleren
       submit: Labels bijwerken!
       title: Labels bijwerken
-    retag_to: 
+    retag_to:
       failure: De labels konden niet worden bijgewerkt.
       success: De labels zijn bijgewerkt.
-    revert: 
+    revert:
       title: Vraag terugdraaien
-    shared: 
+    shared:
       flag: Markeren
-    show: 
+    show:
       accepted_tooltip: Een van de antwoorden is geaccepteerd als juist antwoord.
       another_answers: Andere antwoorden
       answers: Antwoorden
-      answers_title: 
+      answers_title:
         one: "%{count} antwoord"
         other: "%{count} antwoorden"
       asked_on: Gesteld op
@@ -120,23 +120,23 @@ nl:
       unwatch_tooltip: Deze vraag niet langer volgen
       viewed: bekeken
       watch_tooltip: Deze vraag volgen
-    solve: 
+    solve:
       flash_notice: De vraag is beantwoord.
-    tags: 
+    tags:
       filter: Zoeken naar labels
       title: Labels
       tooltip: Vragen weergeven met het label %{tag}
-    unanswered: 
+    unanswered:
       empty: Deze groep heeft geen onbeantwoorde vragen.
       expert: Experts
       my_tags: Mijn labels
       tags: Onbeantwoorde labels
       title: Onbeantwoorde vragen
-    unsolve: 
+    unsolve:
       flash_notice: De vraag is nu niet beantwoord
-    unwatch: 
+    unwatch:
       success: U ontvangt vanaf nu geen berichten per e-mail meer voor ieder nieuw antwoord op deze vraag.
-    update: 
+    update:
       flash_notice: De vraag is bijgewerkt.
-    watch: 
+    watch:
       success: U ontvangt vanaf nu berichten per e-mail voor ieder nieuw antwoord op deze vraag.

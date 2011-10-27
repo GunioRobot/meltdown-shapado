@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  sessions: 
-    create: 
+id:
+  sessions:
+    create:
       flash_error: Tidak dapat masuk log sebagai '%{login}'
       flash_notice: Berhasil masuk log
-    destroy: 
+    destroy:
       flash_notice: Anda telah keluar log.
-    new: 
+    new:
       log_in: Masuk log
       not_registered: Belum mendaftar?
       registered: Sudah terdaftar?

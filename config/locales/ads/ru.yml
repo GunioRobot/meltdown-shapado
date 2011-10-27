@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Lockal
-ru: 
-  ads: 
+ru:
+  ads:
     ad_links: Добавить новое рекламное объявление %{type}
-    create: 
+    create:
       success: Рекламное объявление успешно создано.
-    index: 
+    index:
       add_adbard: Добавить новое рекламное объявление adbard
       add_adsense: Добавить новое рекламное объявление Google AdSense
       title: Реклама

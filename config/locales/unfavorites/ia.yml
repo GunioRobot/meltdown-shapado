@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: McDutchie
-ia: 
-  activerecord: 
-    models: 
+ia:
+  activerecord:
+    models:
       favorite: Favorite
       favorites: Favorites
-  unfavorites: 
-    create: 
+  unfavorites:
+    create:
       success: Le question ha essite removite de tu favorites
       unauthenticated: Tu debe haber un conto pro remover un favorite

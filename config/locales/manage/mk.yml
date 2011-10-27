@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Bjankuloski06
-mk: 
-  admin: 
-    manage: 
-      content: 
+mk:
+  admin:
+    manage:
+      content:
         footer: Подножје
         head: заглавие
         question_help: помош со прашања
@@ -13,12 +13,12 @@ mk:
         title: прилагодена содржина
         top_bar: горна лента
         top_bar_tip: внесете една врска по ред
-      properties: 
-        constrains: 
+      properties:
+        constrains:
           reputation_constrains_description: Овој образец ви овозможува да поставите колку бодови за углед ќе им треба на корисниците за да можат да извршат извесно дејство
           reputation_constrains_subtitle: список на ограничувања за угледот за секое дејство
           title: ограничувања
-        domain: 
+        domain:
           description: "Можете да го пресликате за вашето мреж. место за да биде пристапно преку домен по ваш избор. Тоа се прави вака:"
           instruction1: За да го направите ова најпрвин треба да се најавите на вашиот доменски добавувач (мрежното место кадешто сте го набавиле вашиот домен, како %{subdomain}.com).
           instruction2: Таму ќе треба да појдете до делот DNS и да создадете нешто наречено CNAME.
@@ -28,13 +28,13 @@ mk:
           instruction6: Кога ќе дојдете до тоа, вратете се тука и внесете го вашето доменско име www.%{subdomain} во полето подолу и притиснете на копчето „поднови“. Ако имате прашања, поставете ни ги на  %{chat_url} или на нашиот форум за поддршка
           title: постевете го вашиот домен
           warning: Дали сте сигурни дека сакате да го смените вашиот домен?
-        general: 
+        general:
           title: својства на група
-        rewards: 
+        rewards:
           reputation_rewards_description: овој образец ви овозможува да поставите како корисниците можат да освојуваат и губат бодови за углед за извесно дејство
           reputation_rewards_subtitle: список на награди за угледот
           title: награди
-        share: 
+        share:
           add_tags: Додај ознаки на објавеното на Twitter
           application_id: Назнака (ID) на програмот
           asking_from_twitter: Поставување прашања од Twitter
@@ -50,6 +50,6 @@ mk:
           tweet_ends_with: Приложи ознака кон објавеното на Twitter
           tweet_starts_with: Вметни ознака во објавеното на Twitter
           twitter_account: Сметката на Twitter на којашто вашите корисници ќе поставуваат прашања.
-        theme: 
+        theme:
           logo_legend: Подигнете лого за вашата група. Мора да е помало од 2MB.
           title: постави мотив за групата

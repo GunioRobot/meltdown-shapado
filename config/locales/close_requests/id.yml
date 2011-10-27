@@ -2,13 +2,13 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  close_requests: 
-    create: 
+id:
+  close_requests:
+    create:
       flash_notice: Permintaan penutupan berhasil dibuat
-    destroy: 
+    destroy:
       flash_notice: Permintaan penutupan berhasil dihapus
-    form: 
+    form:
       close_with_reason: Tutup pertanyaan ini atas alasan ini
       dupe: Sudah ada
       no_question: Bukan pertanyaan
@@ -16,16 +16,16 @@ id:
       ot: Keluar dari topik
       request_closing_details: Minta tutup pertanyaan ini
       spam: spam
-    index: 
+    index:
       title: Daftar permintaan yang ditutup
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Komentar
         reason: Alasan
         user: Pengguna
-      messages: 
+      messages:
         already_requested: Anda telah meminta untuk menutup pertanyaan ini
       name: Tutup permintaan
       prural_name: Tutup permintaan
-    update: 
+    update:
       flash_notice: Permintaan penutupan berhasil dimutakhirkan

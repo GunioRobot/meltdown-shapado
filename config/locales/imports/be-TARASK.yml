@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Jim-by
-be-TARASK: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+be-TARASK:
+  imports:
+    subtabs:
+      need_confirmation:
         name: Неабходнае пацьверджаньне
         title: Даслаць электронны ліст з пацьверджаньнем

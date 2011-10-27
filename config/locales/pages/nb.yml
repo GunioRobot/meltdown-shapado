@@ -2,33 +2,33 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Nghtwlkr
-nb: 
-  activerecord: 
-    attributes: 
-      page: 
+nb:
+  activerecord:
+    attributes:
+      page:
         css: Stilark
         js: JavaScript
-    models: 
+    models:
       page: Side
       pages: Sider
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Opprett ny side
       edit_page: Rediger side
       title: Handlinger
-    create: 
+    create:
       success: Siden ble opprettet.
-    edit: 
+    edit:
       title: Redigerer side
-    form: 
+    form:
       language_tip: Sidespråk
       title_tip: "Sidetittel. Bruk denne til å referere til siden. For eksempel: [[FAQ|sjekk ut OSS'en]]"
-    index: 
+    index:
       create_page: Opprett ny side
       title: Liste over sider
       written_in: Skrevet på %{language}
-    new: 
+    new:
       title: Ny side
     title: Fiksmeg
-    update: 
+    update:
       success: Siden ble oppdatert.

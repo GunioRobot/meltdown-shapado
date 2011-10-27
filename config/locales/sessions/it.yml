@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giallu
-it: 
-  sessions: 
-    create: 
+it:
+  sessions:
+    create:
       flash_error: Impossibile accedere come '%{login}'
       flash_notice: Accesso effettuato
-    destroy: 
+    destroy:
       flash_notice: Sei stato disconnesso.
-    new: 
+    new:
       log_in: Accedi
       not_registered: Non sei registrato?
       registered: Già iscritto?

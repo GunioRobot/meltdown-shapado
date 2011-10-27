@@ -2,8 +2,8 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giallu
-it: 
-  feeds: 
+it:
+  feeds:
     feed: Feed
     post_new_questions: Manda le nuove domande su
     question: Iscriviti a questa domanda
@@ -11,7 +11,7 @@ it:
     share_on_twitter: twitter, facebook e molti altri...
     tag: Iscriviti al tag
     user: Iscriviti alle domande dell'utente
-  global: 
+  global:
     active: Attiva
     by: da
     current: Attuale
@@ -23,20 +23,20 @@ it:
     preview: Anteprima
     previous: Precedenti
     share: Condividi
-  languages: 
+  languages:
     any: Qualsiasi
     user: Lingue preferite
-  models: 
+  models:
     question: La domanda
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} volta"
       other: "%{count} volte"
       zero: Mai
-  pagination: 
+  pagination:
     next: Successivo &raquo;
     previous: "&laquo; Precedente"
-  scaffold: 
+  scaffold:
     add: Aggiungi
     back: Indietro
     cancel: Annulla
@@ -52,6 +52,6 @@ it:
     show: Mostra
     sure: Cancellare questo %{model} ?
     update: Aggiorna
-  time: 
+  time:
     ago: "%{time} fa"
     today: oggi

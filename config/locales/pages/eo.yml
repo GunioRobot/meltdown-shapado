@@ -2,33 +2,33 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Darkweasel
-eo: 
-  activerecord: 
-    attributes: 
-      page: 
+eo:
+  activerecord:
+    attributes:
+      page:
         css: Stildosieroj
         js: JavaScript
-    models: 
+    models:
       page: Paĝo
       pages: Paĝoj
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Krei novan paĝon
       edit_page: Redakti paĝon
       title: Agoj
-    create: 
+    create:
       success: Paĝo estis sukcese kreita.
-    edit: 
+    edit:
       title: Redakti paĝon
-    form: 
+    form:
       language_tip: Paĝlingvo
       title_tip: "Paĝtitolo. Uzu tion ĉi por referenci al la paĝo. Ekzemple: [[FAQ|legu la oftajn demandojn]"
-    index: 
+    index:
       create_page: Krei novan paĝon
       title: Paĝlisto
       written_in: Skribita en %{language}
-    new: 
+    new:
       title: nova paĝo
     title: Riparu min
-    update: 
+    update:
       success: Paĝo estis sukcese ĝisdatigita.

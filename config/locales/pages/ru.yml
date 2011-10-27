@@ -3,33 +3,33 @@
 # Export driver: syck
 # Author: Eleferen
 # Author: Lockal
-ru: 
-  activerecord: 
-    attributes: 
-      page: 
+ru:
+  activerecord:
+    attributes:
+      page:
         css: Стилевые таблицы
         js: JavaScript
-    models: 
+    models:
       page: Страница
       pages: Страницы
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Создать новую страницу
       edit_page: Редактировать страницу
       title: Действия
-    create: 
+    create:
       success: Страница была успешно создана.
-    edit: 
+    edit:
       title: Редактирование страницы
-    form: 
+    form:
       language_tip: Язык страницы
       title_tip: Заголовок страницы; используйте его для ссылки на страницу, например, [[ЧаВо|смотрите часто задаваемые вопросы]]
-    index: 
+    index:
       create_page: Создать новую страницу
       title: Список страниц
       written_in: "Язык страницы: %{language}"
-    new: 
+    new:
       title: Новая страница
     title: FIXME
-    update: 
+    update:
       success: Страница была успешно обновлена.

@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Kghbln
-de: 
-  activerecord: 
-    attributes: 
-      member: 
+de:
+  activerecord:
+    attributes:
+      member:
         role: Rolle
-  members: 
-    form: 
+  members:
+    form:
       login_tip: Suche während der Eingabe
-    index: 
+    index:
       manage_members_title: Mitglieder verwalten
       title: Mitglieder der Gruppe %{name}
       title_isolate: Mitglieder von %{name}

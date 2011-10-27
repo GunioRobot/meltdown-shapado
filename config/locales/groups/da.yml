@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  activerecord: 
-    attributes: 
-      group: 
+da:
+  activerecord:
+    attributes:
+      group:
         default_tags: Standard tags
         description: Beskrivelse
         domain: Domæne
@@ -24,14 +24,14 @@ da:
         state: Tilstand
         subdomain: URL
         wysiwyg_editor: Aktiver brugervenlig editor
-    models: 
+    models:
       default_tags_message: Du kan ikke have mere end 10 standard tags
       group: Gruppe
       groups: Grupper
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: Din gruppe blev oprettet. Du kan nu begynde at konfigurere den.
-    form: 
+    form:
       access: Åben Indstillinger
       analytics_engine: Analyser Motor
       analytics_legend: Gruppen vil være i stand til at bruge sin egen sporingskode
@@ -46,14 +46,14 @@ da:
       logo_legend: Du kan uploade gruppe logoet. Den maksimale filstørrelse er 2MB.
       members_only: Kun gruppens medlemmer vil kunne få adgang til denne gruppe
       website_analytics_id: Webside Analyse ID
-    group: 
+    group:
       about: Om
       accept_group: Accepter denne gruppe
       allow_ads: Tillad annoncer
       close: Luk
       close_group: Luk denne gruppe
       disallow_ads: Forbyd annoncer
-    index: 
+    index:
       actives: Aktiv
       filter: Søg efter grupper
       most_active: Mest aktive
@@ -61,9 +61,9 @@ da:
       pendings: Ventende
       request_group: Anmod om en ny gruppe
       title: Grupper
-    new: 
+    new:
       title: Opret din gruppe
-    show: 
+    show:
       accept_group: Accepter denne gruppe
       accept_group_with_custom_ads: Accepter gruppe og tillad tilpassede annoncer
       close_group: Luk denne gruppe

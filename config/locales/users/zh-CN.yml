@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Hydra
-zh-CN: 
-  activerecord: 
-    attributes: 
-      user: 
+zh-CN:
+  activerecord:
+    attributes:
+      user:
         activated_at: 在激活
         activation_code: 激活代码
         age: 年龄
@@ -30,11 +30,11 @@ zh-CN:
         timezone: 时区
         updated_at: 在更新
         website: 网站
-    models: 
+    models:
       user: 用户
       users: 用户
-  users: 
-    actions: 
+  users:
+    actions:
       edit_others_posts: 编辑别人的帖子
       edit_wiki_post: 编辑维基帖子
       flag: 标志
@@ -43,18 +43,18 @@ zh-CN:
       vote_to_close_any_question: 请求关闭的问题
       vote_to_close_own_question: 请求关闭的问题
       vote_up: 投票
-    anonymous_form: 
+    anonymous_form:
       never_shown: 不会显示
-    create: 
+    create:
       flash_error: 很抱歉，我们无法设置该帐户。请重试，或与管理员联系（是上面的链接）。
       flash_notice: 谢谢你注册！
-    edit: 
+    edit:
       enable_twitter: 使您的 Facebook 或 Twitter 帐户
       submit: 保存
       title: 设置
-    follow: 
+    follow:
       flash_notice: 用户 %{user} 已添加到您的朋友
-    form: 
+    form:
       activities_notification: 接收电子邮件通知的系统活动如赚取徽章、 新的追随者等。
       avatar_tip: 使用 Gravatar更改您的配置文件图像
       give_advice_notification: 在你的专业知识领域中接收电子邮件通知有关的问题
@@ -64,7 +64,7 @@ zh-CN:
       notifications: 通知
       reports_notification: 收到一份报告的最新小组活动（只适用于管理员组）
       show_more_lang: 显示更多的语言
-    index: 
+    index:
       empty: 这一组没有任何成员。通过加入本集团参与。
       filter: 搜索用户
       name: 名称
@@ -76,18 +76,18 @@ zh-CN:
       reputation: 声誉
       reputation_tooltip: 用户按较高的声誉
       title: 所有用户
-    messages: 
-      errors: 
+    messages:
+      errors:
         reputation_needed: 您需要自少 %{min_reputation} 的声誉才能够经行 %{action}
-    new: 
+    new:
       submit: 登记
       title: 作为一个新的用户注册
-    show: 
+    show:
       follow: 关注
       followers: 追随者
       following: 跟中
       title: 用户 %{user}
       unfollow: 停止追随
       views: 视图
-    unfollow: 
+    unfollow:
       flash_notice: 用户 %{user} 从你的朋友中已被删除

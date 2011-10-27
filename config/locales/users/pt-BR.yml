@@ -5,10 +5,10 @@
 # Author: Luckas Blade
 # Author: Nighto
 # Author: Vgeorge
-pt-BR: 
-  activerecord: 
-    attributes: 
-      user: 
+pt-BR:
+  activerecord:
+    attributes:
+      user:
         activated_at: ativado em
         activation_code: Código de ativação
         age: Idade
@@ -33,11 +33,11 @@ pt-BR:
         timezone: Fuso horário
         updated_at: atualizado em
         website: Website
-    models: 
+    models:
       user: Usuário
       users: Usuários
-  users: 
-    actions: 
+  users:
+    actions:
       edit_others_posts: Editar publicações de outros
       edit_wiki_post: Editar publicações wiki
       flag: Reportar
@@ -46,18 +46,18 @@ pt-BR:
       vote_to_close_any_question: Pedir o encerramento de qualquer pergunta
       vote_to_close_own_question: Pedir encerramento de sua própria pergunta
       vote_up: Votar positivo
-    anonymous_form: 
+    anonymous_form:
       never_shown: nunca mostrado
-    create: 
+    create:
       flash_error: Desculpe, não foi possível criar essa conta. Tente novamente ou contate um administrador (link está acima), por favor.
       flash_notice: Obrigado por seu registro!
-    edit: 
+    edit:
       enable_twitter: Ativar as suas contas no Facebook ou no Twitter
       submit: Gravar
       title: Definições
-    follow: 
+    follow:
       flash_notice: O usuário %{user} foi adicionado a sua lista de amigos
-    form: 
+    form:
       activities_notification: Receber por e-mail notificações de atividades de sistema, como condecorações dadas, novos seguidores, etc.
       avatar_tip: Alterar a imagem do perfil usando o Gravatar
       give_advice_notification: Receber por e-mail notificações de perguntas na sua área de especialidade
@@ -67,7 +67,7 @@ pt-BR:
       notifications: Notificações
       reports_notification: Receber um relatório das atividades mais recentes do grupo (só para administradores de grupos)
       show_more_lang: Mostrar mais línguas
-    index: 
+    index:
       empty: Este grupo não tem membros. Participe, aderindo a este grupo.
       filter: Busca usuários
       name: Nome
@@ -79,18 +79,18 @@ pt-BR:
       reputation: Reputação
       reputation_tooltip: Usuários por ordem decrescente de reputação
       title: Todos os usuários
-    messages: 
-      errors: 
+    messages:
+      errors:
         reputation_needed: Você precisa de uma reputação mínima de %{min_reputation} para %{action}
-    new: 
+    new:
       submit: Registar
       title: Registrar como um novo usuário
-    show: 
+    show:
       follow: Seguir
       followers: Seguidores
       following: Seguindo
       title: Usuário %{user}
       unfollow: Deixar de seguir
       views: visitas
-    unfollow: 
+    unfollow:
       flash_notice: O usuário %{user} foi removido da sua lista de amigos

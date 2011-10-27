@@ -3,19 +3,19 @@
 # Export driver: syck
 # Author: McDutchie
 # Author: Siebrand
-nl: 
-  comments: 
-    create: 
+nl:
+  comments:
+    create:
       flash_notice: Bedankt voor uw reactie
-    edit: 
+    edit:
       title: Opmerking bewerken
-    shared: 
+    shared:
       add_comment: Opmerking toevoegen...
       comment_submit: Opmerking plaatsen
       reply: Antwoord
       said: schreef
-    update: 
+    update:
       flash_notice: De opmerking is aangepast.
-  models: 
+  models:
     comment: Opmerking
     comments: Opmerkingen

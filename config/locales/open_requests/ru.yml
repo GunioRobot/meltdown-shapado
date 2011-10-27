@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Eleferen
-ru: 
-  open_requests: 
-    create: 
+ru:
+  open_requests:
+    create:
       flash_notice: Запрос на повторное открытие успешно создан
-    destroy: 
+    destroy:
       flash_notice: Запрос на повторное открытие успешно удалён
-    edit: 
+    edit:
       title: Изменить запрос на повторное открытие
-    form: 
+    form:
       request_opening_details: Запрос на повторное открытие этого вопроса
-    index: 
+    index:
       title: Список запросов на повторное открытие
-    model: 
+    model:
       prural_name: Запрос на повторное открытие
-    new: 
+    new:
       title: Запрос на повторное открытие
-    update: 
+    update:
       flash_notice: Запрос на повторное открытие успешно обновлён

@@ -2,8 +2,8 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  feeds: 
+gl:
+  feeds:
     feed: Fonte de novas
     post_new_questions: Publicar novas preguntas en
     question: Subscribirse a esta pregunta
@@ -11,7 +11,7 @@ gl:
     share_on_twitter: twitter, facebook e outros...
     tag: Subscribirse á etiqueta
     user: Subscribirse ás preguntas do usuario
-  global: 
+  global:
     active: Activar
     anonymous: Anónimo
     by: por
@@ -24,20 +24,20 @@ gl:
     preview: Vista previa
     previous: Anteriores
     share: compartir
-  languages: 
+  languages:
     any: Calquera
     user: As linguas que coñezo
-  models: 
+  models:
     question: A pregunta
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} vez"
       other: "%{count} veces"
       zero: Nunca
-  pagination: 
+  pagination:
     next: Seguinte &raquo;
     previous: "&laquo; Anterior"
-  scaffold: 
+  scaffold:
     add: Engadir
     back: Volver
     cancel: Cancelar
@@ -54,6 +54,6 @@ gl:
     show: Mostrar
     sure: Está seguro de querer borrar este %{model}?
     update: Actualizar
-  time: 
+  time:
     ago: hai %{time}
     today: hoxe

@@ -3,11 +3,11 @@
 # Export driver: syck
 # Author: Lockal
 # Author: Александр Сигачёв
-ru: 
-  shared: 
-    current_tags: 
+ru:
+  shared:
+    current_tags:
       title: Выбранные метки
-    topbar: 
+    topbar:
       admin: Администрирование
       logged_as: Вы вошли как %{login}
       user_page: Моя страница

@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Hydra
-zh-CN: 
-  activerecord: 
-    attributes: 
-      group: 
+zh-CN:
+  activerecord:
+    attributes:
+      group:
         default_tags: 默认标签
         description: 说明
         domain: 域
@@ -24,14 +24,14 @@ zh-CN:
         state: 状态
         subdomain: URL
         wysiwyg_editor: 启用用户友好的编辑器
-    models: 
+    models:
       default_tags_message: 你不能拥有 10 多个默认标签
       group: 集团
       groups: 组
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: 已成功创建您的组。您现在可以开始配置它。
-    form: 
+    form:
       access: 访问设置
       analytics_engine: 分析引擎
       analytics_legend: 该小组将能够使用其自己的跟踪代码
@@ -46,14 +46,14 @@ zh-CN:
       logo_legend: 你可以上传集团标志。最大文件大小为 2MB。
       members_only: 只有小组的成员将能够访问此组
       website_analytics_id: 网站分析 ID
-    group: 
+    group:
       about: 关于
       accept_group: 接受此组
       allow_ads: 允许广告
       close: 关闭
       close_group: 关闭此组
       disallow_ads: 禁止广告
-    index: 
+    index:
       actives: 活动
       filter: 搜索组
       most_active: 最活跃
@@ -61,9 +61,9 @@ zh-CN:
       pendings: 挂起
       request_group: 请求一个新的组
       title: 组
-    new: 
+    new:
       title: 创建您的组
-    show: 
+    show:
       accept_group: 接受此组
       accept_group_with_custom_ads: 接受组，并允许自定义广告
       close_group: 关闭此组

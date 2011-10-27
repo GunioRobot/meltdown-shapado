@@ -3,11 +3,11 @@
 # Export driver: syck
 # Author: Giro720
 # Author: Luckas Blade
-pt-BR: 
-  doc: 
-    chat: 
+pt-BR:
+  doc:
+    chat:
       title: Supporte por Conversação
-    plans: 
+    plans:
       15millions: 15 milhões de visitas/mês
       1million: 1 milhão de visitas/mês
       247_all_support: Suporte baseado na internet, e-mail, canais de conversação e telefone de disponibilidade permanentemente

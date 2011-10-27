@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Robby
-lb: 
-  ads: 
-    create: 
+lb:
+  ads:
+    create:
       success: D'Reklamm gouf ugeluecht.
-    index: 
+    index:
       title: Reklammen
     name: "Numm:"
     position: "Positioun:"

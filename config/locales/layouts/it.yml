@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giallu
-it: 
-  layouts: 
-    application: 
+it:
+  layouts:
+    application:
       ask_question: Poni domanda
       badges: Badge
       forgot: Dimenticato?
@@ -16,7 +16,7 @@ it:
       manage_ads: Gestisci annunci
       moderate: Modera
       now: ora!
-      openid: 
+      openid:
         explaination: "Per iscriversi o accedere, selezionare il provider OpenID:"
       pages: Pagine
       questions: Domande
@@ -31,7 +31,7 @@ it:
       unanswered: Senza risposta
       users: Utenti
       welcome_from: Benvenuto! È possibile
-    manage: 
+    manage:
       actions: Azioni
       announcements: Annunci
       constrains: Requisiti
@@ -47,5 +47,5 @@ it:
       stats: Statistiche
       theme: Tema
       widgets: Widget
-    notifications: 
+    notifications:
       message: Per non ricevere più notifiche da %{group}, cambiare le preferenze nella pagina Notifiche.

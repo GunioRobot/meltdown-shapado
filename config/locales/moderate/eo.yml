@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Darkweasel
-eo: 
-  admin: 
-    moderate: 
-      index: 
+eo:
+  admin:
+    moderate:
+      index:
         all: Ĉiuj
         ban: Bloki
         content: Enhavo

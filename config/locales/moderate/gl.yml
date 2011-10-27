@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  admin: 
-    moderate: 
-      index: 
+gl:
+  admin:
+    moderate:
+      index:
         all: todas
         ban: bloquear
         banned: preguntas bloqueadas

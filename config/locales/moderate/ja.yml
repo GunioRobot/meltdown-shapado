@@ -1,10 +1,10 @@
 # Messages for Japanese (日本語)
 # Exported from translatewiki.net
 # Export driver: syck
-ja: 
-  admin: 
-    moderate: 
-      index: 
+ja:
+  admin:
+    moderate:
+      index:
         all: 全て
         ban: 弾く
         banned: 弾かれた質問

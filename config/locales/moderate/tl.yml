@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: AnakngAraw
-tl: 
-  admin: 
-    moderate: 
-      index: 
+tl:
+  admin:
+    moderate:
+      index:
         all: lahat
         ban: pagbawalan
         banned: pinagbabawalang mga tanong

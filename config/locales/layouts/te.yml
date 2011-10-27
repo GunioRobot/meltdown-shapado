@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Veeven
-te: 
-  layouts: 
-    application: 
+te:
+  layouts:
+    application:
       ask_question: ప్రశ్నని అడగండి
       badges: బాడ్జీలు
       forgot: మర్చిపోయారా?
@@ -25,7 +25,7 @@ te:
       title: ప్రశ్నలూ & జవాబులూ
       users: వాడుకరులు
       welcome_from: స్వాగతం! మీరు
-    manage: 
+    manage:
       actions: చర్యలు
       announcements: ప్రకటనలు
       constrains: ఆవశ్యకాలు

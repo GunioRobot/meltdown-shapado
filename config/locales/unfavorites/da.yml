@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  activerecord: 
-    models: 
+da:
+  activerecord:
+    models:
       favorite: Favorit
       favorites: Favoritter
-  unfavorites: 
-    create: 
+  unfavorites:
+    create:
       success: Spørgsmålet er blevet fjernet fra dine favoriter
       unauthenticated: Du skal bruge en konto for at fjerne en favorit

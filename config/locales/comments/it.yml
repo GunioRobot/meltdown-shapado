@@ -3,19 +3,19 @@
 # Export driver: syck
 # Author: Deneb
 # Author: Giallu
-it: 
-  comments: 
-    create: 
+it:
+  comments:
+    create:
       flash_notice: Grazie per il commento
-    edit: 
+    edit:
       title: Modifica commento
-    shared: 
+    shared:
       add_comment: Aggiungi un commento...
       comment_submit: Commento
       reply: Rispondi
       said: ha detto
-    update: 
+    update:
       flash_notice: Commento modificato con successo.
-  models: 
+  models:
     comment: Commento
     comments: Commenti

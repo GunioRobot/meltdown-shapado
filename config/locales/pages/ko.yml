@@ -2,33 +2,33 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Linkr
-ko: 
-  activerecord: 
-    attributes: 
-      page: 
+ko:
+  activerecord:
+    attributes:
+      page:
         css: 스타일 시트
         js: 자바 스크립트
-    models: 
+    models:
       page: 페이지
       pages: 페이지
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: 새 페이지 만들기
       edit_page: 페이지 수정
       title: 액션
-    create: 
+    create:
       success: 페이지가 성공적으로 만들었습니다.
-    edit: 
+    edit:
       title: 페이지 수정
-    form: 
+    form:
       language_tip: 페이지 언어
       title_tip: "페이지 제목. 페이지 참조에 사용합니다. 예를 들면 : [[FAQ|자주 묻는 질문을 체크 아웃]]"
-    index: 
+    index:
       create_page: 새 페이지 만들기
       title: 페이지 목록
       written_in: "%{language}로 작성"
-    new: 
+    new:
       title: 새 페이지
     title: FIXME
-    update: 
+    update:
       success: 페이지가 성공적으로 업데이트 되었습니다.

@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Papapep
-ca: 
-  activerecord: 
-    attributes: 
-      group: 
+ca:
+  activerecord:
+    attributes:
+      group:
         default_tags: Etiquetes predeterminades
         description: Descripció
         domain: Domini
@@ -23,14 +23,14 @@ ca:
         state: Estat
         subdomain: URL
         wysiwyg_editor: Habilita l'editor simple
-    models: 
+    models:
       default_tags_message: No podeu tenir més de 10 etiquetes predeterminades
       group: Grup
       groups: Grups
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: S'ha creat correctament el vostre grup. Podeu començar a configurar-lo.
-    form: 
+    form:
       access: Paràmetres d'accés
       analytics_engine: Motor d'analítiques
       analytics_legend: El grup podrà emprar el seu propi codi de monitorització
@@ -45,14 +45,14 @@ ca:
       logo_legend: Podeu pujar el logotip del grup. La mida màxima del fitxer és de 2MB.
       members_only: Només els membres del grup tindran accés a aquest grup
       website_analytics_id: identificador de les analítiques del lloc web
-    group: 
+    group:
       about: Quant a
       accept_group: Accepta aquest grup
       allow_ads: Permetre anuncis
       close: Tanca
       close_group: Tanca aquest grup
       disallow_ads: No permetre anuncis
-    index: 
+    index:
       actives: Actiu
       filter: Cercar grups
       most_active: Més actiu/s
@@ -60,9 +60,9 @@ ca:
       pendings: Pendent
       request_group: Sol·licitud d'un nou grup
       title: Grups
-    new: 
+    new:
       title: Creeu el vostre grup
-    show: 
+    show:
       accept_group: Accepta aquest grup
       accept_group_with_custom_ads: Accepta el grup i permet anuncis personalitzats
       close_group: Tancar aquest grup

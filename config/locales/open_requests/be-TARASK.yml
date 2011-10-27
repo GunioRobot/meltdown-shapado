@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Jim-by
-be-TARASK: 
-  open_requests: 
-    create: 
+be-TARASK:
+  open_requests:
+    create:
       flash_notice: Запыт на паўторнае адкрыцьцё створаны пасьпяхова
-    destroy: 
+    destroy:
       flash_notice: Запыт на паўторнае адкрыцьцё пасьпяхова выдалены
-    edit: 
+    edit:
       title: Рэдагаваць запыт на паўторнае адкрыцьцё
-    form: 
+    form:
       request_opening_details: Запыт на паўторнае адкрыцьцё гэтага пытаньня
-    index: 
+    index:
       title: Сьпіс запытаў на паўторнае адкрыцьцё
-    model: 
+    model:
       prural_name: Запыт на паўторнае адкрыцьцё
-    new: 
+    new:
       title: Запыт на паўторнае адкрыцьцё
-    update: 
+    update:
       flash_notice: Запыт на паўторнае адкрыцьцё пасьпяхова абноўлены

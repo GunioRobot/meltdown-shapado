@@ -4,8 +4,8 @@
 # Author: McDutchie
 # Author: Protozoan
 # Author: Siebrand
-nl: 
-  feeds: 
+nl:
+  feeds:
     feed: Feed
     post_new_questions: Nieuwe vragen toevoegen aan
     question: Op deze vraag abonneren
@@ -13,7 +13,7 @@ nl:
     share_on_twitter: Twitter, Facebook en meer...
     tag: Op label abonneren
     user: Op gebruikersvragen abonneren
-  global: 
+  global:
     active: Activeren
     anonymous: Anoniem
     by: door
@@ -26,20 +26,20 @@ nl:
     preview: Voorvertoning
     previous: Vorige
     share: Delen
-  languages: 
+  languages:
     any: Alle
     user: Voorkeurstalen
-  models: 
+  models:
     question: De vraag
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} keer"
       other: "%{count} keer"
       zero: Nooit
-  pagination: 
+  pagination:
     next: Volgende &raquo;
     previous: "&laquo; Vorige"
-  scaffold: 
+  scaffold:
     add: Toevoegen
     back: Terug
     cancel: Annuleren
@@ -56,6 +56,6 @@ nl:
     show: Weergeven
     sure: Weet u zeker dat u deze %{model} wilt verwijderen?
     update: Bijwerken
-  time: 
+  time:
     ago: "%{time} geleden"
     today: Vandaag

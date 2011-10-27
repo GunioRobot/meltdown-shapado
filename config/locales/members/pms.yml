@@ -3,15 +3,15 @@
 # Export driver: syck
 # Author: Borichèt
 # Author: Dragonòt
-pms: 
-  activerecord: 
-    attributes: 
-      member: 
+pms:
+  activerecord:
+    attributes:
+      member:
         role: Ròl
-  members: 
-    form: 
+  members:
+    form:
       login_tip: Serca com ch'it të sgnache
-    index: 
+    index:
       manage_members_title: Gestì ij mèmber
       title: Mèmber ëd la partìa ëd %{name}
       title_isolate: Mèmber ëd %{name}

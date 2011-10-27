@@ -4,10 +4,10 @@
 # Author: Giallu
 # Author: Ric
 # Author: Tuxwet
-it: 
-  activerecord: 
-    attributes: 
-      question: 
+it:
+  activerecord:
+    attributes:
+      question:
         answers: Risposte
         asked_by: Chiesto da
         body: Testo
@@ -20,27 +20,27 @@ it:
         updated_by: aggiornato da
         views: Visualizzazioni
         votes: Voti
-    models: 
+    models:
       question: Domanda
       questions: Domande
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: Aggiungi commento...
       flag: Segnala
       pick_answer: Scegli come soluzione
       unset_answer: Annulla soluzione?
-    create: 
+    create:
       flash_notice: La domanda è stata creata.
-    edit: 
+    edit:
       title: Modifica la domanda
-    flag: 
+    flag:
       title: Segnala domanda
-    form: 
+    form:
       adult_content: Questa domanda contiene materiale per adulti.
       body_tip: Qual è la tua domanda? Sii descrittivo.
       language_tip: Seleziona la lingua in cui è posta la domanda.
       tags_tip: Utilizzare i tag per aggiungere ulteriori informazioni sulla tua domanda.
-    index: 
+    index:
       active: Attive
       active_tooltip: Domande aggiornate di recente
       ask_question: Fai una domanda
@@ -55,41 +55,41 @@ it:
       unanswered_questions: Senza risposta
       votes: Voti
       votes_tooltip: Domande con più voti
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: È necessario aggiungere almeno un tag.
         title_too_long: Il titolo è troppo lungo. Non deve contenere più di 100 caratteri.
         too_many_tags: Sono ammessi al massimo 9 tag.
         too_short: Troppo breve. Utilizzare almeno %{count} parole per essere più specifici.
-    move: 
+    move:
       submit: Sposta!
       title: "Sposta domanda : %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: Il gruppo %{group} non esiste
       success: Domanda spostata su %{group}
-    new: 
+    new:
       how_to_ask: Come domandare
       title: Fai una domanda
-    question: 
+    question:
       accepted_tooltip: Questa domanda ha una risposta che è stata accettata
-    retag: 
+    retag:
       title: Modifica tag
-    retag_form: 
+    retag_form:
       cancel: Annulla
       submit: Modifica tag
       title: Modifica tag
-    retag_to: 
+    retag_to:
       failure: I tag non non possono essere modificati.
       success: Tag modificati con successo.
-    revert: 
+    revert:
       title: Ripristina domanda
-    shared: 
+    shared:
       flag: Segnala
-    show: 
+    show:
       accepted_tooltip: Una delle risposte è stata accettata come risposta corretta.
       another_answers: Altre risposte
       answers: Risposte
-      answers_title: 
+      answers_title:
         one: "%{count} risposta"
         other: "%{count} risposte"
       asked_on: chiesto il
@@ -121,23 +121,23 @@ it:
       unwatch_tooltip: Non seguire più la domanda
       viewed: visite
       watch_tooltip: Segui questa domanda
-    solve: 
+    solve:
       flash_notice: La domanda è stata risolta.
-    tags: 
+    tags:
       filter: Cerca per tag
       title: Tag
       tooltip: Mostra domande con il tag %{tag}
-    unanswered: 
+    unanswered:
       empty: Questo gruppo non ha domande senza risposta.
       expert: Esperti
       my_tags: I miei tag
       tags: tag senza risposta
       title: Domande senza risposta
-    unsolve: 
+    unsolve:
       flash_notice: La domanda non è più risolta.
-    unwatch: 
+    unwatch:
       success: Non si riceveranno più notifiche via e-mail per le nuove risposte a questa domanda.
-    update: 
+    update:
       flash_notice: La domanda è stata modificata.
-    watch: 
+    watch:
       success: Si riceverà notificha via e-mail per ogni nuova risposta a questa domanda.

@@ -3,31 +3,31 @@
 # Export driver: syck
 # Author: Hamilton Abreu
 # Author: Waldir
-pt-PT: 
-  activerecord: 
-    attributes: 
-      flag: 
+pt-PT:
+  activerecord:
+    attributes:
+      flag:
         reason: Motivo
-    models: 
+    models:
       flag: Reportada
       flags: Reportadas
-  flags: 
-    create: 
+  flags:
+    create:
       flash_error: Não pode reportar isto
       flash_notice: Obrigado por ter reportado
-    destroy: 
+    destroy:
       flash_notice: A sua marcação foi revogada.
-    edit: 
+    edit:
       title: Editar a marcação de %{model}
-    form: 
+    form:
       attention: Requer a atenção do moderador
       label: Reporte com cuidado, por favor
       offensive: Conteúdo ofensivo, abusivo ou insultuoso
       spam: Spam
-    model: 
-      messages: 
+    model:
+      messages:
         already_requested: Já reportou este %{model}.
-    new: 
+    new:
       title: Reportar o %{model}
-    update: 
+    update:
       flash_notice: A marcação da questão foi actualizada com sucesso.

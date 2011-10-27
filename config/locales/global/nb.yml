@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Nghtwlkr
-nb: 
-  feeds: 
+nb:
+  feeds:
     feed: Mating
     share_on_twitter: twitter, facebook og mer...
-  global: 
+  global:
     by: av
     current: Nåværende
     from: fra %{site}
@@ -16,16 +16,16 @@ nb:
     preview: Forhåndsvisning
     previous: Forrige
     share: del
-  languages: 
+  languages:
     user: Mine foretrukne språk
-  models: 
+  models:
     question: Spørsmålet
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} gang"
       other: "%{count} ganger"
       zero: Aldri
-  scaffold: 
+  scaffold:
     add: Legg til
     back: Tilbake
     cancel: Avbryt
@@ -41,6 +41,6 @@ nb:
     show: Vis
     sure: Er du sikker på at du vil slette denne %{model} ?
     update: Oppdater
-  time: 
+  time:
     ago: "%{time} siden"
     today: i dag

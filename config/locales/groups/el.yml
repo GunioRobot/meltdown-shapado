@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Discon
-el: 
-  activerecord: 
-    attributes: 
-      group: 
+el:
+  activerecord:
+    attributes:
+      group:
         default_tags: Προεπιλεγμένες ετικέτες
         description: Περιγραφή
         domain: Domain
@@ -23,14 +23,14 @@ el:
         state: Κατάσταση
         subdomain: URL (subdomain)
         wysiwyg_editor: Ενεργοποίηση του φιλικού κειμενογράφου
-    models: 
+    models:
       default_tags_message: Δεν επιτρέπονται περισσότερες από 10 προεπιλεγμένες ετικέτες
       group: Ομάδα
       groups: Ομάδες
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: Η ομάδα σας δημιουργήθηκε επιτυχώς, τώρα μπορείτε να τη ρυθμίσετε.
-    form: 
+    form:
       access: Ρυθμίσεις πρόσβασης
       analytics_engine: Μηχανή Analytics
       analytics_legend: Η ομάδα θα μπορεί να χρησιμοποιήσει το δικό της tracking code
@@ -45,14 +45,14 @@ el:
       logo_legend: Μπορείτε να ανεβάσετε το λογότυπο της ομάδας. Το μέγιστο μέγεθος αρχείου είναι 2 MB.
       members_only: Μόνο τα μέλη της ομάδας θα έχουν πρόσβαση σ' αυτήν
       website_analytics_id: Website Analytics ID
-    group: 
+    group:
       about: Περί
       accept_group: Αποδοχή ομάδας
       allow_ads: Να επιτρέπονται διαφημίσεις
       close: Κλείσιμο
       close_group: Κλείσιμο ομάδας
       disallow_ads: Απαγόρευση διαφημίσεων
-    index: 
+    index:
       actives: Ενεργές
       filter: Αναζήτηση ομάδων
       most_active: Πιο δραστήριες
@@ -60,9 +60,9 @@ el:
       pendings: Εκκρεμείς
       request_group: Ζητήστε νέα ομάδα
       title: Ομάδες
-    new: 
+    new:
       title: Δημιουργία ομάδας
-    show: 
+    show:
       accept_group: Αποδοχή ομάδας
       accept_group_with_custom_ads: Αποδοχή ομάδας με προσαρμοσμένες διαφημίσεις
       close_group: Κλείσιμο ομάδας

@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  layouts: 
-    application: 
+da:
+  layouts:
+    application:
       ask_question: Stil spørgsmål
       badges: Badges
       forgot: Glemt?
@@ -16,7 +16,7 @@ da:
       manage_ads: Administrer annoncer
       moderate: Moderat
       now: nu!
-      openid: 
+      openid:
         explaination: "Hvis du ønsker at registrere eller blot logge ind, skal du vælge din OpenID udbyder:"
       pages: Sider
       questions: Spørgsmål
@@ -31,7 +31,7 @@ da:
       unanswered: Ubesvarede
       users: Brugere
       welcome_from: Velkommen! Du kan
-    manage: 
+    manage:
       actions: Handlinger
       announcements: Bekendtgørelser
       constrains: Forudsætninger
@@ -47,5 +47,5 @@ da:
       stats: Statetisker
       theme: Tema
       widgets: Widgets
-    notifications: 
+    notifications:
       message: Hvis du ikke ønsker at modtage automatiske meddelelser fra %{group} længere, ændre dine indstillingere.

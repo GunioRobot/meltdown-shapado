@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: AnakngAraw
-tl: 
-  open_requests: 
-    create: 
+tl:
+  open_requests:
+    create:
       flash_notice: Matagumpay na nalikha ang paghiling ng muling pagbubukas
-    destroy: 
+    destroy:
       flash_notice: Matagumpay na nabura ang hiling ng muling pagbubukas
-    edit: 
+    edit:
       title: Baghin ang kahilingan ng muling pagbubukas
-    form: 
+    form:
       request_opening_details: Hiling ng muling pagbubukas ng tanong na ito
-    index: 
+    index:
       title: Talaan ng mga kahilingan ng muling pagbubukas
-    model: 
+    model:
       prural_name: Mga hiling ng muling pagbubukas
-    new: 
+    new:
       title: Hiling ng muling pagbubukas
-    update: 
+    update:
       flash_notice: Matagumpay na naisapanahon ang hiling ng muling pagbubukas

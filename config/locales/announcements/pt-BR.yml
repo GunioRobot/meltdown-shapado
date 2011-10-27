@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giro720
-pt-BR: 
-  activerecord: 
-    attributes: 
-      announcement: 
+pt-BR:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Termina em
         message: Mensagem
         only_anonymous: Só para usuários anônimos
         starts_at: Inicia em
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Remover
       title: Ações
-    create: 
+    create:
       success: A notificação foi criada com sucesso.
-    index: 
+    index:
       title: Notificações do site

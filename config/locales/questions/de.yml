@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Kghbln
-de: 
-  activerecord: 
-    attributes: 
-      question: 
+de:
+  activerecord:
+    attributes:
+      question:
         answers: Antworten
         asked_by: Gefragt von
         body: Text
@@ -18,27 +18,27 @@ de:
         updated_by: aktualisiert von
         views: Aufrufe
         votes: Bewert-<br />ungen
-    models: 
+    models:
       question: Frage
       questions: Fragen
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: Kommentar hinzufügen …
       flag: Kennzeichnen
       pick_answer: Als Lösung auswählen
       unset_answer: Antwort in Frage stellen?
-    create: 
+    create:
       flash_notice: Die Frage wurde erfolgreich erstellt.
-    edit: 
+    edit:
       title: Bearbeiten der Frage
-    flag: 
+    flag:
       title: Kennzeichnen der Frage
-    form: 
+    form:
       adult_content: Diese Frage enthält jugendgefährdende Angaben.
       body_tip: Wie lautet Deine Frage? Sei aussagekräftig.
       language_tip: Wähle die Sprache der Frage.
       tags_tip: Verwende Stichwörter, um weitere Informationen zu Deiner Frage anzugeben.
-    index: 
+    index:
       active: Aktiv
       active_tooltip: Fragen die vor kurzem aktualisiert wurden
       ask_question: Frage stellen
@@ -53,42 +53,42 @@ de:
       unanswered_questions: offener Fragen.
       votes: Bewertungen
       votes_tooltip: Fragen mit den meisten Bewertungen
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: Du musst mindestens ein Stichwort verwenden.
         title_too_long: Der Titel ist zu lang. Er darf aus nicht mehr als 100 Zeichen bestehen.
         too_many_tags: Du kannst maximal neun Stichwörter verwenden.
         too_short: Er scheint zu kurz zu sein. Bitte verwende mehr als %{count} Wörter.
-    move: 
+    move:
       group_label: "Verschiebe zur Gruppe:"
       submit: Verschieben!
       title: "Verschiebe Frage: %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: Die Gruppe %{group} existiert nicht
       success: Frage wurde nach %{group} verschoben
-    new: 
+    new:
       how_to_ask: Wie fragen
       title: Frage stellen
-    question: 
+    question:
       accepted_tooltip: Zu dieser Frage gibt es eine Antwort, die akzeptiert wurde
-    retag: 
+    retag:
       title: Stichwörter ändern
-    retag_form: 
+    retag_form:
       cancel: Abbrechen
       submit: Stichwörter aktualisieren
       title: Stichwörter aktualisieren
-    retag_to: 
+    retag_to:
       failure: Leider konnten die Stichwörter nicht aktualisiert werden.
       success: Die Stichwörter wurden erfolgreich aktualisiert.
-    revert: 
+    revert:
       title: Frage zurücksetzen
-    shared: 
+    shared:
       flag: Kennzeichnen
-    show: 
+    show:
       accepted_tooltip: Eine der Antworten wurde als richtig akzeptiert
       another_answers: Andere Antworten
       answers: Antworten
-      answers_title: 
+      answers_title:
         one: "%{count} Antwort"
         other: "%{count} Antworten"
       asked_on: gefragt bei
@@ -120,23 +120,23 @@ de:
       unwatch_tooltip: Diese Frage nicht mehr beobachten
       viewed: Gesehen
       watch_tooltip: Diese Frage beobachten
-    solve: 
+    solve:
       flash_notice: Die Frage wurde beantwortet.
-    tags: 
+    tags:
       filter: Suche nach Stichwörtern
       title: Stichwörter
       tooltip: Alle Fragen mit dem Stichwort %{tag} anzeigen
-    unanswered: 
+    unanswered:
       empty: Diese Gruppe beinhaltet keine offenen Fragen.
       expert: Experten
       my_tags: Meine Stichwörter
       tags: Stichwörter zu offenen Fragen
       title: Offene Fragen
-    unsolve: 
+    unsolve:
       flash_notice: Die Frage wird nicht mehr beantwortet.
-    unwatch: 
+    unwatch:
       success: Du erhältst nun keine E-Mail-Benachrichtigungen mehr zu jeder neuen Antwort auf diese Frage.
-    update: 
+    update:
       flash_notice: Die Frage wurde erfolgreich aktualisiert.
-    watch: 
+    watch:
       success: Du erhältst nun E-Mail-Benachrichtigungen zu jeder neuen Antwort auf diese Frage.

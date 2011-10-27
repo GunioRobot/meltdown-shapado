@@ -3,8 +3,8 @@
 # Export driver: syck
 # Author: Ravichandra
 # Author: Veeven
-te: 
-  feeds: 
+te:
+  feeds:
     feed: ఫీడు
     post_new_questions: పై కొత్త ప్రశ్నలు అడగండి
     question: ఈ ప్రశ్నకి చందా చేరండి
@@ -12,7 +12,7 @@ te:
     share_on_twitter: ట్విటర్, ఫేస్‌బుక్ మరియు ఇంకా మరెన్నో...
     tag: ట్యాగుకి చందా చేరండి
     user: ఈ వాడుకరి ప్రశ్నలకి చందా చేరండి
-  global: 
+  global:
     active: చేతనంచేయి
     anonymous: అజ్ఞాత
     by: చే
@@ -25,20 +25,20 @@ te:
     preview: మునుజూపు
     previous: మునుపటి
     share: పంచుకో
-  languages: 
+  languages:
     any: ఏదయినా
     user: నా ప్రాధాన్యతా భాషలు
-  models: 
+  models:
     question: ప్రశ్న
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} సారి"
       other: "%{count} సార్లు"
       zero: ఎప్పటికీ వద్దు
-  pagination: 
+  pagination:
     next: తదుపరి &raquo;
     previous: "&laquo; గత"
-  scaffold: 
+  scaffold:
     add: చేర్చు
     back: వెనక్కి
     cancel: రద్దుచేయి
@@ -55,6 +55,6 @@ te:
     show: చూపించు
     sure: మీరు నిజంగానే ఈ %{model}ని తొలగించాలనుకుంటున్నారా?
     update: తాజాకరించు
-  time: 
+  time:
     ago: "%{time} క్రితం"
     today: ఈరోజు

@@ -2,30 +2,30 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Tobulos1
-sv: 
-  activerecord: 
-    attributes: 
-      flag: 
+sv:
+  activerecord:
+    attributes:
+      flag:
         reason: Orsak
-    models: 
+    models:
       flag: Flagga
       flags: Flaggor
-  flags: 
-    create: 
+  flags:
+    create:
       flash_error: Du kan inte flagga det här
       flash_notice: Tack för din rapport
-    destroy: 
+    destroy:
       flash_notice: Din flaggning har återkallats framgångsrikt.
-    edit: 
+    edit:
       title: Redigera %{model}s flagga
-    form: 
+    form:
       label: Flagga med omsorg
       offensive: Stötande, kränkande eller hatpropaganda
       spam: Spam
-    model: 
-      messages: 
+    model:
+      messages:
         already_requested: Du har redan flaggat denna %{model}
-    new: 
+    new:
       title: Flagga %{model}
-    update: 
+    update:
       flash_notice: Frågans flagga har uppdaterats.

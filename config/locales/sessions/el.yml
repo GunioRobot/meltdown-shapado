@@ -3,14 +3,14 @@
 # Export driver: syck
 # Author: Discon
 # Author: Evropi
-el: 
-  sessions: 
-    create: 
+el:
+  sessions:
+    create:
       flash_error: Δεν μπορέσαμε να σας συνδέσουμε ως '%{login}'
       flash_notice: Συνδεθήκατε επιτυχώς
-    destroy: 
+    destroy:
       flash_notice: Έχετε αποσυνδεθεί.
-    new: 
+    new:
       log_in: Είσοδος
       not_registered: Δεν έχετε εγγραφεί ακόμα;
       registered: Ήδη εγγεγραμμένοι;

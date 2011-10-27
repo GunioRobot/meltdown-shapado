@@ -3,23 +3,23 @@
 # Export driver: syck
 # Author: McDutchie
 # Author: Siebrand
-nl: 
-  mailers: 
-    notifications: 
-      earned_badge: 
+nl:
+  mailers:
+    notifications:
+      earned_badge:
         subject: U hebt een speldje verdiend in %{group}!
-      favorited: 
+      favorited:
         subject: "%{login} heeft uw vraag als favoriet toegevoegd!"
-      follow: 
+      follow:
         subject: "%{login} volgt u nu op %{app}"
-      give_advice: 
+      give_advice:
         friend_subject: "Uw vriend heeft hulp nodig: %{question_title}"
         subject: "We hebben uw advies nodig: %{question_title}"
-      new_answer: 
+      new_answer:
         subject_friend: Uw vriend %{login} heeft de vraag %{title} beantwoord
         subject_other: "%{login} heeft de vraag %{title} beantwoord"
         subject_owner: "%{login} heeft uw vraag %{title} beantwoord"
-      new_comment: 
+      new_comment:
         subject: "%{login} heeft een opmerking toegevoegd aan %{group}"
-      report: 
+      report:
         subject: Rapportage voor de groep %{group} van %{app}

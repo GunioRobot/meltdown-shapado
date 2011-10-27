@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+fi:
+  imports:
+    subtabs:
+      need_confirmation:
         name: Tarvitsee vahvistusta
         title: Lähetä vahvistussähköpostiviestit

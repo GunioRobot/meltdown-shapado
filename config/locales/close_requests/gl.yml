@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  close_requests: 
-    create: 
+gl:
+  close_requests:
+    create:
       flash_notice: a solicitude de peche creouse correctamente
-    destroy: 
+    destroy:
       flash_notice: a solicitude de peche borrouse correctamente
-    edit: 
+    edit:
       title: Editar a solicitude de peche
-    form: 
+    form:
       close_with_reason: pechar esta pregunta por este motivo
       dupe: duplicado
       no_question: non é unha pregunta
@@ -18,16 +18,16 @@ gl:
       ot: fóra do tema
       request_closing_details: solicitar o peche desta pregunta
       spam: spam
-    index: 
+    index:
       title: lista de solicitudes de peche
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: comentario
         reason: motivo
         user: usuario
-      messages: 
+      messages:
         already_requested: xa solicitou o peche desta pregunta
       name: solicitude de peche
       prural_name: solicitudes de peche
-    update: 
+    update:
       flash_notice: a solicitude de peche actualizouse correctamente

@@ -3,19 +3,19 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Jim-by
-be-TARASK: 
-  activerecord: 
-    attributes: 
-      announcement: 
+be-TARASK:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Канчаецца на
         message: Паведамленьне
         only_anonymous: Толькі для ананімных карыстальнікаў
         starts_at: Пачынаецца з
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Выдаліць
       title: Дзеяньні
-    create: 
+    create:
       success: Абвяшчэньня было створанае пасьпяхова.
-    index: 
+    index:
       title: Аб’явы

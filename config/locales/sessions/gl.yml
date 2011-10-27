@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  sessions: 
-    create: 
+gl:
+  sessions:
+    create:
       flash_error: Non se puido acceder ao sistema como "%{login}"
       flash_notice: Accedeu ao sistema correctamente
-    destroy: 
+    destroy:
       flash_notice: Saíu ao anonimato.
-    new: 
+    new:
       log_in: Rexistro
       not_registered: Aínda non está rexistrado?
       registered: Xa está rexistrado?

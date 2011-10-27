@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Patcito
 # Author: Peter17
-fr: 
-  admin: 
-    manage: 
-      content: 
+fr:
+  admin:
+    manage:
+      content:
         footer: Pied de page
         head: en-tête
         question_help: Aide aux questions
@@ -14,12 +14,12 @@ fr:
         title: Contenu personalisé
         top_bar: Barre supérieure
         top_bar_tip: Saisissez un lien par ligne
-      properties: 
-        constrains: 
+      properties:
+        constrains:
           reputation_constrains_description: Ce formulaire permet de configurer la quantité de points de réputation requise pour effectuer une action donnée
           reputation_constrains_subtitle: Liste des contraintes pour chaque action
           title: Contraintes
-        domain: 
+        domain:
           description: "Vous pouvez configurer votre nom de domaine à fin de le faire pointer vers votre site de la manière suivante:"
           instruction1: Vous devez tout d'abord vous rendre sur le site où vous avez acheter votre nom de de domaine tel que %{subdomain}.com.
           instruction2: Là, vous devez vous rendre dans la section DNS pour y créer un CNAME.
@@ -29,13 +29,13 @@ fr:
           instruction6: Vous pouvez maintenant revenir sur cette page et tapez le nom de domaine que vous avez choisi tel que www.%{subdomain} dans le champs de texte ci-dessous et confirmer. Si vous avez des questions, posez-les sur le %{chat_url} ou sur notre forum
           title: Configurer votre nom de domaine
           warning: Êtes-vous sûr de vouloir changer votre domaine?
-        general: 
+        general:
           title: Propriétés du groupe
-        rewards: 
+        rewards:
           reputation_rewards_description: Ce formulaire permet de configurer la quantidade de points requise pour effectuer chaque action.
           reputation_rewards_subtitle: Liste des récompenses de reputation
           title: Récompenses
-        share: 
+        share:
           add_tags: Ajouter des tags à vos tweets
           application_id: Application ID
           asking_from_twitter: Poser des questions depuis Twitter
@@ -51,6 +51,6 @@ fr:
           tweet_ends_with: Ajouter un tag à vos tweets
           tweet_starts_with: Précéder vos tweets d'un tag
           twitter_account: Le compte Twitter à qui vos utilisateurs poseront leurs questions.
-        theme: 
+        theme:
           logo_legend: Importez un logo pour votre groupe. Il doit mesurer au maximum 2 Mo.
           title: Configurer le thème du groupe

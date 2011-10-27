@@ -2,27 +2,27 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Ukabia
-ig: 
-  activerecord: 
-    attributes: 
-      page: 
+ig:
+  activerecord:
+    attributes:
+      page:
         js: JavaScript
-    models: 
+    models:
       page: Ihü
       pages: Ihü
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Ké ihü ohúrù
       edit_page: Rüwa ihü
       title: Mmèmé
-    create: 
+    create:
       success: Ihü kèrè na nke ómá.
-    edit: 
+    edit:
       title: Ihü í rü
-    form: 
+    form:
       language_tip: Asụsụ ihü
-    index: 
+    index:
       title: Ndétu ihü
-    new: 
+    new:
       title: Ihü ohúrù
     title: Gbado'm

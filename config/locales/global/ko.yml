@@ -2,8 +2,8 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Linkr
-ko: 
-  feeds: 
+ko:
+  feeds:
     feed: Feed
     post_new_questions: 새로운 질문을 게시
     question: 이 질문을 구독
@@ -11,7 +11,7 @@ ko:
     share_on_twitter: 트위터, 페이스북 등 ...
     tag: 태그를 구독
     user: 이 사용자의 질문을 구독
-  global: 
+  global:
     by: by
     current: 현재
     from: from %{site}
@@ -22,17 +22,17 @@ ko:
     preview: 미리보기
     previous: 이전
     share: 공유
-  languages: 
+  languages:
     any: 모두
     user: 언어 설정
-  models: 
+  models:
     question: 질문
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} time"
       other: "%{count} times"
       zero: never
-  scaffold: 
+  scaffold:
     add: 추가
     back: 뒤로
     cancel: 취소
@@ -48,6 +48,6 @@ ko:
     show: 보기
     sure: 이  %{model} 을/를 삭제하겠습니까?
     update: 업데이트
-  time: 
+  time:
     ago: "%{time} ago"
     today: 오늘

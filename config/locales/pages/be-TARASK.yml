@@ -3,33 +3,33 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Jim-by
-be-TARASK: 
-  activerecord: 
-    attributes: 
-      page: 
+be-TARASK:
+  activerecord:
+    attributes:
+      page:
         css: Табліцы стыляў
         js: JavaScript
-    models: 
+    models:
       page: Старонка
       pages: Старонкі
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Стварыць новую старонку
       edit_page: Рэдагаваць старонку
       title: Дзеяньні
-    create: 
+    create:
       success: Старонка была пасьпяхова створаная.
-    edit: 
+    edit:
       title: Рэдагаваньне старонкі
-    form: 
+    form:
       language_tip: Мова старонкі
       title_tip: "Назва старонкі. Выкарыстоўвайце яе для спасылкі на старонку. Напрыклад: [[FAQ|праверце faq]]"
-    index: 
+    index:
       create_page: Стварыць новую старонку
       title: Сьпіс старонак
       written_in: Напісана на %{language}
-    new: 
+    new:
       title: Новая старонка
     title: Выправіць
-    update: 
+    update:
       success: Старонка была пасьпяхова абноўленая.

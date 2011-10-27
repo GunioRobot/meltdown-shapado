@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  activerecord: 
-    attributes: 
-      member: 
+id:
+  activerecord:
+    attributes:
+      member:
         role: Peranan
-  members: 
-    form: 
+  members:
+    form:
       login_tip: Cari ketika Anda mengetik
-    index: 
+    index:
       manage_members_title: Kelola anggota
       title: Anggota grup %{name}
       title_isolate: Anggota %{name}

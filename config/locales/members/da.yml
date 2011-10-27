@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  activerecord: 
-    attributes: 
-      member: 
+da:
+  activerecord:
+    attributes:
+      member:
         role: Rolle
-  members: 
-    form: 
+  members:
+    form:
       login_tip: Søg mens du skriver
-    index: 
+    index:
       manage_members_title: Administrer medlemmer
       title: Medlemmer af %{name}'s gruppe
       title_isolate: Medlemmer af %{name}

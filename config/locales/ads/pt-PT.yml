@@ -4,12 +4,12 @@
 # Author: Giro720
 # Author: Hamilton Abreu
 # Author: McDutchie
-pt-PT: 
-  ads: 
+pt-PT:
+  ads:
     ad_links: Adicionar um anúncio %{type} novo
-    create: 
+    create:
       success: O anúncio foi criado.
-    index: 
+    index:
       add_adbard: Adicionar um anúncio Ad Bard novo
       add_adsense: Adicionar um anúncio do Google AdSense novo
       title: Anúncios

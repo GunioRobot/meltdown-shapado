@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Sp5uhe
-pl: 
-  activerecord: 
-    attributes: 
-      announcement: 
+pl:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Zakończ
         message: Komunikat
         only_anonymous: Tylko dla anonimowych użytkowników
         starts_at: Rozpocznij
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Usuń
       title: Działania
-    create: 
+    create:
       success: Ogłoszenie zostało utworzone.
-    index: 
+    index:
       title: Ogłoszenia

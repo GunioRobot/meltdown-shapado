@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Siebrand
-nl: 
-  sessions: 
-    create: 
+nl:
+  sessions:
+    create:
       flash_error: U kon niet aanmelden als "%{login}"
       flash_notice: U bent aangemeld
-    destroy: 
+    destroy:
       flash_notice: U bent afgemeld.
-    new: 
+    new:
       log_in: Aanmelden
       not_registered: Nog niet geregistreerd?
       registered: Al geregistreerd?

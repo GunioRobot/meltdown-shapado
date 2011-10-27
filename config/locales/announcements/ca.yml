@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Papapep
-ca: 
-  activerecord: 
-    attributes: 
-      announcement: 
+ca:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Acaba a
         message: Missatge
         only_anonymous: Només per a usuaris anònims
         starts_at: Comença a
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Elimina
       title: Accions
-    create: 
+    create:
       success: S'ha creat correctament l'avís
-    index: 
+    index:
       title: Avisos

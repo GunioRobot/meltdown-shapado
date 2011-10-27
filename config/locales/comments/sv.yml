@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Tobulos1
-sv: 
-  comments: 
-    create: 
+sv:
+  comments:
+    create:
       flash_notice: Tack för din kommentar
-    edit: 
+    edit:
       title: Redigera kommentar
-    shared: 
+    shared:
       add_comment: Lägg till kommentar...
       comment_submit: Kommentar
       reply: Svara
       said: sade
-    update: 
+    update:
       flash_notice: Kommentaren har uppdaterats.
-  models: 
+  models:
     comment: Kommentera
     comments: Kommentarer

@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Rancher
-sr: 
-  close_requests: 
-    form: 
+sr:
+  close_requests:
+    form:
       dupe: Дупликат
       no_question: Није питање
       not_relevant: Није релевантно
       ot: Ван теме
       request_closing_details: Затражи затварање овог питања
       spam: непожељно
-    index: 
+    index:
       title: Списак захтева за затварање
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Коментар
         reason: Разлог
         user: Корисник

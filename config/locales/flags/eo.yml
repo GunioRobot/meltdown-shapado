@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Gufulo
-eo: 
-  activerecord: 
-    attributes: 
-      flag: 
+eo:
+  activerecord:
+    attributes:
+      flag:
         reason: Kialo
-    models: 
+    models:
       flag: Marko
       flags: Markoj
-  flags: 
-    create: 
+  flags:
+    create:
       flash_error: Vi ne povas marki tion ĉi.
       flash_notice: Dankon pro via raporto.
-    form: 
+    form:
       attention: Postulas atenton de la kontrolanto.
       label: Bonvolu marki singarde.
       offensive: Ofenda, altrudiĝema aŭ malam-instiga parolmaniero

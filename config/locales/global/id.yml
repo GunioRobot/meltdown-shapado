@@ -2,8 +2,8 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  feeds: 
+id:
+  feeds:
     feed: Umpan
     post_new_questions: Kirim pertanyaan baru ke
     question: Berlangganan ke pertanyaan ini
@@ -11,7 +11,7 @@ id:
     share_on_twitter: twitter, facebook dan lainnya...
     tag: Berlangganan ke tag
     user: Berlangganan ke pertanyaan pengguna
-  global: 
+  global:
     active: Aktifkan
     by: oleh
     current: Terkini
@@ -23,17 +23,17 @@ id:
     preview: Pratayang
     previous: Sebelumnya
     share: bagikan
-  languages: 
+  languages:
     any: Apa pun
     user: Bahasa Pilihan Saya
-  models: 
+  models:
     question: Pertanyaan
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} kali"
       other: "%{count} kali"
       zero: Tidak pernah
-  scaffold: 
+  scaffold:
     add: Tambahkan
     back: Kembali
     cancel: Batalkan
@@ -49,6 +49,6 @@ id:
     show: Tampilkan
     sure: Anda yakin ingin menghapus %{model} ini?
     update: Mutakhirkan
-  time: 
+  time:
     ago: "%{time} yang lalu"
     today: hari ini

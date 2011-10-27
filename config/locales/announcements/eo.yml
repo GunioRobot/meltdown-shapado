@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: LaPingvino
-eo: 
-  activerecord: 
-    attributes: 
-      announcement: 
+eo:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Finiĝas je
         message: Mesaĝo
         only_anonymous: Nur por sennomaj uzantoj
         starts_at: Komenciĝas je
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Forviŝi
       title: Agoj
-    create: 
+    create:
       success: Sukcese kreis anoncon
-    index: 
+    index:
       title: Anoncoj

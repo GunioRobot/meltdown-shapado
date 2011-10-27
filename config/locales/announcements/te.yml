@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Veeven
-te: 
-  activerecord: 
-    attributes: 
-      announcement: 
+te:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: ముగింపు
         message: సందేశం
         only_anonymous: అజ్ఞాత వాడుకరులకు మాత్రమే
         starts_at: మొదలు
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: తొలగించు
       title: చర్యలు
-    create: 
+    create:
       success: ప్రకటనని విజయవంతంగా సృష్టించారు.
-    index: 
+    index:
       title: ప్రకటనలు

@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Bjankuloski06
-mk: 
-  sessions: 
-    create: 
+mk:
+  sessions:
+    create:
       flash_error: не можам да ве најавам како „%{login}“
       flash_notice: успешно сте најавени
-    destroy: 
+    destroy:
       flash_notice: одјавени сте.
-    new: 
+    new:
       log_in: најава
       not_registered: сè уште не сте регистрирани?
       registered: веќе сте регистрирани?

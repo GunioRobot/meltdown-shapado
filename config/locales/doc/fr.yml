@@ -4,11 +4,11 @@
 # Author: IAlex
 # Author: Patcito
 # Author: Y-M D
-fr: 
-  doc: 
-    chat: 
+fr:
+  doc:
+    chat:
       title: Support par tchat
-    plans: 
+    plans:
       15millions: 15 millions de pages vues/mois
       1million: 1 million de pages vues/mois
       247_all_support: Support 24/7 sur le web, email, tchat et téléphone

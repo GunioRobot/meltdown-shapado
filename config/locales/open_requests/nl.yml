@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Siebrand
-nl: 
-  open_requests: 
-    create: 
+nl:
+  open_requests:
+    create:
       flash_notice: Het heropeningsverzoek is opgeslagen
-    destroy: 
+    destroy:
       flash_notice: Het heropeningsverzoek is verwijderd
-    edit: 
+    edit:
       title: Heropeningsverzoek bewerken
-    form: 
+    form:
       request_opening_details: Heropeningsverzoek voor deze vraag indienen
-    index: 
+    index:
       title: Lijst met heropeningsverzoeken
-    model: 
+    model:
       prural_name: Heropeningsverzoeken
-    new: 
+    new:
       title: Heropeningsverzoek
-    update: 
+    update:
       flash_notice: Het heropeningsverzoek is bijgewerkt

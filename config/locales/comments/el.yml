@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Discon
-el: 
-  comments: 
-    create: 
+el:
+  comments:
+    create:
       flash_notice: Ευχαριστούμε για το σχόλιό σας
-    edit: 
+    edit:
       title: Επεξεργασία σχόλιου
-    shared: 
+    shared:
       add_comment: Προσθήκη σχόλιου...
       comment_submit: Σχολιασμός
       reply: Απάντηση
       said: είπε
-    update: 
+    update:
       flash_notice: Το σχόλιο ενημερώθηκε επιτυχώς.
-  models: 
+  models:
     comment: Σχόλιο
     comments: Σχόλια

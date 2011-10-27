@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Linkr
-ko: 
-  activerecord: 
-    attributes: 
-      member: 
+ko:
+  activerecord:
+    attributes:
+      member:
         role: 역할
-  members: 
-    form: 
+  members:
+    form:
       login_tip: search as you type
-    index: 
+    index:
       manage_members_title: 회원 관리
       title: "%{name}의 그룹 회원들"
       title_isolate: "%{name}의 회원들"

@@ -3,11 +3,11 @@
 # Export driver: syck
 # Author: Martorell
 # Author: Papapep
-ca: 
-  shared: 
-    current_tags: 
+ca:
+  shared:
+    current_tags:
       title: Etiquetes seleccionades
-    topbar: 
+    topbar:
       admin: Administrador
       logged_as: Heu iniciat la sessió com a %{login}
       user_page: Pàgina personal

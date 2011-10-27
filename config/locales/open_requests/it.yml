@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giallu
-it: 
-  open_requests: 
-    create: 
+it:
+  open_requests:
+    create:
       flash_notice: Richiesta di riapertura creata
-    destroy: 
+    destroy:
       flash_notice: Richiesta di riapertura cancellata
-    edit: 
+    edit:
       title: Modifica richiesta di riapertura
-    form: 
+    form:
       request_opening_details: Richiesta di riapertura della domanda
-    index: 
+    index:
       title: Elenco delle domande di riapertura
-    model: 
+    model:
       prural_name: Richieste di riapertura
-    new: 
+    new:
       title: Richiesta di riapertura
-    update: 
+    update:
       flash_notice: Richiesta di riapertura modificata

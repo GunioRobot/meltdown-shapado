@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: TRYPPN
-ta: 
-  activerecord: 
-    attributes: 
-      announcement: 
+ta:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: முடிவு
         message: செய்தி
         starts_at: தொடக்கம்
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: நீக்குக
       title: செயல்கள்

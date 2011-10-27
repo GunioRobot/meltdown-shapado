@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  activerecord: 
-    attributes: 
-      member: 
+gl:
+  activerecord:
+    attributes:
+      member:
         role: rol
-  members: 
-    form: 
+  members:
+    form:
       login_tip: procurar á vez que escribe
-    index: 
+    index:
       manage_members_title: xestionar os membros
       title: membros do grupo de %{name}
       title_isolate: membros de %{name}

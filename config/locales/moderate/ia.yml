@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: McDutchie
-ia: 
-  admin: 
-    moderate: 
-      index: 
+ia:
+  admin:
+    moderate:
+      index:
         all: Totes
         ban: Bannir
         banned: Questiones bannite

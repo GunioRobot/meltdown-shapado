@@ -3,15 +3,15 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Jim-by
-be-TARASK: 
-  activerecord: 
-    attributes: 
-      member: 
+be-TARASK:
+  activerecord:
+    attributes:
+      member:
         role: Роля
-  members: 
-    form: 
+  members:
+    form:
       login_tip: Пошук падчас увядзеньня
-    index: 
+    index:
       manage_members_title: Кіраваньне ўдзельнікамі
       title: Удзельнікі групы %{name}
       title_isolate: Удзельнікі %{name}

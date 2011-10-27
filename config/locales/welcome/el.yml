@@ -2,53 +2,53 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Discon
-el: 
-  welcome: 
-    confirm_age: 
+el:
+  welcome:
+    confirm_age:
       notice: Για να εισέλθετε σε αυτή τη σελίδα πρέπει να είστε τουλάχιστον 18 ετών ή στην ηλικία ενηλικίωσης στη χώρα στην οποία διαμένετε ή από την οποία έχετε πρόσβαση σε αυτή τη σελίδα.
       over_18: Είμαι πάνω από 18
       under_18: Είμαι κάτω από 18
       warning: "ΠΡΟΣΟΧΗ: Το περιεχόμενο της σελίδας μπορεί να είναι ακατάλληλο για ανηλίκους."
-    facts: 
-      features: 
-        cols: 
+    facts:
+      features:
+        cols:
           adaptable: Προσαρμόσιμο
           foss: Ελεύθερο/ανοιχτού κώδικα
           joel: Θα κάνω πλουσιότερο τον Joel;
           multilanguage: Πολυγλωσσικό
           multitopic: Πολυθεματικό
-        shapado: 
+        shapado:
           adaptable: Ναι!
           foss: Ναι!
           joel: Όχι :/
           multilanguage: Ναι!
           multitopic: Ναι!
-        stackexchange: 
+        stackexchange:
           adaptable: Όχι
           foss: Όχι
           joel: Ναι!
           multilanguage: Όχι
           multitopic: Όχι
-      prices: 
-        cols: 
+      prices:
+        cols:
           onsite: Στο χώρο σας
-        shapado: 
+        shapado:
           large: Μάλλον κοντά στα $500
           medium: <=== το ίδιο
           onsite: Μάλλον $0 στο δικό σας server, ε
           small: Μάλλον μεταξύ $50 και $100/μήνα στους περισσότερους παρόχους φιλοξενίας
-        stackexchange: 
+        stackexchange:
           large: $1299/μήνα
           medium: $999/μήνα
           onsite: $2500/μήνα
           small: $129/μήνα
-    feedback: 
+    feedback:
       captcha_error: Παρακαλώ λύστε μια απλή μαθηματική πράξη
       email_description: Παρακαλώ εισάγετε το email σας ώστε να μπορούμε να απαντήσουμε
       feedback_description: Περιγραφή
       feedback_title: Θέμα
       title: Στείλτε τα σχόλιά σας
-    index: 
+    index:
       active: Ενεργές
       create_own_site: Δημιουργήστε το δικό σας Q&amp;A site σε 8 δευτερόλεπτα, δωρεάν
       hot: Δημοφιλείς

@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Y-M D
-br: 
-  activerecord: 
-    models: 
+br:
+  activerecord:
+    models:
       favorite: Sined
       favorites: Sinedoù
-  favorites: 
-    create: 
+  favorites:
+    create:
       success: Ouzhpennet eo bet ar goulenn d'ho sinedoù
       unauthenticated: Rankout a reoc'h krouiñ ur gont evit ouzhpennañ sinedoù

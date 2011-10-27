@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Siebrand
-nl: 
-  activerecord: 
-    attributes: 
-      announcement: 
+nl:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Eindigt om
         message: Bericht
         only_anonymous: Alleen voor anonieme gebruikers
         starts_at: Begint om
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Verwijderen
       title: Handelingen
-    create: 
+    create:
       success: De aankondiging is aangemaakt.
-    index: 
+    index:
       title: Aankondigingen

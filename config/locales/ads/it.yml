@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giallu
-it: 
-  ads: 
+it:
+  ads:
     ad_links: Aggiungi un nuovo annuncio %{type}
-    create: 
+    create:
       success: Annuncio creato.
-    index: 
+    index:
       add_adbard: Aggiungi annuncio Ad Bard
       add_adsense: Aggiungi annuncio Google AdSense
       title: Annunci

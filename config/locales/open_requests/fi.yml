@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  open_requests: 
-    create: 
+fi:
+  open_requests:
+    create:
       flash_notice: Uudellenavauspyynnön luonti onnistui
-    destroy: 
+    destroy:
       flash_notice: Uudelleenavauspyynnön poisto onnistui
-    edit: 
+    edit:
       title: Muokkaa uudelleenavauspyyntöä
-    form: 
+    form:
       request_opening_details: Tämän kysymyksen uudelleenavauspyyntö
-    index: 
+    index:
       title: Uudelleenavauspyyntöjen luettelo
-    model: 
+    model:
       prural_name: Uudelleenavauspyynnöt
-    new: 
+    new:
       title: Uudelleenavauspyyntö
-    update: 
+    update:
       flash_notice: Uudelleenavauspyynnön päivitys onnistui

@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Xil
-lv: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+lv:
+  imports:
+    subtabs:
+      need_confirmation:
         name: Jāapstiprina
         title: Nosūtīt apstiprināšanas e-pastus

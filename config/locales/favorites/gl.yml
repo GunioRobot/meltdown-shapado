@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  activerecord: 
-    models: 
+gl:
+  activerecord:
+    models:
       favorite: favorito
       favorites: favoritos
-  favorites: 
-    create: 
+  favorites:
+    create:
       success: engadiuse a pregunta aos seus favoritos
       unauthenticated: necesita unha conta para engadir favoritos

@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Kghbln
-de: 
-  activerecord: 
-    models: 
+de:
+  activerecord:
+    models:
       favorite: Favorit
       favorites: Favoriten
-  favorites: 
-    create: 
+  favorites:
+    create:
       success: Die Frage wurde zu deinen Favoriten hinzugefügt.
       unauthenticated: Du brauchst ein Nutzerkonto, um Favoriten hinzufügen zu können.

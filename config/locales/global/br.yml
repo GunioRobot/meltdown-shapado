@@ -3,8 +3,8 @@
 # Export driver: syck
 # Author: Fulup
 # Author: Y-M D
-br: 
-  feeds: 
+br:
+  feeds:
     feed: Lanvad
     post_new_questions: Sevel goulennoù nevez ouzh
     question: Koumanantiñ d'ar goulenn-mañ
@@ -12,7 +12,7 @@ br:
     share_on_twitter: twitter, facebook ha muioc'h...
     tag: Koumanantiñ d'an dikedenn
     user: En em enskrivit da goulennoù an implijer
-  global: 
+  global:
     active: Gweredekaat
     anonymous: Dizanv
     by: gant
@@ -25,20 +25,20 @@ br:
     preview: Rakwelet
     previous: Kent
     share: rannañ
-  languages: 
+  languages:
     any: Ne vern
     user: Ma yezhoù karetañ
-  models: 
+  models:
     question: Ar goulenn
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} gwech"
       other: "%{count} gwech"
       zero: Morse
-  pagination: 
+  pagination:
     next: War-lerc'h &raquo;
     previous: "&laquo; Kent"
-  scaffold: 
+  scaffold:
     add: Ouzhpennañ
     back: Distreiñ
     cancel: Nullañ
@@ -55,6 +55,6 @@ br:
     show: Diskouez
     sure: Ha sur oc'h hoc'h eus c'hoant da zilemel ar %{model}-mañ ?
     update: Hizivaat
-  time: 
+  time:
     ago: "%{time} zo"
     today: hiziv

@@ -2,8 +2,8 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Kghbln
-de: 
-  feeds: 
+de:
+  feeds:
     feed: Feed
     post_new_questions: Erstelle neue Fragen zu
     question: Abonniere diese Frage
@@ -11,7 +11,7 @@ de:
     share_on_twitter: Twitter, Facebook und mehr …
     tag: Abonniere das Stichwort
     user: Abonniere die Fragen des Nutzers
-  global: 
+  global:
     active: Aktivieren
     anonymous: Anonymer
     by: von
@@ -24,20 +24,20 @@ de:
     preview: Vorschau betrachten
     previous: Vorherige
     share: freigeben
-  languages: 
+  languages:
     any: Alle
     user: Meine bevorzugten Sprachen
-  models: 
+  models:
     question: Die Frage
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count}-mal"
       other: "%{count}-mal"
       zero: Nie
-  pagination: 
+  pagination:
     next: Nächste &raquo;
     previous: "&laquo; Vorige"
-  scaffold: 
+  scaffold:
     add: Hinzufügen
     back: Zurück
     cancel: Abbrechen
@@ -54,6 +54,6 @@ de:
     show: Zeigen
     sure: Bist Du sicher, dass Du diese %{model} löschen möchtest?
     update: Aktualisieren
-  time: 
+  time:
     ago: vor %{time}
     today: heute

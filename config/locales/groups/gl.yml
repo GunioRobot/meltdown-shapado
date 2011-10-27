@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  activerecord: 
-    attributes: 
-      group: 
+gl:
+  activerecord:
+    attributes:
+      group:
         default_tags: Etiquetas por defecto
         description: Descrición
         domain: Dominio
@@ -24,14 +24,14 @@ gl:
         state: Estado
         subdomain: URL
         wysiwyg_editor: Activar o editor sinxelo
-    models: 
+    models:
       default_tags_message: Non pode empregar máis de 10 etiquetas por defecto
       group: Grupo
       groups: Grupos
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: A creación do seu grupo rematou correctamente. Agora, xa pode comezar a configuralo.
-    form: 
+    form:
       access: Configuracións de acceso
       analytics_engine: Motor de análise
       analytics_legend: O grupo poderá utilizar o seu propio código de vixilancia
@@ -46,14 +46,14 @@ gl:
       logo_legend: Podes cargar o logo do grupo. O tamaño máximo é de 2MB.
       members_only: Só os membros do grupo poderán acceder a este grupo
       website_analytics_id: ID das análises da páxina web
-    group: 
+    group:
       about: Acerca de
       accept_group: Aceptar este grupo
       allow_ads: Activar os anuncios
       close: Pechar
       close_group: Pechar este grupo
       disallow_ads: Desactivar os anuncios
-    index: 
+    index:
       actives: Activos
       filter: Procurar un grupo
       most_active: Máis activos
@@ -61,9 +61,9 @@ gl:
       pendings: Pendente
       request_group: Pedir un novo grupo
       title: Grupos
-    new: 
+    new:
       title: Crear o seu grupo
-    show: 
+    show:
       accept_group: Aceptar este grupo
       accept_group_with_custom_ads: Aceptar o grupo e permitir anuncios personalizados
       close_group: Pechar este grupo

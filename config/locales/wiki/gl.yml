@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  wiki: 
-    actions: 
+gl:
+  wiki:
+    actions:
       all_history: volver ao historial
       back_to_question: volver á pregunta
       revert: reverter ata esta versión
       show_diff: comparar as versións seleccionadas
-    diff: 
+    diff:
       title: diferenzas entre %{prev} e %{curr}
-    history: 
+    history:
       current_version: versión actual
       previous_versions: versións anteriores
       title: historial (%{count})
       version: versión
       version_summary: resumo da versión
-    model: 
-      attributes: 
+    model:
+      attributes:
         message: resumo

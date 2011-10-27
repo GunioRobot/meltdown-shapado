@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Vgeorge
-pt-BR: 
-  admin: 
-    manage: 
-      content: 
+pt-BR:
+  admin:
+    manage:
+      content:
         footer: Rodapé
         head: Cabeçalho
         question_help: Ajuda de perguntas
@@ -13,12 +13,12 @@ pt-BR:
         title: Conteúdo personalizado
         top_bar: Barra superior
         top_bar_tip: Introduza um link por linha
-      properties: 
-        constrains: 
+      properties:
+        constrains:
           reputation_constrains_description: Este formulário permite-lhe configurar quantos pontos de reputação os usuários necessitam para executar uma determinada ação
           reputation_constrains_subtitle: Lista de requisitos de reputação para cada ação
           title: Requisitos
-        domain: 
+        domain:
           description: "Você pode mapear o seu site de forma a ser acessado através do seu próprio domínio. Faça assim:"
           instruction1: Para fazê-lo, antes autentique-se no fornecedor do seu domínio. É o site onde comprou o seu domínio, como %{subdomain}.com.
           instruction2: Lá, vá à seção de DNS e crie uma coisa chamada CNAME.
@@ -28,13 +28,13 @@ pt-BR:
           instruction6: Quando isto acontecer, volte aqui e coloque o nome do seu domínio www.%{subdomain} no campo abaixo e clique 'Atualizar'. Se você tem dúvidas, pergunte no %{chat_url} ou no nosso fórum de suporte.
           title: Defina o seu domínio
           warning: Tem a certeza de que quer alterar o seu domínio?
-        general: 
+        general:
           title: Propriedades do grupo
-        rewards: 
+        rewards:
           reputation_rewards_description: Este formulário permite configurar de que forma os usuários podem ganhar e perder pontos de reputação por uma dada ação
           reputation_rewards_subtitle: Lista de recompensas de reputação
           title: Recompensas
-        share: 
+        share:
           add_tags: Acrescentar tags aos seus tweets
           application_id: ID da Aplicação
           asking_from_twitter: Perguntar a partir do Twitter
@@ -50,6 +50,6 @@ pt-BR:
           tweet_ends_with: Acrescentar uma tag no fim dos seus tweets
           tweet_starts_with: Acrescentar uma tag no início dos seus tweets
           twitter_account: A conta do Twitter à qual seus usuários farão perguntas.
-        theme: 
+        theme:
           logo_legend: Faça o upload de um logotipo para o seu grupo; tem que ser inferior a 2 MB.
           title: Defina o tema do grupo

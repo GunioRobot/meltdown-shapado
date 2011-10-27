@@ -4,28 +4,28 @@
 # Author: Centerlink
 # Author: Nike
 # Author: Silvonen
-fi: 
-  activerecord: 
-    attributes: 
-      answer: 
+fi:
+  activerecord:
+    attributes:
+      answer:
         body: Runko
         created_at: Vastattu
         link: Linkki
-    models: 
+    models:
       answer: Vastaus
       answers: Vastaukset
-  answers: 
-    create: 
+  answers:
+    create:
       flash_error: "Vastauksen lisääminen epäonnistui.\nMuistathan, että:\n- Tyhjiä ja toistuvia vastauksia ei sallita\n- Sinun on odotettava 20 sekuntia ennen toisen vastauksen lähettämistä.\n- Voit vain lähettää yhden vastauksen per kysymys."
       flash_notice: Kiitos!
-    edit: 
+    edit:
       title: Muokataan vastausta
-    form: 
+    form:
       answer_label: Vastaus kysymykseen
       comment_label: Kommentoi tätä vastausta
       comment_submit: Kommentoi
       submit: Vastaa
-    revert: 
+    revert:
       title: Palauta vastaus
-    update: 
+    update:
       flash_notice: Vastaus päivitettiin onnistuneesti.

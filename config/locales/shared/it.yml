@@ -3,11 +3,11 @@
 # Export driver: syck
 # Author: Giallu
 # Author: HalphaZ
-it: 
-  shared: 
-    current_tags: 
+it:
+  shared:
+    current_tags:
       title: Tag selezionati
-    topbar: 
+    topbar:
       admin: Amministrazione
       logged_as: Collegato come %{login}
       user_page: La mia pagina

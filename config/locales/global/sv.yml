@@ -2,8 +2,8 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Tobulos1
-sv: 
-  feeds: 
+sv:
+  feeds:
     feed: Feed
     post_new_questions: Lägg upp nya frågor till
     question: Prenumerera på denna fråga
@@ -11,7 +11,7 @@ sv:
     share_on_twitter: Twitter, Facebook och mer ...
     tag: Prenumerera på tagg
     user: Prenumerera på frågor från användare
-  global: 
+  global:
     active: Aktivera
     anonymous: Anonym
     by: av
@@ -24,20 +24,20 @@ sv:
     preview: Förhandsgranska
     previous: Föregående
     share: Dela
-  languages: 
+  languages:
     any: Vilken som helst
     user: Föredraget språk
-  models: 
+  models:
     question: Frågan
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} gång"
       other: "%{count} gånger"
       zero: Aldrig
-  pagination: 
+  pagination:
     next: Nästa &raquo;
     previous: "&laquo; Föregående"
-  scaffold: 
+  scaffold:
     add: Lägg till
     back: Tillbaka
     cancel: Avbryt
@@ -54,6 +54,6 @@ sv:
     show: Visa
     sure: Är du säker på att du vill ta bort denna %{model} ?
     update: Uppdatera
-  time: 
+  time:
     ago: "%{time} sedan"
     today: idag

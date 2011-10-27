@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  close_requests: 
-    create: 
+da:
+  close_requests:
+    create:
       flash_notice: Luknings anmodning blev oprettet
-    destroy: 
+    destroy:
       flash_notice: Luknings anmodning blev slettet
-    edit: 
+    edit:
       title: Rediger luknings anmodning
-    form: 
+    form:
       close_with_reason: Lukker dette spørgsmål med brug af denne årsag
       dupe: Dublet
       no_question: Ikke et spørgsmål
@@ -18,16 +18,16 @@ da:
       ot: Ude af sammenhæng
       request_closing_details: Anmodning om at lukke dette spørgsmål
       spam: spam
-    index: 
+    index:
       title: Liste over tætte anmodninger
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Kommentar
         reason: Årsag
         user: Bruger
-      messages: 
+      messages:
         already_requested: Du har allerede anmodet om at lukke dette spørgsmål
       name: Luknings anmodning
       prural_name: Luknings anmodninger
-    update: 
+    update:
       flash_notice: Luknings anmodning blev opdateret

@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  shared: 
-    current_tags: 
+id:
+  shared:
+    current_tags:
       title: Tag terpilih
-    topbar: 
+    topbar:
       admin: Pengurus
       logged_as: Masuk log sebagai %{login}
       user_page: Halaman saya

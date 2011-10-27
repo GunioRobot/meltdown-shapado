@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Discon
-el: 
-  admin: 
-    moderate: 
-      index: 
+el:
+  admin:
+    moderate:
+      index:
         all: Όλα
         ban: Απαγόρευση
         banned: Απαγορευμένες ερωτήσεις

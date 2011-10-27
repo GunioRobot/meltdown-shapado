@@ -2,24 +2,24 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Robby
-lb: 
-  activerecord: 
-    attributes: 
-      answer: 
+lb:
+  activerecord:
+    attributes:
+      answer:
         created_at: Beäntwert
         link: Link
-    models: 
+    models:
       answer: Äntwert
       answers: Äntwerten
-  answers: 
-    create: 
+  answers:
+    create:
       flash_notice: Merci!
-    edit: 
+    edit:
       title: Äntwert änneren
-    form: 
+    form:
       answer_label: D'Fro beäntwerten
       comment_label: Dës Äntwert kommentéieren
       comment_submit: Bemierkung
       submit: Äntwert
-    update: 
+    update:
       flash_notice: D'Äntwert gouf aktualiséiert.

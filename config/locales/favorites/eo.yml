@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Gufulo
-eo: 
-  activerecord: 
-    models: 
+eo:
+  activerecord:
+    models:
       favorite: Plej ŝatata
       favorites: Plej ŝatataj
-  favorites: 
-    create: 
+  favorites:
+    create:
       success: La demando estis aldonita al viaj plej ŝatataj.
       unauthenticated: Necesas ke vi registriĝu por aldoni al plej ŝatataj.

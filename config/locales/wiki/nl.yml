@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Siebrand
-nl: 
-  wiki: 
-    actions: 
+nl:
+  wiki:
+    actions:
       all_history: Terug naar geschiedenis
       back_to_question: Terug naar de vraag
       revert: Terugdraaien naar deze versie
       show_diff: Geselecteerde versies vergelijken
-    diff: 
+    diff:
       title: Verschillen tussen %{prev} en %{curr}
-    history: 
+    history:
       current_version: Huidige versie
       previous_versions: Eerdere versies
       title: Geschiedenis (%{count})
       version: Versie
       version_summary: Samenvatting voor versie
-    model: 
-      attributes: 
+    model:
+      attributes:
         message: Samenvatting

@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Siebrand
-nl: 
-  admin: 
-    moderate: 
-      index: 
+nl:
+  admin:
+    moderate:
+      index:
         all: alle
         ban: Verbergen
         banned: Verborgen vragen

@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Robby
-lb: 
-  wiki: 
-    diff: 
+lb:
+  wiki:
+    diff:
       title: Ënnerscheed tëschent %{prev} a(n) %{curr}
-    history: 
+    history:
       current_version: Aktuell Versioun
       previous_versions: Vireg Versiounen
       version: Versioun
       version_summary: Resumé vun dëser Versioun
-    model: 
-      attributes: 
+    model:
+      attributes:
         message: Resumé

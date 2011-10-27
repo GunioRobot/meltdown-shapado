@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Linkr
-ko: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+ko:
+  imports:
+    subtabs:
+      need_confirmation:
         name: 확인 필요
         title: 확인 이메일을 보냄

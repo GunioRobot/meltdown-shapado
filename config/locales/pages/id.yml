@@ -2,33 +2,33 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  activerecord: 
-    attributes: 
-      page: 
+id:
+  activerecord:
+    attributes:
+      page:
         css: Pengubah tampilan
         js: JavaScript
-    models: 
+    models:
       page: Halaman
       pages: Halaman
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Buat halaman baru
       edit_page: Sunting halaman
       title: Tindakan
-    create: 
+    create:
       success: Halaman berhasil dibuat.
-    edit: 
+    edit:
       title: Menyunting halaman
-    form: 
+    form:
       language_tip: Bahasa halaman
       title_tip: "Judul halaman. Gunakan ini untuk merujuk halaman. Contoh: [[FAQ|baca faq]]"
-    index: 
+    index:
       create_page: Buat halaman baru
       title: Daftar bahasa
       written_in: Ditulis dalam %{language}
-    new: 
+    new:
       title: Halaman baru
     title: Perbaiki
-    update: 
+    update:
       success: Halaman berhasil dimutakhirkan.

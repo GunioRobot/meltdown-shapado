@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Robby
-lb: 
-  activerecord: 
-    models: 
+lb:
+  activerecord:
+    models:
       favorite: Favorit
       favorites: Favoriten
-  favorites: 
-    create: 
+  favorites:
+    create:
       unauthenticated: Dir braucht e Benotzerkont fir Favoriten deräizesetzen

@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Papapep
-ca: 
-  comments: 
-    create: 
+ca:
+  comments:
+    create:
       flash_notice: Gràcies pel vostre comentari
-    edit: 
+    edit:
       title: Edita el comentari
-    shared: 
+    shared:
       add_comment: Afegiu un comentari...
       comment_submit: Comentari
       reply: Responeu
       said: ha dit
-    update: 
+    update:
       flash_notice: S'ha actualitzat correctament el comentari.
-  models: 
+  models:
     comment: Comentari
     comments: Comentaris

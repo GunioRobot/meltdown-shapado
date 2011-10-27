@@ -4,10 +4,10 @@
 # Author: Giro720
 # Author: Luckas Blade
 # Author: Vgeorge
-pt-BR: 
-  activerecord: 
-    attributes: 
-      group: 
+pt-BR:
+  activerecord:
+    attributes:
+      group:
         default_tags: Tags predefinidas
         description: Descrição
         domain: Domínio
@@ -26,14 +26,14 @@ pt-BR:
         state: Estado
         subdomain: Url
         wysiwyg_editor: Ativar editor amigável para o usuário
-    models: 
+    models:
       default_tags_message: Não pode ter mais do que 10 tags predefinidas
       group: Grupo
       groups: Grupos
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: O seu grupo foi criado, pode agora começar a configurá-lo.
-    form: 
+    form:
       access: Definições de Acesso
       analytics_engine: Motor de Análise
       analytics_legend: O grupo poderá usar o seu próprio código de rastreamento
@@ -48,14 +48,14 @@ pt-BR:
       logo_legend: Você pode fazer upload do logotipo do grupo. O tamanho máximo do arquivo é 2MB.
       members_only: Só os membros do grupo poderão acessar a este grupo
       website_analytics_id: ID da Análise do Site
-    group: 
+    group:
       about: Sobre
       accept_group: Aceitar este grupo
       allow_ads: Permitir anúncios
       close: Fechar
       close_group: Fechar este grupo
       disallow_ads: Não permitir anúncios
-    index: 
+    index:
       actives: Ativos
       filter: Pesquisar grupos
       most_active: Mais ativos
@@ -63,9 +63,9 @@ pt-BR:
       pendings: Pendentes
       request_group: Pedir um grupo novo
       title: Grupos
-    new: 
+    new:
       title: Criar seu grupo
-    show: 
+    show:
       accept_group: Aceitar este grupo
       accept_group_with_custom_ads: Aceitar grupo e permitir anúncios personalizados
       close_group: Fechar este grupo

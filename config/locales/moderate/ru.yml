@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Eleferen
 # Author: Lockal
-ru: 
-  admin: 
-    moderate: 
-      index: 
+ru:
+  admin:
+    moderate:
+      index:
         all: Все
         ban: Блокировка
         banned: Запрещённые вопросы

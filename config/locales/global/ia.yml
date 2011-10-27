@@ -2,8 +2,8 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: McDutchie
-ia: 
-  feeds: 
+ia:
+  feeds:
     feed: Syndication
     post_new_questions: Publicar nove questiones in
     question: Subscriber a iste question
@@ -11,7 +11,7 @@ ia:
     share_on_twitter: Twitter, Facebook e plus...
     tag: Subscriber al etiquetta
     user: Subscriber a questiones de usatores
-  global: 
+  global:
     active: Activar
     anonymous: Anonyme
     by: per
@@ -24,20 +24,20 @@ ia:
     preview: Previsualisar
     previous: Precedente
     share: partir
-  languages: 
+  languages:
     any: Qualcunque
     user: Mi linguas preferite
-  models: 
+  models:
     question: Le question
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} vice"
       other: "%{count} vices"
       zero: Nunquam
-  pagination: 
+  pagination:
     next: Sequente &raquo;
     previous: "&laquo; Precedente"
-  scaffold: 
+  scaffold:
     add: Adder
     back: Retro
     cancel: Cancellar
@@ -54,6 +54,6 @@ ia:
     show: Monstrar
     sure: Es tu secur de voler deler iste %{model}?
     update: Actualisar
-  time: 
+  time:
     ago: "%{time} retro"
     today: hodie

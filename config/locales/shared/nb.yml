@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Nghtwlkr
-nb: 
-  shared: 
-    current_tags: 
+nb:
+  shared:
+    current_tags:
       title: Valgte merker
-    topbar: 
+    topbar:
       admin: Admin
       logged_as: Innlogget som %{login}
       user_page: Min side

@@ -5,8 +5,8 @@
 # Author: Patcito
 # Author: Peter17
 # Author: Verdy p
-fr: 
-  feeds: 
+fr:
+  feeds:
     feed: Flux
     post_new_questions: Poster les nouvelles questions à
     question: Souscrire à cette question
@@ -14,7 +14,7 @@ fr:
     share_on_twitter: twitter, facebook et plus...
     tag: Souscrite au tag
     user: Inscrivez-vous aux questions de l'utilisateur
-  global: 
+  global:
     active: Activer
     anonymous: Anonyme
     by: par
@@ -27,20 +27,20 @@ fr:
     preview: Prévisualisation
     previous: Précédent
     share: Partager
-  languages: 
+  languages:
     any: Toutes
     user: Mes langues
-  models: 
+  models:
     question: La question
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} fois"
       other: "%{count} fois"
       zero: Jamais
-  pagination: 
+  pagination:
     next: Suivant »
     previous: « Précédent
-  scaffold: 
+  scaffold:
     add: Ajouter
     back: Retour
     cancel: Annuler
@@ -57,6 +57,6 @@ fr:
     show: Monter
     sure: Êtes-vous sûr de vouloir supprimer ce %{model} ?
     update: Actualiser
-  time: 
+  time:
     ago: il y a %{time}
     today: aujourd'hui

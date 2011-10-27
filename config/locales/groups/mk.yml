@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Bjankuloski06
 # Author: McDutchie
-mk: 
-  activerecord: 
-    attributes: 
-      group: 
+mk:
+  activerecord:
+    attributes:
+      group:
         default_tags: основно зададени ознаки
         description: опис
         domain: домен
@@ -25,14 +25,14 @@ mk:
         state: држава
         subdomain: URL
         wysiwyg_editor: Овозможи згоден кориснички уредувач
-    models: 
+    models:
       default_tags_message: не може да имате повеќе од 10 основно зададени ознаки
       group: група
       groups: групи
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: Вашата група е успешно создадена. Сега можете да почнете да правите поставки и прилагодувања.
-    form: 
+    form:
       access: Поставки за пристап
       analytics_engine: Аналитички погон
       analytics_legend: Оваа група ќе може да користи сопствен код за следење
@@ -47,14 +47,14 @@ mk:
       logo_legend: можете да подигнете лого на групата. максималната дозволена големина изнесува 2 Мб
       members_only: Само членовите на групата ќе имаат пристап до неа
       website_analytics_id: ID на аналитика на мреж. место
-    group: 
+    group:
       about: за групата
       accept_group: прифати ја групава
       allow_ads: дозволи реклами
       close: затвори
       close_group: затвори ја групава
       disallow_ads: забрани реклами
-    index: 
+    index:
       actives: активни
       filter: пребарување на нови групи
       most_active: најактивни
@@ -62,9 +62,9 @@ mk:
       pendings: во исчекување
       request_group: побарај нова група
       title: групи
-    new: 
+    new:
       title: создајте своја група
-    show: 
+    show:
       accept_group: прифати ја групава
       accept_group_with_custom_ads: прифати ја групата и дозволи реклами по избор
       close_group: затвори ја групава

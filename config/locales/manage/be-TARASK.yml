@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Jim-by
-be-TARASK: 
-  admin: 
-    manage: 
-      content: 
+be-TARASK:
+  admin:
+    manage:
+      content:
         footer: Ніжні калёнтытул
         head: загаловак
         question_help: Дапамога па пытаньню
@@ -14,12 +14,12 @@ be-TARASK:
         title: Нестандартны зьмест
         top_bar: Верхняя панэль
         top_bar_tip: Уводзьце па адной спасылцы ў радку
-      properties: 
-        constrains: 
+      properties:
+        constrains:
           reputation_constrains_description: Гэтая форма дазваляе Вам канфігураваць колькасьць пунктаў рэпутацыі, якія неабходныя карыстальніку для выкананьня дзеяньня
           reputation_constrains_subtitle: Сьпіс патрабаваньняў рэпутацыі для кожнага дзеяньня
           title: Патрабаваньні
-        domain: 
+        domain:
           description: "Вы можаце наладзіць Ваш сайт так, каб да яго можна было зьвяртацца праз уласны нестандартны дамэн. Вось як гэта зрабіць:"
           instruction1: Для гэтага, спачатку трэба ўвайсьці ў сыстэму правайдэра Вашага дамэну. Гэта сайт, дзе Вы набылі Ваш дамэн, напрыклад %{subdomain}.com.
           instruction2: Там Вам неабходна перайсьці ў сэкцыю DNS і стварыць што-небудзь з назвай CNAME.
@@ -29,13 +29,13 @@ be-TARASK:
           instruction6: Калі справа ў гэтым, вярніцеся сюды і ўстаўце назву Вашага дамэну www.%{subdomain} у полі ніжэй і націсьніце кнопку «Абнавіць». Калі Вы маеце пытаньні, задайце іх нам на %{chat_url} ці ў форуме падтрымкі.
           title: Устанавіць Ваш дамэн
           warning: Вы ўпэўнены, што жадаеце зьмяніць Ваш дамэн?
-        general: 
+        general:
           title: Уласьцівасьці групы
-        rewards: 
+        rewards:
           reputation_rewards_description: Гэтая форма дазваляе Вам наладжваць як карыстальнікі могуць атрымліваць ці страчваць пункты рэпутацыі для пададзеных дзеяньняў
           reputation_rewards_subtitle: Сьпіс узнагародаў
           title: Узнагароды
-        share: 
+        share:
           add_tags: Дадаць тэгі ў Вашыя запісы Twitter
           application_id: Ідэнтыфікатар дастасаваньня
           asking_from_twitter: Задаваньне пытаньняў з Twitter
@@ -51,6 +51,6 @@ be-TARASK:
           tweet_ends_with: Дадаць тэг да Вашых паведамленьняў на Twitter
           tweet_starts_with: Далучыць тэг у пачатак Вашых паведамленьняў у Twitter
           twitter_account: Рахунак Twitter, дзе карыстальнікі будуць задаваць пытаньні.
-        theme: 
+        theme:
           logo_legend: Загрузка лягатыпу для Вашай групы. Яго памер павінен быць меней чым 2 Мб.
           title: Устанавіць тэму афармленьня групы

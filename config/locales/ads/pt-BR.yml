@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giro720
-pt-BR: 
-  ads: 
+pt-BR:
+  ads:
     ad_links: Adicionar um novo anúncio %{type}
-    create: 
+    create:
       success: O anúncio foi criado.
-    index: 
+    index:
       add_adbard: Adicionar um novo anúncio Ad Bard
       add_adsense: Adicionar um novo anúncio do Google AdSense
       title: Anúncios

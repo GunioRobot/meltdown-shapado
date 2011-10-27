@@ -2,33 +2,33 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Tobulos1
-sv: 
-  activerecord: 
-    attributes: 
-      page: 
+sv:
+  activerecord:
+    attributes:
+      page:
         css: Stilmallar
         js: JavaScript
-    models: 
+    models:
       page: Sida
       pages: Sidor
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Skapa ny sida
       edit_page: Redigera sida
       title: Åtgärder
-    create: 
+    create:
       success: Sidan har skapats.
-    edit: 
+    edit:
       title: Redigera sida
-    form: 
+    form:
       language_tip: Sidans språk
       title_tip: "Sidrubrik. Använd detta för att referera till sidan. Till exempel: [[FAQ|kolla in vår faq]]"
-    index: 
+    index:
       create_page: Skapa ny sida
       title: Lista över sidor
       written_in: Skriven på %{language}
-    new: 
+    new:
       title: Ny sida
     title: Fixa-mig
-    update: 
+    update:
       success: Sidan har uppdaterats.

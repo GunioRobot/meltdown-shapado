@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Kghbln
 # Author: Ookami
-de: 
-  activerecord: 
-    attributes: 
-      group: 
+de:
+  activerecord:
+    attributes:
+      group:
         default_tags: Standard-Stichwörter
         description: Beschreibung
         domain: Domain
@@ -25,14 +25,14 @@ de:
         state: Land
         subdomain: URL
         wysiwyg_editor: Nutzerfreundlichen Editor aktivieren
-    models: 
+    models:
       default_tags_message: Du kannst nicht mehr als 10 Standard-Stichwörter verwenden
       group: Gruppe
       groups: Gruppen
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: Deine Gruppe wurde erfolgreich erstellt. Du kannst jetzt beginnen, sie zu konfigurieren.
-    form: 
+    form:
       access: Zugangs-Einstellungen
       analytics_engine: Webanalytik-System
       analytics_legend: Die Gruppe wird ihren eigenen Tracking-Code zu verwenden können
@@ -47,14 +47,14 @@ de:
       logo_legend: Du kannst ein Gruppenlogo hochladen. Die maximale Dateigröße beträgt 2 MB.
       members_only: Nur Gruppenmitglieder haben Zugriff auf diese Gruppe.
       website_analytics_id: Webanalytik-ID der Website
-    group: 
+    group:
       about: Über
       accept_group: Diese Gruppe akzeptieren
       allow_ads: Werbung erlauben
       close: Schließen
       close_group: Diese Gruppe schließen
       disallow_ads: Werbung verbieten
-    index: 
+    index:
       actives: Aktiv
       filter: Nach Gruppen suchen
       most_active: Aktivste
@@ -62,9 +62,9 @@ de:
       pendings: Ausstehend
       request_group: Neue Gruppe beantragen
       title: Gruppen
-    new: 
+    new:
       title: Gruppe erstellen
-    show: 
+    show:
       accept_group: Diese Gruppe akzeptieren
       accept_group_with_custom_ads: Gruppe akzeptieren sowie nutzerdefinierte Anzeigen erlauben
       close_group: Diese Gruppe schließen

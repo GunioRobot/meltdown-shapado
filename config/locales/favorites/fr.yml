@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Patcito
-fr: 
-  activerecord: 
-    models: 
+fr:
+  activerecord:
+    models:
       favorite: Favorite
       favorites: Favorites
-  favorites: 
-    create: 
+  favorites:
+    create:
       success: La question a été ajouté à vos favorits
       unauthenticated: Vous devez créer un compte pour ajouter des favorits

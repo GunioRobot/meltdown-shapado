@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Siebrand
-nl: 
-  activerecord: 
-    models: 
+nl:
+  activerecord:
+    models:
       favorite: favoriet
       favorites: favorieten
-  unfavorites: 
-    create: 
+  unfavorites:
+    create:
       success: De vraag is uit uw favorieten verwijderd
       unauthenticated: U moet een gebruiker hebben om favorieten te kunnen verwijderen

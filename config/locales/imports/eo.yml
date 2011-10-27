@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Darkweasel
-eo: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+eo:
+  imports:
+    subtabs:
+      need_confirmation:
         name: Bezonas konfirmon
         title: Sendi konfirmajn retleterojn

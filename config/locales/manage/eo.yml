@@ -4,10 +4,10 @@
 # Author: Darkweasel
 # Author: McDutchie
 # Author: Mihxil
-eo: 
-  admin: 
-    manage: 
-      content: 
+eo:
+  admin:
+    manage:
+      content:
         footer: Paĝopiedo
         head: kapo
         question_help: Helpo pri demandado
@@ -15,12 +15,12 @@ eo:
         title: Propra enhavo
         top_bar: Supra breto
         top_bar_tip: Enigu po unu ligilon en linion
-      properties: 
-        constrains: 
+      properties:
+        constrains:
           reputation_constrains_description: Tiu ĉi respondilo ebligas al vi agordi, kiom da reputacio uzantoj devas havi por povi fari certan agon
           reputation_constrains_subtitle: Listo de reputaci-necesaĵoj por ĉiu ago
           title: Necesaĵoj
-        domain: 
+        domain:
           description: "Estas eble mapigi vian retejon tiel ke ĝi alireblas per via propra domajno. Tion vi aranĝas jene:"
           instruction1: Por fari tion, vi unue ensalutu ĉe via domajnprovizisto. Tio estas la paĝaro, kie vi aĉetis vian domajnon, ekzemple %{subdomain}.com.
           instruction2: Tie vi iru al la DNS-parto kaj kreu CNAME-on.
@@ -30,13 +30,13 @@ eo:
           instruction6: Kiam estas tiel, revenu tien ĉi kaj enigu vian domajnnamon www.%{subdomain} en la ĉi-malsupran kampon kaj klaku la butonon 'ĝisdatigi'. Se vi havas demandojn, demandu nin en la %{chat_url} aŭ en nia konsultejo.
           title: Agordi vian domajnon
           warning: Ĉu vi certas, ke vi volas ŝanĝi vian domajnon?
-        general: 
+        general:
           title: Ecoj de grupo
-        rewards: 
+        rewards:
           reputation_rewards_description: Tiu ĉi respondilo ebligas al vi agordi, kiel uzantoj povas gajni kaj perdi reputacion por certa ago
           reputation_rewards_subtitle: Listo de reputacirekompencoj
           title: Rekompencoj
-        share: 
+        share:
           add_tags: Aldoni etikedojn al viaj pepaĵoj
           application_id: Aplikaĵa identigilo
           asking_from_twitter: Demandi per Twitter
@@ -52,6 +52,6 @@ eo:
           tweet_ends_with: Almeti etikedon al viaj pepoj
           tweet_starts_with: Antaŭmetu etikedon antaŭ viajn pepojn.
           twitter_account: La Twitter-konto, al kiu uzantoj demandos.
-        theme: 
+        theme:
           logo_legend: Alŝuti emblemon por via grupo. Ĝi estu malpli granda ol 2MB.
           title: Agordi la aspekton de la grupo

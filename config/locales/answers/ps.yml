@@ -2,23 +2,23 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Ahmed-Najib-Biabani-Ibrahimkhel
-ps: 
-  activerecord: 
-    attributes: 
-      answer: 
+ps:
+  activerecord:
+    attributes:
+      answer:
         created_at: ځوب شوي
         link: تړنه
-    models: 
+    models:
       answer: ځواب
       answers: ځوابونه
-  answers: 
-    create: 
+  answers:
+    create:
       flash_notice: مننه!
-    edit: 
+    edit:
       title: ځواب سمول
-    form: 
+    form:
       answer_label: پوښتنه ځوابول
       comment_submit: تبصره
       submit: ځواب
-    update: 
+    update:
       flash_notice: ځواب مو په برياليتوب سره اوسمهاله شو.

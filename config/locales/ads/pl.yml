@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Sp5uhe
-pl: 
-  ads: 
+pl:
+  ads:
     ad_links: Dodaj nową %{type} reklamę
-    create: 
+    create:
       success: Reklama została utworzona.
-    index: 
+    index:
       add_adbard: Dodaj nowy billboard reklamowy
       add_adsense: Dodaj nową reklamę kontekstową google
       title: Reklamy

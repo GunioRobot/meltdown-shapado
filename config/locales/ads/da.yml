@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  ads: 
+da:
+  ads:
     ad_links: Tilføj en ny %{type} annonce
-    create: 
+    create:
       success: Annoncen blev oprettet med succes.
-    index: 
+    index:
       add_adbard: Tilføj en ny Ad Bard annonce
       add_adsense: Tilføj en ny Google AdSense annonce
       title: Annoncer

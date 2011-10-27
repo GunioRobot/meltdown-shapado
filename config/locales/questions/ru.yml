@@ -5,10 +5,10 @@
 # Author: G0rn
 # Author: Lockal
 # Author: Александр Сигачёв
-ru: 
-  activerecord: 
-    attributes: 
-      question: 
+ru:
+  activerecord:
+    attributes:
+      question:
         answers: Ответы
         asked_by: Задано
         body: Текст
@@ -21,27 +21,27 @@ ru:
         updated_by: обновлено
         views: Просмотры
         votes: Голоса
-    models: 
+    models:
       question: Вопрос
       questions: Вопросы
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: Добавить комментарий…
       flag: Отметить
       pick_answer: Выбрать в качестве решения
       unset_answer: Аннулировать решение?
-    create: 
+    create:
       flash_notice: Вопрос успешно создан.
-    edit: 
+    edit:
       title: Редактирование вопроса
-    flag: 
+    flag:
       title: Отметить вопрос
-    form: 
+    form:
       adult_content: Этот вопрос содержит материалы для взрослых.
       body_tip: В чём состоит вопрос? Сделайте его более информативным.
       language_tip: Выберите язык вопроса.
       tags_tip: Используйте теги для добавления информации о вашем вопросе.
-    index: 
+    index:
       active: Активные
       active_tooltip: Недавно обновлённые вопросы
       ask_question: Задать вопрос
@@ -56,42 +56,42 @@ ru:
       unanswered_questions: Вопросы без ответов
       votes: Голоса
       votes_tooltip: Вопросы с наибольшим числом голосов
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: Необходимо указать хотя бы один тег.
         title_too_long: Название слишком длинное. Оно не должно содержать более 100 символов
         too_many_tags: К сожалению, можно ввести только не более 9 тегов.
         too_short: Слишком мало текста. Используйте больше %{count} слов, чтобы конкретизировать текст.
-    move: 
+    move:
       group_label: "Переместить в группу с именем:"
       submit: Переместить!
       title: "Переместить вопрос: %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: Группа %{group} не существует
       success: Вопрос перемещён в %{group}
-    new: 
+    new:
       how_to_ask: Как задавать вопросы
       title: Задать вопрос
-    question: 
+    question:
       accepted_tooltip: На этот вопрос есть принятый ответ
-    retag: 
+    retag:
       title: Изменить теги
-    retag_form: 
+    retag_form:
       cancel: Отменить
       submit: Обновить теги!
       title: Обновление тегов
-    retag_to: 
+    retag_to:
       failure: К сожалению, теги не могут быть обновлены.
       success: Теги успешно обновлены.
-    revert: 
+    revert:
       title: Откатить вопрос
-    shared: 
+    shared:
       flag: Отметить
-    show: 
+    show:
       accepted_tooltip: Один из ответов был принят в качестве правильного ответа
       another_answers: Другие ответы
       answers: Ответы
-      answers_title: 
+      answers_title:
         one: "%{count} ответ"
         other: "%{count} ответ(а/ов)"
       asked_on: задано
@@ -123,23 +123,23 @@ ru:
       unwatch_tooltip: Перестать следить за этим вопросом
       viewed: просмотрено
       watch_tooltip: Следить за этим вопросом
-    solve: 
+    solve:
       flash_notice: Вопрос был решён.
-    tags: 
+    tags:
       filter: Поиск по тегам
       title: Теги
       tooltip: Показать вопросы с тегом %{tag}
-    unanswered: 
+    unanswered:
       empty: В этой группе нет вопросов без ответов.
       expert: Эксперты
       my_tags: Мои теги
       tags: Теги без ответов
       title: Вопросы без ответов
-    unsolve: 
+    unsolve:
       flash_notice: Вопрос пока не решён.
-    unwatch: 
+    unwatch:
       success: Вы больше не будете  получать почтовые уведомления по каждому новому ответу на этот вопрос
-    update: 
+    update:
       flash_notice: Вопрос успешно обновлён.
-    watch: 
+    watch:
       success: Теперь вы будете  получать почтовые уведомления по каждому новому ответу на этот вопрос

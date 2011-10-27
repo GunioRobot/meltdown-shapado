@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  doc: 
-    chat: 
+id:
+  doc:
+    chat:
       title: Bantuan Obrolan
-    plans: 
+    plans:
       15millions: 15 juta kunjungan halaman/bulan
       1million: 1 juta kunjungan halaman/bulan
       247_all_support: Bantuan berbasis web, surel, obrolan dan telepon 24/7

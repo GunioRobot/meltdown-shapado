@@ -4,10 +4,10 @@
 # Author: KagerMtc
 # Author: Kghbln
 # Author: The Evil IP address
-de: 
-  activerecord: 
-    attributes: 
-      user: 
+de:
+  activerecord:
+    attributes:
+      user:
         activated_at: aktiviert bei
         activation_code: Aktivierungscode
         age: Alter
@@ -32,11 +32,11 @@ de:
         timezone: Zeitzone
         updated_at: aktualisiert am
         website: Website
-    models: 
+    models:
       user: Nutzer
       users: Nutzer
-  users: 
-    actions: 
+  users:
+    actions:
       edit_others_posts: Bearbeite Beiträge anderer
       edit_wiki_post: Beiträge im Wiki bearbeiten
       flag: Kennzeichnen
@@ -45,18 +45,18 @@ de:
       vote_to_close_any_question: Beantrage die Beendigung einer beliebigen Frage
       vote_to_close_own_question: Beantrage die Beendigung einer eigenen Frage
       vote_up: Positiv bewerten
-    anonymous_form: 
+    anonymous_form:
       never_shown: nie angezeigt
-    create: 
+    create:
       flash_error: Wir konnten dieses Nutzerkonto leider nicht einrichten. Versuche es erneut oder kontaktiere einen Administrator (Link s.o.).
       flash_notice: Vielen Dank für die Anmeldung!
-    edit: 
+    edit:
       enable_twitter: Verknüpfung mit Facebook- oder Twitter-Konten
       submit: Speichern
       title: Einstellungen
-    follow: 
+    follow:
       flash_notice: Der Nutzer %{user} wurde zur Liste Deiner Freunde hinzugefügt.
-    form: 
+    form:
       activities_notification: E-Mail-Benachrichtigungen zu Aktivitäten, z. B. zu erhaltenen Auszeichnungen, neuen Anhängern, etc.
       avatar_tip: Ändere Dein Profilbild mit „Gravatar“
       give_advice_notification: E-Mail-Benachrichtigungen zu Fragen in Deinem Fachgebiet
@@ -66,7 +66,7 @@ de:
       notifications: Benachrichtigungen
       reports_notification: Bericht mit den letzten Gruppenaktivitäten (nur für Gruppenadministratoren)
       show_more_lang: Weitere Sprachen
-    index: 
+    index:
       empty: Diese Gruppe hat keine Mitglieder - beteilige Dich, indem Du dieser Gruppe beitrittst
       filter: Suche nach Nutzern
       name: Name
@@ -78,18 +78,18 @@ de:
       reputation: Reputation
       reputation_tooltip: Nutzer, nach Reputation geordnet
       title: Alle Nutzer
-    messages: 
-      errors: 
+    messages:
+      errors:
         reputation_needed: "Du brauchst einen Reputationswert von %{min_reputation} für: %{action}"
-    new: 
+    new:
       submit: Anmeldung
       title: Anmeldung als neuer Nutzer
-    show: 
+    show:
       follow: Beachten
       followers: Anhänger
       following: folgend
       title: Nutzer %{user}
       unfollow: Nicht mehr beachten
       views: Aufrufe
-    unfollow: 
+    unfollow:
       flash_notice: Der Nutzer %{user} wurde von der Liste Deiner Freunde entfernt.

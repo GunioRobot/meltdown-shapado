@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: McDutchie
 # Author: Siebrand
-nl: 
-  activerecord: 
-    attributes: 
-      group: 
+nl:
+  activerecord:
+    attributes:
+      group:
         default_tags: Standaardlabels
         description: Beschrijving
         domain: Domein
@@ -25,14 +25,14 @@ nl:
         state: Status
         subdomain: URL
         wysiwyg_editor: Gebruikersvriendelijke tekstverwerker inschakelen
-    models: 
+    models:
       default_tags_message: U kunt niet meer dan tien standaardlabels hebben.
       group: Groep
       groups: Groepen
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: Uw groep is aangemaakt. U kunt nu de instellingen maken.
-    form: 
+    form:
       access: Toegangsinstellingen
       analytics_engine: Analytics Engine
       analytics_legend: De groep kan zijn eigen trackingcode gebruiken
@@ -47,14 +47,14 @@ nl:
       logo_legend: U kunt het groepslogo uploaden. De maximale grootte is 2MB.
       members_only: Alleen leden van de groep hebben toegang tot deze groep
       website_analytics_id: Website Analytics ID
-    group: 
+    group:
       about: Over
       accept_group: Groep accepteren
       allow_ads: Advertenties toestaan
       close: Sluiten
       close_group: Deze groep sluiten
       disallow_ads: Advertenties niet toestaan
-    index: 
+    index:
       actives: Actief
       filter: Groepen doorzoeken
       most_active: Meest actief
@@ -62,9 +62,9 @@ nl:
       pendings: In behandeling
       request_group: Nieuwe groep aanvragen
       title: Groepen
-    new: 
+    new:
       title: Uw groep aanmaken
-    show: 
+    show:
       accept_group: Groep accepteren
       accept_group_with_custom_ads: Groep accepteren en aangepaste advertenties toestaan
       close_group: Groep sluiten

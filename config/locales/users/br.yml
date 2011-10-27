@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Fulup
 # Author: Y-M D
-br: 
-  activerecord: 
-    attributes: 
-      user: 
+br:
+  activerecord:
+    attributes:
+      user:
         activated_at: gweredekaet d'an
         activation_code: Kod gweredekadur
         age: Oad
@@ -31,11 +31,11 @@ br:
         timezone: Gwerzhid-eur
         updated_at: hizivaet d'an
         website: Lec'hienn internet
-    models: 
+    models:
       user: Implijer
       users: Implijerien
-  users: 
-    actions: 
+  users:
+    actions:
       edit_others_posts: Kemmañ embannadennoù ar re all
       edit_wiki_post: aozañ an embannadennoù wiki
       flag: Banniel
@@ -44,18 +44,18 @@ br:
       vote_to_close_any_question: Goulenn serriñ pep goulenn
       vote_to_close_own_question: Goulenn serriñ goulenn an-unan
       vote_up: Votiñ a-du
-    anonymous_form: 
+    anonymous_form:
       never_shown: N'eo ket bet diskouezet biskoazh c'hoazh
-    create: 
+    create:
       flash_error: Ho tigarez, disosupl eo bet krouiñ ho kont. Klaskit diwezhatoc'hik pe kit e darempred gant ur merour (a-us emañ al liamm)
       flash_notice: Trugarez deoc'h da vezañ en em enrollet
-    edit: 
+    edit:
       enable_twitter: Gweredekaat ho kont facebook pe twitter
       submit: Enrollañ
       title: Penndibaboù
-    follow: 
+    follow:
       flash_notice: Ouzhpennet eo bet an implijer %{user} d'ho mignoned
-    form: 
+    form:
       activities_notification: Resev kemennoù dre bostel diwar-benn oberiantiz ar reizhiad evel badjoù gounezet, heulierien nevez, h.a.
       avatar_tip: Kemmañ skeudenn ho profil gant gravatar
       give_advice_notification: Degemer posteloù kelaouiñ diwar-benn ar goulennoù liammet ouzh ho tachenn varregezh
@@ -65,7 +65,7 @@ br:
       notifications: Kemennoù
       reports_notification: Resev un danevell gant oberiantizoù diwezhañ ar strollad (evit merour ar strollad nemetken)
       show_more_lang: Diskouez yezhoù all
-    index: 
+    index:
       empty: N'eus ezel ebet er strollad-mañ evit ar poent. Kemerit perzh er strollad.
       filter: Klask implijerien
       name: Anv
@@ -77,18 +77,18 @@ br:
       reputation: Brud
       reputation_tooltip: Implijerien renket diouzh urzh o brud
       title: An holl implijerien
-    messages: 
-      errors: 
+    messages:
+      errors:
         reputation_needed: Ezhomm hoc'h eus e savfe ho prud da %{min_reputation} evit %{action}
-    new: 
+    new:
       submit: En em enskrivañ
       title: Kevreañ evel implijer nevez
-    show: 
+    show:
       follow: Heuliañ
       followers: Heulierien
       following: O Heuliañ
       title: Implijer %{user}
       unfollow: chom hep heuliañ
       views: gweladennoù
-    unfollow: 
+    unfollow:
       flash_notice: Lamet eo bet an implijer %{user} kuit eus ho roll mignoned

@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  shared: 
-    current_tags: 
+gl:
+  shared:
+    current_tags:
       title: etiquetas seleccionadas
-    topbar: 
+    topbar:
       admin: administrador
       logged_as: conectado como %{login}
       user_page: a miña páxina

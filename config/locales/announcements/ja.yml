@@ -1,19 +1,19 @@
 # Messages for Japanese (日本語)
 # Exported from translatewiki.net
 # Export driver: syck
-ja: 
-  activerecord: 
-    attributes: 
-      announcement: 
+ja:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: 終了日
         message: メッセージ
         only_anonymous: 未ログインユーザのみ
         starts_at: 開始日
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: 削除
       title: アクション
-    create: 
+    create:
       success: お知らせを作成しました
-    index: 
+    index:
       title: お知らせ

@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  shared: 
-    current_tags: 
+fi:
+  shared:
+    current_tags:
       title: Valitut tunnisteet
-    topbar: 
+    topbar:
       admin: Ylläpitäjä
       logged_as: Kirjautunut nimellä %{login}
       user_page: Oma sivu

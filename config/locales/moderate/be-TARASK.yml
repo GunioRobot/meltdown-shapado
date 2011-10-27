@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Jim-by
-be-TARASK: 
-  admin: 
-    moderate: 
-      index: 
+be-TARASK:
+  admin:
+    moderate:
+      index:
         all: Усе
         ban: Заблякаваць
         banned: Забароненыя пытаньні

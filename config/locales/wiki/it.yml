@@ -3,21 +3,21 @@
 # Export driver: syck
 # Author: Giallu
 # Author: Tuxwet
-it: 
-  wiki: 
-    actions: 
+it:
+  wiki:
+    actions:
       all_history: Torna alla cronologia
       back_to_question: Torna alla domanda
       revert: Ripristina questa versione
       show_diff: Confronta versioni selezionate
-    diff: 
+    diff:
       title: Differenze tra %{prev} e %{curr}
-    history: 
+    history:
       current_version: Versione attuale
       previous_versions: Versioni precedenti
       title: Cronologia (%{count})
       version: Versione
       version_summary: Sommario delle versioni
-    model: 
-      attributes: 
+    model:
+      attributes:
         message: Sommario

@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Bjankuloski06
-mk: 
-  close_requests: 
-    create: 
+mk:
+  close_requests:
+    create:
       flash_notice: барањето за затворање е успешно создадено
-    destroy: 
+    destroy:
       flash_notice: барањето за затворање е успешно избришано
-    edit: 
+    edit:
       title: Уредување на барање за затворање
-    form: 
+    form:
       close_with_reason: затвори го прашањево користејќи ја оваа причина
       dupe: дупликат
       no_question: не е прашање
@@ -18,16 +18,16 @@ mk:
       ot: вон тема
       request_closing_details: побарај да се затвори ова прашање
       spam: спам
-    index: 
+    index:
       title: список на барања за затворање
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: коментар
         reason: причина
         user: корисник
-      messages: 
+      messages:
         already_requested: веќе сте побарале да се затвори ова прашање
       name: барање за затворање
       prural_name: затвори барања
-    update: 
+    update:
       flash_notice: барањето за затворање е успешно подновено

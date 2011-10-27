@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Hydra
-zh-CN: 
-  layouts: 
-    application: 
+zh-CN:
+  layouts:
+    application:
       ask_question: 问的问题
       badges: 徽章
       forgot: 忘了吗？
@@ -16,7 +16,7 @@ zh-CN:
       manage_ads: 管理广告
       moderate: 中度
       now: 现在！
-      openid: 
+      openid:
         explaination: 如果您希望注册或只需登录，请选择您的 OpenID 提供商：
       pages: 页
       questions: 问题
@@ -31,7 +31,7 @@ zh-CN:
       unanswered: 无人应答
       users: 用户
       welcome_from: 欢迎！您可以
-    manage: 
+    manage:
       actions: 行动
       announcements: 公告
       constrains: 要求
@@ -47,5 +47,5 @@ zh-CN:
       stats: 统计信息
       theme: 主题
       widgets: 窗口小部件
-    notifications: 
+    notifications:
       message: 如果您不希望再收到来自 %{domain} 的自动通知，更改您的首选项，在通知屏幕。

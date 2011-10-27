@@ -1,19 +1,19 @@
 # Messages for Japanese (日本語)
 # Exported from translatewiki.net
 # Export driver: syck
-ja: 
-  comments: 
-    create: 
+ja:
+  comments:
+    create:
       flash_notice: コメントありがとうございます
-    edit: 
+    edit:
       title: コメントの編集
-    shared: 
+    shared:
       add_comment: コメントする
       comment_submit: コメントする
       reply: 返信
       said: のコメント
-    update: 
+    update:
       flash_notice: コメントは更新されました
-  models: 
+  models:
     comment: コメント
     comments: コメント

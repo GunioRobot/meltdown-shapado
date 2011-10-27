@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giallu
-it: 
-  admin: 
-    moderate: 
-      index: 
+it:
+  admin:
+    moderate:
+      index:
         all: Tutti
         ban: Ban
         banned: Domande bannate

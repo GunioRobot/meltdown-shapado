@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Discon
-el: 
-  activerecord: 
-    models: 
+el:
+  activerecord:
+    models:
       favorite: Αγαπημένη
       favorites: Αγαπημένες
-  unfavorites: 
-    create: 
+  unfavorites:
+    create:
       success: Η ερώτηση έχει αφαιρεθεί από τις αγαπημένες σας
       unauthenticated: Χρειάζεστε λογαριασμό για να αφαιρέσετε μία αγαπημένη

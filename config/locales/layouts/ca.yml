@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Papapep
-ca: 
-  layouts: 
-    application: 
+ca:
+  layouts:
+    application:
       ask_question: Feu una pregunta
       badges: Distintius
       forgot: Ho heu oblidat?
@@ -16,7 +16,7 @@ ca:
       manage_ads: Gestioneu els anuncis
       moderate: Modereu
       now: ara!
-      openid: 
+      openid:
         explaination: "Si voleu registrar-vos o només iniciar la sessiò, trieu el vostre proveïdor d'OpenID:"
       pages: Pàgines
       questions: Preguntes
@@ -31,7 +31,7 @@ ca:
       unanswered: Sense respondre
       users: Usuaris
       welcome_from: Benvinguts! Podeu
-    manage: 
+    manage:
       actions: Accions
       announcements: Avisos
       constrains: Requeriments
@@ -47,5 +47,5 @@ ca:
       stats: Estadístiques
       theme: Tema
       widgets: Ginys
-    notifications: 
+    notifications:
       message: Si no voleu rebre més les notificacions automàtiques de %{group}, canvieu les vostres preferències a la pantalla de notificacions.

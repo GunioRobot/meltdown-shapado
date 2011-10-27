@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Bjankuloski06
-mk: 
-  doc: 
-    chat: 
+mk:
+  doc:
+    chat:
       title: Поддршка со разговор во живо
-    plans: 
+    plans:
       15millions: 15 милиони прегледи на страницата месечно
       1million: 1 милион прегледи на страница месечно
       247_all_support: на мреж. страница, по е-пошта, разговор во живо и телефонски 24/7

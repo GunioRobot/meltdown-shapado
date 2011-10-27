@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Patcito
 # Author: Peter17
-fr: 
-  activerecord: 
-    attributes: 
-      question: 
+fr:
+  activerecord:
+    attributes:
+      question:
         answers: Réponses
         asked_by: Posée par
         body: Corps
@@ -19,27 +19,27 @@ fr:
         updated_by: actualisée par
         views: Vues
         votes: Votes
-    models: 
+    models:
       question: Question
       questions: Questions
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: Ajouter un commentaire...
       flag: Reporter un abus
       pick_answer: Choisir comme solution
       unset_answer: Annuler solution?
-    create: 
+    create:
       flash_notice: La question a été créée avec succès.
-    edit: 
+    edit:
       title: Éditer la question
-    flag: 
+    flag:
       title: Reporter un abus
-    form: 
+    form:
       adult_content: Cette question possède du contenu pour adultes.
       body_tip: Quelle est votre question? soyez descriptif.
       language_tip: Sélectionnez la langue de votre question.
       tags_tip: Utilisez les tags pour ajouter plus d'information à question.
-    index: 
+    index:
       active: Actives
       active_tooltip: Les questions actualisées le plus récemment
       ask_question: Poser une question
@@ -54,42 +54,42 @@ fr:
       unanswered_questions: Questions sans réponse
       votes: Votes
       votes_tooltip: Les questions les plus votées
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: Désolé, vous devez utiliser au moins un tag.
         title_too_long: Le titre est trop long, il ne doit pas contenir plus de 100 caractères
         too_many_tags: Désolé, vous ne pouvez utiliser que 9 tags maximum.
         too_short: Semble trop court. S'il vous plait, veuillez utiliser plus de mots que %{count} pour être plus specific
-    move: 
+    move:
       group_label: "Transférer au groupe du nom:"
       submit: Transférer!
       title: "Transférer la question: %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: Le groupe %{group} n'éxiste pas
       success: Question transférée à %{group}
-    new: 
+    new:
       how_to_ask: Comment poser une question
       title: Posez une question
-    question: 
+    question:
       accepted_tooltip: Cette question a été répondu correctement
-    retag: 
+    retag:
       title: Modifier les tags
-    retag_form: 
+    retag_form:
       cancel: Annuler
       submit: Actualiser las tags!
       title: Actualiser les tags
-    retag_to: 
+    retag_to:
       failure: Désolé, les tags n'ont pas pu être actualisé.
       success: Les tags ont été actualisé avec succès.
-    revert: 
+    revert:
       title: Révoquer la question
-    shared: 
+    shared:
       flag: Rapporter
-    show: 
+    show:
       accepted_tooltip: L'une des réponses a été accepté comme solution
       another_answers: Autres réponses
       answers: Réponses
-      answers_title: 
+      answers_title:
         one: "%{count} réponse"
         other: "%{count} réponses"
       asked_on: posée dans
@@ -121,23 +121,23 @@ fr:
       unwatch_tooltip: Arrêter de suivre cette question
       viewed: vues
       watch_tooltip: Suivre cette question
-    solve: 
+    solve:
       flash_notice: La question a été résolue.
-    tags: 
+    tags:
       filter: Recherchez des tags
       title: Tags
       tooltip: Montrer les questions avec le tag %{tag}
-    unanswered: 
+    unanswered:
       empty: Ce groupe n'a aucune question sans réponses.
       expert: Experts
       my_tags: Mes tags
       tags: Tags sans réponses
       title: Sans réponse
-    unsolve: 
+    unsolve:
       flash_notice: La question n'est plus résolue.
-    unwatch: 
+    unwatch:
       success: Vous n'allez plus recevoir de notifications par email pour chaque réponse à cette question.
-    update: 
+    update:
       flash_notice: La question a été actualisée avec succès.
-    watch: 
+    watch:
       success: Vous allez maintenant recevoir des notifications par email pour chaque réponse à cette question.

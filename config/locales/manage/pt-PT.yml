@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Hamilton Abreu
-pt-PT: 
-  admin: 
-    manage: 
-      content: 
+pt-PT:
+  admin:
+    manage:
+      content:
         footer: Rodapé
         head: Cabeçalho
         question_help: Ajuda de perguntas
@@ -13,12 +13,12 @@ pt-PT:
         title: Conteúdo personalizado
         top_bar: Barra do topo
         top_bar_tip: Introduza um link por linha
-      properties: 
-        constrains: 
+      properties:
+        constrains:
           reputation_constrains_description: Este formulário permite-lhe configurar quantos pontos de reputação os utilizadores necessitam para executar uma determinada acção
           reputation_constrains_subtitle: Lista de requisitos de reputação para cada acção
           title: Requisitos
-        domain: 
+        domain:
           description: "Pode mapear o seu site de forma a ser acessível através do seu domínio próprio. Faça-o assim:"
           instruction1: Para fazê-lo, antes autentique-se no fornecedor do seu domínio. É o site onde comprou o seu domínio, do tipo %{subdomain}.com.
           instruction2: Lá, vá à secção de DNS e crie uma coisa chamada um CNAME.
@@ -28,13 +28,13 @@ pt-PT:
           instruction6: Quando for este o caso, volte cá, coloque o nome do seu domínio www.%{subdomain} no campo abaixo e clique 'Actualizar'. Se tem questões, coloque-as em %{chat_url} ou no nosso fórum de suporte.
           title: Defina o seu domínio
           warning: Tem a certeza de que quer alterar o seu domínio?
-        general: 
+        general:
           title: Propriedades do grupo
-        rewards: 
+        rewards:
           reputation_rewards_description: Este formulário permite-lhe configurar de que forma os utilizadores podem ganhar e perder pontos de reputação por uma dada acção
           reputation_rewards_subtitle: Lista de prémios de reputação
           title: Prémios
-        share: 
+        share:
           add_tags: Acrescentar categorias aos seus tweets
           application_id: Aplicação
           asking_from_twitter: Perguntar a partir do Twitter
@@ -50,6 +50,6 @@ pt-PT:
           tweet_ends_with: Acrescentar uma categoria no fim dos seus tweets
           tweet_starts_with: Acrescentar uma categoria no início dos seus tweets
           twitter_account: A conta do Twitter à qual os seus utilizadores farão perguntas.
-        theme: 
+        theme:
           logo_legend: Faça o upload de um logótipo para o seu grupo; tem de ser inferior a 2 MB.
           title: Defina o tema do grupo

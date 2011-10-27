@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Giallu
 # Author: Tuxwet
-it: 
-  activerecord: 
-    attributes: 
-      user: 
+it:
+  activerecord:
+    attributes:
+      user:
         activated_at: attivato il
         activation_code: Codice di attivazione
         age: Età
@@ -31,11 +31,11 @@ it:
         timezone: Fuso orario
         updated_at: aggiornato il
         website: Sito web
-    models: 
+    models:
       user: Utente
       users: Utenti
-  users: 
-    actions: 
+  users:
+    actions:
       edit_others_posts: Modificare post di altri
       edit_wiki_post: Modificare messaggi wiki
       flag: Segnalare
@@ -44,18 +44,18 @@ it:
       vote_to_close_any_question: Richiedere la chiusura di una domanda
       vote_to_close_own_question: Richiedere la chiusura di una propria domanda
       vote_up: Votare positivamente
-    anonymous_form: 
+    anonymous_form:
       never_shown: mai mostrato
-    create: 
+    create:
       flash_error: Creazione account non riuscita. Riprovare o contattare un amministratore (link sopra).
       flash_notice: Grazie per esserti iscritto!
-    edit: 
+    edit:
       enable_twitter: Attiva il tuo account Facebook o Twitter
       submit: Salva
       title: Impostazioni
-    follow: 
+    follow:
       flash_notice: L'utente %{user} è stato aggiunto agli amici
-    form: 
+    form:
       activities_notification: "Ricevi email di notifica per eventi come: nuovi follow, bagde conquistati, etc."
       avatar_tip: Cambia l'immagine del profilo utilizzando Gravatar
       give_advice_notification: Ricevi email di notifica su domande nel tuo campo di competenza
@@ -65,7 +65,7 @@ it:
       notifications: Notifiche
       reports_notification: Ricevi un report dell'attività recente del gruppo (solo per amministratori)
       show_more_lang: Mostra altre lingue
-    index: 
+    index:
       empty: Il gruppo non ha nessun membro. Partecipa unendoti a questo gruppo.
       filter: Cerca utenti
       name: Nome
@@ -77,16 +77,16 @@ it:
       reputation: Reputazione
       reputation_tooltip: Utenti in ordine di reputazione
       title: Tutti gli utenti
-    messages: 
-      errors: 
+    messages:
+      errors:
         reputation_needed: E' necessaria una reputazione di %{min_reputation} per %{action}
-    new: 
+    new:
       submit: Iscriviti
       title: Iscriviti come nuovo utente
-    show: 
+    show:
       follow: Follow
       title: Utente %{user}
       unfollow: Annulla follow
       views: visualizzazioni
-    unfollow: 
+    unfollow:
       flash_notice: L'utente %{user} è stato rimosso dagli amici

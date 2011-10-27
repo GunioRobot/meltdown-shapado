@@ -4,12 +4,12 @@
 # Author: ArnoLagrange
 # Author: Gufulo
 # Author: LaPingvino
-eo: 
-  ads: 
+eo:
+  ads:
     ad_links: Aldoni novan reklamon %{type}
-    create: 
+    create:
       success: Reklamo estis sukcese kreita.
-    index: 
+    index:
       add_adbard: Aldoni novan „Ad Bard”-reklamon
       add_adsense: Aldoni novan reklamon Google AdSense
       title: Reklamo

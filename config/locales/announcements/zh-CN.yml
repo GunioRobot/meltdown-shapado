@@ -3,19 +3,19 @@
 # Export driver: syck
 # Author: Hydra
 # Author: ZhengYiFeng
-zh-CN: 
-  activerecord: 
-    attributes: 
-      announcement: 
+zh-CN:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: 要结束
         message: 消息
         only_anonymous: 仅对匿名用户
         starts_at: 开始
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: 删除
       title: 行动
-    create: 
+    create:
       success: 公告成功创立
-    index: 
+    index:
       title: 公告

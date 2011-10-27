@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  activerecord: 
-    attributes: 
-      question: 
+gl:
+  activerecord:
+    attributes:
+      question:
         answers: Respostas
         asked_by: Preguntada por
         body: Corpo
@@ -18,27 +18,27 @@ gl:
         updated_by: actualizada por
         views: Visitas
         votes: Votos
-    models: 
+    models:
       question: Pregunta
       questions: Preguntas
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: Engadir un comentario...
       flag: Informar
       pick_answer: Elixir como solución
       unset_answer: Quere anular a solución?
-    create: 
+    create:
       flash_notice: A pregunta foi creada correctamente.
-    edit: 
+    edit:
       title: Editando a pregunta
-    flag: 
+    flag:
       title: Informar dun abuso
-    form: 
+    form:
       adult_content: Esta pregunta contén material para adultos.
       body_tip: Cal é a súa pregunta? Sexa descritivo.
       language_tip: Seleccione a lingua na que formula a pregunta.
       tags_tip: Use as etiquetas para engadir máis información sobre a pregunta.
-    index: 
+    index:
       active: Activas
       active_tooltip: As preguntas que foron actualizadas recentemente
       ask_question: Facer unha pregunta
@@ -53,42 +53,42 @@ gl:
       unanswered_questions: Preguntas sen resposta
       votes: Votos
       votes_tooltip: Preguntas con máis votos
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: Sentímolo. Cómpre usar, polo menos, unha etiqueta.
         title_too_long: O título é longo de máis. Non pode conter máis de 100 caracteres.
         too_many_tags: Sentímolo. Soamente pode introducir un máximo de 9 etiquetas.
         too_short: Semella curta de máis. Utilice máis de %{count} palabras para ser máis específico.
-    move: 
+    move:
       group_label: "Mover ao grupo de nome:"
       submit: Mover!
       title: "Mover a pregunta: %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: Non existe o grupo %{group}
       success: Pregunta trasladada a %{group}
-    new: 
+    new:
       how_to_ask: Como formular unha pregunta
       title: Facer unha pregunta
-    question: 
+    question:
       accepted_tooltip: Esta pregunta ten unha resposta que foi aceptada
-    retag: 
+    retag:
       title: Cambiar a etiqueta
-    retag_form: 
+    retag_form:
       cancel: Cancelar
       submit: Actualizar as etiquetas!
       title: Actualizar as etiquetas
-    retag_to: 
+    retag_to:
       failure: Sentímolo. As etiquetas non se puideron actualizar.
       success: As etiquetas actualizáronse correctamente.
-    revert: 
+    revert:
       title: Reverter a pregunta
-    shared: 
+    shared:
       flag: Informar
-    show: 
+    show:
       accepted_tooltip: Unha das respostas foi aceptada como a resposta correcta.
       another_answers: Outras respostas
       answers: Respostas
-      answers_title: 
+      answers_title:
         one: "%{count} resposta"
         other: "%{count} respostas"
       asked_on: preguntada o
@@ -120,23 +120,23 @@ gl:
       unwatch_tooltip: Deixar de seguir esta pregunta
       viewed: visitada
       watch_tooltip: Seguir esta pregunta
-    solve: 
+    solve:
       flash_notice: A pregunta está resolta.
-    tags: 
+    tags:
       filter: Procura por etiquetas
       title: Etiquetas
       tooltip: Mostrar as preguntas etiquetadas con "%{tag}"
-    unanswered: 
+    unanswered:
       empty: Este grupo non contén ningunha pregunta sen resposta.
       expert: Expertos
       my_tags: As miñas etiquetas
       tags: Etiquetas sen resposta
       title: Preguntas sen resposta
-    unsolve: 
+    unsolve:
       flash_notice: A pregunta non está resolta.
-    unwatch: 
+    unwatch:
       success: Xa non recibirá notificacións por correo electrónico para cada nova resposta a esta pregunta.
-    update: 
+    update:
       flash_notice: A pregunta actualizouse correctamente.
-    watch: 
+    watch:
       success: Agora recibirá notificacións por correo electrónico para cada nova resposta a esta pregunta.

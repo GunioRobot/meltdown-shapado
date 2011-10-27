@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: McDutchie
-ia: 
-  open_requests: 
-    create: 
+ia:
+  open_requests:
+    create:
       flash_notice: Requesta de reapertura create con successo
-    destroy: 
+    destroy:
       flash_notice: Requesta de reapertura delite con successo
-    edit: 
+    edit:
       title: Modificar requesta de reapertura
-    form: 
+    form:
       request_opening_details: Requestar a reaperir iste question
-    index: 
+    index:
       title: Lista de requestas de reapertura
-    model: 
+    model:
       prural_name: Requestas de reapertura
-    new: 
+    new:
       title: Requesta de reapertura
-    update: 
+    update:
       flash_notice: Requesta de reapertura actualisate con successo

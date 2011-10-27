@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  ads: 
+gl:
+  ads:
     ad_links: engadir un novo anuncio %{type}
-    create: 
+    create:
       success: o anuncio creouse correctamente.
-    index: 
+    index:
       add_adbard: engadir un novo anuncio
       add_adsense: engadir un novo anuncio do Google
       title: anuncios

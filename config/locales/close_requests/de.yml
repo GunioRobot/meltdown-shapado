@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Kghbln
-de: 
-  close_requests: 
-    create: 
+de:
+  close_requests:
+    create:
       flash_notice: Beendigungsanfrage wurde erfolgreich erstellt
-    destroy: 
+    destroy:
       flash_notice: Beendigungsanfrage wurde erfolgreich gelöscht
-    edit: 
+    edit:
       title: Beendigungsanfrage bearbeiten
-    form: 
+    form:
       close_with_reason: Frage unter Verwendung dieses Grundes beenden
       dupe: Duplikat
       no_question: keine Frage
@@ -18,16 +18,16 @@ de:
       ot: nicht zum Thema gehörig
       request_closing_details: Beendigungsanfrage zu dieser Frage
       spam: Spam
-    index: 
+    index:
       title: Liste der Beendigungsanfragen
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Kommentar
         reason: Grund
         user: Nutzer
-      messages: 
+      messages:
         already_requested: Du hast bereits die Beendigung dieser Frage beantragt
       name: Beendigungsanfrage
       prural_name: Beendigungsanfragen
-    update: 
+    update:
       flash_notice: Beendigungsanfrage wurde erfolgreich aktualisiert

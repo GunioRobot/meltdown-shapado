@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: 青子守歌
-ja: 
-  activerecord: 
-    attributes: 
-      group: 
+ja:
+  activerecord:
+    attributes:
+      group:
         default_tags: デフォルトタグ
         description: 詳細
         domain: ドメイン
@@ -23,14 +23,14 @@ ja:
         state: ステータス
         subdomain: URL
         wysiwyg_editor: WYSIWYGエディタを利用する
-    models: 
+    models:
       default_tags_message: デフォルトタグは10個までです
       group: グループ
       groups: グループ
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: あなたのサイトは作成されました。設定を変更してください
-    form: 
+    form:
       access: アクセス設定
       analytics_engine: analytics Engine
       analytics_legend: the group will be able to use its own tracking code
@@ -45,14 +45,14 @@ ja:
       logo_legend: このサイト用のロゴがアップデートでいます。ファイルサイズは2MBまでです。
       members_only: only the group's members will be able to access this group
       website_analytics_id: website Analytics ID
-    group: 
+    group:
       about: 詳細
       accept_group: このサイトを有効にする
       allow_ads: 広告を有効化
       close: 閉鎖
       close_group: このサイトを閉じる
       disallow_ads: 広告を無効化
-    index: 
+    index:
       actives: 有効
       filter: グループを検索
       most_active: アクティブ順
@@ -60,9 +60,9 @@ ja:
       pendings: 審査中
       request_group: 新しいグループのリクエスト
       title: グループ
-    new: 
+    new:
       title: 新しいサイトの作成
-    show: 
+    show:
       accept_group: このサイトを有効にする
       accept_group_with_custom_ads: グループの許可とカスタム広告の許可
       close_group: このサイトを閉鎖する

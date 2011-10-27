@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Linkr
-ko: 
-  admin: 
-    moderate: 
-      index: 
+ko:
+  admin:
+    moderate:
+      index:
         all: 모두
         ban: 금지
         banned: 금지된 질문

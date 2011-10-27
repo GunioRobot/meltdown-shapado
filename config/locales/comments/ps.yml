@@ -2,17 +2,17 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Ahmed-Najib-Biabani-Ibrahimkhel
-ps: 
-  comments: 
-    create: 
+ps:
+  comments:
+    create:
       flash_notice: ستاسې له تبصرې نه مننه
-    edit: 
+    edit:
       title: تبصره سمول
-    shared: 
+    shared:
       add_comment: تبصره ورګډول...
       comment_submit: تبصره
       reply: ځوابول
       said: ووييل
-  models: 
+  models:
     comment: تبصره
     comments: تبصرې

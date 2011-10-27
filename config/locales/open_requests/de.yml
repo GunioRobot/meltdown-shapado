@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Kghbln
-de: 
-  open_requests: 
-    create: 
+de:
+  open_requests:
+    create:
       flash_notice: Bitte um erneute Aktivierung wurde erfolgreich erstellt
-    destroy: 
+    destroy:
       flash_notice: Bitte um erneute Aktivierung wurde erfolgreich gelöscht
-    edit: 
+    edit:
       title: Bitte um erneute Aktivierung bearbeiten
-    form: 
+    form:
       request_opening_details: Um die erneute Aktivierung dieser Frage bitten
-    index: 
+    index:
       title: Liste der Bitten zur erneuten Aktivierung
-    model: 
+    model:
       prural_name: Bitten um erneute Aktivierung
-    new: 
+    new:
       title: Bitte um erneute Aktivierung
-    update: 
+    update:
       flash_notice: Bitte um erneute Aktivierung wurde erfolgreich aktualisiert

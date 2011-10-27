@@ -2,28 +2,28 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Papapep
-ca: 
-  activerecord: 
-    attributes: 
-      answer: 
+ca:
+  activerecord:
+    attributes:
+      answer:
         body: Cos
         created_at: Respost
         link: Enllaç
-    models: 
+    models:
       answer: Resposta
       answers: Respostes
-  answers: 
-    create: 
+  answers:
+    create:
       flash_error: "S'ha produït un error en afegir la vostra resposta.\n Recordeu que:\n - No s'admeten les respostes buides i repetides\n - Han de passar 20 segons entre que publiqueu una resposta i una altra\n - Només podeu publicar una resposta per a cada pregunta"
       flash_notice: Gràcies!
-    edit: 
+    edit:
       title: S'està editant la resposta
-    form: 
+    form:
       answer_label: Responeu la pregunta
       comment_label: Comenteu aquesta resposta
       comment_submit: Comentari
       submit: Resposta
-    revert: 
+    revert:
       title: Reverteix la resposta
-    update: 
+    update:
       flash_notice: S'ha actualitzat correctament la resposta.

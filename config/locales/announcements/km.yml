@@ -2,16 +2,16 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Sovichet
-km: 
-  activerecord: 
-    attributes: 
-      announcement: 
+km:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: បញ្ចប់​នៅ
         message: សារ
         only_anonymous: សម្រាប់​តែ​ជន​អនាមិក​ទេ
         starts_at: ចាប់​ផ្ដើម​នៅ
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: លុប​ចេញ
-    index: 
+    index:
       title: សេចក្ដី​ប្រកាស

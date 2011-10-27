@@ -3,9 +3,9 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Jim-by
-be-TARASK: 
-  layouts: 
-    application: 
+be-TARASK:
+  layouts:
+    application:
       ask_question: Задаць пытаньне
       badges: Узнагароды
       forgot: Забыліся?
@@ -17,7 +17,7 @@ be-TARASK:
       manage_ads: Кіраваньне рэклямай
       moderate: Сярэдняя
       now: зараз!
-      openid: 
+      openid:
         explaination: "Калі Вы жадаеце зарэгістравацца ці проста ўвайсьці ў сыстэму, калі ласка, выберыце Ваш сэрвіс OpenID:"
       pages: Старонкі
       questions: Пытаньні
@@ -32,7 +32,7 @@ be-TARASK:
       unanswered: Без адказаў
       users: Карыстальнікі
       welcome_from: Вітаем! Вы можаце
-    manage: 
+    manage:
       actions: Дзеяньні
       announcements: Аб’явы
       constrains: Патрабаваньні
@@ -48,5 +48,5 @@ be-TARASK:
       stats: Статыстыка
       theme: Афармленьне
       widgets: Віджэты
-    notifications: 
+    notifications:
       message: Калі Вы болей не жадаеце атрымліваць аўтаматычныя абвяшчэньні з %{group}, зьмяніце Вашыя ўстаноўкі ў акне абвяшчэньняў.

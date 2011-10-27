@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  doc: 
-    chat: 
+fi:
+  doc:
+    chat:
       title: Verkkojuttelutuki
-    plans: 
+    plans:
       15millions: 15 miljoonaa sivuatselua/kuukausi
       1million: 1 miljoonaa sivuatselua/kuukausi
       247_all_support: Web-perustainen, sähköposti, verkkojuttelu ja 24/7 -puhelintuki

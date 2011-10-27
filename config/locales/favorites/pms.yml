@@ -3,12 +3,12 @@
 # Export driver: syck
 # Author: Borichèt
 # Author: Dragonòt
-pms: 
-  activerecord: 
-    models: 
+pms:
+  activerecord:
+    models:
       favorite: Preferì
       favorites: Preferì
-  favorites: 
-    create: 
+  favorites:
+    create:
       success: La chestion a l'é stàita giontà ai sò preferì
       unauthenticated: A l'ha dabzògn d'un cont për gionté dij preferì

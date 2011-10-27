@@ -3,33 +3,33 @@
 # Export driver: syck
 # Author: Fulup
 # Author: Y-M D
-br: 
-  activerecord: 
-    attributes: 
-      page: 
+br:
+  activerecord:
+    attributes:
+      page:
         css: Follenn stil
         js: Javascript
-    models: 
+    models:
       page: Pajenn
       pages: Pajennoù
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Krouiñ ur bajenn nevez
       edit_page: Kemmañ ar bajenn
       title: Oberoù
-    create: 
+    create:
       success: Krouet eo bet ar bajenn ervat.
-    edit: 
+    edit:
       title: O kemmañ ar bajenn
-    form: 
+    form:
       language_tip: Yezh ar bajenn
       title_tip: "Titl ar bajenn. Implijit kement-mañ evit krouiñ un dave d'ar bajenn. Da skouer : [[FAQ|lenn ar FAG-mañ]]"
-    index: 
+    index:
       create_page: Krouiñ ur bajenn nevez
       title: Roll ar pajennoù
       written_in: Skrivet e %{language}
-    new: 
+    new:
       title: Pajenn nevez
     title: Kempenn
-    update: 
+    update:
       success: Hizivaet-mat eo bet ar bajenn

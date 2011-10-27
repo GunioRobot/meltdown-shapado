@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Siebrand
-nl: 
-  doc: 
-    chat: 
+nl:
+  doc:
+    chat:
       title: Chatondersteuning
-    plans: 
+    plans:
       15millions: 15 miljoen pageviews per maand
       1million: 1 miljoen pageviews per maand
       247_all_support: Webgebaseerd, e-mail, chat en telefonische ondersteuning 24 uur per dag, 7 dagen per week

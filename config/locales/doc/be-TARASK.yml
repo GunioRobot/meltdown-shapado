@@ -3,11 +3,11 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Jim-by
-be-TARASK: 
-  doc: 
-    chat: 
+be-TARASK:
+  doc:
+    chat:
       title: Падтрымка ў чаце
-    plans: 
+    plans:
       15millions: 15 мільёнаў праглядаў старонкі ў месяц
       1million: 1 мільён праглядаў старонкі ў месяц
       247_all_support: Падтрымка праз ўэб, электронную пошту, чат і тэлефон 24/7

@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Fulup
 # Author: Y-M D
-br: 
-  activerecord: 
-    attributes: 
-      question: 
+br:
+  activerecord:
+    attributes:
+      question:
         answers: Respontoù
         asked_by: Goulennet gant
         body: Korf
@@ -19,27 +19,27 @@ br:
         updated_by: hizivaet gant
         views: Gweladennoù
         votes: Mouezhioù
-    models: 
+    models:
       question: Goulenn
       questions: Goulennoù
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: Ouzhpennañ un evezhiadenn...
       flag: Banniel
       pick_answer: Dibab evel respont
       unset_answer: Nullañ an diskoulm ?
-    create: 
+    create:
       flash_notice: Krouet eo bet ar goulenn ervat.
-    edit: 
+    edit:
       title: Kemmañ ar goulenn
-    flag: 
+    flag:
       title: Kas kemenn eus in implij direizh
-    form: 
+    form:
       adult_content: Er goulenn-mañ ez eus danvez evit an dud gour.
       body_tip: Pehini eo ho koulenn ? Roit un deskrivadur.
       language_tip: Dibabit yezh ho koulenn.
       tags_tip: Implijit ar balizennoù evit ouzhpennañ muioc'h a ditouroù d'ar goulenn.
-    index: 
+    index:
       active: Oberiant
       active_tooltip: Goulennoù bet hizivaet da ziwezhañ
       ask_question: Sevel ur goulenn
@@ -54,42 +54,42 @@ br:
       unanswered_questions: Goulennoù direspont
       votes: Mouezhioù
       votes_tooltip: Goulennet zo bet votet ar muiañ evito
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: Digarezit, rankout a rit implijout ur balizenn d'an nebeutañ.
         title_too_long: Re hir eo an titl. Arabat eo dezhañ bezañ hiroc'h eget 100 arouezenn
         too_many_tags: Digarezit, ne c'hellit implijout nemet 9 balizenn d'ar muiañ.
         too_short: Seblantout a ra re verr. Mar plij implijit muioc'h eget %{count} ger evit bezañ resisoc'h.
-    move: 
+    move:
       group_label: "Fiñval ar goulenn d'ar strollad :"
       submit: Dilec'hiañ !
       title: "Treuzkas ar goulenn : %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: N'eus ket eus ar strollad %{group}
       success: Goulenn bet dilec'hiet da %{group}
-    new: 
+    new:
       how_to_ask: Penaos goulenn
       title: Sevel ur goulenn
-    question: 
+    question:
       accepted_tooltip: Respontet ez eus bet d'ar goulenn-mañ ervat
-    retag: 
+    retag:
       title: Adtikedenniñ
-    retag_form: 
+    retag_form:
       cancel: Nullañ
       submit: Hizivaat an tikedennoù !
       title: Hizivaat an tikedennoù !
-    retag_to: 
+    retag_to:
       failure: Hopala, dibosupl eo hizivaat an tikedennoù
       success: Hizivaet eo bet an tikedennoù ervat.
-    revert: 
+    revert:
       title: Disteuler ar goulenn
-    shared: 
+    shared:
       flag: Kas kemenn un implij direizh
-    show: 
+    show:
       accepted_tooltip: Degemeret ez eus bet unan eus ar respontoù da respont reizh.
       another_answers: Respontoù all
       answers: Respontoù
-      answers_title: 
+      answers_title:
         one: "%{count} respont"
         other: "%{count} respont"
       asked_on: Goulennet e
@@ -121,23 +121,23 @@ br:
       unwatch_tooltip: Paouez da heuliañ ar goulenn-mañ
       viewed: lennet
       watch_tooltip: Heuliañ ar goulenn-mañ
-    solve: 
+    solve:
       flash_notice: Diskoulmet eo bet ar gudenn.
-    tags: 
+    tags:
       filter: Klask tikedennoù
       title: Tikedennoù
       tooltip: Diskouez ar goulennoù gant an dikedenn %{tag}
-    unanswered: 
+    unanswered:
       empty: N'eus goulenn direspont ebet er strollad-mañ
       expert: Arbennigourien
       my_tags: Ma zikedennoù
       tags: Tikedennoù direspont
       title: Goulennoù direspont
-    unsolve: 
+    unsolve:
       flash_notice: N'eo ket mui diskoulmet ar goulenn.
-    unwatch: 
+    unwatch:
       success: Ne resevot ket kemmennadennoù dre bostel pa vo respontoù nevez d'ar goulenn-mañ ken.
-    update: 
+    update:
       flash_notice: Hizivaet eo bet ar goulenn ervat.
-    watch: 
+    watch:
       success: Hiviziken e resevot kemennoù dre bostel bep tro ma vo ur respont nevez d'ar goulenn-mañ

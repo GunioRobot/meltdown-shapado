@@ -2,27 +2,27 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Byulent
-pl: 
-  activerecord: 
-    attributes: 
-      page: 
+pl:
+  activerecord:
+    attributes:
+      page:
         js: JavaScript
-    models: 
+    models:
       page: Strona
       pages: Strony
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Utwórz nową stronę
       edit_page: Edytuj stronę
       title: Operacje
-    edit: 
+    edit:
       title: Edytuj stronę
-    form: 
+    form:
       language_tip: Język strony
       title_tip: "Tytuł strony. Służy do odniesienia stronie. Naprzykład: [[FAQ | sprawdź faq]]"
-    index: 
+    index:
       create_page: Utwórz nową stronę
       title: Spis stron
       written_in: Językiem strony jest %{language}
-    new: 
+    new:
       title: Nowa strona

@@ -3,8 +3,8 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Jim-by
-be-TARASK: 
-  feeds: 
+be-TARASK:
+  feeds:
     feed: Стужка
     post_new_questions: Даслаць новае пытаньне ў
     question: Падпісацца на гэтае пытаньне
@@ -12,7 +12,7 @@ be-TARASK:
     share_on_twitter: Twitter, Facebook і іншае…
     tag: Падпісацца на тэг
     user: Падпісацца на пытаньні гэтага карыстальніка
-  global: 
+  global:
     active: Актывізаваць
     anonymous: Ананім
     by: ад
@@ -25,20 +25,20 @@ be-TARASK:
     preview: Папярэдні прагляд
     previous: Папярэдні
     share: Адкрыць доступ
-  languages: 
+  languages:
     any: Любая
     user: Мовы, якім я аддаю перавагу
-  models: 
+  models:
     question: Пытаньне
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} разоў"
       other: "%{count} раз(оў)"
       zero: Ніколі
-  pagination: 
+  pagination:
     next: Наступная &raquo;
     previous: "&laquo; Папярэдняя"
-  scaffold: 
+  scaffold:
     add: Дадаць
     back: Назад
     cancel: Скасаваць
@@ -55,6 +55,6 @@ be-TARASK:
     show: Паказаць
     sure: Вы ўпэўнены, што жадаеце выдаліць %{model} ?
     update: Абнавіць
-  time: 
+  time:
     ago: "%{time} таму"
     today: сёньня

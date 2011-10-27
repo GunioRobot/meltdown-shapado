@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Kghbln
-de: 
-  admin: 
-    moderate: 
-      index: 
+de:
+  admin:
+    moderate:
+      index:
         all: alle
         ban: verbieten
         banned: verbotene Fragen

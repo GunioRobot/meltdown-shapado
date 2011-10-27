@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Hydra
-zh-CN: 
-  admin: 
-    moderate: 
-      index: 
+zh-CN:
+  admin:
+    moderate:
+      index:
         all: 全部
         ban: 禁止
         banned: 被禁止的问题

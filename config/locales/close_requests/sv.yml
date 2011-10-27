@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Tobulos1
-sv: 
-  close_requests: 
-    form: 
+sv:
+  close_requests:
+    form:
       close_with_reason: Stäng denna fråga med detta skäl
       dupe: Duplicera
       no_question: Inte en fråga
@@ -12,12 +12,12 @@ sv:
       ot: Off topic
       request_closing_details: Begäran om att avsluta denna fråga
       spam: skräppost
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Kommentera
         reason: Orsak
         user: Användare
-      messages: 
+      messages:
         already_requested: Du har redan begärt att stänga denna fråga
       name: Begäran stängd
       prural_name: Förfrågningar stängda

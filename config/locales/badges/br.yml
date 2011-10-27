@@ -3,148 +3,148 @@
 # Export driver: syck
 # Author: Fulup
 # Author: Y-M D
-br: 
-  activerecord: 
-    models: 
+br:
+  activerecord:
+    models:
       badge: Badj
       badges: Badjoù
-  badges: 
-    index: 
+  badges:
+    index:
       description: An holl badjoù a c'hellit gounid. Rannit o anaoudegezhioù, gounezit badjoù.
       title: badjoù
-    shared: 
-      addict: 
+    shared:
+      addict:
         description: Gweladenniñ al lec'hienn bemdez e-pad 20 devezh da-heul
         name: Sod-nay
-      autobiographer: 
+      autobiographer:
         description: en deus leuniet e holl maeziennoù implijer
         name: Emvuhezskriver
-      celebrity: 
+      celebrity:
         description: En deus muioc'h eget 100 heulier
         name: Den brudet
-      citizen_patrol: 
+      citizen_patrol:
         description: Kentañ postadenn bannielet
         name: Patrouilh keodedel
-      civic_duty: 
+      civic_duty:
         description: En deus votet 300 gwech
         name: Dever keodedel
-      cleanup: 
+      cleanup:
         description: en deus graet e zistaoladenn gentañ
         name: Naetaerezh
-      commentator: 
+      commentator:
         description: Bez skrivet 10 evezhiadenn
         name: Displeger
-      critic: 
+      critic:
         description: bet votet a-enep evit ar wech gentañ
         name: Burutelladenn
-      disciplined: 
+      disciplined:
         description: Diverket en deus ur bostadenn dezhi ur skor a 3 pe muioc'h
         name: Kenurzhiek
-      editor: 
+      editor:
         description: Kentañ postadenn kemmet
         name: Embannner
-      effort_medal: 
+      effort_medal:
         description: Kaout 100 mouezh pozitivel
         name: Medalenn ar striv
-      enlightened: 
+      enlightened:
         description: en deus ur respont bet degemeret gant 10 vot a-du d'an nebeutañ
         name: Goulaouiñ
-      famous_question: 
+      famous_question:
         description: Goulenn gant 10 000 gweladenn
         name: Goulenn brudet
-      fanatic: 
+      fanatic:
         description: Gweladenniñ al lec'hienn bemdez e-pad 100 devezh da-heul
         name: Klañv-mik
-      favorite_question: 
+      favorite_question:
         description: en deus savet ur goulenn sinedet gant ouzhpenn 25 implijer
         name: Goulenn a blij ar muiañ
-      friendly: 
+      friendly:
         description: Heuliañ unan bennak evit ar wech gentañ
         name: Mignoniel
-      good_answer: 
+      good_answer:
         description: En deus kaset ur respont en deus paket ar geidenn a 25 mouezh pe uheloc'h
         name: Respont vat
-      good_question: 
+      good_question:
         description: En deus kaset ur respont en deus paket ar geidenn a 25 mouezh pe uheloc'h
         name: Goulenn vat
-      great_answer: 
+      great_answer:
         description: En deus ur respont bet votet a-du 100 gwech
         name: Respont dispar
-      great_question: 
+      great_question:
         description: Goulenn bet votet a-du 100 gwech
         name: Goulenn dispar
-      guru: 
+      guru:
         description: Reiñ un diskoulm d'ur goulenn gant ur geidenn uheloc'h eget 40 mouezh
         name: Gourou
-      inquirer: 
+      inquirer:
         description: Sevel ur goulenn evit ar wech gentañ
         name: Enklasker
-      interesting_person: 
+      interesting_person:
         description: En deus ouzhpenn 10 heulier
         name: Den dedennus
-      merit_medal: 
+      merit_medal:
         description: Kaout 200 mouezh pozitivel
         name: Medalenn a enor
-      necromancer: 
+      necromancer:
         description: En deus respontet d'ur goulenn bet savet muioc'h eget 60 devezh zo ha gant 5 mouezh da nebeutañ
         name: Igromañser
-      nice_answer: 
+      nice_answer:
         description: En deus ur respont zo bet votet 10 gwezh a-du evitañ
         name: Respont vat
-      nice_question: 
+      nice_question:
         description: En deus savet ur goulenn bet votet a-du 10 gwech
         name: Goulenn vat
-      notable_question: 
+      notable_question:
         description: Goulenn gant 2 500 gweladenn
         name: Goulenn talvoudus
-      organizer: 
+      organizer:
         description: en deus adtikedennet ur wezh
         name: Aozer
-      peer_pressure: 
+      peer_pressure:
         description: Diverket en deus ur bostadenn dezhi ur skor a -3 pe nebeutoc'h
         name: Gwask ar strollad
-      pioneer: 
+      pioneer:
         description: Bezañ er re gentañ o vezañ en em enskrivet
         name: Gwastadour
-      popstar: 
+      popstar:
         description: En deus 500 vot a-du ha 10 a-enep d'ar muiañ
         name: Popstar
-      popular_person: 
+      popular_person:
         description: en deus muioc'h eget 50 heulier
         name: Den poblel
-      popular_question: 
+      popular_question:
         description: Goulenn gant 1 000 gweladenn
         name: Goulenn a ra berzh
-      rockstar: 
+      rockstar:
         description: En deus 1 000 vot pozitivel, 10 negativel d'ar muiañ
         name: Rockstar
-      scholar: 
+      scholar:
         description: En deus respontet da gentañ d'ur goulenn savet gantañ e-unan, gant ur respont degemeret
         name: helenneg
-      self-learner: 
+      self-learner:
         description: En deus respontet d'e c'houlenn gant 3 vot a-du d'an nebeutañ
         name: Emzeskad
-      service_medal: 
+      service_medal:
         description: En deus 300 vot a-du
         name: Medalenn ar servij
-      shapado: 
+      shapado:
         description: Gweladenniñ al lec'hienn bemdez e-pad  8 devezh da-heul
-      stellar_question: 
+      stellar_question:
         description: En deus savet ur goulenn sinedet gant 100 implijer
         name: Goulenn steredel
-      student: 
+      student:
         description: Resevout ur vouezh a-du evit e c'houlenn gentañ
         name: Studier
-      supporter: 
+      supporter:
         description: bet votet a-du evit ar wech gentañ
         name: Harpañ
-      troubleshooter: 
+      troubleshooter:
         description: Respont evit ar wech gentañ
         name: Diskoulmer kudennoù
-      tutor: 
+      tutor:
         description: Reiñ un diskoulm d'ur goulenn gant ur geidenn a votoù uheloc'h eget 2
         name: Harper
-    show: 
+    show:
       description: "Implijerien hag o deus gounezet ar badj-mañ. Bet roet n'eus ket pell da :"
       earned: gounezet
       for_tag_bronze: 200 mouezh evit an tikedenn %{tag}

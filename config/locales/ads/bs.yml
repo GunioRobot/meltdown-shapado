@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: CERminator
-bs: 
-  ads: 
+bs:
+  ads:
     ad_links: Dodaj novi %{type} oglas
-    index: 
+    index:
       title: Oglasi
     name: "Ime:"
     position: "Pozicija:"

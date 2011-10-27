@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Linkr
-ko: 
-  doc: 
-    chat: 
+ko:
+  doc:
+    chat:
       title: 채팅 지원
-    plans: 
+    plans:
       15millions: 15 백만 페이지뷰 / 월
       1million: 1 백만 페이지뷰 / 월
       247_all_support: 웹 기반, 이메일, 채팅 및 전화 지원 - 24/7

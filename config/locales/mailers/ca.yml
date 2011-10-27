@@ -2,23 +2,23 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Papapep
-ca: 
-  mailers: 
-    notifications: 
-      earned_badge: 
+ca:
+  mailers:
+    notifications:
+      earned_badge:
         subject: Heu guanyat un distintiu a %{group}!
-      favorited: 
+      favorited:
         subject: "%{login} ha afegit la vostra pregunta com a favorita!"
-      follow: 
+      follow:
         subject: "%{login} us està seguint a %{app}"
-      give_advice: 
+      give_advice:
         friend_subject: "El vostre amic necessita ajuda: %{question_title}"
         subject: "Necessitem el vostre consell: %{question_title}"
-      new_answer: 
+      new_answer:
         subject_friend: El vostre amic %{login} ha respost la pregunta %{title}
         subject_other: "%{login} ha respost la pregunta %{title}"
         subject_owner: "%{login} ha respost la vostra pregunta %{title}"
-      new_comment: 
+      new_comment:
         subject: "%{login} ha comentat a %{group}"
-      report: 
+      report:
         subject: Informeu del grup %{group} de %{app}

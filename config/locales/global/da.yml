@@ -2,8 +2,8 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  feeds: 
+da:
+  feeds:
     feed: Feed
     post_new_questions: Send nye spørgsmål til
     question: Abonner på dette spørgsmål
@@ -11,7 +11,7 @@ da:
     share_on_twitter: twitter, facebook and mere...
     tag: Abonner på kategori
     user: Abonner på spørgsmål fra denne bruger
-  global: 
+  global:
     active: Aktiver
     anonymous: Anonym
     by: af
@@ -24,20 +24,20 @@ da:
     preview: Forhåndsvisning
     previous: Forrige
     share: Del
-  languages: 
+  languages:
     any: Alle
     user: Mine Foretrukne Sprog
-  models: 
+  models:
     question: Spørgsmålet
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} gang"
       other: "%{count} gange"
       zero: Aldrig
-  pagination: 
+  pagination:
     next: Næste &raquo;
     previous: "&laquo; Forrige"
-  scaffold: 
+  scaffold:
     add: Tilføj
     back: Tilbage
     cancel: Annuller
@@ -54,6 +54,6 @@ da:
     show: Vis
     sure: Er du sikker på du vil slette denne %{model}?
     update: Opdater
-  time: 
+  time:
     ago: "%{time} siden"
     today: i dag

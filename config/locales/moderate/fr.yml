@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Patcito
-fr: 
-  admin: 
-    moderate: 
-      index: 
+fr:
+  admin:
+    moderate:
+      index:
         all: Tous
         ban: Bannir
         banned: questions banée

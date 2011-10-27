@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Tobulos1
-sv: 
-  activerecord: 
-    models: 
+sv:
+  activerecord:
+    models:
       favorite: Favorit
       favorites: Favoriter
-  favorites: 
-    create: 
+  favorites:
+    create:
       success: Frågan har lagts till i dina favoriter
       unauthenticated: Du behöver ett konto för att lägga till favoriter

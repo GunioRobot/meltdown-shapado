@@ -3,15 +3,15 @@
 # Export driver: syck
 # Author: Fulup
 # Author: Y-M D
-br: 
-  close_requests: 
-    create: 
+br:
+  close_requests:
+    create:
       flash_notice: Goulenn serriñ bet krouet ervat
-    destroy: 
+    destroy:
       flash_notice: Goulenn serriñ bet dilamet ervat
-    edit: 
+    edit:
       title: Kemmañ ar goulenn serriñ
-    form: 
+    form:
       close_with_reason: Serriñ ar goulenn-mañ en ur implijout an abeg-se
       dupe: Doublenn
       no_question: N'eo ket ur goulenn
@@ -19,16 +19,16 @@ br:
       ot: E-maez sujed
       request_closing_details: Goulenn ma vo serret ar goulenn-mañ
       spam: strob
-    index: 
+    index:
       title: Roll ar rekedoù serriñ
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Evezhiadenn
         reason: Abeg
         user: Implijer
-      messages: 
+      messages:
         already_requested: Ur goulenn serriñ oc'h eus graet dija evit ar goulenn-mañ
       name: Reked serriñ
       prural_name: Rekedoù serriñ
-    update: 
+    update:
       flash_notice: Goulenn serriñ bet hizivaet ervat

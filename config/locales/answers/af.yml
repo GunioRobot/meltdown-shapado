@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Naudefj
-af: 
-  activerecord: 
-    attributes: 
-      answer: 
+af:
+  activerecord:
+    attributes:
+      answer:
         body: Teks
         created_at: Beantwoord
         link: Skakel
-    models: 
+    models:
       answer: Antwoord
       answers: Antwoorde
-  answers: 
-    create: 
+  answers:
+    create:
       flash_notice: Dankie!
-    form: 
+    form:
       comment_submit: Opmerking
       submit: Antwoorde

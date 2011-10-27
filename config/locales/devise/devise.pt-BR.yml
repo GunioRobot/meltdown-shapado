@@ -3,27 +3,27 @@
 # Export driver: syck
 # Author: Diego Queiroz
 # Author: Vgeorge
-pt-BR: 
-  devise: 
-    confirmations: 
+pt-BR:
+  devise:
+    confirmations:
       confirmed: Sua conta foi confirmada com sucesso. Agora você pode entrar.
       link: Você não recebeu as instruções de confirmação?
       send_instructions: Você vai receber um e-mail com instrução sobre como confirmar a sua conta em alguns minutos.
-    mailer: 
+    mailer:
       confirmation_instructions: Instruções de confirmação
       reset_password_instructions: Instruções de redefinição de senha
       unlock_instructions: Desbloquear instruções
-    passwords: 
+    passwords:
       link: Esqueceu a senha?
       send_instructions: Você receberá um e-mail com instruções para redefinir a sua senha em alguns minutos.
       updated: Sua senha foi modificada com sucesso! Agora você pode entrar.
-    registrations: 
+    registrations:
       destroyed: Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve.
       link: Entrar
       signed_up: Você entrou com sucesso.
       updated: Você atualizou a sua conta com sucesso.
-    sessions: 
-      facebook_actions: 
+    sessions:
+      facebook_actions:
         sign_in: Entrar
         sign_out: Sair
       facebook_authenticity_token: Algo deu errado. Por segurança, entre novamente.
@@ -39,7 +39,7 @@ pt-BR:
       timeout: Sua sessão expirou, por favor entre novamente para continuar.
       unauthenticated: Você precisa entrar ou se registrar antes de continuar.
       unconfirmed: Você precisa confirmar sua conta antes de continuar.
-    unlocks: 
+    unlocks:
       link: Você não recebeu as instruções de desbloqueio?
       send_instructions: Você vai receber um e-mail com instruções sobre como desbloquear a sua conta em alguns minutos.
       unlocked: Sua conta foi desbloqueada com sucesso. Agora você pode entrar.

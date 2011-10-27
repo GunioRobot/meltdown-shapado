@@ -1,7 +1,7 @@
 %section.main-question
   %h1.version
-    %small.version 
-      =t("wiki.history.version") 
+    %small.version
+      =t("wiki.history.version")
       &=number
       = radio_button_tag("prev", number, prev.to_s == number.to_s)
       = radio_button_tag("curr", number, curr.to_s == number.to_s)

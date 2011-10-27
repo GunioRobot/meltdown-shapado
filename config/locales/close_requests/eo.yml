@@ -3,15 +3,15 @@
 # Export driver: syck
 # Author: LaPingvino
 # Author: Mihxil
-eo: 
-  close_requests: 
-    create: 
+eo:
+  close_requests:
+    create:
       flash_notice: Fermpeto sukcese kreiĝis
-    destroy: 
+    destroy:
       flash_notice: Fermpetoj sukcese forviŝiĝis
-    edit: 
+    edit:
       title: Ŝanĝi fermpeton
-    form: 
+    form:
       close_with_reason: Fermi ĉi tiun demandon per ĉi tiu kialo
       dupe: Duoblaĵo
       no_question: Ne demando
@@ -19,16 +19,16 @@ eo:
       ot: Eksterteme
       request_closing_details: Peto por fermi ĉi tiun demandon
       spam: spamo
-    index: 
+    index:
       title: Listo de fermpetoj
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Komento
         reason: Kialo
         user: Uzanto
-      messages: 
+      messages:
         already_requested: Vi jam petis fermi ĉi tiun demandon
       name: Fermpeton
       prural_name: Fermpetoj
-    update: 
+    update:
       flash_notice: Fermpeto sukcese ĝisdatiĝis

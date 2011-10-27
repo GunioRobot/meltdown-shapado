@@ -2,26 +2,26 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Tobulos1
-sv: 
-  activerecord: 
-    attributes: 
-      answer: 
+sv:
+  activerecord:
+    attributes:
+      answer:
         body: Innehåll
         created_at: Besvarade
         link: Länk
-    models: 
+    models:
       answer: Svar
       answers: Svar
-  answers: 
-    create: 
+  answers:
+    create:
       flash_error: "Något gick fel när du försökte lägga till ditt svar. \n  Kom ihåg att: \n - Tomma och upprepade svar är inte tillåtna.\n - Du måste vänta 20 sekunder före du skickar in ett annat svar. \n - Du kan endast skicka in ett svar per fråga."
       flash_notice: Tack!
-    edit: 
+    edit:
       title: Redigera svar
-    form: 
+    form:
       answer_label: Svara på frågan
       comment_label: Kommentera detta svar
       comment_submit: Kommentera
       submit: Svar
-    update: 
+    update:
       flash_notice: Svaren har uppdaterats.

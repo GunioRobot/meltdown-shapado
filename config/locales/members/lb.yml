@@ -2,13 +2,13 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Robby
-lb: 
-  activerecord: 
-    attributes: 
-      member: 
+lb:
+  activerecord:
+    attributes:
+      member:
         role: Roll
-  members: 
-    form: 
+  members:
+    form:
       login_tip: Siche wann Dir tippt
-    index: 
+    index:
       manage_members_title: Membere geréieren

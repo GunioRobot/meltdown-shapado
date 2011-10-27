@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+da:
+  imports:
+    subtabs:
+      need_confirmation:
         name: Behøver bekræftelse
         title: Send bekræftelse e-mails

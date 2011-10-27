@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Veeven
-te: 
-  sessions: 
-    create: 
+te:
+  sessions:
+    create:
       flash_error: "'%{login}' గా మిమ్మల్ని ప్రవేశింపజేయలేకపోయాం"
       flash_notice: విజయవంతంగా ప్రవేశించారు
-    destroy: 
+    destroy:
       flash_notice: మీరు నిష్క్రమించారు.
-    new: 
+    new:
       log_in: ప్రవేశించండి
       not_registered: ఇంకా నమోదు కాలేదా?
       registered: ఇప్పటికే నమోదయ్యారా?

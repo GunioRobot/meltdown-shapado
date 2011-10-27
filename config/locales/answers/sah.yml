@@ -2,28 +2,28 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: HalanTul
-sah: 
-  activerecord: 
-    attributes: 
-      answer: 
+sah:
+  activerecord:
+    attributes:
+      answer:
         body: Тиэкиһэ
         created_at: Хоруйдар
         link: Сигэ
-    models: 
+    models:
       answer: Хоруй
       answers: Хоруйдар
-  answers: 
-    create: 
+  answers:
+    create:
       flash_error: "Хоруйдуургар туох эрэ сатаммата.\n  Өйдөө:\n - Хоруй кураанах уонна хатыланар буолуо суохтаах\n - Аныгыскы хоруйу ыытыаҥ иннинэ 20 сөкүүндэ кэтэһиэхтээххин\n - Биир ыйытыыга биир хоруйу биэрэр кыахтааххын"
       flash_notice: Махтал!
-    edit: 
+    edit:
       title: Хоруйу уларытыы
-    form: 
+    form:
       answer_label: Ыйытыыга хоруй
       comment_label: Бу ыйытык ырытыылара
       comment_submit: Ырытыы
       submit: Хоруйдааһын
-    revert: 
+    revert:
       title: Хоруйу сотуу
-    update: 
+    update:
       flash_notice: Хоруй сөпкө уларыйда.

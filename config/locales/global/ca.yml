@@ -3,8 +3,8 @@
 # Export driver: syck
 # Author: Martorell
 # Author: Papapep
-ca: 
-  feeds: 
+ca:
+  feeds:
     feed: Canal
     post_new_questions: Publiqueu una nova pregunta a
     question: Subscriviu-vos a aquesta pregunta
@@ -12,7 +12,7 @@ ca:
     share_on_twitter: twitter, facebook i més...
     tag: Subscriure-us a una etiqueta
     user: Subscriviu-vos a les preguntes d'usuaris
-  global: 
+  global:
     active: Activa
     by: per
     current: Actual
@@ -24,17 +24,17 @@ ca:
     preview: Previsualització
     previous: Anterior
     share: compateix
-  languages: 
+  languages:
     any: Qualsevol
     user: Els meus idiomes preferits
-  models: 
+  models:
     question: La pregunta
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} temps"
       other: "%{count} cops"
       zero: Mai
-  scaffold: 
+  scaffold:
     add: Afegeix
     back: Enrera
     cancel: Cancel·la
@@ -50,6 +50,6 @@ ca:
     show: Mostra
     sure: Voleu eliminar aquest %{model}?
     update: Actualitza
-  time: 
+  time:
     ago: "%{time} abans"
     today: avui

@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Papapep
-ca: 
-  admin: 
-    moderate: 
-      index: 
+ca:
+  admin:
+    moderate:
+      index:
         all: Tot
         ban: Prohibició
         banned: Preguntes prohibides

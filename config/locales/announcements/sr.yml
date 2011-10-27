@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Rancher
-sr: 
-  activerecord: 
-    attributes: 
-      announcement: 
+sr:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Завршава се у
         message: Порука
         only_anonymous: Само за анонимне кориснике
         starts_at: Почиње у
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Уклони
       title: Радње
-    create: 
+    create:
       success: Саопштење је успешно направљено.
-    index: 
+    index:
       title: Саопштења

@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Papapep
-ca: 
-  sessions: 
-    create: 
+ca:
+  sessions:
+    create:
       flash_error: No s'ha pogut iniciar la vostra sessió com a '%{login}'
       flash_notice: Heu iniciat la sessió correctament
-    destroy: 
+    destroy:
       flash_notice: Heu tancat la sessió.
-    new: 
+    new:
       log_in: Inicieu la sessió
       not_registered: No us heu registrat encara?
       registered: Ja esteu registrat?

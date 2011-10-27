@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+id:
+  imports:
+    subtabs:
+      need_confirmation:
         name: Membutuhkan konfirmasi
         title: Kirim surel konfirmasi

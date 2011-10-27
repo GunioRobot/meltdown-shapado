@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Nghtwlkr
-nb: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+nb:
+  imports:
+    subtabs:
+      need_confirmation:
         name: Krever bekreftelse
         title: Send bekreftelses-e-poster

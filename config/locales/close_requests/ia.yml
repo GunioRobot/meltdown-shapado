@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: McDutchie
-ia: 
-  close_requests: 
-    create: 
+ia:
+  close_requests:
+    create:
       flash_notice: Requesta de clausura create con successo.
-    destroy: 
+    destroy:
       flash_notice: Requesta de clausura delite con successo.
-    edit: 
+    edit:
       title: Modificar requesta de clausura
-    form: 
+    form:
       close_with_reason: Clauder iste question usante iste motivo
       dupe: Duplicato
       no_question: Non es un question
@@ -18,16 +18,16 @@ ia:
       ot: Foras del thema
       request_closing_details: Requestar a clauder iste question
       spam: Spam
-    index: 
+    index:
       title: Lista de requestas de clausura
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Commento
         reason: Motivo
         user: Usator
-      messages: 
+      messages:
         already_requested: Tu ha jam requestate a clauder iste question.
       name: Requesta de clausura
       prural_name: Requestas de clausura
-    update: 
+    update:
       flash_notice: Requesta de clausura actualisate con successo.

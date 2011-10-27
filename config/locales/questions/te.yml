@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Veeven
-te: 
-  activerecord: 
-    attributes: 
-      question: 
+te:
+  activerecord:
+    attributes:
+      question:
         answers: జవాబులు
         asked_by: అడిగిన వారు
         body: వివరణ
@@ -15,19 +15,19 @@ te:
         title: శీర్షిక
         views: వీక్షణలు
         votes: వోట్లు
-    models: 
+    models:
       question: ప్రశ్న
       questions: ప్రశ్నలు
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: వ్యాఖ్యానించండి...
       pick_answer: పరిష్కారంగా ఎంచుకోండి
-    create: 
+    create:
       flash_notice: ప్రశ్నని విజయవంతంగా సృష్టించాం.
-    form: 
+    form:
       adult_content: ఈ ప్రశ్నలో పెద్దలకు మాత్రమే సంబంధించిన సమాచారం ఉంది.
       body_tip: మీ ప్రశ్న ఏమిటి? వివరంగా అడగండి.
-    index: 
+    index:
       active: క్రియాశీలం
       active_tooltip: ఇటీవల తాజాకరించబడిన ప్రశ్నలు
       ask_question: ప్రశ్నని అడగండి
@@ -37,21 +37,21 @@ te:
       oldest: పాతవి
       title: అన్ని ప్రశ్నలు
       votes: వోట్లు
-    move: 
+    move:
       submit: తరలించు!
       title: "ప్రశ్న తరలింపు: %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: అనే గుంపు %{group} లేనే లేదు
       success: ప్రశ్నని %{group}కి తరలించాం
-    new: 
+    new:
       how_to_ask: ఎలా అడగాలి
       title: ప్రశ్నని అడగండి
-    retag_form: 
+    retag_form:
       cancel: రద్దుచేయి
-    show: 
+    show:
       another_answers: ఇతర జవాబులు
       answers: జవాబులు
-      answers_title: 
+      answers_title:
         one: "%{count} జవాబు"
         other: "%{count} జవాబులు"
       close: మూసివేయి
@@ -65,12 +65,12 @@ te:
       unfavorite_tooltip: ఈ ప్రశ్నని మీ ఇష్టాంశాల నుండి తొలగించండి
       unwatch_tooltip: ఈ ప్రశ్నని గమనించడం మానివేయండి
       watch_tooltip: ఈ ప్రశ్నని గమనించండి
-    tags: 
+    tags:
       title: ట్యాగులు
-    unanswered: 
+    unanswered:
       empty: ఈ గుంపులో జవాబు కోసం ఎదురుచూస్తున్న ప్రశ్నలేమీ లేవు.
       expert: నిపుణులు
       my_tags: నా ట్యాగులు
       title: జవాబులేని ప్రశ్నలు
-    update: 
+    update:
       flash_notice: ప్రశ్నని విజయవంతంగా తాజాకరించాం.

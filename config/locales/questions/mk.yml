@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Bjankuloski06
-mk: 
-  activerecord: 
-    attributes: 
-      question: 
+mk:
+  activerecord:
+    attributes:
+      question:
         answers: Одговори
         asked_by: поставено од
         body: текст
@@ -18,27 +18,27 @@ mk:
         updated_by: подновено од
         views: Прегледи
         votes: Гласа
-    models: 
+    models:
       question: прашање
       questions: прашања
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: додај коментар...
       flag: означи
       pick_answer: одбери како решение
       unset_answer: ова повеќе да не биде решение?
-    create: 
+    create:
       flash_notice: прашањето е успешно создадено.
-    edit: 
+    edit:
       title: уредување на прашањето
-    flag: 
+    flag:
       title: означување на прашање
-    form: 
+    form:
       adult_content: ова прашање содржи материјал за возрасни
       body_tip: што сакате да прашате? бидете описни.
       language_tip: одберете прашање за јазикот
       tags_tip: користете ознаки за да додете повеќе информации за вашето прашање.
-    index: 
+    index:
       active: активни
       active_tooltip: неодамна подновени прашања
       ask_question: постави прашање
@@ -53,42 +53,42 @@ mk:
       unanswered_questions: неодговорени прашања
       votes: Гласа
       votes_tooltip: прашања со највеќе гласови
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: Нажалост, мора да употребите барем една ознака.
         title_too_long: Насловот е предолг. не треба да содржи повеќе од 100 знаци
         too_many_tags: Нажалост, можете да внесете највеќе до 9 ознаки.
         too_short: изгледа прекратко. Употребете повеќе зборови од %{count} за да бидете поконкретни.
-    move: 
+    move:
       group_label: "премести во групата со насловот:"
       submit: премести!
       title: "преместување на прашањето: %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: групата %{group} не постои
       success: прашањето е преместено во %{group}
-    new: 
+    new:
       how_to_ask: како да поставите прашање
       title: постави прашање
-    question: 
+    question:
       accepted_tooltip: Ова прашање има одговор кој е прифатен
-    retag: 
+    retag:
       title: преозначи
-    retag_form: 
+    retag_form:
       cancel: откажи
       submit: поднови ознаки!
       title: Поднови ознаки
-    retag_to: 
+    retag_to:
       failure: Нажалост, оваа ознака не може да се поднови.
       success: Ознаките се успешно подновени.
-    revert: 
+    revert:
       title: враќање на прашање
-    shared: 
+    shared:
       flag: знаменце
-    show: 
+    show:
       accepted_tooltip: еден од одговорите е прифатен како точен
       another_answers: други одговори
       answers: Одговори
-      answers_title: 
+      answers_title:
         one: "%{count} одговор"
         other: "%{count} одговори"
       asked_on: постевено на
@@ -120,23 +120,23 @@ mk:
       unwatch_tooltip: престани со набљудување на прашањево
       viewed: прегледани
       watch_tooltip: набљудувај го прашањево
-    solve: 
+    solve:
       flash_notice: одговорот е решен.
-    tags: 
+    tags:
       filter: пребарај ознаки
       title: ознаки
       tooltip: приказ на прашања со ознаката %{tag}
-    unanswered: 
+    unanswered:
       empty: оваа група нема неодговорени прашања.
       expert: стручњаци
       my_tags: мои ознаки
       tags: неодговорени ознаки
       title: неодговорени прашања
-    unsolve: 
+    unsolve:
       flash_notice: прашањето сега не е решено.
-    unwatch: 
+    unwatch:
       success: повеќе нема да добивате соопштенија по е-пошта за секој нов одговор на ова прашање
-    update: 
+    update:
       flash_notice: прашањето е успешно подновено.
-    watch: 
+    watch:
       success: отсега ќе примате соопштенија по е-пошта за секој нов одговор на ова прашање

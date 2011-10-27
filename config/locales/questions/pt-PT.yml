@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Hamilton Abreu
 # Author: Waldir
-pt-PT: 
-  activerecord: 
-    attributes: 
-      question: 
+pt-PT:
+  activerecord:
+    attributes:
+      question:
         answers: Respostas
         asked_by: Feita por
         body: Conteúdo
@@ -19,27 +19,27 @@ pt-PT:
         updated_by: actualizada por
         views: Visitas
         votes: Votos
-    models: 
+    models:
       question: Pergunta
       questions: Perguntas
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: Adicionar comentário...
       flag: Reportar
       pick_answer: Escolher como solução
       unset_answer: Retirar como solução?
-    create: 
+    create:
       flash_notice: A pergunta foi criada.
-    edit: 
+    edit:
       title: A editar pergunta
-    flag: 
+    flag:
       title: Reportar pergunta
-    form: 
+    form:
       adult_content: Esta pergunta envolve conteúdo para adultos.
       body_tip: Qual é a sua pergunta? Seja descritivo.
       language_tip: Seleccione a língua da pergunta.
       tags_tip: Use categorias para fornecer mais informação sobre a sua pergunta.
-    index: 
+    index:
       active: Activas
       active_tooltip: Perguntas actualizadas recentemente
       ask_question: Fazer pergunta
@@ -54,42 +54,42 @@ pt-PT:
       unanswered_questions: Perguntas sem resposta
       votes: Votos
       votes_tooltip: Perguntas com mais votos
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: Desculpe, tem de usar pelo menos uma categoria.
         title_too_long: O título é demasiado longo. Não pode conter mais do que 100 caracteres.
         too_many_tags: Desculpe, mas só pode introduzir até 9 categorias.
         too_short: Parece demasiado curta. Use mais do que %{count} palavras para ser mais específico.
-    move: 
+    move:
       group_label: "Mover para o grupo:"
       submit: Mover!
       title: "Mover a pergunta: %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: O grupo %{group} não existe
       success: Pergunta movida para o grupo %{group}
-    new: 
+    new:
       how_to_ask: Como perguntar
       title: Fazer pergunta
-    question: 
+    question:
       accepted_tooltip: Esta pergunta tem uma resposta que foi aceite
-    retag: 
+    retag:
       title: Recategorizar
-    retag_form: 
+    retag_form:
       cancel: Cancelar
       submit: Actualizar categorias!
       title: Actualizar categorias
-    retag_to: 
+    retag_to:
       failure: Desculpe, não foi possível actualizar as categorias.
       success: As categorias foram actualizadas.
-    revert: 
+    revert:
       title: Reverter a pergunta
-    shared: 
+    shared:
       flag: Reportar
-    show: 
+    show:
       accepted_tooltip: Uma das respostas foi aceite como sendo a resposta correcta.
       another_answers: Outras respostas
       answers: Respostas
-      answers_title: 
+      answers_title:
         one: "%{count} resposta"
         other: "%{count} respostas"
       asked_on: colocada a
@@ -121,23 +121,23 @@ pt-PT:
       unwatch_tooltip: Deixar de vigiar esta pergunta
       viewed: visitada
       watch_tooltip: Vigiar esta pergunta
-    solve: 
+    solve:
       flash_notice: A pergunta foi resolvida.
-    tags: 
+    tags:
       filter: Pesquisar categorias
       title: Categorias
       tooltip: Mostrar perguntas na categoria %{tag}
-    unanswered: 
+    unanswered:
       empty: Este grupo não contém perguntas sem resposta.
       expert: Peritos
       my_tags: As minhas categorias
       tags: Categorias sem respostas
       title: Perguntas sem resposta
-    unsolve: 
+    unsolve:
       flash_notice: A pergunta deixou de estar resolvida.
-    unwatch: 
+    unwatch:
       success: Deixará de receber notificações por correio electrónico por cada nova resposta a esta pergunta.
-    update: 
+    update:
       flash_notice: A pergunta foi actualizada.
-    watch: 
+    watch:
       success: Passará a receber notificações por correio electrónico a cada nova resposta a esta pergunta.

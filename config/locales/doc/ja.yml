@@ -1,11 +1,11 @@
 # Messages for Japanese (日本語)
 # Exported from translatewiki.net
 # Export driver: syck
-ja: 
-  doc: 
-    chat: 
+ja:
+  doc:
+    chat:
       title: チャットサポート
-    plans: 
+    plans:
       15millions: 1,500万PV/月まで
       1million: 100万/PV月まで
       247_all_support: Webベース、メール、チャット、電話による24時間365日のサポート

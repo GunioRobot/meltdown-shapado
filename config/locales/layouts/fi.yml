@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  layouts: 
-    application: 
+fi:
+  layouts:
+    application:
       ask_question: Kysy kysymys
       badges: Ansiomitalit
       forgot: Unohditko?
@@ -16,7 +16,7 @@ fi:
       manage_ads: Hallitse mainoksia
       moderate: Valvo
       now: nyt!
-      openid: 
+      openid:
         explaination: "Jos haluat rekisteröityä tai vain kirjautua sisään, valitse OpenID-palveluntarjoaja:"
       pages: Sivut
       questions: Kysymykset
@@ -31,7 +31,7 @@ fi:
       unanswered: Vastaamaton
       users: Käyttäjät
       welcome_from: Tervetuloa! Voit
-    manage: 
+    manage:
       actions: Toimet
       announcements: Ilmoitukset
       constrains: Vaatimukset
@@ -47,5 +47,5 @@ fi:
       stats: Tilastot
       theme: Teema
       widgets: Ikkunaoliot
-    notifications: 
+    notifications:
       message: Jos et halua enää vastaanottaa automaattisia ilmoituksia kohteesta %{group}, muuta asetuksiasi ilmoitusnäytöllä.

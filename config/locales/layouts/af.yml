@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Naudefj
-af: 
-  layouts: 
-    application: 
+af:
+  layouts:
+    application:
       ask_question: Vra 'n vraag
       badges: Balkies
       forgot: Vergeet?
@@ -16,7 +16,7 @@ af:
       manage_ads: Bestuur advertensies
       moderate: Modereer
       now: nou!
-      openid: 
+      openid:
         explaination: "Kies asseblief u OpenID-verskaffer as u wil registreer of net wil aanmeld:"
       pages: Bladsye
       questions: Vrae
@@ -31,7 +31,7 @@ af:
       unanswered: Onbeantwoord
       users: Gebruikers
       welcome_from: Welkom! U kan
-    manage: 
+    manage:
       actions: Aksies
       announcements: Aankondigings
       constrains: Vereistes
@@ -47,5 +47,5 @@ af:
       stats: Statistieke
       theme: Tema
       widgets: Widgets
-    notifications: 
+    notifications:
       message: As u nie outomatiese kennisgewings vanaf %{domein} wil ontvang nie, verander u voorkeure in die kennisgewings-skerm.

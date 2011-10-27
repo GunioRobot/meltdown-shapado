@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Toliño
-gl: 
-  comments: 
-    create: 
+gl:
+  comments:
+    create:
       flash_notice: grazas polo seu comentario
-    edit: 
+    edit:
       title: Editar o comentario
-    shared: 
+    shared:
       add_comment: engadir un comentario...
       comment_submit: comentar
       reply: responder
       said: dixo
-    update: 
+    update:
       flash_notice: o comentario actualizouse correctamente.
-  models: 
+  models:
     comment: comentario
     comments: comentarios

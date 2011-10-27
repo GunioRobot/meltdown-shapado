@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: AnakngAraw
-tl: 
-  activerecord: 
-    attributes: 
-      announcement: 
+tl:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: nagtatapos sa
         message: mensahe
         only_anonymous: para lang sa mga tagagamit na hindi nagpapakilala
         starts_at: nagsisimula sa
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: tanggalin
       title: mga galaw
-    create: 
+    create:
       success: matagumpay na nalikha ang pahayag.
-    index: 
+    index:
       title: mga pahayag

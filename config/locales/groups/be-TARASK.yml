@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Jim-by
-be-TARASK: 
-  activerecord: 
-    attributes: 
-      group: 
+be-TARASK:
+  activerecord:
+    attributes:
+      group:
         default_tags: Тэгі па змоўчваньні
         description: Апісаньне
         domain: Дамэн
@@ -25,14 +25,14 @@ be-TARASK:
         state: Стан
         subdomain: URL-адрас
         wysiwyg_editor: Уключыць рэдактар зручны для карыстальніка
-    models: 
+    models:
       default_tags_message: Вы ня можаце мець болей 10 тэгаў па змоўчваньні
       group: Група
       groups: Групы
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: Вашая група была пасьпяхова створаная. Цяпер Вы можаце пачаць яе ўстанаўліваць.
-    form: 
+    form:
       access: Устаноўкі доступу
       analytics_engine: Рухавік Analytics
       analytics_legend: Група будзе мець магчымасьць выкарыстоўваць уласны код сачэньня
@@ -47,14 +47,14 @@ be-TARASK:
       logo_legend: Вы можаце загрузіць лягатып групы. Максымальны памер файла складае 2 Мб.
       members_only: Толькі сябры групы будуць мець доступ да гэтай групы
       website_analytics_id: Ідэнтыфікатар аналітыкі сайта
-    group: 
+    group:
       about: Пра
       accept_group: Прыняць гэтую групу
       allow_ads: Дазволіць рэкляму
       close: Закрыць
       close_group: Закрыць гэтую групу
       disallow_ads: Забараніць рэкляму
-    index: 
+    index:
       actives: Актыўныя
       filter: Пошук групаў
       most_active: Самыя актыўныя
@@ -62,9 +62,9 @@ be-TARASK:
       pendings: Чакае
       request_group: Запытаць новую групу
       title: Групы
-    new: 
+    new:
       title: Стварэньне ўласнай групы
-    show: 
+    show:
       accept_group: Прыняць гэтую групу
       accept_group_with_custom_ads: Прыняць групу і дазволіць нестандартную рэкляму
       close_group: Закрыць гэтую групу

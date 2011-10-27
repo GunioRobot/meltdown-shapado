@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  activerecord: 
-    attributes: 
-      group: 
+fi:
+  activerecord:
+    attributes:
+      group:
         default_tags: Oletustunnisteet
         description: Kuvaus
         domain: Toimialue
@@ -24,14 +24,14 @@ fi:
         state: Tila
         subdomain: Verkko-osoite
         wysiwyg_editor: Ota käyttöön käyttäjäystävällinen editori
-    models: 
+    models:
       default_tags_message: Et voi luoda yli 10 oletustunnistetta
       group: Ryhmä
       groups: Ryhmät
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: Ryhmäsi luotiin onnistuneesti. Voit aloittaa nyt asettamaan sen asetuksia.
-    form: 
+    form:
       access: Käyttöoikeusasetukset
       analytics_engine: Analytiikkakone
       analytics_legend: Ryhmä voi käyttää omaa jäljityskoodia
@@ -46,14 +46,14 @@ fi:
       logo_legend: Voit kopioida palvelimelle ryhmän logon. Tiedoston enimmäiskoko on 2 megatavua.
       members_only: Vain ryhmän jäsenet voivat käyttää tätä ryhmää
       website_analytics_id: Verkkosivun analytiikkatunnus
-    group: 
+    group:
       about: Tietoja
       accept_group: Hyväksy tämä ryhmä
       allow_ads: Salli mainokset
       close: Sulje
       close_group: Sulje tämä ryhmä
       disallow_ads: Älä hyväksy mainoksia
-    index: 
+    index:
       actives: Käytössä
       filter: Etsi ryhmiä
       most_active: Aktiivisimmat
@@ -61,9 +61,9 @@ fi:
       pendings: Odottava
       request_group: Pyydä uusi ryhmä
       title: Ryhmät
-    new: 
+    new:
       title: Luo ryhmä
-    show: 
+    show:
       accept_group: Hyväksy tämä ryhmä
       accept_group_with_custom_ads: Hyväksy ryhmä ja salli mukautetun mainokset
       close_group: Sulje tämä ryhmä

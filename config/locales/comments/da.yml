@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  comments: 
-    create: 
+da:
+  comments:
+    create:
       flash_notice: Tak for din kommentar
-    edit: 
+    edit:
       title: Rediger kommentar
-    shared: 
+    shared:
       add_comment: Tilføj kommentar ...
       comment_submit: Kommentar
       reply: Svar
       said: sagde
-    update: 
+    update:
       flash_notice: Kommentaren blev opdateret.
-  models: 
+  models:
     comment: Kommentar
     comments: Kommentarer

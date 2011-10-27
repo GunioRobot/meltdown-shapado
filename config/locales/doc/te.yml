@@ -3,11 +3,11 @@
 # Export driver: syck
 # Author: Ravichandra
 # Author: Veeven
-te: 
-  doc: 
-    chat: 
+te:
+  doc:
+    chat:
       title: ఛాట్ తోడ్పాటు
-    plans: 
+    plans:
       15millions: 15 మిలియన్ల పేజీ వీక్షణలు/నెలకి
       1million: 1 మిలియను పేజీ వీక్షణలు/నెలకి
       5millions: 5 మిలియన్ల పేజీ వీక్షణలు/నెలకి

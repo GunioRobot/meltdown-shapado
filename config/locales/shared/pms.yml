@@ -3,11 +3,11 @@
 # Export driver: syck
 # Author: Borichèt
 # Author: Dragonòt
-pms: 
-  shared: 
-    current_tags: 
+pms:
+  shared:
+    current_tags:
       title: Tichëtte selessionà
-    topbar: 
+    topbar:
       admin: Aministrator
       logged_as: Intrà com %(login)
       user_page: Mia pàgina

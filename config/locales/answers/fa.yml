@@ -2,28 +2,28 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Persianizer
-fa: 
-  activerecord: 
-    attributes: 
-      answer: 
+fa:
+  activerecord:
+    attributes:
+      answer:
         body: بدنه
         created_at: پاسخ داده شده
         link: پیوند
-    models: 
+    models:
       answer: پاسخ
       answers: پاسخ‌ها
-  answers: 
-    create: 
+  answers:
+    create:
       flash_error: "مشکلی در افزودن پرسش شما پیش آمد\nبه یاد داشته باشید:\n- پاسخ‌های خالی یا تکراری اجازه ندارند\n- شما برای ارسال پاسخ بعدی بایستی ۲۰ ثانیه صبر کنید\n- شما می‌توانید برای هر پرسش تنها یک پاسخ بفرستید"
       flash_notice: سپاس!
-    edit: 
+    edit:
       title: ویرایش پاسخ
-    form: 
+    form:
       answer_label: سوال را جواب دهید
       comment_label: پیامی برای این پاسخ بگذارید
       comment_submit: نظر دهید
       submit: پاسخ دهید
-    revert: 
+    revert:
       title: پاسخ را برگردان
-    update: 
+    update:
       flash_notice: پاسخ با موفقیت به‌روز شد

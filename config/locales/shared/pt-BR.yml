@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giro720
-pt-BR: 
-  shared: 
-    current_tags: 
+pt-BR:
+  shared:
+    current_tags:
       title: Etiquetas selecionadas
-    topbar: 
+    topbar:
       admin: Admin
       logged_as: Iniciada sessão como %{login}
       user_page: Minha página

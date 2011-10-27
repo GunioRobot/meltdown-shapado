@@ -2,18 +2,18 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Rancher
-sr: 
-  comments: 
-    create: 
+sr:
+  comments:
+    create:
       flash_notice: Хвала вам на коментару.
-    edit: 
+    edit:
       title: Уређивање коментара
-    shared: 
+    shared:
       add_comment: Додај коментар...
       reply: Одговори
       said: рече
-    update: 
+    update:
       flash_notice: Коментар је ажуриран.
-  models: 
+  models:
     comment: Коментар
     comments: Коментари

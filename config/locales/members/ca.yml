@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Papapep
-ca: 
-  activerecord: 
-    attributes: 
-      member: 
+ca:
+  activerecord:
+    attributes:
+      member:
         role: Rol
-  members: 
-    form: 
+  members:
+    form:
       login_tip: Cerqueu mentre introduïu el text
-    index: 
+    index:
       manage_members_title: Gestioneu els membres
       title: Membres del grup %{name}
       title_isolate: Membres de %{name}

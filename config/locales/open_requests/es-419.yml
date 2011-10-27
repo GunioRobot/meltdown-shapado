@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Patcito
-es-419: 
-  open_requests: 
-    create: 
+es-419:
+  open_requests:
+    create:
       flash_notice: La solicitud de re-apertura ha sido creada con éxito
-    destroy: 
+    destroy:
       flash_notice: Solicitud de re-apertura borrada con éxito
-    edit: 
+    edit:
       title: Editar la solicitud de re-apertura
-    form: 
+    form:
       request_opening_details: Solicitar la re-apertura de esta pregunta
-    index: 
+    index:
       title: Lista de solicitudes de re-apertura
-    model: 
+    model:
       prural_name: Solicitudes de re-apertura.
-    new: 
+    new:
       title: Solicitar re-abrir
-    update: 
+    update:
       flash_notice: Solicitud de re-apertura actualizada con éxito

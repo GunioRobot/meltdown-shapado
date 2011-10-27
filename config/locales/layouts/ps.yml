@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Ahmed-Najib-Biabani-Ibrahimkhel
-ps: 
-  layouts: 
-    application: 
+ps:
+  layouts:
+    application:
       ask_question: پوښتنه پوښتل
       badges: نښانونه
       home: کور
@@ -21,7 +21,7 @@ ps:
       unanswered: بې ځوابه
       users: کارنان
       welcome_from: ښه راغلاست! تاسې کولای شی چې
-    manage: 
+    manage:
       announcements: خبرتياوې
       constrains: غوښتنې
       domain: شپول

@@ -3,15 +3,15 @@
 # Export driver: syck
 # Author: Fulup
 # Author: Y-M D
-br: 
-  activerecord: 
-    attributes: 
-      member: 
+br:
+  activerecord:
+    attributes:
+      member:
         role: Rol
-  members: 
-    form: 
+  members:
+    form:
       login_tip: Klask en ur vizskrivañ
-    index: 
+    index:
       manage_members_title: Izili merañ
       title: Izili ar strollad %{name}
       title_isolate: Izili %{name}

@@ -2,26 +2,26 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Nghtwlkr
-nb: 
-  widgets: 
-    groups: 
+nb:
+  widgets:
+    groups:
       description: Dette skjermelementet viser de siste gruppene
       title: Siste grupper
-    index: 
+    index:
       description: Bruke pilene for å flytte skjermelementene dine
       title: Håndter skjermelement i sidelinjen
-    pages: 
+    pages:
       description: Dette skjermelementet viser listen over wikisider
       title: Wikisider
-    tag_cloud: 
+    tag_cloud:
       description: Dette skjermelementet viser en merkelappsky
       title: Merkelappsky
-    top_groups: 
+    top_groups:
       description: Dette skjermelementet viser topp fem grupper
       title: Topp 5 grupper
-    top_users: 
+    top_users:
       description: Dette skjermelementet viser topp fem brukere
       title: Topp 5 brukere
-    users: 
+    users:
       description: Dette skjermelementet viser nylig registrerte medlemmer
       title: Siste brukere

@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Siebrand
-nl: 
-  close_requests: 
-    create: 
+nl:
+  close_requests:
+    create:
       flash_notice: Het sluitingsverzoek is ingediend
-    destroy: 
+    destroy:
       flash_notice: Het sluitingsverzoek is afgehandeld
-    edit: 
+    edit:
       title: Sluitingsverzoek bewerken
-    form: 
+    form:
       close_with_reason: Deze vraag met deze reden sluiten
       dupe: Duplicaat
       no_question: Geen vraag
@@ -18,16 +18,16 @@ nl:
       ot: Ander onderwerp
       request_closing_details: Sluitingsverzoek voor deze vraag indienen
       spam: spam
-    index: 
+    index:
       title: Lijst met sluitingsverzoeken
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Opmerking
         reason: Reden
         user: Gebruiker
-      messages: 
+      messages:
         already_requested: U hebt al een sluitingsverzoek voor deze vraag ingediend
       name: Sluitingsverzoek
       prural_name: Sluitingsverzoeken
-    update: 
+    update:
       flash_notice: Het sluitingsverzoek is bijgewerkt

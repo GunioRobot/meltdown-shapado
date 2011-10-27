@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Nike
-fi: 
-  ads: 
+fi:
+  ads:
     ad_links: lisää uusi %{type}
-    create: 
+    create:
       success: mainos luotu.
-    index: 
+    index:
       add_adbard: lisää uusi adbard-mainos
       add_adsense: lisää uusi google adsense -mainos
       title: mainokset

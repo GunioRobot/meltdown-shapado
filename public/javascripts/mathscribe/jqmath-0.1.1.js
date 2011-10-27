@@ -2,7 +2,7 @@
 	formulas.  This file uses charset UTF-8, and requires jQuery 1.0+, jsCurry, and jqmath.css.
 	By default, we use MathML when available, else simple HTML and CSS.  Expressions may be
 	constructed programmatically, or using a simple TeX-like syntax.
-	
+
 	To use symbolic expressions in a web page or problem domain, one must choose a set of
 	symbols, ensure they can be viewed by users, and specify precedences for the operator
 	symbols.  We use Unicode character numbers for encoding, and fonts for display.  Normally
@@ -10,24 +10,24 @@
 	can be used when necessary.  By default, this module currently uses standard MathML 3
 	precedences for operator symbols, except we omit "multiple character operator"s like && or
 	<=, and choose a single precedence for each of |, ^, and _.
-	
+
 	The algorithm to detect MathML only works after some document.body is defined and available.
 	Thus it should probably not be used during document loading.
-	
+
 	See http://mathscribe.com/author/jqmath.html for usage documentation and examples, and
 	jscurry.js for some coding conventions and goals.
-	
+
 	Copyright 2011, Mathscribe, Inc.  Dual licensed under the MIT or GPL Version 2 licenses.
 	See e.g. http://jquery.org/license for an explanation of these licenses.  */
 
 
 var jqMath = function() {
 	var $ = jQuery, F = jsCurry;
-	
+
 	function M(s, blockQ, docP) { return M.s2mathE(s, blockQ, docP); }
-	
+
 	M.mathmlNS = "http://www.w3.org/1998/Math/MathML";	// MathML namespace
-	
+
 	if ($.browser.msie)
 		document.write(
 			'<object id=MathPlayer classid="clsid:32F66A20-7614-11D4-BD11-00104BD3F987">',
@@ -50,7 +50,7 @@ var jqMath = function() {
 			} catch(exc) {}
 		if (! MathPlayerQ_ && typeof doc.createElementNS == 'undefined')	M.mathmlQP_ = false;
 		if (M.mathmlQP_ != null)	return;
-		
+
 		var e1 = newMENS('math', newMENS('mn', '1', doc), doc),
 			e2 = newMENS('math',
 				newMENS('mfrac', $([newMENS('mn', '1', doc), newMENS('mn', '2', doc)]), doc),
@@ -61,7 +61,7 @@ var jqMath = function() {
 		M.mathmlQP_ = $(es$[1]).height() > $(es$[0]).height() + 2;
 		es$.remove();
 	};
-	
+
 	// fmUp is mid-x to outer top, fmDn is mid-x to outer bottom, both approx. & in parent ems
 	function checkVertStretch(up, dn, g) /* non-MathML */ {
 		if (g.nodeName.toLowerCase() == 'mo' && g.childNodes.length == 1) {
@@ -86,15 +86,15 @@ var jqMath = function() {
 	M.newME = function(tag, args$P /* for jQuery append() if != null */, docP) {
 		if (! docP)	docP = document;
 		M.mathmlQP_ != null || F.err(err_newME_mathmlQP_);
-		
+
 		if (M.mathmlQP_)	return newMENS(tag, args$P, docP);
-		
+
 		var e$ = $(docP.createElement(tag));
 		if (args$P != null)	e$.append(args$P);
 		var a = F.slice(e$[0].childNodes),	// partly because e$[0].childNodes is dynamic
 			ups = F.map(function(g) { return Number(g.fmUp || 0.6); }, a),
 			dns = F.map(function(g) { return Number(g.fmDn || 0.6); }, a);
-		
+
 		if (tag == 'math')	e$.addClass('fm');
 		else if (tag == 'mn' || tag == 'mo' || tag == 'mtext'
 		|| tag == 'mspace' /* note its width/etc. attributes won't work */)
@@ -219,11 +219,11 @@ var jqMath = function() {
 		{ return M.newME('mrow',
 			$([M.newME('mo', leftP || '(', docP), me1, M.newME('mo', rightP || ')', docP)]),
 			docP); };
-	
+
 	M.decsE = function(s, docP) /* converts the numeric string 's' to an HTML or XML 'math'
 			element */ {
 		if (! docP)	docP = document;
-		
+
 		M.checkMathML(docP);
 		var negQ = false;
 		if (s.charAt(0) == '-') {
@@ -234,7 +234,7 @@ var jqMath = function() {
 		if (negQ)	e = M.newME('mrow', $([M.newME('mo', '\u2212', docP), e]), docP);
 		return M.newME('math', e, docP);
 	};
-	
+
 	/*  Like TeX, we use ^ for superscripts, _ for subscripts, {} for grouping, and \ (or `) as
 		an escape character.  Spaces and newline characters are ignored.  We also use ↖ (\u2196)
 		and ↙ (\u2199) to put limits above and below an operator or expression.  You can
@@ -250,16 +250,16 @@ var jqMath = function() {
 		'≪̸': 260, '≫̸': 260, '⪯̸': 260, '⪰̸': 260,
 		'∽̱': 265, '≂̸': 265, '≎̸': 265, '≏̸': 265, '≦̸': 265, '≿̸': 265, '⊏̸': 265, '⊐̸': 265, '⧏̸': 265,
 		'⧐̸': 265, '⩽̸': 265, '⩾̸': 265, '⪡̸': 265, '⪢̸': 265,
-		
+
 		// if non-MathML and precedence <= 270, then class is 'fm-infix-loose' not 'fm-infix'
-		
+
 		/* '-' is converted to '\u2212' &minus; − */
 		'\u2009' /* &thinsp; ' ', currently generates an <mspace> */: 390,
-		
+
 		'' /* no <mo> is generated */: 500 /* not 390 or 850 */
-		
+
 		/* \^ or `^  880 not 780, \_ or `_ 880 not 900 */
-		
+
 		// unescaped ^ _ ↖ (\u2196) ↙ (\u2199) have precedence 999
 	};
 	// If an infix op is also prefix or postfix, it must use the same precedence in each form.
@@ -268,11 +268,11 @@ var jqMath = function() {
 		// prefix precedence < 25 => thin space not inserted between multi-letter <mi> and it;
 		//	(prefix or postfix precedence < 25) and non-MathML => <mo> stretchy;
 		//	precedence < 25 => can be a fence
-		
+
 		// can use {|...|} for absolute value
-		
+
 		// + - % and other infix ops can automatically be used as prefix and postfix ops
-		
+
 		// if non-MathML and prefix and 290 <= precedence <= 350, then 'fm-large-op'
 	M.postfix_ = {
 		// (unquoted) ' is converted to '\u2032' &prime; ′
@@ -353,9 +353,9 @@ var jqMath = function() {
 			[800, '′♭♮♯'],
 			[810, '!'],
 			[880, '&\'`~¨¯°´¸ˆˇˉˊˋˍ˘˙˚˜˝˷\u0302\u0311‾\u20db\u20dc⎴⎵⏜⏝⏞⏟⏠⏡']]);
-	
+
 	var s_, docP_, precAdj_;
-	
+
 	function scan_word(descP) {
 		var re = /\S+/g;
 		re.lastIndex = M.re_.lastIndex;
@@ -404,43 +404,43 @@ var jqMath = function() {
 					'm:mi', 'm:mn', 'm:mo', 'm:mtext', 'm:mspace', 'm:ms']))
 			throw 'Can only apply a mathvariant to a MathML token (atomic) element, at '+
 				'position '+re.lastIndex;
-		
+
 		me.setAttribute('mathvariant', w);
-		
+
 		if (/bold/.test(w))	addClass(me, 'ma-bold');
 		else if (w == 'normal' || w == 'italic')	addClass(me, 'ma-nonbold');
-		
+
 		addClass(me, /italic/.test(w) ? 'ma-italic' : 'ma-upright');
-		
+
 		if (/double-struck/.test(w))	addClass(me, 'ma-double-struck');
 		else if (/fraktur/.test(w))	addClass(me, 'ma-fraktur');
 		else if (/script/.test(w))	addClass(me, 'ma-script');
 		else if (/sans-serif/.test(w))	addClass(me, 'ma-sans-serif');
-		
+
 		// (monospace, initial, tailed, looped, stretched) are currently ignored
-		
+
 		return tok;
 	}
 	function frScan() {
 		var tok = scan_meTok('\\fr'), me = tok[0];
 		if (! F.elem(me.tagName.toLowerCase(), ['mi', 'm:mi']))
 			throw 'Can only apply \\fr to an identifier, at position '+re.lastIndex;
-		
+
 		me.setAttribute('mathvariant', 'fraktur');
 		addClass(me, 'ma-upright');	// use \mv italic-fraktur for italic fraktur
 		addClass(me, 'ma-fraktur');
-		
+
 		return tok;
 	}
 	function scScan() {
 		var tok = scan_meTok('\\sc'), me = tok[0];
 		if (! F.elem(me.tagName.toLowerCase(), ['mi', 'm:mi']))
 			throw 'Can only apply \\sc to an identifier, at position '+re.lastIndex;
-		
+
 		me.setAttribute('mathvariant', 'script');
 		addClass(me, 'ma-upright');	// use \mv italic-script for italic script
 		addClass(me, 'ma-script');
-		
+
 		return tok;
 	}
 	// A "tok" (scanner token) here is an [meP, opSP].
@@ -448,7 +448,7 @@ var jqMath = function() {
 		cl: clScan, mv: F(0, mvScan), bo: F(mvScan, 'bold'), it: F(mvScan, 'italic'),
 		bi: F(mvScan, 'bold-italic'), fr: frScan, sc: scScan
 	};
-	
+
 	M.alias_ = { '-': '\u2212' /* &minus; */, '\'': '\u2032' /* &prime; */,
 		'\u212D': ['C', 'fraktur'], '\u210C': ['H', 'fraktur'], '\u2111': ['I', 'fraktur'],
 		'\u211C': ['R', 'fraktur'], '\u2128': ['Z', 'fraktur'],
@@ -496,7 +496,7 @@ var jqMath = function() {
 		}
 		return [e, opSP];
 	}
-	
+
 	function parse_table_tokP() {
 		var mtrs = [], tokP = null, prec = M.infix_[','];
 		while (true) {
@@ -517,10 +517,10 @@ var jqMath = function() {
 	// An "mx" here is an "me" that is not just a bare operator.
 	M.macro1s_ /* each returns mxP_tokP, so can do precedence-based look-ahead */ =
 		{ table: parse_table_tokP };
-	
+
 	/*+ Add an "@" macro for saving references to subexpressions, or an "id" macro and/or "data"
 		macro, or a syntax to insert scanned expressions? +*/
-	
+
 	function checkSubSup(me, tokP) /* returns [me, tokP] */ {
 		var subP = null, supP = null, underP = null, overP = null, anyQ = false;
 		while (true) {
@@ -650,13 +650,13 @@ var jqMath = function() {
 			element */ {
 		typeof s == 'string' && M.infix_[''] && M.infix_[','] || F.err(err_s2mathE_1_);
 		if (! docP)	docP = document;
-		
+
 		M.checkMathML(docP);
 		M.re_.lastIndex = 0;
 		s_ = s;
 		docP_ = docP;
 		precAdj_ = M.infix_[''];
-		
+
 		var mxP_tokP = parse_mxP_tokP(0);
 		if (mxP_tokP[1])	throw 'Extra input:  '+mxP_tokP[1][1]+s.substring(M.re_.lastIndex);
 		else if (M.re_.lastIndex < s.length)	F.err(err_s2mathE_2_);
@@ -665,7 +665,7 @@ var jqMath = function() {
 		else if (! M.mathmlQP_)	$(res).addClass('fm-inline');
 		return res;
 	};
-	
+
 	/*  Like TeX, we use $ and $$ to delimit inline and block ("display") mathematics,
 		respectively.  Use \$ for an actual $ instead, or \\ for \ if necessary.  */
 	M.replace$s = function(nod) {
@@ -696,7 +696,7 @@ var jqMath = function() {
 		}
 	};
 	$(function() { if (! M.noReplace$s) M.replace$s(document.body); });
-	
+
 	return M;
 }();
 var M;	if (M === undefined)	M = jqMath;

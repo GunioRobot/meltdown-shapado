@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Hydra
-zh-CN: 
-  doc: 
-    chat: 
+zh-CN:
+  doc:
+    chat:
       title: 聊天支持
-    plans: 
+    plans:
       15millions: 数以百万计 15 页视图/月
       1million: 1 万页的访问/月
       247_all_support: 基于的网络电子邮件、 聊天和 24/7 全天候电话支持

@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Nghtwlkr
-nb: 
-  sessions: 
-    create: 
+nb:
+  sessions:
+    create:
       flash_error: Kunne ikke logge deg inn som '%{login}'
       flash_notice: Logget inn
-    destroy: 
+    destroy:
       flash_notice: Du har blitt logget ut.
-    new: 
+    new:
       log_in: Logg inn
       not_registered: Ikke registrert ennå?
       registered: Allerede registrert?

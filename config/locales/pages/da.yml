@@ -2,33 +2,33 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  activerecord: 
-    attributes: 
-      page: 
+da:
+  activerecord:
+    attributes:
+      page:
         css: Stylesheets
         js: JavaScript
-    models: 
+    models:
       page: Side
       pages: Sider
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Opret ny side
       edit_page: Rediger side
       title: Handlinger
-    create: 
+    create:
       success: Side blev oprettet.
-    edit: 
+    edit:
       title: Redigerings side
-    form: 
+    form:
       language_tip: Side sprog
       title_tip: "Sidetitel. Brug dette til at henvise til siden. For eksempel: [[FAQ|tjek faq'en ud]]"
-    index: 
+    index:
       create_page: Opret ny side
       title: Liste over sider
       written_in: Skrevet på %{language}
-    new: 
+    new:
       title: Ny side
     title: Fixme
-    update: 
+    update:
       success: Side blev opdateret.

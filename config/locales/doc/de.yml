@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Kghbln
-de: 
-  doc: 
-    chat: 
+de:
+  doc:
+    chat:
       title: Chat-Support
-    plans: 
+    plans:
       15millions: 15 Millionen Seitenabrufe/Monat
       1million: 1 Million Seitenabrufe/Monat
       247_all_support: Webbasierter E-Mail-, Chat- und Telefonsupport (24/7)

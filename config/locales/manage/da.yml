@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  admin: 
-    manage: 
-      content: 
+da:
+  admin:
+    manage:
+      content:
         footer: Sidefod
         head: header
         question_help: Spørgsmål hjælp
@@ -13,12 +13,12 @@ da:
         title: Brugerdefineret indhold
         top_bar: Top bjælke
         top_bar_tip: Indtast et link per linie
-      properties: 
-        constrains: 
+      properties:
+        constrains:
           reputation_constrains_description: Denne formular giver dig mulighed for at konfigurere, hvor mange omdømme point brugerne behøver for at gøre en given handling
           reputation_constrains_subtitle: Liste over omdømme for hver handling
           title: Forudsætninger
-        domain: 
+        domain:
           description: "Du kan kortlægge dit websted, så det kan tilgås via dit eget domæne. Dette er hvordan du gør det:"
           instruction1: For at gøre det er du først nødt til at logge på din domæne udbyder. Det er stedet, hvor du har købt dit domæne såsom %{subdomain}.com.
           instruction2: Der skal du gå til DNS afsnittet og lave noget der hedder en CNAME.
@@ -28,13 +28,13 @@ da:
           instruction6: Når dette er tilfældet, kom tilbage her og sæt dit domænenavn www.%{subdomain} i feltet nedenfor og tryk på knappen 'opdater'. Hvis du har spørgsmål, så spørg os i %{chat_url} eller på vores support forum.
           title: Sæt dit domæne
           warning: Er du sikker på du vil ændre dit domæne?
-        general: 
+        general:
           title: Gruppe indstillinger
-        rewards: 
+        rewards:
           reputation_rewards_description: Denne form giver dig mulighed for at konfigurere, hvordan brugerne kan vinde og tabe omdømme points for en given handling
           reputation_rewards_subtitle: Liste over omdømme belønninger
           title: Belønninger
-        share: 
+        share:
           add_tags: Tilføj tags til dine tweets
           application_id: Applikations ID
           asking_from_twitter: Stille spørgsmål fra Twitter
@@ -50,6 +50,6 @@ da:
           tweet_ends_with: Vedhæft en tag til din tweets
           tweet_starts_with: Foranstille et tag til dine tweets
           twitter_account: Den Twitter-konto dine brugere vil stille spørgsmål til.
-        theme: 
+        theme:
           logo_legend: Uploade et logo til din gruppe. Det skal være mindre end 2 MB.
           title: Indstil gruppens tema

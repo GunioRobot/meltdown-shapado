@@ -3,8 +3,8 @@
 # Export driver: syck
 # Author: Hamilton Abreu
 # Author: Waldir
-pt-PT: 
-  feeds: 
+pt-PT:
+  feeds:
     feed: Feed
     post_new_questions: Publicar perguntas novas
     question: Subscrever esta pergunta
@@ -12,7 +12,7 @@ pt-PT:
     share_on_twitter: no twitter, facebook e outros...
     tag: Subscrever a categoria
     user: Subscrever as perguntas do utilizador
-  global: 
+  global:
     active: Activar
     anonymous: Anónimo
     by: por
@@ -25,20 +25,20 @@ pt-PT:
     preview: Antevisão
     previous: Anterior
     share: Partilhar
-  languages: 
+  languages:
     any: Qualquer
     user: As Minhas Línguas Preferidas
-  models: 
+  models:
     question: A pergunta
-  number: 
-    x_time: 
+  number:
+    x_time:
       one: "%{count} vez"
       other: "%{count} vezes"
       zero: Nunca
-  pagination: 
+  pagination:
     next: Seguinte &raquo;
     previous: "&laquo; Anterior"
-  scaffold: 
+  scaffold:
     add: Adicionar
     back: Voltar
     cancel: Cancelar
@@ -55,6 +55,6 @@ pt-PT:
     show: Mostrar
     sure: Tem a certeza de que pretende apagar este %{model}?
     update: Actualizar
-  time: 
+  time:
     ago: "%{time} atrás"
     today: hoje

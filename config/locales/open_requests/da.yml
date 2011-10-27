@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  open_requests: 
-    create: 
+da:
+  open_requests:
+    create:
       flash_notice: Anmodning om at genåbne oprettet
-    destroy: 
+    destroy:
       flash_notice: Anmodning om at genåbne slettet
-    edit: 
+    edit:
       title: Rediger anmodning om at genåbne
-    form: 
+    form:
       request_opening_details: Anmodning om at genåbne dette spørgsmål
-    index: 
+    index:
       title: Liste over ansøgninger om at genåbne
-    model: 
+    model:
       prural_name: Anmodninger om at genåbne
-    new: 
+    new:
       title: Anmodning om at genåbne
-    update: 
+    update:
       flash_notice: Anmodning om at genåbne opdateret

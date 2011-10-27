@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Fulup
 # Author: Y-M D
-br: 
-  admin: 
-    manage: 
-      content: 
+br:
+  admin:
+    manage:
+      content:
         footer: Traoñ pajenn
         head: talbenn
         question_help: Skoazell ar goulennoù
@@ -14,12 +14,12 @@ br:
         title: Danvez personelaet
         top_bar: Barenn uhelañ
         top_bar_tip: Lakait ul liamm dre linenn
-      properties: 
-        constrains: 
+      properties:
+        constrains:
           reputation_constrains_description: Ar furmskrid a aotre da gefluniañ ar c'hementad poentoù brud ret evit seveniñ un obererezh roet
           reputation_constrains_subtitle: Roll ar redioù evit pep obererezh
           title: Strishadurioù
-        domain: 
+        domain:
           description: "Gellout a rit kefluniañ ho anv domani evit biziañ anezhañ davet ho lec'hienn eus an doare da-heul :"
           instruction1: Da gentañ e rankit mont war al lec'hienn e lec'h m'hoc'h eus prennet ho anv domani, evel %{subdomain}.com.
           instruction2: Amañ e rankit mont er rann DNS evit krouiñ ur CNAME.
@@ -29,13 +29,13 @@ br:
           instruction6: Pa vez kont evel-se e c'hallit distreiñ amañ ha merkañ hoc'h anv domani www.%{subdomain} er vaezienn a-is ha klikañ war ar bouton 'hizivaat'. M'hoc'h eus goulennoù, goulennit ouzhimp dre %{chat_url} pe war hor forom skoazellañ.
           title: Kefluniañ ho anv domani
           warning: Ha sur oc'h kaout c'hoant kemmañ ho domani ?
-        general: 
+        general:
           title: Perzhioù ar strollad
-        rewards: 
+        rewards:
           reputation_rewards_description: Ar furmskrid-mañ a servij da gefluniañ penaos e c'hell un implijer gounid pe koll poentoù evit un obererezh resis
           reputation_rewards_subtitle: Roll ar profoù brud
           title: Prizioù
-        share: 
+        share:
           add_tags: Ouzhpennañ tikedennoù d'ho tweetadennoù
           application_id: ID ar poellad
           asking_from_twitter: Sevel goulennoù adalek Twitter
@@ -51,6 +51,6 @@ br:
           tweet_ends_with: Ouzhpennañ un dikedenn d'ho tweetadennoù
           tweet_starts_with: Merkañ un dikedenn a-raok ho twitadennoù
           twitter_account: Anv ar gont Twitter ma vo savet o goulennoù gant hoc'h implijerien.
-        theme: 
+        theme:
           logo_legend: Enporzhit ul logo evit ho strollad. D'ar muiañ e c'hell bezañ 2 Mo.
           title: Kefluniañ tem ar strollad

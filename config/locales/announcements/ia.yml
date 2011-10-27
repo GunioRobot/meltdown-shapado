@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: McDutchie
-ia: 
-  activerecord: 
-    attributes: 
-      announcement: 
+ia:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Termina le
         message: Message
         only_anonymous: Solmente pro usatores anonyme
         starts_at: Comencia le
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Remover
       title: Actiones
-    create: 
+    create:
       success: Le aviso ha essite create con successo.
-    index: 
+    index:
       title: Avisos

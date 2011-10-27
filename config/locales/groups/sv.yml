@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Tobulos1
-sv: 
-  activerecord: 
-    attributes: 
-      group: 
+sv:
+  activerecord:
+    attributes:
+      group:
         default_tags: Standard-taggar
         description: Beskrivning
         domain: Domän
@@ -24,14 +24,14 @@ sv:
         state: Stat
         subdomain: URL
         wysiwyg_editor: Aktivera användarvänlig redigerare
-    models: 
+    models:
       default_tags_message: Du kan inte ha mer än 10 standard-taggar
       group: Grupp
       groups: Grupper
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: Din grupp har skapats. Du kan nu börja konfigurera den.
-    form: 
+    form:
       access: Inställningar
       analytics_engine: Analytics motor
       analytics_legend: Gruppen kommer att kunna använda sin egen spårningskod
@@ -46,14 +46,14 @@ sv:
       logo_legend: Du kan ladda upp en grupplogo. Den maximala filstorleken är 2 MB.
       members_only: Bara gruppens medlemmar kommer att kunna komma åt den här gruppen
       website_analytics_id: Webbsidans Analytics-ID
-    group: 
+    group:
       about: Om
       accept_group: Acceptera den här gruppen
       allow_ads: Tillåt annonser
       close: Stäng
       close_group: Stäng den här gruppen
       disallow_ads: Hindra annonser
-    index: 
+    index:
       actives: Aktiv
       filter: Sök efter grupper
       most_active: Mest aktiva
@@ -61,9 +61,9 @@ sv:
       pendings: Oavgjord
       request_group: Begär en ny grupp
       title: Grupper
-    new: 
+    new:
       title: Skapa din grupp
-    show: 
+    show:
       accept_group: Acceptera den här gruppen
       accept_group_with_custom_ads: Godkänn gruppen och tillåt anpassade annonser
       close_group: Stäng den här gruppen

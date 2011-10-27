@@ -3,15 +3,15 @@
 # Export driver: syck
 # Author: Deneb
 # Author: Giallu
-it: 
-  close_requests: 
-    create: 
+it:
+  close_requests:
+    create:
       flash_notice: Richiesta di chiusura creata
-    destroy: 
+    destroy:
       flash_notice: Richiesta di chiusura eliminata
-    edit: 
+    edit:
       title: Modifica richiesta di chiusura
-    form: 
+    form:
       close_with_reason: La domanda viene chiusa con questa motivazione
       dupe: Duplica
       no_question: Non è una domanda
@@ -19,16 +19,16 @@ it:
       ot: Fuori tema
       request_closing_details: Richiesta di chiusura per la domanda
       spam: spam
-    index: 
+    index:
       title: Elenco delle richieste chiuse
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Commenta
         reason: Motivo
         user: Utente
-      messages: 
+      messages:
         already_requested: C'è già una richiesta di chiusura per questa domanda
       name: Richiesta di chiusura
       prural_name: Richieste di chiusura
-    update: 
+    update:
       flash_notice: Richiesta di chiusura modificata

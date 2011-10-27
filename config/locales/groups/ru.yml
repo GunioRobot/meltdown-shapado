@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Lockal
 # Author: Александр Сигачёв
-ru: 
-  activerecord: 
-    attributes: 
-      group: 
+ru:
+  activerecord:
+    attributes:
+      group:
         default_tags: Теги по умолчанию
         description: Описание
         domain: Домен
@@ -25,14 +25,14 @@ ru:
         state: Состояние
         subdomain: URL
         wysiwyg_editor: Включить удобный для пользования редактор
-    models: 
+    models:
       default_tags_message: Нельзя установить более 10 тегов по умолчанию
       group: Группа
       groups: Группы
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: Ваша группа успешно создана, теперь вы можете приступить к её настройке.
-    form: 
+    form:
       access: Настройки доступа
       analytics_engine: Параметры инструментов Analytics
       analytics_legend: Группа может использовать собственный код отслеживания
@@ -47,14 +47,14 @@ ru:
       logo_legend: Вы можете загрузить логотип группы. Максимальный размер файла составляет 2 МБ.
       members_only: Только участники группы будут иметь доступ к этой группе
       website_analytics_id: Код Analytics сайта
-    group: 
+    group:
       about: О группе
       accept_group: Принять эту группу
       allow_ads: Разрешить рекламу
       close: Закрыть
       close_group: Закрыть эту группу
       disallow_ads: Запретить рекламу
-    index: 
+    index:
       actives: Активные
       filter: Поиск групп
       most_active: Самые активные
@@ -62,9 +62,9 @@ ru:
       pendings: На рассмотрении
       request_group: Запросить новую группу
       title: Группы
-    new: 
+    new:
       title: Создание собственной группы
-    show: 
+    show:
       accept_group: Принять группу
       accept_group_with_custom_ads: Принять группу и разрешить настраиваемую рекламу
       close_group: Закрыть эту группу

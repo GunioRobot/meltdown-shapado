@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Tobulos1
-sv: 
-  layouts: 
-    application: 
+sv:
+  layouts:
+    application:
       ask_question: Ställ fråga
       forgot: Har du glömt?
       home: Hem
@@ -15,7 +15,7 @@ sv:
       manage_ads: Hantera annonser
       moderate: Medel
       now: nu!
-      openid: 
+      openid:
         explaination: "Om du vill registrera dig eller logga in, vänligen välj din OpenID leverantör:"
       pages: Sidor
       questions: Frågor
@@ -30,7 +30,7 @@ sv:
       unanswered: Obesvarade
       users: Användare
       welcome_from: Välkommen! Du kan
-    manage: 
+    manage:
       actions: Åtgärder
       announcements: Meddelanden
       constrains: Krav
@@ -46,5 +46,5 @@ sv:
       stats: Statistik
       theme: Tema
       widgets: Widgets
-    notifications: 
+    notifications:
       message: Om du inte vill ta emot automatiska meddelanden från %{domain} längre, ändra dina inställningar i anmälningsskärmen.

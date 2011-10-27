@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Darkweasel
-eo: 
-  activerecord: 
-    attributes: 
-      member: 
+eo:
+  activerecord:
+    attributes:
+      member:
         role: Rolo
-  members: 
-    form: 
+  members:
+    form:
       login_tip: Serĉi dum tajpado
-    index: 
+    index:
       manage_members_title: Administri anojn
       title: Anoj de la grupo de %{name}
       title_isolate: Anoj de %{name}

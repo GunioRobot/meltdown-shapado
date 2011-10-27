@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  sessions: 
-    create: 
+fi:
+  sessions:
+    create:
       flash_error: Et voinut kirjautua sisään käyttäjänä '%{login}'
       flash_notice: Kirjautuminen onnistui
-    destroy: 
+    destroy:
       flash_notice: Olet kirjautunut ulos.
-    new: 
+    new:
       log_in: Kirjaudu
       not_registered: Etkö ole vielä rekisteröitynyt?
       registered: Oletko jo rekisteröitynyt?

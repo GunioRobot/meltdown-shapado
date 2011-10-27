@@ -2,27 +2,27 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: McDutchie
-ia: 
-  devise: 
-    confirmations: 
+ia:
+  devise:
+    confirmations:
       confirmed: Tu conto ha essite confirmate con successo. Tu es ora authenticate.
       link: Instructiones pro confirmar non recipite?
       send_instructions: Tu recipera post alcun minutas un e-mail con instructiones pro confirmar tu conto.
-    mailer: 
+    mailer:
       confirmation_instructions: Instructiones pro confirmar
       reset_password_instructions: Instructiones pro reinitialisar contrasigno
       unlock_instructions: Instructiones pro disblocar
-    passwords: 
+    passwords:
       link: Contrasigno oblidate?
       send_instructions: Tu recipera post alcun minutas un e-mail con instructiones pro reinitialisar tu contrasigno.
       updated: Tu contrasigno ha essite cambiate con successo. Tu es ora authenticate.
-    registrations: 
+    registrations:
       destroyed: Adeo! Tu conto ha essite cancellate con successo. Nos spera revider te tosto.
       link: Crear conto
       signed_up: Tu ha create un conto con successo.
       updated: Tu ha actualisate tu conto con successo.
-    sessions: 
-      facebook_actions: 
+    sessions:
+      facebook_actions:
         sign_in: Aperir session
         sign_out: Clauder session
       facebook_authenticity_token: Qualcosa errava. Pro motivos de securitate, per favor reaperi session.
@@ -38,7 +38,7 @@ ia:
       timeout: Session expirate. Per favor reaperi session pro continuar.
       unauthenticated: Tu debe aperir un session o crear un conto ante de continuar.
       unconfirmed: Tu debe confirmar tu conto ante de continuar.
-    unlocks: 
+    unlocks:
       link: Instructiones pro disblocar non recipite?
       send_instructions: Tu recipera post alcun minutas un e-mail con instructiones pro disblocar tu conto.
       unlocked: Tu conto ha essite disblocate con successo. Tu es ora authenticate.

@@ -3,31 +3,31 @@
 # Export driver: syck
 # Author: Patcito
 # Author: Peter17
-fr: 
-  activerecord: 
-    attributes: 
-      flag: 
+fr:
+  activerecord:
+    attributes:
+      flag:
         reason: Raison
-    models: 
+    models:
       flag: Rapport
       flags: Rapports
-  flags: 
-    create: 
+  flags:
+    create:
       flash_error: Vous ne pouvez rapporter ceci
       flash_notice: Merci pour votre rapport
-    destroy: 
+    destroy:
       flash_notice: Votre signal a été révoqué avec succès.
-    edit: 
+    edit:
       title: Modifier le signal du %{model}
-    form: 
+    form:
       attention: Nécesite l'attention des modérateurs
       label: S'il vous plait, raporter avec attention
       offensive: Injurieux, abusif ou discours de haine
       spam: Spam
-    model: 
-      messages: 
+    model:
+      messages:
         already_requested: Vous avez déjà signalé ce %{model}
-    new: 
+    new:
       title: Signaler le %{model}
-    update: 
+    update:
       flash_notice: Le signal de la question a été mis à jour avec succès.

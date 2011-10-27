@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Farras
-id: 
-  activerecord: 
-    attributes: 
-      group: 
+id:
+  activerecord:
+    attributes:
+      group:
         default_tags: Tanda baku
         description: Deskripsi
         domain: Domain
@@ -23,12 +23,12 @@ id:
         state: Keadaan
         subdomain: URL
         wysiwyg_editor: Aktifkan penyunting ramah pengguna
-    models: 
+    models:
       default_tags_message: Anda tidak diperbolehkan memiliki lebih dari 10 tag baku
       group: Grup
       groups: Grup
-  groups: 
-    form: 
+  groups:
+    form:
       access: Pengaturan Akses
       any_language: Apa pun
       custom_html: Izinkan HTML kustom
@@ -39,14 +39,14 @@ id:
       legend_legend: Ini akan digunakan di kepala. Anda punya 40 karakter.
       logo_legend: Anda dapat mengunggah logo grup. Ukuran berkas maksimal 2MB.
       members_only: Hanya anggora grup yang diperbolehkan mengakses grup ini
-    group: 
+    group:
       about: Tentang
       accept_group: Terima grup ini
       allow_ads: Izinkan iklan
       close: Tutup
       close_group: Tutup grup ini
       disallow_ads: Jangan izinkan iklan
-    index: 
+    index:
       actives: Aktif
       filter: Cari grup
       most_active: Paling aktif
@@ -54,9 +54,9 @@ id:
       pendings: Menunggu
       request_group: Minta grup baru
       title: Grup
-    new: 
+    new:
       title: Buat grup Anda
-    show: 
+    show:
       accept_group: Terima grup ini
       accept_group_with_custom_ads: Terima grup dan izinkan iklan kustom
       close_group: Tutup grup ini

@@ -3,19 +3,19 @@
 # Export driver: syck
 # Author: Borichèt
 # Author: Dragonòt
-pms: 
-  activerecord: 
-    attributes: 
-      announcement: 
+pms:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: A finiss al
         message: Mëssagi
         only_anonymous: Mach për j'utent anònim
         starts_at: A ancamin-a al
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Gava
       title: Assion
-    create: 
+    create:
       success: L'anonsi a l'é stàit creà da bin.
-    index: 
+    index:
       title: Anonsi

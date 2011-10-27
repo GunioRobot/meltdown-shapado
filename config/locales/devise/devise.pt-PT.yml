@@ -3,27 +3,27 @@
 # Export driver: syck
 # Author: GTNS
 # Author: Hamilton Abreu
-pt-PT: 
-  devise: 
-    confirmations: 
+pt-PT:
+  devise:
+    confirmations:
       confirmed: A sua conta foi confirmada. Agora pode entrar.
       link: Não recebeu instruções de confirmação?
       send_instructions: Irá receber um email com instruções sobre como confirmar a sua conta dentro de alguns minutos.
-    mailer: 
+    mailer:
       confirmation_instructions: Instruções de confirmação
       reset_password_instructions: Instruções de redefinição da palavra-chave
       unlock_instructions: Instruções de desbloqueio
-    passwords: 
+    passwords:
       link: Esqueceu-se da palavra-chave?
       send_instructions: Irá receber um email com instruções sobre como redefinir a sua palavra-chave dentro de alguns minutos.
       updated: A sua palavra-chave foi alterada. Agora pode entrar.
-    registrations: 
+    registrations:
       destroyed: Adeus! A sua conta foi cancelada. Esperamos vê-lo(a) novamente em breve.
       link: Registar-se
       signed_up: Inscreveu-se.
       updated: Actualizou a sua conta.
-    sessions: 
-      facebook_actions: 
+    sessions:
+      facebook_actions:
         sign_in: Entrar
         sign_out: Sair
       facebook_authenticity_token: Algo correu mal. Por razões de segurança, por favor, entre novamente.
@@ -39,7 +39,7 @@ pt-PT:
       timeout: A sua sessão expirou. Por favor, entre novamente para continuar.
       unauthenticated: Precisa de entrar ou de se registar antes de continuar.
       unconfirmed: Precisa de confirmar a sua conta antes de continuar.
-    unlocks: 
+    unlocks:
       link: Não recebeu instruções de desbloqueio?
       send_instructions: Irá receber um email com instruções sobre como desbloquear a sua conta dentro de alguns minutos.
       unlocked: A sua conta foi desbloqueada. Agora pode entrar.

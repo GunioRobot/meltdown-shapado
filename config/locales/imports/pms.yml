@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Borichèt
-pms: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+pms:
+  imports:
+    subtabs:
+      need_confirmation:
         name: A l'han da manca ëd na conferma
         title: Mandé dij mëssagi ëd conferma

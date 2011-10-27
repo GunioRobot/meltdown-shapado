@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Discon
-el: 
-  activerecord: 
-    attributes: 
-      announcement: 
+el:
+  activerecord:
+    attributes:
+      announcement:
         ends_at: Λήξη
         message: Μήνυμα
         only_anonymous: Μόνο για ανώνυμους χρήστες
         starts_at: Έναρξη
-  announcements: 
-    actions: 
+  announcements:
+    actions:
       delete: Κατάργηση
       title: Ενέργειες
-    create: 
+    create:
       success: Η ανακοίνωση δημιουργήθηκε επιτυχώς.
-    index: 
+    index:
       title: Ανακοινώσεις

@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Patcito
 # Author: Peter17
-fr: 
-  activerecord: 
-    attributes: 
-      group: 
+fr:
+  activerecord:
+    attributes:
+      group:
         default_tags: Tags par défaut
         description: Description
         domain: Domaine
@@ -25,14 +25,14 @@ fr:
         state: État
         subdomain: URL
         wysiwyg_editor: Activer l'éditeur de texte convivial (présente à l'écran tel qu'à l'écrit)
-    models: 
+    models:
       default_tags_message: Vous ne pouvez pas utiliser plus de 10 tags par défaut.
       group: Groupe
       groups: Groupes
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: Votre groupe a été créé avec succès, vous pouvez maintenant commencer à le configurer.
-    form: 
+    form:
       access: Configuration de l'accès
       analytics_engine: Moteur d’analyse
       analytics_legend: Le groupe pourra utiliser son propre code de suivi
@@ -47,14 +47,14 @@ fr:
       logo_legend: Vous pouvez télécharger le logo du groupe. la taille maximum est de 2mb.
       members_only: Seuls les membres du groupe pourront accéder à ce groupe
       website_analytics_id: Identifiant d’analyse du site web
-    group: 
+    group:
       about: À propos
       accept_group: Accepter ce groupe
       allow_ads: Permettre la publicité
       close: Fermer
       close_group: Fermer ce groupe
       disallow_ads: Interdire la publicité
-    index: 
+    index:
       actives: Actifs
       filter: Chercher les groupes
       most_active: Plus actifs
@@ -62,9 +62,9 @@ fr:
       pendings: En attente
       request_group: Solliciter un nouveau groupe
       title: Groupes
-    new: 
+    new:
       title: Créez votre groupe
-    show: 
+    show:
       accept_group: Accepter ce groupe
       accept_group_with_custom_ads: Accepter les groupes et autoriser les annonces personnalisées
       close_group: Fermer ce groupe

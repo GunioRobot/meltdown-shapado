@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Mihxil
-eo: 
-  devise: 
-    registrations: 
+eo:
+  devise:
+    registrations:
       link: Registriĝi
-    sessions: 
-      facebook_actions: 
+    sessions:
+      facebook_actions:
         sign_in: Ensaluti
         sign_out: Elsaluti
       facebook_authenticity_token: Io fiaskiĝis. Pro sekurecaj kialoj, bonvolu reensaluti.
@@ -22,5 +22,5 @@ eo:
       timeout: Via seskio eksvalidĝis. Bonvolu reensaluti por daŭrigi.
       unauthenticated: Vi devas ensaluti aŭ krei konton antaŭ ol daŭrigi.
       unconfirmed: Vi konfirmu vian konton antaŭ ol daŭrigi.
-    unlocks: 
+    unlocks:
       unlocked: Via konto estis malblokita. Vi estas ensalutinta nun.

@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Hydra
-zh-CN: 
-  close_requests: 
-    create: 
+zh-CN:
+  close_requests:
+    create:
       flash_notice: 关闭请求已成功创建
-    destroy: 
+    destroy:
       flash_notice: 关闭请求已成功删除
-    edit: 
+    edit:
       title: 编辑结束请求
-    form: 
+    form:
       close_with_reason: 关闭使用此这个问题
       dupe: 复制
       no_question: 不是问题
@@ -18,16 +18,16 @@ zh-CN:
       ot: 关闭主题
       request_closing_details: 对关闭这一问题的请求
       spam: 垃圾邮件
-    index: 
+    index:
       title: 关闭请求的列表
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: 评论
         reason: 原因
         user: 用户
-      messages: 
+      messages:
         already_requested: 您已要求关闭这个问题
       name: 关闭请求
       prural_name: 关闭请求
-    update: 
+    update:
       flash_notice: 关闭请求已成功更新

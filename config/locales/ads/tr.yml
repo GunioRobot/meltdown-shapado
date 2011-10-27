@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Mert.subay
-tr: 
-  ads: 
+tr:
+  ads:
     ad_links: Yeni bir %{type} reklamı ekle
-    create: 
+    create:
       success: Reklam başarıyla oluşturuldu.
-    index: 
+    index:
       add_adbard: Yeni bir Ad Bard reklamı ekleyin
       add_adsense: Yeni bir Google AdSense reklamı ekle
       title: Reklamlar

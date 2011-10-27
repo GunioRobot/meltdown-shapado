@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Tobulos1
-sv: 
-  doc: 
-    chat: 
+sv:
+  doc:
+    chat:
       title: Chatt-support
-    plans: 
+    plans:
       15millions: 15 miljoner sidvisningar/månad
       1million: 1 miljon sidvisningar/månad
       247_all_support: Nätbaserad, e-post, chatt och telefon (24/7) support

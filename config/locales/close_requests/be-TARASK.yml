@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Jim-by
-be-TARASK: 
-  close_requests: 
-    create: 
+be-TARASK:
+  close_requests:
+    create:
       flash_notice: Запыт на закрыцьцё пасьпяхова створаны
-    destroy: 
+    destroy:
       flash_notice: Запыт на закрыцьцё пасьпяхова выдалены
-    edit: 
+    edit:
       title: Рэдагаваць запыт на закрыцьцё
-    form: 
+    form:
       close_with_reason: Закрыць гэтае пытаньне па гэтай прычыне
       dupe: Капіяваць
       no_question: Не зьяўляецца пытаньнем
@@ -18,16 +18,16 @@ be-TARASK:
       ot: Не па тэме
       request_closing_details: Запыт на закрыцьцё гэтага пытаньня
       spam: спам
-    index: 
+    index:
       title: Сьпіс запытаў на закрыцьцё
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Камэнтар
         reason: Прычына
         user: Карыстальнік
-      messages: 
+      messages:
         already_requested: Вы ўжо даслалі запыт на закрыцьцё гэтага пытаньня
       name: Запыт на закрыцьцё
       prural_name: Запыты на закрыцьцё
-    update: 
+    update:
       flash_notice: Запыт на закрыцьцё пасьпяхова зьменены

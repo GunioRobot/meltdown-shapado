@@ -2,21 +2,21 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  wiki: 
-    actions: 
+da:
+  wiki:
+    actions:
       all_history: Tilbage til historien
       back_to_question: Tilbage til spørgsmålet
       revert: Vend tilbage til denne version
       show_diff: Sammenlign valgte versioner
-    diff: 
+    diff:
       title: Forskelle mellem %{prev} og %{curr}
-    history: 
+    history:
       current_version: Nuværende version
       previous_versions: Tidligere versioner
       title: Historie (%{count})
       version: Version
       version_summary: Version sammendrag
-    model: 
-      attributes: 
+    model:
+      attributes:
         message: Sammendrag

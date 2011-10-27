@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  doc: 
-    chat: 
+da:
+  doc:
+    chat:
       title: Chat Support
-    plans: 
+    plans:
       15millions: 15 millioner sidevisninger om måneden
       1million: 1 million sidevisninger om måneden
       247_all_support: Web-baseret, e-mail, chat og 24/7 telefon support

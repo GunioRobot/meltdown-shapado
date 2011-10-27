@@ -2,12 +2,12 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Naudefj
-af: 
-  ads: 
+af:
+  ads:
     ad_links: Voeg nuwe advertensie van tipe %{type} by
-    create: 
+    create:
       success: Die advertensie is geskep.
-    index: 
+    index:
       add_adbard: Voeg 'n nuwe "Ad Bar"-tipe advertensie by
       add_adsense: Voeg 'n nuwe "Google AdSense"-advertensie by
       title: Advertensies

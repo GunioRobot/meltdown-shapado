@@ -2,33 +2,33 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Kghbln
-de: 
-  activerecord: 
-    attributes: 
-      page: 
+de:
+  activerecord:
+    attributes:
+      page:
         css: Stylesheets
         js: JavaScript
-    models: 
+    models:
       page: Seite
       pages: Seiten
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Neue Seite erstellen
       edit_page: Seite bearbeiten
       title: Aktionen
-    create: 
+    create:
       success: Die Seite wurde erfolgreich erstellt.
-    edit: 
+    edit:
       title: Seite bearbeiten
-    form: 
+    form:
       language_tip: Sprache der Seite
       title_tip: "Seitentitel mit dem auf diese Seite verwiesen werden kann. Beispielsweise: [[Häufige Fragen|Lese zunächst die „Häufigen Fragen“]]"
-    index: 
+    index:
       create_page: Neue Seite erstellen
       title: Liste der Seiten
       written_in: auf %{language} geschrieben
-    new: 
+    new:
       title: neue Seite
     title: FIXME
-    update: 
+    update:
       success: Die Seite wurde erfolgreich aktualisiert.

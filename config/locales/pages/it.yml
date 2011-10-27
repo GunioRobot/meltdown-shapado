@@ -2,33 +2,33 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Giallu
-it: 
-  activerecord: 
-    attributes: 
-      page: 
+it:
+  activerecord:
+    attributes:
+      page:
         css: Fogli di stile
         js: JavaScript
-    models: 
+    models:
       page: Pagina
       pages: Pagine
-  pages: 
-    actions: 
+  pages:
+    actions:
       create_page: Crea nuova pagina
       edit_page: Modifica pagina
       title: Azioni
-    create: 
+    create:
       success: La pagina è stata creata.
-    edit: 
+    edit:
       title: Modifica pagina
-    form: 
+    form:
       language_tip: Lingua della pagina
       title_tip: "Titolo della pagina. Usabile per fare riferimento alla pagina. Ad esempio: [[FAQ|controlla le faq]]"
-    index: 
+    index:
       create_page: Crea nuova pagina
       title: Lista delle pagine
       written_in: Scritto in %{language}
-    new: 
+    new:
       title: Nuova pagina
     title: Fixme
-    update: 
+    update:
       success: Pagina aggiornata.

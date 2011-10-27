@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Kghbln
-de: 
-  sessions: 
-    create: 
+de:
+  sessions:
+    create:
       flash_error: Anmeldung als „%{login}“ erfolglos
       flash_notice: erfolgreich angemeldet
-    destroy: 
+    destroy:
       flash_notice: Du bist nun abgemeldet.
-    new: 
+    new:
       log_in: Anmeldung
       not_registered: noch nicht registriert?
       registered: bereits registriert?

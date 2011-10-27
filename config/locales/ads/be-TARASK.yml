@@ -3,12 +3,12 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Jim-by
-be-TARASK: 
-  ads: 
+be-TARASK:
+  ads:
     ad_links: Дадаць новую рэкляму %{type}
-    create: 
+    create:
       success: Рэкляма была пасьпяхова створаная.
-    index: 
+    index:
       add_adbard: Дадаць новую рэклямную аб’яву
       add_adsense: Дадаць новую рэкляму Google AdSense
       title: Рэкляма

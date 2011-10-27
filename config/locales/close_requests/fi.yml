@@ -2,15 +2,15 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Centerlink
-fi: 
-  close_requests: 
-    create: 
+fi:
+  close_requests:
+    create:
       flash_notice: Sulkupyyntö luotu onnistuneesti
-    destroy: 
+    destroy:
       flash_notice: Sulkemispyyntö poistettiin onnistuneesti
-    edit: 
+    edit:
       title: Muokkaa sulkemispyyntöä
-    form: 
+    form:
       close_with_reason: Suljetaan tämä kysymys käyttäen tätä syytä
       dupe: Kaksoiskappale
       no_question: Ei kysymys
@@ -18,16 +18,16 @@ fi:
       ot: Aiheen vierestä
       request_closing_details: Pyyntö sulkea tämä kysymys
       spam: roskaposti
-    index: 
+    index:
       title: Sulkupyyntöjen luettelo
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: Kommentti
         reason: Syy
         user: Käyttäjä
-      messages: 
+      messages:
         already_requested: Olet jo pyytänyt tämän kysymyksen sulkemista
       name: Sulkemispyyntö
       prural_name: Sulkemispyynnöt
-    update: 
+    update:
       flash_notice: Sulkemispyyntö päivitettiin onnistuneesti

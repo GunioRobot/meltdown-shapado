@@ -3,12 +3,12 @@
 # Export driver: syck
 # Author: Lockal
 # Author: Александр Сигачёв
-ru: 
-  activerecord: 
-    models: 
+ru:
+  activerecord:
+    models:
       favorite: Избранное
       favorites: Избранные
-  unfavorites: 
-    create: 
+  unfavorites:
+    create:
       success: Вопрос был удалён из вашего списка избранного
       unauthenticated: Вам нужно зарегистрироваться, чтобы удалять из избранного

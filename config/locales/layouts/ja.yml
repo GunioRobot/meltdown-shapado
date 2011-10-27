@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: 青子守歌
-ja: 
-  layouts: 
-    application: 
+ja:
+  layouts:
+    application:
       ask_question: 質問する
       badges: バッジ
       forgot: 忘れた？
@@ -16,7 +16,7 @@ ja:
       manage_ads: 広告の管理
       moderate: モデレート
       now: 今すぐ！
-      openid: 
+      openid:
         explaination: 外部サービスを使ってログインする場合は下のサービス一覧から選択してください
       pages: ページ
       questions: 質問
@@ -31,7 +31,7 @@ ja:
       unanswered: 未回答な質問
       users: ユーザ
       welcome_from: ようこそ！あなたは次のことをすることができます
-    manage: 
+    manage:
       actions: アクション
       announcements: アナウンス
       constrains: 制約
@@ -47,5 +47,5 @@ ja:
       stats: ステータス
       theme: テーマ
       widgets: ウィジェット
-    notifications: 
+    notifications:
       message: これ以上%{group}からの自動通知を受け取りたくない場合、通知画面の設定を変更してください。

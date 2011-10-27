@@ -3,27 +3,27 @@
 # Export driver: syck
 # Author: Centerlink
 # Author: Nike
-fi: 
-  devise: 
-    confirmations: 
+fi:
+  devise:
+    confirmations:
       confirmed: Tilisi vahvistettiin. Olet nyt kirjautunut sisään.
       link: Etkö ole saanut vahvistusohjeita?
       send_instructions: Saat muutaman minuutin kuluttua sähköpostiviestin, joka sisältää ohjeet tilin varmistamiseen.
-    mailer: 
+    mailer:
       confirmation_instructions: Vahvistusohjeet
       reset_password_instructions: Ohjeet salasanan alustamiseen
       unlock_instructions: Poista ohjeiden lukitus
-    passwords: 
+    passwords:
       link: Unohtuiko salasana?
       send_instructions: Saat muutaman minuutin kuluttua sähköpostiviestin, joka sisältää ohjeet salasanan alustamisesta.
       updated: Salasanasi on vaihdettu. Olet nyt kirjautunut sisään.
-    registrations: 
+    registrations:
       destroyed: Heippa! Tilisi on peruutettu. Toivomme näkevämme sinut pian uudelleen.
       link: Rekisteröidy
       signed_up: Olet rekisteröitynyt.
       updated: Olet päivittänyt tilisi.
-    sessions: 
-      facebook_actions: 
+    sessions:
+      facebook_actions:
         sign_in: Kirjaudu sisään
         sign_out: Kirjaudu ulos
       facebook_authenticity_token: Jokin meni vikaan. Turvallisuussyistä kirjaudu sisään uudelleen.
@@ -39,7 +39,7 @@ fi:
       timeout: Istuntosi on vanhentunut. Jatka kirjautumalla sisään.
       unauthenticated: Sinun täytyy kirjautua sisään tai rekisteröityä ennen kuin jatkat.
       unconfirmed: Sinun on vahvistettava tilisi ennen kuin jatkat.
-    unlocks: 
+    unlocks:
       link: Etkö vastaanottanut lukituksenpoisto-ohjeita?
       send_instructions: Saat muutaman minuutin kuluttua sähköpostiviestin, joka sisältää ohjeet tilin lukituksen poistamisesta.
       unlocked: Tilisi on avattu. Olet nyt kirjautunut sisään

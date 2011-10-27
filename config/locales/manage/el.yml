@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Discon
-el: 
-  admin: 
-    manage: 
-      content: 
+el:
+  admin:
+    manage:
+      content:
         footer: Υποσέλιδο
         head: Κεφαλίδα
         question_help: Βοήθεια ερώτησης
@@ -13,12 +13,12 @@ el:
         title: Προσαρμοσμένο περιεχόμενο
         top_bar: Άνω μπάρα
         top_bar_tip: Εισάγετε ένα σύνδεσμο ανά γραμμή
-      properties: 
-        constrains: 
+      properties:
+        constrains:
           reputation_constrains_description: Αυτή η φόρμα σας δίνει τη δυνατότητα να καθορίσετε πόσους πόντους υπόληψης πρέπει να έχουν τα μέλη για να τους επιτρέπονται συγκεκριμένες ενέργειες
           reputation_constrains_subtitle: Κατάλογος απαιτούμενων πόντων υπόληψης για κάθε ενέργεια
           title: Περιορισμοί
-        domain: 
+        domain:
           description: "You can map your site so it can be accessed through your own custom domain, this is how you do it:"
           instruction1: To do so you first need to log on to your domain provider (the site where you bought your domain such as %{subdomain}.com).
           instruction2: There you need to go to the DNS section and create something called a CNAME.
@@ -28,14 +28,14 @@ el:
           instruction6: When this is the case, come back here and put your domain name www.%{subdomain} in the field below and press the button 'update'. If you have questions, ask us in the %{chat_url} or on our support forum
           title: Ρυθμίστε το domain
           warning: Είστε σίγουροι ότι θέλετε να αλλάξετε το domain σας;
-        general: 
+        general:
           title: Ιδιότητες ομάδας
-        rewards: 
+        rewards:
           reputation_rewards_description: Η φόρμα παρακάτω σας δίνει τη δυνατότητα να ρυθμίσετε πως τα μέλη κερδίζουν ή χάνουν πόντους υπόληψης για τις ενέργειές τους
           reputation_rewards_subtitle: Κατάλογος ανταμοιβών υπόληψης
           title: Ανταμοιβές
-        share: 
+        share:
           title: Διαμοιρασμός
-        theme: 
+        theme:
           logo_legend: Φορτώστε ένα λογότυπο για την ομάδα σας, θα πρέπει να είναι μικρότερο από 2MB.
           title: Ρυθμίστε το θέμα της ομάδας σας

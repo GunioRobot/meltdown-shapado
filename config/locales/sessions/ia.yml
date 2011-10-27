@@ -2,14 +2,14 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: McDutchie
-ia: 
-  sessions: 
-    create: 
+ia:
+  sessions:
+    create:
       flash_error: Non poteva aperir tu session como '%{login}'
       flash_notice: Session aperite con successo
-    destroy: 
+    destroy:
       flash_notice: Tu session ha essite claudite.
-    new: 
+    new:
       log_in: Aperir session
       not_registered: Non ancora registrate?
       registered: Jam registrate?

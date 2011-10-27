@@ -2,9 +2,9 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Discon
-el: 
-  imports: 
-    subtabs: 
-      need_confirmation: 
+el:
+  imports:
+    subtabs:
+      need_confirmation:
         name: Χρειάζεται επιβεβαίωση
         title: Αποστολή email επιβεβαίωσης

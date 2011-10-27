@@ -2,11 +2,11 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Lockal
-ru: 
-  doc: 
-    chat: 
+ru:
+  doc:
+    chat:
       title: Чат-поддержка
-    plans: 
+    plans:
       15millions: 15 миллионов просмотров страниц в месяц
       1million: 1 миллион просмотров страниц в месяц
       247_all_support: Круглосуточная поддержка через веб, электронную почту, чат и по телефону

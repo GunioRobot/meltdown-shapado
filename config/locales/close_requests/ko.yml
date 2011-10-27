@@ -2,13 +2,13 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Linkr
-ko: 
-  close_requests: 
-    create: 
+ko:
+  close_requests:
+    create:
       flash_notice: 마감 요청이 수락되었습니다.
-    destroy: 
+    destroy:
       flash_notice: 마감 요청이 수락되었습니다.
-    form: 
+    form:
       close_with_reason: 이러한 이유로 이 질문을 마감
       dupe: 중복
       no_question: 질문이 아님
@@ -16,16 +16,16 @@ ko:
       ot: 주제를 벗어남
       request_closing_details: 이 질문의 마감 요청
       spam: 스팸
-    index: 
+    index:
       title: 마감 요청 목록
-    model: 
-      attributes: 
+    model:
+      attributes:
         comment: 코멘트
         reason: 이유
         user: 사용자
-      messages: 
+      messages:
         already_requested: 이 질문의 마감을 이미 요청하였습니다
       name: 마감 요청
       prural_name: 마감 요청
-    update: 
+    update:
       flash_notice: 마감 요청이 갱신 되었습니다.

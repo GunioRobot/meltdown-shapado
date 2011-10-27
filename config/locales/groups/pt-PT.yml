@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Hamilton Abreu
 # Author: Malafaya
-pt-PT: 
-  activerecord: 
-    attributes: 
-      group: 
+pt-PT:
+  activerecord:
+    attributes:
+      group:
         default_tags: Categorias predefinidas
         description: Descrição
         domain: Domínio
@@ -25,14 +25,14 @@ pt-PT:
         state: Estado
         subdomain: URL
         wysiwyg_editor: Activar o editor de utilização fácil
-    models: 
+    models:
       default_tags_message: Não pode ter mais do que 10 categorias predefinidas
       group: Grupo
       groups: Grupos
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: O seu grupo foi criado. Agora pode começar a configurá-lo.
-    form: 
+    form:
       access: Definições de Acesso
       analytics_engine: Motor de Análise
       analytics_legend: O grupo poderá usar o seu próprio código de monitorização
@@ -47,14 +47,14 @@ pt-PT:
       logo_legend: Pode fazer upload do logótipo do grupo. O tamanho máximo do ficheiro é 2MB.
       members_only: Só os membros do grupo poderão aceder a este grupo
       website_analytics_id: ID da Análise do Site
-    group: 
+    group:
       about: Sobre
       accept_group: Aceitar este grupo
       allow_ads: Permitir anúncios
       close: Fechar
       close_group: Fechar este grupo
       disallow_ads: Não permitir anúncios
-    index: 
+    index:
       actives: Activos
       filter: Pesquisar grupos
       most_active: Mais activos
@@ -62,9 +62,9 @@ pt-PT:
       pendings: Pendentes
       request_group: Pedir um grupo novo
       title: Grupos
-    new: 
+    new:
       title: Crie o seu grupo
-    show: 
+    show:
       accept_group: Aceitar este grupo
       accept_group_with_custom_ads: Aceitar o grupo e permitir anúncios personalizados
       close_group: Fechar este grupo

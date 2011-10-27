@@ -2,19 +2,19 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Robby
-lb: 
-  comments: 
-    create: 
+lb:
+  comments:
+    create:
       flash_notice: Merci fir Är Bemierkung
-    edit: 
+    edit:
       title: Bemierkung änneren
-    shared: 
+    shared:
       add_comment: Bemierkung derbäisetzen...
       comment_submit: Bemierkung
       reply: Äntwerten
       said: huet gesot
-    update: 
+    update:
       flash_notice: D'Bemierkung gouf aktualiséiert.
-  models: 
+  models:
     comment: Bemierkung
     comments: Bemierkungen

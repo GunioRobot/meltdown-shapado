@@ -1,6 +1,6 @@
 require "openssl"
 require "net/smtp"
- 
+
 Net::SMTP.class_eval do
   private
   def do_start(helodomain, user, secret, authtype)
@@ -10,15 +10,15 @@ Net::SMTP.class_eval do
     else
       check_auth_args user, secret, authtype if user or secret
     end
- 
+
     sock = timeout(@open_timeout) { TCPSocket.open(@address, @port) }
     @socket = Net::InternetMessageIO.new(sock)
     @socket.read_timeout = 60 #@read_timeout
     @socket.debug_output = STDERR #@debug_output
- 
+
     check_response(critical { recv_response() })
     do_helo(helodomain)
- 
+
     raise 'openssl library not installed' unless defined?(OpenSSL)
     starttls
     ssl = OpenSSL::SSL::SSLSocket.new(sock)
@@ -28,7 +28,7 @@ Net::SMTP.class_eval do
     @socket.read_timeout = 60 #@read_timeout
     @socket.debug_output = STDERR #@debug_output
     do_helo(helodomain)
- 
+
     authenticate user, secret, authtype if user
     @started = true
   ensure
@@ -38,7 +38,7 @@ Net::SMTP.class_eval do
       @socket = nil
     end
   end
- 
+
   def do_helo(helodomain)
      begin
       if @esmtp
@@ -55,11 +55,11 @@ Net::SMTP.class_eval do
       raise
     end
   end
- 
+
   def starttls
     getok('STARTTLS')
   end
- 
+
   def quit
     begin
       getok('QUIT')

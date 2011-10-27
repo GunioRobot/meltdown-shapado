@@ -3,14 +3,14 @@
 # Export driver: syck
 # Author: Eleferen
 # Author: Lockal
-ru: 
-  sessions: 
-    create: 
+ru:
+  sessions:
+    create:
       flash_error: Невозможно войти в систему как «%{login}»
       flash_notice: Вы успешно вошли
-    destroy: 
+    destroy:
       flash_notice: Вы вышли из системы.
-    new: 
+    new:
       log_in: Войти
       not_registered: Ещё не зарегистрированы?
       registered: Уже зарегистрированы?

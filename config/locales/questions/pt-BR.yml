@@ -4,10 +4,10 @@
 # Author: Giro720
 # Author: Luckas Blade
 # Author: Vgeorge
-pt-BR: 
-  activerecord: 
-    attributes: 
-      question: 
+pt-BR:
+  activerecord:
+    attributes:
+      question:
         answers: Respostas
         asked_by: Perguntado por
         body: Conteúdo
@@ -20,27 +20,27 @@ pt-BR:
         updated_by: atualizada por
         views: Visualizações
         votes: Votos
-    models: 
+    models:
       question: Pergunta
       questions: Perguntas
-  questions: 
-    answer: 
+  questions:
+    answer:
       add_comment: Adicionar comentário...
       flag: Reportar
       pick_answer: Escolher como solução
       unset_answer: Retirar como solução?
-    create: 
+    create:
       flash_notice: A pergunta foi criada com sucesso.
-    edit: 
+    edit:
       title: Editar pergunta
-    flag: 
+    flag:
       title: Reportar pergunta
-    form: 
+    form:
       adult_content: Esta pergunta envolve conteúdo para adultos.
       body_tip: Qual é a sua pergunta? Seja descritivo.
       language_tip: Selecione o idioma da sua pergunta.
       tags_tip: Use tags para acrescentar informação sobre a sua pergunta.
-    index: 
+    index:
       active: Ativas
       active_tooltip: Perguntas atualizadas recentemente
       ask_question: Perguntar
@@ -55,42 +55,42 @@ pt-BR:
       unanswered_questions: Perguntas sem resposta
       votes: Votos
       votes_tooltip: Perguntas com mais votos
-    model: 
-      messages: 
+    model:
+      messages:
         empty_tags: Desculpe, você tem que usar pelo menos uma tag.
         title_too_long: O título é muito longo. Não pode conter mais do que 100 caracteres.
         too_many_tags: Desculpe, mas você só pode introduzir até 9 tags.
         too_short: Parece demasiado curta. Use mais do que %{count} palavras para ser mais específico.
-    move: 
+    move:
       group_label: "Mover para o grupo:"
       submit: Mover!
       title: "Mover a pergunta: %{title}"
-    move_to: 
+    move_to:
       group_dont_exists: O grupo %{group} não existe
       success: Pergunta movida para o grupo %{group}
-    new: 
+    new:
       how_to_ask: Como perguntar
       title: Perguntar
-    question: 
+    question:
       accepted_tooltip: Esta pergunta tem uma resposta que foi aceita
-    retag: 
+    retag:
       title: Alterar tag
-    retag_form: 
+    retag_form:
       cancel: Cancelar
       submit: Atualizar tags!
       title: Atualizar tags
-    retag_to: 
+    retag_to:
       failure: Desculpe, não foi possível atualizar as tags.
       success: As tags foram atualizadas.
-    revert: 
+    revert:
       title: Reverter a pergunta
-    shared: 
+    shared:
       flag: Reportar
-    show: 
+    show:
       accepted_tooltip: Uma das respostas foi aceitada como correta
       another_answers: Outras respostas
       answers: Respostas
-      answers_title: 
+      answers_title:
         one: "%{count} resposta"
         other: "%{count} respostas"
       asked_on: perguntado em
@@ -122,23 +122,23 @@ pt-BR:
       unwatch_tooltip: Deixar de vigiar esta pergunta
       viewed: visitada
       watch_tooltip: Vigiar esta pergunta
-    solve: 
+    solve:
       flash_notice: A pergunta foi resolvida.
-    tags: 
+    tags:
       filter: Pesquisar tags
       title: Tags
       tooltip: Mostrar perguntas na tag %{tag}
-    unanswered: 
+    unanswered:
       empty: Este grupo não contém perguntas sem resposta.
       expert: Peritos
       my_tags: Minhas tags
       tags: Tags sem respostas
       title: Perguntas sem resposta
-    unsolve: 
+    unsolve:
       flash_notice: A pergunta deixou de estar resolvida.
-    unwatch: 
+    unwatch:
       success: Você não receberá mais notificações por e-mail para cada nova resposta a esta pergunta.
-    update: 
+    update:
       flash_notice: A pergunta foi atualizada com sucesso.
-    watch: 
+    watch:
       success: Você receberá notificações por e-mail a cada nova resposta a esta pergunta.

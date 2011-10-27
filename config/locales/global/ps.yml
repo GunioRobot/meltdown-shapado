@@ -2,26 +2,26 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Ahmed-Najib-Biabani-Ibrahimkhel
-ps: 
-  actions: 
+ps:
+  actions:
     closed: تړل شوی
     created: جوړ شو
     deleted: ړنګ شو
     updated: اوسمهاله شو
-  global: 
+  global:
     current: تازه
     or: يا
     previous: پخوانی
     share: شريکول
-  languages: 
+  languages:
     any: هر يو
     user: زما د خوښې ژبې
-  models: 
+  models:
     question: پوښتنه
-  number: 
-    x_time: 
+  number:
+    x_time:
       zero: هېڅکله
-  scaffold: 
+  scaffold:
     add: ورګډول
     cancel: ناګارل
     close: تړل
@@ -33,5 +33,5 @@ ps:
     send: لېږل
     show: ښکاره کول
     update: اوسمهالول
-  time: 
+  time:
     today: نن

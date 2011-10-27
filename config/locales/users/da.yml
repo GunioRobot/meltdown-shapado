@@ -2,10 +2,10 @@
 # Exported from translatewiki.net
 # Export driver: syck
 # Author: Emilkris33
-da: 
-  activerecord: 
-    attributes: 
-      user: 
+da:
+  activerecord:
+    attributes:
+      user:
         activated_at: aktiveret på
         activation_code: Aktiverings kode
         age: Alder
@@ -30,11 +30,11 @@ da:
         timezone: Tidszone
         updated_at: opdateret på
         website: Website
-    models: 
+    models:
       user: Bruger
       users: Brugere
-  users: 
-    actions: 
+  users:
+    actions:
       edit_others_posts: Rediger andre's indlæg
       edit_wiki_post: Rediger wiki indlæg
       flag: Anmeld
@@ -43,18 +43,18 @@ da:
       vote_to_close_any_question: Anmod om lukning af et hvert spørgsmål
       vote_to_close_own_question: Anmod om lukning af eget spørgsmål
       vote_up: Stem op
-    anonymous_form: 
+    anonymous_form:
       never_shown: aldrig vist
-    create: 
+    create:
       flash_error: Vi kunne desværre ikke oprettet denne konto. Prøv igen, eller kontakt en administrator (link er ovenfor).
       flash_notice: Tak for din tilmelding!
-    edit: 
+    edit:
       enable_twitter: Aktiver din Facebook eller Twitter-konti
       submit: Gem
       title: Indstillinger
-    follow: 
+    follow:
       flash_notice: Brugeren %{user} blev tilføjet til dine venner
-    form: 
+    form:
       activities_notification: Modtage e-mail meddelelser om system aktiviteter såsom optjente badges, nye følgere, o.s.v.
       avatar_tip: Skift dit profil billede ved hjælp af Gravatar
       give_advice_notification: Modtag e-mail meddelelser om spørgsmål inden for dit område af ekspertise
@@ -64,7 +64,7 @@ da:
       notifications: Meddelelser
       reports_notification: Modtag en rapport med de seneste gruppe aktiviteter (kun for gruppe admins)
       show_more_lang: Vis flere sprog
-    index: 
+    index:
       empty: Denne gruppe har ingen medlemmer. Deltag ved at tilmelde dig denne gruppe.
       filter: Søg efter brugere
       name: Navn
@@ -76,16 +76,16 @@ da:
       reputation: Omdømme
       reputation_tooltip: Brugere sorteret efter højere omdømme
       title: Alle brugere
-    messages: 
-      errors: 
+    messages:
+      errors:
         reputation_needed: Du har brug for et omdømme på %{min_reputation} for at %{action}
-    new: 
+    new:
       submit: Tilmeld
       title: Opret dig som ny bruger
-    show: 
+    show:
       follow: Følg
       title: Bruger %{user}
       unfollow: Stop med at følge
       views: visninger
-    unfollow: 
+    unfollow:
       flash_notice: Brugeren %{user} blev fjernet fra dine venner

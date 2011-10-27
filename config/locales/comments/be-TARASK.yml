@@ -3,19 +3,19 @@
 # Export driver: syck
 # Author: EugeneZelenko
 # Author: Jim-by
-be-TARASK: 
-  comments: 
-    create: 
+be-TARASK:
+  comments:
+    create:
       flash_notice: Дзякуй за Ваш камэнтар
-    edit: 
+    edit:
       title: Рэдагаваць камэнтар
-    shared: 
+    shared:
       add_comment: Дадаць камэнтар…
       comment_submit: Камэнтаваць
       reply: Адказаць
       said: паведаміў(-ла)
-    update: 
+    update:
       flash_notice: Камэнтар быў пасьпяхова абноўлены.
-  models: 
+  models:
     comment: Камэнтар
     comments: Камэнтары

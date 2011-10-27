@@ -3,10 +3,10 @@
 # Export driver: syck
 # Author: Fulup
 # Author: Y-M D
-br: 
-  activerecord: 
-    attributes: 
-      group: 
+br:
+  activerecord:
+    attributes:
+      group:
         default_tags: Tikedennoù dre ziouer
         description: Deskrivadur
         domain: Domani
@@ -25,14 +25,14 @@ br:
         state: Stad
         subdomain: Url
         wysiwyg_editor: Gweredekaat ar skridaozer testennoù aes da implijout
-    models: 
+    models:
       default_tags_message: N'hallit ket lakaat en tu all da 10 tikedenn dre ziouer
       group: Strollad
       groups: Strolladoù
-  groups: 
-    create: 
+  groups:
+    create:
       flash_notice: Krouet eo bet ho strollad ervat. Gallout a rit kregiñ d'e gefluniañ.
-    form: 
+    form:
       access: Kefluniadur moned
       analytics_engine: Lusker dielfennañ
       analytics_legend: Gallout a raio ar strollad implijout e god heuliañ dezhañ e-unan
@@ -47,14 +47,14 @@ br:
       logo_legend: Gallout a rit pellgargañ logo ar strollad. 2MB eo ar vent vrasañ.
       members_only: Ne vo digor ar strollad nemet d'an izili anezhañ.
       website_analytics_id: ID dielfennañ al lec'hienn web
-    group: 
+    group:
       about: Diwar-benn
       accept_group: Asantiñ ar strollad-mañ
       allow_ads: Aotreañ ar bruderezhioù
       close: Serriñ
       close_group: Serriñ ar strollad-mañ
       disallow_ads: Nac'hañ ar bruderezhioù
-    index: 
+    index:
       actives: Oberiant
       filter: Klask strolladoù
       most_active: Oberiantañ
@@ -62,9 +62,9 @@ br:
       pendings: o c'hortoz
       request_group: Goulenn ur strollad nevez
       title: Strolladoù
-    new: 
+    new:
       title: Krouiñ ho strollad
-    show: 
+    show:
       accept_group: Asantiñ ar strollad-mañ
       accept_group_with_custom_ads: Degemer ar strolladoù hag aotren ar c'hemennoù personelaet
       close_group: Serriñ ar strollad-mañ
